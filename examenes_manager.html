@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor de Exámenes y Prácticas</title>
+    <style>
+      /* --- Estilos Generales (sin cambios significativos, solo añadidos) --- */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+          "Segoe UI Symbol";
+        line-height: 1.7;
+        margin: 0;
+        padding: 25px;
+        background-color: #f0f2f5;
+        color: #333;
+      }
+      h1 {
+        text-align: center;
+        color: #1a237e;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #7986cb;
+        padding-bottom: 10px;
+      }
+      #controles-seleccion {
+        max-width: 900px;
+        margin: 0 auto 25px auto;
+        padding: 15px;
+        background-color: #e8eaf6;
+        border-radius: 8px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        align-items: center;
+        justify-content: center; /* Centrar controles */
+      }
+      #controles-seleccion label {
+        font-weight: 600;
+        color: #3f51b5;
+        margin-right: 5px;
+      }
+      #controles-seleccion select,
+      #controles-seleccion button {
+        padding: 8px 12px;
+        font-size: 0.95em;
+        border: 1px solid #c5cae9;
+        border-radius: 5px;
+      }
+      #controles-seleccion button {
+         cursor: pointer;
+         background-color: #3f51b5;
+         color: white;
+         border: none;
+         transition: background-color 0.2s ease;
+      }
+       #controles-seleccion button:hover {
+         background-color: #283593;
+       }
+
+      #filtros-tags {
+         margin-top: 15px; /* Separar de controles principales */
+         width: 100%; /* Ocupar todo el ancho del contenedor de controles */
+         border-top: 1px solid #c5cae9;
+         padding-top: 15px;
+      }
+      #filtros-tags h3 {
+          margin: 0 0 10px 0;
+          font-size: 1.1em;
+          color: #283593;
+          text-align: left;
+      }
+      #lista-tags {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 10px;
+          margin-bottom: 10px;
+      }
+      .tag-filter {
+          display: inline-flex; /* Alinea checkbox y label */
+          align-items: center;
+          background-color: #fff;
+          padding: 5px 10px;
+          border-radius: 15px;
+          border: 1px solid #c5cae9;
+          font-size: 0.9em;
+          cursor: pointer;
+          transition: background-color 0.2s ease, border-color 0.2s ease;
+      }
+      .tag-filter input[type="checkbox"] {
+          margin-right: 5px;
+      }
+      .tag-filter:hover {
+          background-color: #f0f2f5;
+      }
+
+
+      #contenedor-problemas {
+        max-width: 900px;
+        margin: 0 auto;
+      }
+      .problema {
+        border: 1px solid #d1d1d1;
+        border-radius: 10px;
+        padding: 20px 25px;
+        margin-bottom: 25px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.3s ease;
+      }
+      .problema:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+      }
+      .problema h2 {
+        margin-top: 0;
+        margin-bottom: 15px;
+        color: #283593;
+        font-size: 1.4em;
+      }
+       .problema .tags-list { /* Estilo para mostrar tags en el problema */
+           margin-bottom: 10px;
+           font-size: 0.9em;
+           color: #555;
+       }
+       .problema .tag-item {
+           display: inline-block;
+           background-color: #e0e0e0;
+           padding: 2px 8px;
+           border-radius: 4px;
+           margin-right: 5px;
+       }
+      /* Estilo para el párrafo de descripción principal */
+      .problema > p.descripcion-principal {
+        margin-bottom: 15px;
+        color: #555;
+        font-size: 1.05em;
+      }
+      .expresion-mathjax {
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding: 15px;
+        background-color: #e8eaf6;
+        border-radius: 6px;
+        border-left: 4px solid #3f51b5;
+        overflow-x: auto;
+        font-size: 1.1em;
+      }
+      details {
+        margin-top: 20px;
+        border: 1px solid #c5cae9;
+        border-radius: 8px;
+        background-color: #f8f9fa;
+      }
+      summary {
+        padding: 12px 18px;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+        color: #3f51b5;
+        background-color: #e8eaf6;
+        border-radius: 8px 8px 0 0;
+        transition: background-color 0.2s ease;
+        list-style: none;
+        position: relative;
+        font-size: 1.05em;
+         padding-left: 30px; /* Espacio para el icono */
+      }
+      summary:hover {
+        background-color: #dde1f0;
+      }
+      summary:focus-visible {
+        box-shadow: 0 0 0 2px #7986cb;
+      }
+      summary::before {
+        content: "▶";
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(0deg);
+        font-size: 0.8em;
+        color: #3f51b5;
+        transition: transform 0.2s ease;
+      }
+      details[open] > summary::before {
+        transform: translateY(-50%) rotate(90deg);
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      .resolucion-pasos {
+        padding: 15px 20px;
+        border-top: 1px solid #c5cae9;
+      }
+      .paso {
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 1px dashed #e0e0e0;
+      }
+      .paso:last-child {
+        margin-bottom: 0;
+        padding-bottom: 0;
+        border-bottom: none;
+      }
+      .paso strong {
+        color: #1e88e5;
+        display: inline-block;
+        margin-right: 8px;
+        font-size: 1.1em;
+      }
+      /* Estilo para el párrafo de descripción del paso */
+      .paso p.descripcion-paso {
+        margin-top: 5px;
+        margin-bottom: 10px;
+        color: #424242;
+      }
+      .expresion-paso-mathjax {
+        margin-top: 10px;
+        padding: 10px 12px;
+        background-color: #e3f2fd;
+        border-radius: 4px;
+        border-left: 3px solid #2196f3;
+        overflow-x: auto;
+        font-size: 1em;
+      }
+      .mensaje {
+        text-align: center;
+        padding: 20px;
+        font-style: italic;
+        color: #777;
+      }
+      .mensaje-error {
+        color: #d32f2f;
+        font-weight: bold;
+        border: 1px solid #ef9a9a;
+        background-color: #ffebee;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .geogebra-container {
+        margin-top: 20px;
+        border: 1px solid #d1d1d1;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+      .geogebra-applet {
+        width: 100%;
+        height: 400px;
+      }
+      .geogebra-button {
+        display: inline-block;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        padding: 10px 18px;
+        background-color: #2d71a1;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 0.95em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-align: center;
+      }
+      .geogebra-button:hover {
+        background-color: #215577;
+      }
+      .checkbox-container {
+        display: flex;
+        align-items: center;
+        margin-top: 15px; /* Más espacio */
+        padding-top: 10px;
+        border-top: 1px solid #eee; /* Separador visual ligero */
+      }
+      .checkbox-container input[type="checkbox"] {
+        margin-right: 8px;
+         width: 16px; /* Tamaño consistente */
+         height: 16px;
+      }
+      .checkbox-container label {
+        font-size: 0.95em; /* Ligeramente más pequeño */
+        color: #555;
+      }
+      .hidden {
+          display: none; /* Para ocultar problemas filtrados */
+      }
+    </style>
+    <!-- Configuración de MathJax -->
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [["$", "$"], ["\\(", "\\)"]],
+          displayMath: [["$$", "$$"], ["\\[", "\\]"]],
+          processEscapes: true // Importante para que \\ funcione correctamente
+        },
+        svg: { fontCache: "global" },
+        startup: {
+          ready: () => {
+            console.log("MathJax is ready.");
+            MathJax.startup.defaultReady();
+            // Añadir clase al body para saber que MathJax está listo
+            document.body.classList.add("mathjax-ready");
+            // Disparar evento personalizado por si algo necesita esperar
+            document.dispatchEvent(new Event("MathJaxReady"));
+          },
+        },
+        options: {
+          // Ignorar elementos que no queremos que MathJax procese
+          ignoreHtmlClass: 'tex2jax_ignore',
+          // Procesar elementos con esta clase (aunque no es estrictamente necesario con typesetPromise)
+          // processHtmlClass: 'tex2jax_process'
+        }
+      };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js" async></script>
+</head>
+<body>
+    <h1>Gestor de Exámenes y Prácticas</h1>
+
+    <!-- Controles de Selección -->
+    <div id="controles-seleccion">
+        <div>
+            <label for="select-fuente">Seleccionar Fuente:</label>
+            <select id="select-fuente"></select>
+        </div>
+        <div id="selector-ejercicio-container" style="display: none;">
+            <label for="select-ejercicio">Ir a ejercicio:</label>
+            <select id="select-ejercicio"></select>
+            <button id="btn-ir">Ir</button>
+        </div>
+        <!-- Filtros por Tags (se llenará dinámicamente) -->
+        <div id="filtros-tags" style="display: none;">
+             <h3>Filtrar por Tags:</h3>
+             <div id="lista-tags">
+                 <!-- Los tags se insertarán aquí -->
+             </div>
+             <button id="btn-clear-filters" style="margin-left: 5px;">Limpiar Filtros</button>
+        </div>
+    </div>
+
+    <div id="contenedor-problemas">
+      <p class="mensaje">Selecciona una fuente (práctica o examen) para cargar los problemas.</p>
+    </div>
+
+    <script>
+      // --- Configuración ---
+      const fuentesJson = [ // Lista de archivos JSON disponibles
+          { nombre: "Primera Práctica", archivo: "primera_practica.json" },
+          { nombre: "Segunda Práctica", archivo: "segunda_practica.json" },
+          { nombre: "Tercera Práctica", archivo: "tercera_practica.json" },
+        { nombre: "Cuarta Práctica", archivo: "cuarta_practica.json" },
+          // { nombre: "Parcial 1", archivo: "parcial_1.json" },
+          // { nombre: "Examen Final", archivo: "examen_final.json" },
+          // Agrega más aquí
+      ];
+
+      // --- Elementos del DOM ---
+      const contenedor = document.getElementById("contenedor-problemas");
+      const selectFuente = document.getElementById("select-fuente");
+      const selectorEjercicioContainer = document.getElementById("selector-ejercicio-container");
+      const selectEjercicio = document.getElementById("select-ejercicio");
+      const btnIr = document.getElementById("btn-ir");
+      const filtrosTagsContainer = document.getElementById("filtros-tags");
+      const listaTagsDiv = document.getElementById("lista-tags");
+      const btnClearFilters = document.getElementById("btn-clear-filters");
+
+      // --- Estado Global ---
+      let currentData = [];
+      let currentSourceFile = null;
+      let activeTagFilters = new Set();
+
+      // --- Funciones ---
+
+      // **Función para renderizar con MathJax (REVISADA)**
+      function renderizarMathJax(elementos) {
+        const elementsToTypeset = Array.isArray(elementos) ? elementos : [elementos];
+        if (!elementsToTypeset || elementsToTypeset.length === 0) {
+            console.log("renderizarMathJax: No elements to typeset.");
+            return;
+        }
+
+        console.log("renderizarMathJax: Intentando renderizar", elementsToTypeset.length, "elemento(s)."); // , elementsToTypeset); // Descomentar para ver objetos
+
+        const attemptRender = () => {
+            if (typeof MathJax !== "undefined" && MathJax.typesetPromise) {
+                console.log("MathJax encontrado, llamando typesetPromise...");
+                // Limpiar caché de MathJax antes de re-renderizar puede ayudar a veces
+                // MathJax.startup.document.clear();
+                // MathJax.startup.document.updateDocument();
+                MathJax.typesetPromise(elementsToTypeset)
+                    .then(() => {
+                        console.log("Renderizado MathJax completado con éxito para:", elementsToTypeset.length, "elementos.");
+                    })
+                    .catch((err) => {
+                        console.error("Error durante MathJax.typesetPromise:", err); // , "Elementos:", elementsToTypeset);
+                    });
+            } else if (document.body.classList.contains("mathjax-ready")) {
+                // MathJax objeto podría no estar listo inmediatamente después del evento ready
+                console.warn("MathJax.typesetPromise no disponible aún (estado ready), reintentando en 150ms...");
+                setTimeout(attemptRender, 150);
+            } else {
+                 console.log("MathJax no está listo, esperando evento MathJaxReady...");
+            }
+        };
+
+        if (document.body.classList.contains("mathjax-ready")) {
+             console.log("Llamando attemptRender directamente (mathjax-ready class presente).");
+             attemptRender();
+        } else {
+             console.log("Añadiendo listener para MathJaxReady.");
+             document.addEventListener("MathJaxReady", () => {
+                 console.log("Evento MathJaxReady recibido, llamando attemptRender.");
+                 attemptRender();
+             }, { once: true });
+        }
+      }
+
+      // **Manejar apertura de <details> (REVISADO)**
+      function handleDetailsToggle(detailsElement) {
+        if (detailsElement.open && !detailsElement.dataset.mathjaxRendered) {
+          const contenidoPasos = detailsElement.querySelector(".resolucion-pasos");
+          if (contenidoPasos) {
+             // Recolectar TODOS los elementos dentro de los pasos que podrían tener MathJax
+             // Esto incluye los párrafos de descripción y los divs de expresiones
+             const elementsInSteps = Array.from(contenidoPasos.querySelectorAll('.paso p.descripcion-paso, .expresion-paso-mathjax'));
+             console.log("Abriendo details, renderizando elementos en pasos:", elementsInSteps.length);
+             if (elementsInSteps.length > 0) {
+                 renderizarMathJax(elementsInSteps);
+             }
+             detailsElement.dataset.mathjaxRendered = "true"; // Marcar como renderizado después del intento
+          }
+        }
+      }
+
+      // **Ir al último problema completado (sin cambios)**
+      function irAlUltimoCompletado() {
+        if (!currentSourceFile) return;
+
+        let ultimoCompletadoId = null;
+         for (let i = currentData.length - 1; i >= 0; i--) {
+             const problemaId = `problema-${i + 1}`;
+             const storageKey = `${currentSourceFile}:${problemaId}-completado`;
+             if (localStorage.getItem(storageKey) === "true") {
+                 ultimoCompletadoId = problemaId;
+                 break;
+             }
+         }
+
+        if (ultimoCompletadoId) {
+           const ultimoCompletadoElement = document.getElementById(ultimoCompletadoId);
+            if (ultimoCompletadoElement) {
+                 setTimeout(() => {
+                     ultimoCompletadoElement.scrollIntoView({ behavior: "smooth", block: "center" });
+                     console.log(`Desplazado al último completado: ${ultimoCompletadoId}`);
+                 }, 100);
+            } else {
+                 console.log(`Elemento ${ultimoCompletadoId} no encontrado en el DOM actual (quizás filtrado).`);
+            }
+        } else {
+            console.log("No se encontraron problemas completados para esta fuente.");
+        }
+      }
+
+
+      // **Generar y mostrar problemas en el DOM (REVISADO)**
+      function displayProblems(problemas) {
+          contenedor.innerHTML = ""; // Limpiar contenido anterior
+          selectEjercicio.innerHTML = '<option value="">Seleccionar...</option>';
+          selectorEjercicioContainer.style.display = problemas.length > 0 ? 'block' : 'none';
+
+          if (problemas.length === 0) {
+              // ... (mensajes de no problemas) ...
+              if (activeTagFilters.size > 0) {
+                  contenedor.innerHTML = '<p class="mensaje">No hay problemas que coincidan con los filtros seleccionados.</p>';
+              } else {
+                  contenedor.innerHTML = '<p class="mensaje">Esta fuente no contiene problemas.</p>';
+              }
+              return;
+          }
+
+          const elementsToRenderInitially = []; // <<< Lista para elementos que necesitan MathJax INICIALMENTE
+
+          problemas.forEach((problema, index) => {
+              const problemaOriginalIndex = currentData.findIndex(p => p === problema);
+              const divProblema = document.createElement("div");
+              divProblema.className = "problema";
+              const problemId = `problema-${problemaOriginalIndex + 1}`;
+              divProblema.id = problemId;
+
+              const titulo = document.createElement("h2");
+              titulo.textContent = problema.titulo || `Ejercicio ${problemaOriginalIndex + 1}`;
+              divProblema.appendChild(titulo);
+
+              // Mostrar Tags
+              if (problema.tags && problema.tags.length > 0) {
+                  const tagsContainer = document.createElement("div");
+                  tagsContainer.className = "tags-list";
+                  tagsContainer.innerHTML = "Tags: ";
+                  problema.tags.forEach(tag => {
+                      const tagSpan = document.createElement("span");
+                      tagSpan.className = "tag-item";
+                      tagSpan.textContent = tag;
+                      tagsContainer.appendChild(tagSpan);
+                  });
+                  divProblema.appendChild(tagsContainer);
+              }
+
+              // --- Descripción Principal ---
+              const descripcion = document.createElement("p");
+              descripcion.className = "descripcion-principal"; // <<< Añadir clase para identificar
+              descripcion.innerHTML = problema.descripcion || "";
+              divProblema.appendChild(descripcion);
+              elementsToRenderInitially.push(descripcion); // <<< Añadir descripción a la lista para renderizar
+
+              // --- Expresión Principal ---
+              if (problema.expresion_latex && problema.expresion_latex.trim() !== "") {
+                  const expresionDiv = document.createElement("div");
+                  expresionDiv.className = "expresion-mathjax";
+                  expresionDiv.textContent = `\\[ ${problema.expresion_latex} \\]`;
+                  divProblema.appendChild(expresionDiv);
+                  elementsToRenderInitially.push(expresionDiv); // <<< Añadir expresión principal a la lista
+              }
+
+              // --- GeoGebra ---
+              if (problema.geogebra && problema.geogebra.trim() !== "") {
+                  const geogebraButton = document.createElement("a");
+                  geogebraButton.className = "geogebra-button";
+                  geogebraButton.href = `https://www.geogebra.org/3d?command=${encodeURIComponent(problema.geogebra)}`;
+                  geogebraButton.textContent = "Abrir en GeoGebra 3D";
+                  geogebraButton.target = "_blank";
+                  geogebraButton.rel = "noopener noreferrer";
+                  divProblema.appendChild(geogebraButton);
+              }
+
+              // --- Pasos de Resolución ---
+              if (problema.pasos_resolucion && problema.pasos_resolucion.length > 0) {
+                  const details = document.createElement("details");
+                  details.addEventListener("toggle", () => handleDetailsToggle(details));
+                  const summary = document.createElement("summary");
+                  summary.textContent = "Ver Resolución Detallada";
+                  details.appendChild(summary);
+
+                  const resolucionContainer = document.createElement("div");
+                  resolucionContainer.className = "resolucion-pasos";
+
+                  problema.pasos_resolucion.forEach((paso) => {
+                      const divPaso = document.createElement("div");
+                      divPaso.className = "paso";
+
+                      const pasoNum = document.createElement("strong");
+                      pasoNum.textContent = `Paso ${paso.paso_numero}:`;
+                      divPaso.appendChild(pasoNum);
+
+                      // --- Descripción del Paso ---
+                      const descPaso = document.createElement("p");
+                      descPaso.className = "descripcion-paso"; // <<< Añadir clase para identificar
+                      descPaso.innerHTML = paso.descripcion_paso || "";
+                      divPaso.appendChild(descPaso);
+                      // NOTA: La descripción del paso ahora se renderizará al abrir <details>
+
+                      // --- Expresión del Paso ---
+                      if (paso.expresion_latex_paso && paso.expresion_latex_paso.trim() !== "") {
+                          const expPasoDiv = document.createElement("div");
+                          expPasoDiv.className = "expresion-paso-mathjax";
+                          expPasoDiv.textContent = `\\[ ${paso.expresion_latex_paso} \\]`;
+                          divPaso.appendChild(expPasoDiv);
+                          // NOTA: La expresión del paso ahora se renderizará al abrir <details>
+                      }
+                      resolucionContainer.appendChild(divPaso);
+                  });
+                  details.appendChild(resolucionContainer);
+                  divProblema.appendChild(details);
+              }
+
+              // --- Checkbox Completado ---
+              const checkboxContainer = document.createElement("div");
+              checkboxContainer.className = "checkbox-container";
+              const checkbox = document.createElement("input");
+              checkbox.type = "checkbox";
+              const checkboxId = `checkbox-${problemId}`;
+              checkbox.id = checkboxId;
+              const storageKey = `${currentSourceFile}:${problemId}-completado`;
+
+              checkbox.addEventListener("change", () => {
+                  localStorage.setItem(storageKey, checkbox.checked);
+                  console.log(`Estado guardado para ${storageKey}: ${checkbox.checked}`);
+              });
+
+              const label = document.createElement("label");
+              label.htmlFor = checkboxId;
+              label.textContent = "Marcar como completado";
+              checkboxContainer.appendChild(checkbox);
+              checkboxContainer.appendChild(label);
+              divProblema.appendChild(checkboxContainer);
+
+              // Cargar estado del checkbox desde localStorage
+              checkbox.checked = localStorage.getItem(storageKey) === "true";
+
+              // --- Añadir problema al contenedor principal ---
+              contenedor.appendChild(divProblema); // Usar appendChild
+
+              // Añadir opción al selector de ejercicios
+              const option = document.createElement("option");
+              option.value = problemId;
+              option.textContent = `Ejercicio ${problemaOriginalIndex + 1}`;
+              selectEjercicio.appendChild(option);
+          });
+
+          // --- Renderizar MathJax INICIALMENTE (Descripciones y Expresiones Principales) ---
+          // Usar setTimeout para dar tiempo al DOM a actualizarse
+          setTimeout(() => {
+              if (elementsToRenderInitially.length > 0) {
+                  console.log("Renderizando MathJax INICIALMENTE para elementos específicos:", elementsToRenderInitially.length);
+                  renderizarMathJax(elementsToRenderInitially);
+              } else {
+                  console.log("No hay elementos específicos para renderizar MathJax inicialmente.");
+              }
+          }, 50); // 50ms de demora puede ser suficiente
+
+      } // Fin displayProblems
+
+      // **Filtrar problemas según los tags activos (sin cambios)**
+      function filterAndDisplayProblems() {
+          if (activeTagFilters.size === 0) {
+              displayProblems(currentData); // Mostrar todos si no hay filtros
+          } else {
+              const filteredData = currentData.filter(problema =>
+                  problema.tags && problema.tags.some(tag => activeTagFilters.has(tag))
+              );
+              displayProblems(filteredData);
+          }
+           // Intentar ir al último completado *después* de renderizar
+          irAlUltimoCompletado();
+      }
+
+      // **Poblar la sección de filtros de tags (sin cambios)**
+       function populateTagFilters(data) {
+           listaTagsDiv.innerHTML = '';
+           const allTags = new Set();
+           data.forEach(problema => {
+               if (problema.tags && Array.isArray(problema.tags)) {
+                   problema.tags.forEach(tag => allTags.add(tag));
+               }
+           });
+
+           if (allTags.size > 0) {
+               filtrosTagsContainer.style.display = 'block';
+               const sortedTags = Array.from(allTags).sort();
+
+               sortedTags.forEach(tag => {
+                   const tagId = `tag-${tag.replace(/\s+/g, '-')}`;
+                   const label = document.createElement('label');
+                   label.className = 'tag-filter';
+                   label.htmlFor = tagId;
+
+                   const checkbox = document.createElement('input');
+                   checkbox.type = 'checkbox';
+                   checkbox.id = tagId;
+                   checkbox.value = tag;
+                   checkbox.checked = activeTagFilters.has(tag);
+
+                   checkbox.addEventListener('change', (event) => {
+                       if (event.target.checked) {
+                           activeTagFilters.add(tag);
+                       } else {
+                           activeTagFilters.delete(tag);
+                       }
+                       filterAndDisplayProblems();
+                   });
+
+                   label.appendChild(checkbox);
+                   label.appendChild(document.createTextNode(tag));
+                   listaTagsDiv.appendChild(label);
+               });
+           } else {
+               filtrosTagsContainer.style.display = 'none';
+           }
+       }
+
+
+      // **Cargar y procesar el JSON seleccionado (sin cambios)**
+      function loadSourceFile(fileName) {
+          if (!fileName) {
+              contenedor.innerHTML = '<p class="mensaje">Selecciona una fuente para comenzar.</p>';
+              selectorEjercicioContainer.style.display = 'none';
+              filtrosTagsContainer.style.display = 'none';
+              currentData = [];
+              currentSourceFile = null;
+              activeTagFilters.clear();
+              return;
+          }
+
+          contenedor.innerHTML = `<p class="mensaje">Cargando problemas desde ${fileName}...</p>`;
+          selectorEjercicioContainer.style.display = 'none';
+          filtrosTagsContainer.style.display = 'none';
+          currentSourceFile = fileName;
+          activeTagFilters.clear();
+
+          fetch(fileName)
+              .then((response) => {
+                  if (!response.ok) throw new Error(`Error HTTP ${response.status} al cargar ${fileName}`);
+                  return response.json();
+              })
+              .then((data) => {
+                  if (!Array.isArray(data)) {
+                      throw new Error(`El archivo ${fileName} no contiene un array JSON válido.`);
+                  }
+                  currentData = data;
+                  populateTagFilters(currentData);
+                  filterAndDisplayProblems(); // Llama a displayProblems que ahora maneja el renderizado inicial
+              })
+              .catch((error) => {
+                  console.error("Error detallado:", error);
+                  contenedor.innerHTML = `<div class="mensaje mensaje-error">
+                                              <p><b>Error al cargar los problemas desde '${fileName}'.</b></p>
+                                              <p>Detalle: ${error.message}</p>
+                                              <p>Verifica que el archivo exista y tenga el formato JSON correcto (un array de objetos).</p>
+                                          </div>`;
+                  currentData = [];
+                  currentSourceFile = null;
+                  selectorEjercicioContainer.style.display = 'none';
+                  filtrosTagsContainer.style.display = 'none';
+              });
+      }
+
+      // --- Inicialización (sin cambios) ---
+      function init() {
+          // Poblar selector de fuentes
+          selectFuente.innerHTML = '<option value="">-- Selecciona una Fuente --</option>';
+          fuentesJson.forEach(fuente => {
+              const option = document.createElement("option");
+              option.value = fuente.archivo;
+              option.textContent = fuente.nombre;
+              selectFuente.appendChild(option);
+          });
+
+          // Event listener para cambio de fuente
+          selectFuente.addEventListener("change", (event) => {
+              loadSourceFile(event.target.value);
+          });
+
+          // Event listener para el botón "Ir"
+          btnIr.addEventListener("click", () => {
+              const selectedId = selectEjercicio.value;
+              if (selectedId) {
+                 const problema = document.getElementById(selectedId);
+                  if (problema) {
+                     problema.scrollIntoView({ behavior: "smooth", block: "center" });
+                  } else {
+                      alert(`El ejercicio con ID ${selectedId} no está visible (quizás filtrado). Limpia los filtros si es necesario.`);
+                  }
+              }
+          });
+
+          // Event listener para limpiar filtros
+          btnClearFilters.addEventListener('click', () => {
+               activeTagFilters.clear();
+               listaTagsDiv.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+               filterAndDisplayProblems();
+           });
+      }
+
+      // Ejecutar inicialización al cargar la página
+      document.addEventListener("DOMContentLoaded", init);
+
+    </script>
+</body>
+</html>

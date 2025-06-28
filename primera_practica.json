@@ -1,0 +1,3181 @@
+[
+    {
+        "titulo": "Problema 1",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t^2 - 4)}{\\sqrt{9 - t^2}}, \\sqrt{t^3 - 4t^2 + 3t}, \\frac{\\sin(3t)}{\\sqrt{t + 2}} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "El dominio de una función vectorial \\(\\vec{f}(t) = (f_1(t), f_2(t), f_3(t))\\) es la intersección de los dominios de sus funciones componentes.",
+                "expresion_latex_paso": "Dom(\\vec{f}) = Dom(f_1) \\cap Dom(f_2) \\cap Dom(f_3)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Identificamos las funciones componentes:",
+                "expresion_latex_paso": "f_1(t) = \\frac{\\ln(t^2 - 4)}{\\sqrt{9 - t^2}} \\\\ f_2(t) = \\sqrt{t^3 - 4t^2 + 3t} \\\\ f_3(t) = \\frac{\\sin(3t)}{\\sqrt{t + 2}}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos el dominio de \\(f_1(t)\\). Se deben cumplir dos condiciones simultáneamente:",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Condición 1 (Logaritmo): El argumento del logaritmo natural debe ser estrictamente positivo.",
+                "expresion_latex_paso": "t^2 - 4 > 0 \\implies (t-2)(t+2) > 0 \\implies t \\in (-\\infty, -2) \\cup (2, \\infty)"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Condición 2 (Raíz cuadrada en denominador): El argumento de la raíz cuadrada debe ser estrictamente positivo (por estar en el denominador).",
+                "expresion_latex_paso": "9 - t^2 > 0 \\implies t^2 < 9 \\implies -3 < t < 3 \\implies t \\in (-3, 3)"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "El dominio de \\(f_1(t)\\) es la intersección de las dos condiciones:",
+                "expresion_latex_paso": "Dom(f_1) = [(-\\infty, -2) \\cup (2, \\infty)] \\cap (-3, 3) = (-3, -2) \\cup (2, 3)"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el dominio de \\(f_2(t)\\). El argumento de la raíz cuadrada debe ser mayor o igual a cero.",
+                "expresion_latex_paso": "t^3 - 4t^2 + 3t \\ge 0"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Factorizamos la expresión:",
+                "expresion_latex_paso": "t(t^2 - 4t + 3) \\ge 0 \\implies t(t-1)(t-3) \\ge 0"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Analizamos los signos en los intervalos definidos por las raíces \\(t=0, t=1, t=3\\). La desigualdad se cumple para:",
+                "expresion_latex_paso": "t \\in [0, 1] \\cup [3, \\infty)"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Por lo tanto, el dominio de \\(f_2(t)\\) es:",
+                "expresion_latex_paso": "Dom(f_2) = [0, 1] \\cup [3, \\infty)"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Calculamos el dominio de \\(f_3(t)\\). El numerador \\(\\sin(3t)\\) está definido para todo \\(t\\). La restricción viene del denominador.",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 5.1,
+                "descripcion_paso": "Condición (Raíz cuadrada en denominador): El argumento de la raíz cuadrada debe ser estrictamente positivo.",
+                "expresion_latex_paso": "t + 2 > 0 \\implies t > -2 \\implies t \\in (-2, \\infty)"
+            },
+            {
+                "paso_numero": 5.2,
+                "descripcion_paso": "Por lo tanto, el dominio de \\(f_3(t)\\) es:",
+                "expresion_latex_paso": "Dom(f_3) = (-2, \\infty)"
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "Finalmente, encontramos la intersección de los tres dominios para obtener el dominio de \\(\\vec{f}(t)\\):",
+                "expresion_latex_paso": "Dom(\\vec{f}) = Dom(f_1) \\cap Dom(f_2) \\cap Dom(f_3)"
+            },
+            {
+                "paso_numero": 6.1,
+                "descripcion_paso": "Sustituimos los dominios encontrados:",
+                "expresion_latex_paso": "Dom(\\vec{f}) = [(-3, -2) \\cup (2, 3)] \\cap ([0, 1] \\cup [3, \\infty)) \\cap (-2, \\infty)"
+            },
+            {
+                "paso_numero": 6.2,
+                "descripcion_paso": "Primero intersectamos \\(Dom(f_1)\\) y \\(Dom(f_3)\\):",
+                "expresion_latex_paso": "[(-3, -2) \\cup (2, 3)] \\cap (-2, \\infty) = (2, 3)"
+            },
+            {
+                "paso_numero": 6.3,
+                "descripcion_paso": "Ahora intersectamos el resultado anterior con \\(Dom(f_2)\\):",
+                "expresion_latex_paso": "(2, 3) \\cap ([0, 1] \\cup [3, \\infty))"
+            },
+            {
+                "paso_numero": 6.4,
+                "descripcion_paso": "Analizamos la intersección: El intervalo \\((2, 3)\\) no tiene elementos en común ni con \\([0, 1]\\) ni con \\([3, \\infty)\\).",
+                "expresion_latex_paso": "(2, 3) \\cap [0, 1] = \\emptyset \\\\ (2, 3) \\cap [3, \\infty) = \\emptyset"
+            },
+            {
+                "paso_numero": 7,
+                "descripcion_paso": "La intersección final es el conjunto vacío.",
+                "expresion_latex_paso": "Dom(\\vec{f}) = \\emptyset"
+            }
+        ],
+        "resolucion_latex": ""
+    },
+    {
+        "titulo": "Problema 2",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sqrt{1 + 2t} - \\sqrt{1 - t}}{t}, \\frac{\\cos(5t) - \\cos(3t)}{t^2}, \\frac{e^{2t} - 1}{\\sin(4t)} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "El límite de una función vectorial es el vector de los límites de sus funciones componentes, siempre que estos límites existan.",
+                "expresion_latex_paso": "L = (L_1, L_2, L_3)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos el límite de la primera componente \\(L_1\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{\\sqrt{1 + 2t} - \\sqrt{1 - t}}{t}"
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Multiplicamos por el conjugado del numerador.",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{\\sqrt{1 + 2t} - \\sqrt{1 - t}}{t} \\cdot \\frac{\\sqrt{1 + 2t} + \\sqrt{1 - t}}{\\sqrt{1 + 2t} + \\sqrt{1 - t}}"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Simplificamos el numerador usando la diferencia de cuadrados \\((a-b)(a+b) = a^2 - b^2\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{(1 + 2t) - (1 - t)}{t (\\sqrt{1 + 2t} + \\sqrt{1 - t})}"
+            },
+            {
+                "paso_numero": 2.3,
+                "descripcion_paso": "Continuamos simplificando el numerador y cancelamos \\(t\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{3t}{t (\\sqrt{1 + 2t} + \\sqrt{1 - t})} = \\lim_{t \\to 0} \\frac{3}{\\sqrt{1 + 2t} + \\sqrt{1 - t}}"
+            },
+            {
+                "paso_numero": 2.4,
+                "descripcion_paso": "Evaluamos el límite sustituyendo \\(t = 0\\).",
+                "expresion_latex_paso": "L_1 = \\frac{3}{\\sqrt{1 + 0} + \\sqrt{1 - 0}} = \\frac{3}{1 + 1} = \\frac{3}{2}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos el límite de la segunda componente \\(L_2\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} \\frac{\\cos(5t) - \\cos(3t)}{t^2}"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Usamos la identidad trigonométrica de resta de cosenos: \\(\\cos(A) - \\cos(B) = -2 \\sin\\left(\\frac{A+B}{2}\\right) \\sin\\left(\\frac{A-B}{2}\\right)\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} \\frac{-2 \\sin\\left(\\frac{5t+3t}{2}\\right) \\sin\\left(\\frac{5t-3t}{2}\\right)}{t^2} = \\lim_{t \\to 0} \\frac{-2 \\sin(4t) \\sin(t)}{t^2}"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Separamos los términos para usar el límite notable \\(\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} -2 \\left( \\frac{\\sin(4t)}{t} \\right) \\left( \\frac{\\sin(t)}{t} \\right)"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "Ajustamos el primer término para que coincida con el límite notable (artificio: multiplicar y dividir por 4).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} -2 \\left( \\frac{\\sin(4t)}{4t} \\cdot 4 \\right) \\left( \\frac{\\sin(t)}{t} \\right)"
+            },
+            {
+                "paso_numero": 3.4,
+                "descripcion_paso": "Evaluamos el límite usando \\(\\lim_{u \\to 0} \\frac{\\sin(u)}{u} = 1\\).",
+                "expresion_latex_paso": "L_2 = -2 (1 \\cdot 4) (1) = -8"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el límite de la tercera componente \\(L_3\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{e^{2t} - 1}{\\sin(4t)}"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Usamos los límites notables \\(\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1\\) y \\(\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{e^{2t} - 1}{\\sin(4t)}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Multiplicamos y dividimos por \\(t\\) (o múltiplos apropiados) para formar los límites notables (artificio).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{\\frac{e^{2t} - 1}{2t} \\cdot 2t}{\\frac{\\sin(4t)}{4t} \\cdot 4t}"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Simplificamos y evaluamos los límites notables.",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{ \\left(\\frac{e^{2t} - 1}{2t}\\right) \\cdot 2t }{ \\left(\\frac{\\sin(4t)}{4t}\\right) \\cdot 4t } = \\frac{1 \\cdot 2t}{1 \\cdot 4t} = \\frac{2t}{4t} = \\frac{2}{4} = \\frac{1}{2}"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Combinamos los límites de las componentes para obtener el límite de la función vectorial.",
+                "expresion_latex_paso": "L = (L_1, L_2, L_3) = \\left( \\frac{3}{2}, -8, \\frac{1}{2} \\right)"
+            }
+        ],
+        "resolucion_latex": "\\lim_{t \\to 0} \\vec{f}(t) = \\left( \\frac{3}{2}, -8, \\frac{1}{2} \\right)"
+    },
+    {
+        "titulo": "Problema 3",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^3 \\ln(2t + 1), \\arctan\\!\\left( \\sqrt{t^2 + 1} \\right), \\frac{e^{t^2} \\cdot \\sin(t)}{t^2 + 1} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "La derivada de una función vectorial \\(\\vec{f}(t) = (f_1(t), f_2(t), f_3(t))\\) se obtiene derivando cada una de sus funciones componentes.",
+                "expresion_latex_paso": "\\vec{f}'(t) = \\left( \\frac{d}{dt}f_1(t), \\frac{d}{dt}f_2(t), \\frac{d}{dt}f_3(t) \\right)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos la derivada de la primera componente \\(f_1(t) = t^3 \\ln(2t + 1)\\) usando la regla del producto \\((uv)' = u'v + uv'\\).",
+                "expresion_latex_paso": "u = t^3 \\implies u' = 3t^2 \\\\ v = \\ln(2t + 1) \\implies v' = \\frac{1}{2t+1} \\cdot 2 = \\frac{2}{2t+1}"
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Aplicamos la regla del producto a \\(f_1(t)\\).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_1(t) = (3t^2) \\ln(2t + 1) + t^3 \\left( \\frac{2}{2t+1} \\right) = 3t^2 \\ln(2t + 1) + \\frac{2t^3}{2t+1}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos la derivada de la segunda componente \\(f_2(t) = \\arctan(\\sqrt{t^2 + 1})\\) usando la regla de la cadena.",
+                "expresion_latex_paso": "\\frac{d}{dx}(\\arctan(u)) = \\frac{u'}{1+u^2}"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Identificamos \\(u = \\sqrt{t^2 + 1} = (t^2 + 1)^{1/2}\\) y calculamos su derivada \\(u'\\) usando la regla de la cadena nuevamente.",
+                "expresion_latex_paso": "u' = \\frac{1}{2}(t^2 + 1)^{-1/2} \\cdot (2t) = \\frac{t}{\\sqrt{t^2 + 1}}"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Aplicamos la regla de la derivada del arcotangente.",
+                "expresion_latex_paso": "\\frac{d}{dt}f_2(t) = \\frac{\\frac{t}{\\sqrt{t^2 + 1}}}{1 + (\\sqrt{t^2 + 1})^2} = \\frac{\\frac{t}{\\sqrt{t^2 + 1}}}{1 + (t^2 + 1)} = \\frac{\\frac{t}{\\sqrt{t^2 + 1}}}{t^2 + 2}"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "Simplificamos la expresión para \\(f_2'(t)\\).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_2(t) = \\frac{t}{(t^2 + 2)\\sqrt{t^2 + 1}}"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos la derivada de la tercera componente \\(f_3(t) = \\frac{e^{t^2} \\sin(t)}{t^2 + 1}\\) usando la regla del cociente \\((\\frac{u}{v})' = \\frac{u'v - uv'}{v^2}\\).",
+                "expresion_latex_paso": "u = e^{t^2} \\sin(t) \\\\ v = t^2 + 1"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Calculamos \\(u'\\) usando la regla del producto y la regla de la cadena.",
+                "expresion_latex_paso": "u' = \\frac{d}{dt}(e^{t^2}) \\sin(t) + e^{t^2} \\frac{d}{dt}(\\sin(t)) \\\\ u' = (e^{t^2} \\cdot 2t) \\sin(t) + e^{t^2} \\cos(t) = e^{t^2}(2t \\sin(t) + \\cos(t))"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Calculamos \\(v'\\).",
+                "expresion_latex_paso": "v' = \\frac{d}{dt}(t^2 + 1) = 2t"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Aplicamos la regla del cociente a \\(f_3(t)\\).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_3(t) = \\frac{[e^{t^2}(2t \\sin(t) + \\cos(t))](t^2 + 1) - [e^{t^2} \\sin(t)](2t)}{(t^2 + 1)^2}"
+            },
+            {
+                "paso_numero": 4.4,
+                "descripcion_paso": "Simplificamos el numerador factorizando \\(e^{t^2}\\) y expandiendo.",
+                "expresion_latex_paso": "\\frac{e^{t^2} [(2t \\sin(t) + \\cos(t))(t^2 + 1) - 2t \\sin(t)]}{(t^2 + 1)^2} \\\\ = \\frac{e^{t^2} [2t^3 \\sin(t) + 2t \\sin(t) + t^2 \\cos(t) + \\cos(t) - 2t \\sin(t)]}{(t^2 + 1)^2}"
+            },
+             {
+                "paso_numero": 4.5,
+                "descripcion_paso": "Continuamos simplificando el numerador.",
+                "expresion_latex_paso": "\\frac{d}{dt}f_3(t) = \\frac{e^{t^2} [2t^3 \\sin(t) + (t^2 + 1) \\cos(t)]}{(t^2 + 1)^2}"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Combinamos las derivadas de las componentes para obtener la derivada de la función vectorial.",
+                "expresion_latex_paso": "\\vec{f}'(t) = \\left( 3t^2 \\ln(2t + 1) + \\frac{2t^3}{2t+1}, \\frac{t}{(t^2 + 2)\\sqrt{t^2 + 1}}, \\frac{e^{t^2} (2t^3 \\sin(t) + (t^2 + 1) \\cos(t))}{(t^2 + 1)^2} \\right)"
+            }
+        ],
+        "resolucion_latex": "\\vec{f}'(t) = \\left( 3t^2 \\ln(2t + 1) + \\frac{2t^3}{2t+1}, \\frac{t}{(t^2 + 2)\\sqrt{t^2 + 1}}, \\frac{e^{t^2} (2t^3 \\sin(t) + (t^2 + 1) \\cos(t))}{(t^2 + 1)^2} \\right)"
+    },
+    {
+        "titulo": "Problema 4",
+        "descripcion": "Analizar continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{t + 3} - 2}{t - 1}, \\frac{\\ln(t)}{t^2 - 1}, \\frac{t^2 - 1}{t - 1} \\right) & t \\neq 1 \\\\ \\left( \\frac{1}{4}, 0, 2 \\right) & t = 1 \\end{cases}",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "Para que la función vectorial \\(\\vec{f}(t)\\) sea continua en \\( t = a \\), deben cumplirse tres condiciones:",
+                "expresion_latex_paso": "1. \\vec{f}(a) \\text{ está definida} \\\\ 2. \\lim_{t \\to a} \\vec{f}(t) \\text{ existe} \\\\ 3. \\lim_{t \\to a} \\vec{f}(t) = \\vec{f}(a)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Verificamos la primera condición en \\( t = 1 \\).",
+                "expresion_latex_paso": "La función está definida en \\( t = 1 \\) por la segunda rama: \\vec{f}(1) = \\left( \\frac{1}{4}, 0, 2 \\right)."
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Verificamos la segunda condición calculando el límite de \\(\\vec{f}(t)\\) cuando \\( t \\to 1 \\). Usamos la definición para \\( t \\neq 1 \\).",
+                "expresion_latex_paso": "\\lim_{t \\to 1} \\vec{f}(t) = \\left( \\lim_{t \\to 1} \\frac{\\sqrt{t + 3} - 2}{t - 1}, \\lim_{t \\to 1} \\frac{\\ln(t)}{t^2 - 1}, \\lim_{t \\to 1} \\frac{t^2 - 1}{t - 1} \\right)"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el límite de la primera componente \\(L_1\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 1} \\frac{\\sqrt{t + 3} - 2}{t - 1}"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{0}{0}\\). Multiplicamos por el conjugado del numerador.",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 1} \\frac{\\sqrt{t + 3} - 2}{t - 1} \\cdot \\frac{\\sqrt{t + 3} + 2}{\\sqrt{t + 3} + 2} = \\lim_{t \\to 1} \\frac{(t + 3) - 4}{(t - 1)(\\sqrt{t + 3} + 2)}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Simplificamos y cancelamos el factor \\((t - 1)\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 1} \\frac{t - 1}{(t - 1)(\\sqrt{t + 3} + 2)} = \\lim_{t \\to 1} \\frac{1}{\\sqrt{t + 3} + 2}"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Evaluamos el límite sustituyendo \\(t = 1\\).",
+                "expresion_latex_paso": "L_1 = \\frac{1}{\\sqrt{1 + 3} + 2} = \\frac{1}{\\sqrt{4} + 2} = \\frac{1}{2 + 2} = \\frac{1}{4}"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Calculamos el límite de la segunda componente \\(L_2\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 1} \\frac{\\ln(t)}{t^2 - 1}"
+            },
+            {
+                "paso_numero": 5.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{0}{0}\\). Factorizamos el denominador.",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 1} \\frac{\\ln(t)}{(t - 1)(t + 1)}"
+            },
+            {
+                "paso_numero": 5.2,
+                "descripcion_paso": "Usamos el cambio de variable \\( t = 1 + h \\). Cuando \\( t \\to 1 \\), \\( h \\to 0 \\).",
+                "expresion_latex_paso": "L_2 = \\lim_{h \\to 0} \\frac{\\ln(1 + h)}{(1 + h - 1)(1 + h + 1)} = \\lim_{h \\to 0} \\frac{\\ln(1 + h)}{h(2 + h)}"
+            },
+             {
+                "paso_numero": 5.3,
+                "descripcion_paso": "Separamos el límite y usamos el límite notable \\( \\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1 \\).",
+                "expresion_latex_paso": "L_2 = \\left( \\lim_{h \\to 0} \\frac{\\ln(1 + h)}{h} \\right) \\cdot \\left( \\lim_{h \\to 0} \\frac{1}{2 + h} \\right) = 1 \\cdot \\frac{1}{2 + 0} = \\frac{1}{2}"
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "Calculamos el límite de la tercera componente \\(L_3\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 1} \\frac{t^2 - 1}{t - 1}"
+            },
+            {
+                "paso_numero": 6.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{0}{0}\\). Factorizamos el numerador.",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 1} \\frac{(t - 1)(t + 1)}{t - 1}"
+            },
+            {
+                "paso_numero": 6.2,
+                "descripcion_paso": "Cancelamos el factor \\((t - 1)\\) y evaluamos.",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 1} (t + 1) = 1 + 1 = 2"
+            },
+            {
+                "paso_numero": 7,
+                "descripcion_paso": "El límite de la función vectorial es el vector de los límites de las componentes.",
+                "expresion_latex_paso": "\\lim_{t \\to 1} \\vec{f}(t) = (L_1, L_2, L_3) = \\left( \\frac{1}{4}, \\frac{1}{2}, 2 \\right)"
+            },
+            {
+                "paso_numero": 8,
+                "descripcion_paso": "Verificamos la tercera condición comparando el límite con el valor de la función en \\( t = 1 \\).",
+                "expresion_latex_paso": "\\lim_{t \\to 1} \\vec{f}(t) = \\left( \\frac{1}{4}, \\frac{1}{2}, 2 \\right) \\\\ \\vec{f}(1) = \\left( \\frac{1}{4}, 0, 2 \\right)"
+            },
+            {
+                "paso_numero": 9,
+                "descripcion_paso": "Observamos que los vectores no son iguales, ya que la segunda componente difiere.",
+                "expresion_latex_paso": "\\frac{1}{2} \\neq 0"
+            },
+            {
+                "paso_numero": 10,
+                "descripcion_paso": "Dado que \\(\\lim_{t \\to 1} \\vec{f}(t) \\neq \\vec{f}(1)\\), la función \\(\\vec{f}(t)\\) no es continua en \\( t = 1 \\).",
+                "expresion_latex_paso": "\\text{La función no es continua en } t = 1."
+            }
+        ],
+        "resolucion_latex": ""
+    },
+    {
+        "titulo": "Problema 5",
+        "descripcion": "Analizar continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{e^{3t} - 1}{t}, \\frac{\\sqrt{1 + 4t} - 1}{t}, \\frac{\\ln(1 + t^3)}{t^2} \\right) & t \\neq 0 \\\\ \\left( 3, 2, 0 \\right) & t = 0 \\end{cases}",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "Para que la función vectorial \\(\\vec{f}(t)\\) sea continua en \\( t = a \\), deben cumplirse tres condiciones:",
+                "expresion_latex_paso": "1. \\vec{f}(a) \\text{ está definida} \\\\ 2. \\lim_{t \\to a} \\vec{f}(t) \\text{ existe} \\\\ 3. \\lim_{t \\to a} \\vec{f}(t) = \\vec{f}(a)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Verificamos la primera condición en \\( t = 0 \\).",
+                "expresion_latex_paso": "La función está definida en \\( t = 0 \\) por la segunda rama: \\vec{f}(0) = \\left( 3, 2, 0 \\right)."
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Verificamos la segunda condición calculando el límite de \\(\\vec{f}(t)\\) cuando \\( t \\to 0 \\). Usamos la definición para \\( t \\neq 0 \\).",
+                "expresion_latex_paso": "\\lim_{t \\to 0} \\vec{f}(t) = \\left( \\lim_{t \\to 0} \\frac{e^{3t} - 1}{t}, \\lim_{t \\to 0} \\frac{\\sqrt{1 + 4t} - 1}{t}, \\lim_{t \\to 0} \\frac{\\ln(1 + t^3)}{t^2} \\right)"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el límite de la primera componente \\(L_1\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{e^{3t} - 1}{t}"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{0}{0}\\). Usamos el límite notable \\(\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{e^{3t} - 1}{t} = \\lim_{t \\to 0} 3 \\cdot \\frac{e^{3t} - 1}{3t}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Haciendo \\(u = 3t\\), cuando \\(t \\to 0\\), \\(u \\to 0\\).",
+                "expresion_latex_paso": "L_1 = 3 \\cdot \\lim_{u \\to 0} \\frac{e^u - 1}{u} = 3 \\cdot 1 = 3"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Calculamos el límite de la segunda componente \\(L_2\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} \\frac{\\sqrt{1 + 4t} - 1}{t}"
+            },
+            {
+                "paso_numero": 5.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{0}{0}\\). Multiplicamos por el conjugado del numerador.",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} \\frac{\\sqrt{1 + 4t} - 1}{t} \\cdot \\frac{\\sqrt{1 + 4t} + 1}{\\sqrt{1 + 4t} + 1} = \\lim_{t \\to 0} \\frac{(1 + 4t) - 1}{t (\\sqrt{1 + 4t} + 1)}"
+            },
+            {
+                "paso_numero": 5.2,
+                "descripcion_paso": "Simplificamos y cancelamos el factor \\(t\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} \\frac{4t}{t (\\sqrt{1 + 4t} + 1)} = \\lim_{t \\to 0} \\frac{4}{\\sqrt{1 + 4t} + 1}"
+            },
+            {
+                "paso_numero": 5.3,
+                "descripcion_paso": "Evaluamos el límite sustituyendo \\(t = 0\\).",
+                "expresion_latex_paso": "L_2 = \\frac{4}{\\sqrt{1 + 0} + 1} = \\frac{4}{1 + 1} = \\frac{4}{2} = 2"
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "Calculamos el límite de la tercera componente \\(L_3\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{\\ln(1 + t^3)}{t^2}"
+            },
+            {
+                "paso_numero": 6.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{0}{0}\\). Usamos el límite notable \\(\\lim_{x \\to 0} \\frac{\\ln(1+x)}{x} = 1\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{\\ln(1 + t^3)}{t^2} = \\lim_{t \\to 0} \\left( \\frac{\\ln(1 + t^3)}{t^3} \\cdot t \\right)"
+            },
+            {
+                "paso_numero": 6.2,
+                "descripcion_paso": "Separamos el límite del producto y aplicamos el límite notable con \\(u = t^3\\).",
+                "expresion_latex_paso": "L_3 = \\left( \\lim_{t \\to 0} \\frac{\\ln(1 + t^3)}{t^3} \\right) \\cdot \\left( \\lim_{t \\to 0} t \\right) = \\left( \\lim_{u \\to 0} \\frac{\\ln(1 + u)}{u} \\right) \\cdot 0"
+            },
+            {
+                "paso_numero": 6.3,
+                "descripcion_paso": "Evaluamos los límites.",
+                "expresion_latex_paso": "L_3 = 1 \\cdot 0 = 0"
+            },
+            {
+                "paso_numero": 7,
+                "descripcion_paso": "El límite de la función vectorial es el vector de los límites de las componentes.",
+                "expresion_latex_paso": "\\lim_{t \\to 0} \\vec{f}(t) = (L_1, L_2, L_3) = \\left( 3, 2, 0 \\right)"
+            },
+            {
+                "paso_numero": 8,
+                "descripcion_paso": "Verificamos la tercera condición comparando el límite con el valor de la función en \\( t = 0 \\).",
+                "expresion_latex_paso": "\\lim_{t \\to 0} \\vec{f}(t) = \\left( 3, 2, 0 \\right) \\\\ \\vec{f}(0) = \\left( 3, 2, 0 \\right)"
+            },
+            {
+                "paso_numero": 9,
+                "descripcion_paso": "Observamos que los vectores son iguales.",
+                "expresion_latex_paso": "\\lim_{t \\to 0} \\vec{f}(t) = \\vec{f}(0)"
+            },
+            {
+                "paso_numero": 10,
+                "descripcion_paso": "Dado que las tres condiciones se cumplen, la función \\(\\vec{f}(t)\\) es continua en \\( t = 0 \\).",
+                "expresion_latex_paso": "\\text{La función es continua en } t = 0."
+            }
+        ],
+        "resolucion_latex": ""
+    },
+    {
+        "titulo": "Problema 6",
+        "descripcion": "Hallar el dominio de:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\arcsin(2t)}{\\sqrt{4 - t^2}}, \\sqrt{t^4 - 5t^2 + 4}, \\frac{\\tan(3t)}{t^2 - 9} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "El dominio de la función vectorial \\(\\vec{f}(t) = (f_1(t), f_2(t), f_3(t))\\) es la intersección de los dominios de sus funciones componentes.",
+                "expresion_latex_paso": "Dom(\\vec{f}) = Dom(f_1) \\cap Dom(f_2) \\cap Dom(f_3)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Identificamos las funciones componentes:",
+                "expresion_latex_paso": "f_1(t) = \\frac{\\arcsin(2t)}{\\sqrt{4 - t^2}} \\\\ f_2(t) = \\sqrt{t^4 - 5t^2 + 4} \\\\ f_3(t) = \\frac{\\tan(3t)}{t^2 - 9}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos el dominio de \\(f_1(t)\\). Se deben cumplir dos condiciones simultáneamente:",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Condición 1 (Arcoseno): El argumento del arcoseno debe estar entre -1 y 1 (inclusive).",
+                "expresion_latex_paso": "-1 \\le 2t \\le 1 \\implies -\\frac{1}{2} \\le t \\le \\frac{1}{2} \\implies t \\in [-\\frac{1}{2}, \\frac{1}{2}]"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Condición 2 (Raíz cuadrada en denominador): El argumento de la raíz cuadrada debe ser estrictamente positivo.",
+                "expresion_latex_paso": "4 - t^2 > 0 \\implies t^2 < 4 \\implies -2 < t < 2 \\implies t \\in (-2, 2)"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "El dominio de \\(f_1(t)\\) es la intersección de las dos condiciones:",
+                "expresion_latex_paso": "Dom(f_1) = [-\\frac{1}{2}, \\frac{1}{2}] \\cap (-2, 2) = [-\\frac{1}{2}, \\frac{1}{2}]"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el dominio de \\(f_2(t)\\). El argumento de la raíz cuadrada debe ser mayor o igual a cero.",
+                "expresion_latex_paso": "t^4 - 5t^2 + 4 \\ge 0"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Factorizamos la expresión (tratándola como una cuadrática en \\(t^2\\)):",
+                "expresion_latex_paso": "(t^2 - 1)(t^2 - 4) \\ge 0 \\implies (t - 1)(t + 1)(t - 2)(t + 2) \\ge 0"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Analizamos los signos en los intervalos definidos por las raíces \\(t=-2, t=-1, t=1, t=2\\). La desigualdad se cumple para:",
+                "expresion_latex_paso": "t \\in (-\\infty, -2] \\cup [-1, 1] \\cup [2, \\infty)"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Por lo tanto, el dominio de \\(f_2(t)\\) es:",
+                "expresion_latex_paso": "Dom(f_2) = (-\\infty, -2] \\cup [-1, 1] \\cup [2, \\infty)"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Calculamos el dominio de \\(f_3(t)\\). Se deben cumplir dos condiciones:",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 5.1,
+                "descripcion_paso": "Condición 1 (Tangente): El argumento de la tangente no puede ser un múltiplo impar de \\(\\pi/2\\).",
+                "expresion_latex_paso": "3t \\neq \\frac{\\pi}{2} + n\\pi = (2n + 1)\\frac{\\pi}{2} \\implies t \\neq (2n + 1)\\frac{\\pi}{6}, \\text{ para } n \\in \\mathbb{Z}"
+            },
+            {
+                "paso_numero": 5.2,
+                "descripcion_paso": "Condición 2 (Denominador): El denominador no puede ser cero.",
+                "expresion_latex_paso": "t^2 - 9 \\neq 0 \\implies t^2 \\neq 9 \\implies t \\neq 3 \\text{ y } t \\neq -3"
+            },
+            {
+                "paso_numero": 5.3,
+                "descripcion_paso": "El dominio de \\(f_3(t)\\) es el conjunto de todos los números reales excepto los puntos excluidos:",
+                "expresion_latex_paso": "Dom(f_3) = \\mathbb{R} - \\{ -3, 3 \\} \\cup \\{ (2n + 1)\\frac{\\pi}{6} \\mid n \\in \\mathbb{Z} \\}"
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "Finalmente, encontramos la intersección de los tres dominios.",
+                "expresion_latex_paso": "Dom(\\vec{f}) = Dom(f_1) \\cap Dom(f_2) \\cap Dom(f_3)"
+            },
+            {
+                "paso_numero": 6.1,
+                "descripcion_paso": "Primero, intersectamos \\(Dom(f_1)\\) y \\(Dom(f_2)\\):",
+                "expresion_latex_paso": "Dom(f_1) \\cap Dom(f_2) = [-\\frac{1}{2}, \\frac{1}{2}] \\cap ((-\\infty, -2] \\cup [-1, 1] \\cup [2, \\infty))"
+            },
+            {
+                "paso_numero": 6.2,
+                "descripcion_paso": "Dado que \\([-\\frac{1}{2}, \\frac{1}{2}]\\) está contenido en \\([-1, 1]\\), la intersección es:",
+                "expresion_latex_paso": "Dom(f_1) \\cap Dom(f_2) = [-\\frac{1}{2}, \\frac{1}{2}]"
+            },
+            {
+                "paso_numero": 6.3,
+                "descripcion_paso": "Ahora intersectamos este resultado con \\(Dom(f_3)\\):",
+                "expresion_latex_paso": "Dom(\\vec{f}) = [-\\frac{1}{2}, \\frac{1}{2}] \\cap Dom(f_3)"
+            },
+            {
+                "paso_numero": 6.4,
+                "descripcion_paso": "Verificamos si alguno de los puntos excluidos de \\(Dom(f_3)\\) está en \\([-\\frac{1}{2}, \\frac{1}{2}]\\). Los puntos excluidos son \\(t = \\pm 3\\) y \\(t = (2n+1)\\frac{\\pi}{6}\\).",
+                "expresion_latex_paso": "\\pm 3 \\notin [-\\frac{1}{2}, \\frac{1}{2}]. \\\\ \\text{Para } n=0, t=\\frac{\\pi}{6} \\approx \\frac{3.14}{6} \\approx 0.523 > \\frac{1}{2}. \\\\ \\text{Para } n=-1, t=-\\frac{\\pi}{6} \\approx -0.523 < -\\frac{1}{2}. \\\\ \\text{Otros valores de } n \\text{ dan valores de } t \\text{ más alejados de 0.}"
+            },
+            {
+                "paso_numero": 6.5,
+                "descripcion_paso": "Ninguno de los puntos excluidos de \\(Dom(f_3)\\) se encuentra en el intervalo \\([-\\frac{1}{2}, \\frac{1}{2}]\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 7,
+                "descripcion_paso": "Por lo tanto, la intersección final y el dominio de \\(\\vec{f}(t)\\) es:",
+                "expresion_latex_paso": "Dom(\\vec{f}) = [-\\frac{1}{2}, \\frac{1}{2}]"
+            }
+        ],
+        "resolucion_latex": "Dom(\\vec{f}) = [-\\frac{1}{2}, \\frac{1}{2}]"
+    },
+    {
+        "titulo": "Problema 7",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\pi \\):",
+        "expresion_latex": "\\lim_{t \\to \\pi} \\left( \\frac{\\sin(2t)}{t - \\pi}, \\frac{1 - \\cos(t - \\pi)}{(t - \\pi)^2}, \\frac{\\ln(1 + \\sin(t))}{t - \\pi} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "El límite de una función vectorial es el vector de los límites de sus funciones componentes, siempre que estos límites existan.",
+                "expresion_latex_paso": "L = (L_1, L_2, L_3)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos el límite de la primera componente \\(L_1\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to \\pi} \\frac{\\sin(2t)}{t - \\pi}"
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Usamos el artificio del cambio de variable: Sea \\(u = t - \\pi\\). Cuando \\(t \\to \\pi\\), entonces \\(u \\to 0\\). Además \\(t = u + \\pi\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{u \\to 0} \\frac{\\sin(2(u + \\pi))}{u}"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Simplificamos el argumento del seno usando la periodicidad: \\(\\sin(2u + 2\\pi) = \\sin(2u)\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{u \\to 0} \\frac{\\sin(2u)}{u}"
+            },
+            {
+                "paso_numero": 2.3,
+                "descripcion_paso": "Usamos el límite notable \\(\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1\\) mediante un artificio.",
+                "expresion_latex_paso": "L_1 = \\lim_{u \\to 0} \\frac{\\sin(2u)}{2u} \\cdot 2"
+            },
+            {
+                "paso_numero": 2.4,
+                "descripcion_paso": "Evaluamos el límite.",
+                "expresion_latex_paso": "L_1 = 1 \\cdot 2 = 2"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos el límite de la segunda componente \\(L_2\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to \\pi} \\frac{1 - \\cos(t - \\pi)}{(t - \\pi)^2}"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Usamos el artificio del cambio de variable: Sea \\(u = t - \\pi\\). Cuando \\(t \\to \\pi\\), entonces \\(u \\to 0\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{u \\to 0} \\frac{1 - \\cos(u)}{u^2}"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Usamos el límite notable \\(\\lim_{x \\to 0} \\frac{1 - \\cos(x)}{x^2} = \\frac{1}{2}\\).",
+                "expresion_latex_paso": "L_2 = \\frac{1}{2}"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el límite de la tercera componente \\(L_3\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to \\pi} \\frac{\\ln(1 + \\sin(t))}{t - \\pi}"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Usamos el artificio del cambio de variable: Sea \\(u = t - \\pi\\). Entonces \\(u \\to 0\\) y \\(t = u + \\pi\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{u \\to 0} \\frac{\\ln(1 + \\sin(u + \\pi))}{u}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Simplificamos usando la identidad trigonométrica \\(\\sin(u + \\pi) = -\\sin(u)\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{u \\to 0} \\frac{\\ln(1 - \\sin(u))}{u}"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Usamos el límite notable \\(\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1\\) y \\(\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1\\) mediante un artificio.",
+                "expresion_latex_paso": "L_3 = \\lim_{u \\to 0} \\frac{\\ln(1 + (-\\sin(u)))}{-\\sin(u)} \\cdot \\frac{-\\sin(u)}{u}"
+            },
+            {
+                "paso_numero": 4.4,
+                "descripcion_paso": "Evaluamos los límites separados. Sea \\(v = -\\sin(u)\\). Cuando \\(u \\to 0\\), \\(v \\to 0\\).",
+                "expresion_latex_paso": "L_3 = \\left( \\lim_{v \\to 0} \\frac{\\ln(1 + v)}{v} \\right) \\cdot \\left( \\lim_{u \\to 0} -\\frac{\\sin(u)}{u} \\right)"
+            },
+             {
+                "paso_numero": 4.5,
+                "descripcion_paso": "Calculamos el valor final.",
+                "expresion_latex_paso": "L_3 = (1) \\cdot (-1) = -1"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Combinamos los límites de las componentes para obtener el límite de la función vectorial.",
+                "expresion_latex_paso": "L = (L_1, L_2, L_3) = \\left( 2, \\frac{1}{2}, -1 \\right)"
+            }
+        ],
+        "resolucion_latex": "\\lim_{t \\to \\pi} \\vec{f}(t) = \\left( 2, \\frac{1}{2}, -1 \\right)"
+    },
+    {
+        "titulo": "Problema 4 - Integración Vectorial",
+        "descripcion": "Hallar la integral indefinida \\( \\int \\vec{f}(t) dt \\), si \\(\\vec{f}(t) = \\left( \\frac{t \\arctan t}{\\sqrt{1+t^2}}, \\frac{t^2}{(t\\cos t - \\sin t)^2} \\right)\\)",
+        "expresion_latex": "\\vec{f}(t) = \\left( f_1(t), f_2(t) \\right) = \\left( \\frac{t \\arctan t}{\\sqrt{1+t^2}}, \\frac{t^2}{(t\\cos t - \\sin t)^2} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "La integral de una función vectorial se calcula integrando cada componente por separado.",
+                "expresion_latex_paso": "\\int \\vec{f}(t) dt = \\left( \\int f_1(t) dt, \\int f_2(t) dt \\right) = (I_1, I_2)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos la integral de la primera componente \\(I_1\\).",
+                "expresion_latex_paso": "I_1 = \\int \\frac{t \\arctan t}{\\sqrt{1+t^2}} dt"
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Usamos integración por partes: \\(\\int u dv = uv - \\int v du\\).",
+                "expresion_latex_paso": "\\text{Sea } u = \\arctan t \\quad \\Rightarrow \\quad du = \\frac{1}{1+t^2} dt \\\\ \\text{Sea } dv = \\frac{t}{\\sqrt{1+t^2}} dt"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Integramos \\(dv\\) para encontrar \\(v\\). Hacemos la sustitución \\(w = 1+t^2\\), \\(dw = 2t dt\\).",
+                "expresion_latex_paso": "v = \\int \\frac{t}{\\sqrt{1+t^2}} dt = \\int \\frac{1/2}{\\sqrt{w}} dw = \\frac{1}{2} \\int w^{-1/2} dw = \\frac{1}{2} (2 w^{1/2}) = \\sqrt{w} = \\sqrt{1+t^2}"
+            },
+            {
+                "paso_numero": 2.3,
+                "descripcion_paso": "Aplicamos la fórmula de integración por partes.",
+                "expresion_latex_paso": "I_1 = (\\arctan t)(\\sqrt{1+t^2}) - \\int \\sqrt{1+t^2} \\cdot \\frac{1}{1+t^2} dt"
+            },
+            {
+                "paso_numero": 2.4,
+                "descripcion_paso": "Simplificamos la integral restante.",
+                "expresion_latex_paso": "I_1 = \\sqrt{1+t^2} \\arctan t - \\int \\frac{1}{\\sqrt{1+t^2}} dt"
+            },
+            {
+                "paso_numero": 2.5,
+                "descripcion_paso": "La integral resultante es estándar: \\(\\int \\frac{1}{\\sqrt{1+t^2}} dt = \\text{arsinh}(t) = \\ln(t + \\sqrt{1+t^2})\\).",
+                "expresion_latex_paso": "I_1 = \\sqrt{1+t^2} \\arctan t - \\ln(t + \\sqrt{1+t^2}) + C_1"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos la integral de la segunda componente \\(I_2\\).",
+                "expresion_latex_paso": "I_2 = \\int \\frac{t^2}{(t\\cos t - \\sin t)^2} dt"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Observamos que el integrando tiene la forma \\(\\frac{N(t)}{[D(t)]^2}\\), lo que sugiere que podría ser la derivada de un cociente \\(\\frac{g(t)}{h(t)}\\), donde \\(h(t) = t\\cos t - \\sin t\\).",
+                "expresion_latex_paso": "\\frac{d}{dt}\\left(\\frac{g(t)}{h(t)}\\right) = \\frac{g'(t)h(t) - g(t)h'(t)}{[h(t)]^2}"
+            },
+            {
+                 "paso_numero": 3.2,
+                 "descripcion_paso": "Calculamos la derivada del denominador: \\(h'(t) = \\frac{d}{dt}(t\\cos t - \\sin t)\\).",
+                 "expresion_latex_paso": "h'(t) = (1\\cdot\\cos t + t(-\\sin t)) - \\cos t = \\cos t - t\\sin t - \\cos t = -t\\sin t"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "Intentamos encontrar una función \\(g(t)\\) tal que la derivada de \\(\\frac{g(t)}{t\\cos t - \\sin t}\\) (o su negativo) sea el integrando. Consideremos la función \\(k(t) = \\frac{t\\sin t + \\cos t}{\\sin t - t\\cos t}\\).",
+                "expresion_latex_paso": "k(t) = \\frac{t\\sin t + \\cos t}{- (t\\cos t - \\sin t)} = - \\frac{g(t)}{h(t)} \\text{ donde } g(t) = t\\sin t + \\cos t"
+            },
+            {
+                 "paso_numero": 3.4,
+                 "descripcion_paso": "Calculamos la derivada de \\(g(t) = t\\sin t + \\cos t\\).",
+                 "expresion_latex_paso": "g'(t) = (1\\cdot\\sin t + t\\cos t) - \\sin t = t\\cos t"
+            },
+            {
+                 "paso_numero": 3.5,
+                 "descripcion_paso": "Calculamos la derivada de \\(\\frac{g(t)}{h(t)} = \\frac{t\\sin t + \\cos t}{t\\cos t - \\sin t}\\).",
+                 "expresion_latex_paso": "\\frac{d}{dt}\\left( \\frac{t\\sin t + \\cos t}{t\\cos t - \\sin t} \\right) = \\frac{(t\\cos t)(t\\cos t - \\sin t) - (t\\sin t + \\cos t)(-t\\sin t)}{(t\\cos t - \\sin t)^2}"
+            },
+            {
+                 "paso_numero": 3.6,
+                 "descripcion_paso": "Expandimos y simplificamos el numerador.",
+                 "expresion_latex_paso": "\\text{Num} = (t^2\\cos^2 t - t\\sin t\\cos t) - (-t^2\\sin^2 t - t\\sin t\\cos t) \\\\ = t^2\\cos^2 t - t\\sin t\\cos t + t^2\\sin^2 t + t\\sin t\\cos t \\\\ = t^2(\\cos^2 t + \\sin^2 t) = t^2"
+            },
+            {
+                 "paso_numero": 3.7,
+                 "descripcion_paso": "Por lo tanto, la derivada es exactamente el integrando.",
+                 "expresion_latex_paso": "\\frac{d}{dt}\\left( \\frac{t\\sin t + \\cos t}{t\\cos t - \\sin t} \\right) = \\frac{t^2}{(t\\cos t - \\sin t)^2}"
+            },
+             {
+                "paso_numero": 3.8,
+                "descripcion_paso": "Entonces, la integral \\(I_2\\) es:",
+                "expresion_latex_paso": "I_2 = \\int \\frac{t^2}{(t\\cos t - \\sin t)^2} dt = \\frac{t\\sin t + \\cos t}{t\\cos t - \\sin t} + C_2"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Combinamos los resultados de \\(I_1\\) e \\(I_2\\) y añadimos el vector constante de integración \\(\\vec{C} = (C_1, C_2)\\).",
+                "expresion_latex_paso": "\\int \\vec{f}(t) dt = \\left( \\sqrt{1+t^2} \\arctan t - \\ln(t + \\sqrt{1+t^2}) + C_1, \\frac{t\\sin t + \\cos t}{t\\cos t - \\sin t} + C_2 \\right)"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Resultado final:",
+                "expresion_latex_paso": "\\int \\vec{f}(t) dt = \\left( \\sqrt{1+t^2} \\arctan t - \\ln(t + \\sqrt{1+t^2}), \\frac{t\\sin t + \\cos t}{t\\cos t - \\sin t} \\right) + \\vec{C}"
+            }
+        ],
+        "resolucion_latex": "\\int \\vec{f}(t) dt = \\left( \\sqrt{1+t^2} \\arctan t - \\ln(t + \\sqrt{1+t^2}), \\frac{t\\sin t + \\cos t}{t\\cos t - \\sin t} \\right) + \\vec{C}"
+    },
+    {
+        "titulo": "Problema 8",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 \\cdot \\arctan(\\sqrt{t}), \\frac{e^{t^3}}{\\ln(t + 1)}, \\frac{\\sec^{-1}(3t)}{t^2 + 1} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "La derivada de una función vectorial \\(\\vec{f}(t) = (f_1(t), f_2(t), f_3(t))\\) se obtiene derivando cada una de sus funciones componentes.",
+                "expresion_latex_paso": "\\vec{f}'(t) = \\left( \\frac{d}{dt}f_1(t), \\frac{d}{dt}f_2(t), \\frac{d}{dt}f_3(t) \\right)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos la derivada de la primera componente \\(f_1(t) = t^2 \\arctan(\\sqrt{t})\\) usando la regla del producto \\((uv)' = u'v + uv'\\).",
+                "expresion_latex_paso": "u = t^2 \\implies u' = 2t \\\\ v = \\arctan(\\sqrt{t})"
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Calculamos \\(v'\\) usando la regla de la cadena: \\(\\frac{d}{dx}(\\arctan(w)) = \\frac{w'}{1+w^2}\\), con \\(w = \\sqrt{t} = t^{1/2}\\).",
+                "expresion_latex_paso": "w' = \\frac{1}{2}t^{-1/2} = \\frac{1}{2\\sqrt{t}} \\\\ v' = \\frac{1/(2\\sqrt{t})}{1 + (\\sqrt{t})^2} = \\frac{1/(2\\sqrt{t})}{1 + t} = \\frac{1}{2\\sqrt{t}(1 + t)}"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Aplicamos la regla del producto a \\(f_1(t)\\).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_1(t) = (2t) \\arctan(\\sqrt{t}) + t^2 \\left( \\frac{1}{2\\sqrt{t}(1 + t)} \\right)"
+            },
+            {
+                "paso_numero": 2.3,
+                "descripcion_paso": "Simplificamos la expresión.",
+                "expresion_latex_paso": "\\frac{d}{dt}f_1(t) = 2t \\arctan(\\sqrt{t}) + \\frac{t^2}{2t^{1/2}(1 + t)} = 2t \\arctan(\\sqrt{t}) + \\frac{t^{3/2}}{2(1 + t)} = 2t \\arctan(\\sqrt{t}) + \\frac{t\\sqrt{t}}{2(1 + t)}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos la derivada de la segunda componente \\(f_2(t) = \\frac{e^{t^3}}{\\ln(t + 1)}\\) usando la regla del cociente \\((\\frac{u}{v})' = \\frac{u'v - uv'}{v^2}\\).",
+                "expresion_latex_paso": "u = e^{t^3} \\\\ v = \\ln(t + 1)"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Calculamos \\(u'\\) usando la regla de la cadena.",
+                "expresion_latex_paso": "u' = e^{t^3} \\cdot \\frac{d}{dt}(t^3) = e^{t^3} \\cdot 3t^2 = 3t^2 e^{t^3}"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Calculamos \\(v'\\) usando la regla de la cadena.",
+                "expresion_latex_paso": "v' = \\frac{1}{t+1} \\cdot \\frac{d}{dt}(t+1) = \\frac{1}{t+1} \\cdot 1 = \\frac{1}{t+1}"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "Aplicamos la regla del cociente a \\(f_2(t)\\).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_2(t) = \\frac{(3t^2 e^{t^3}) \\ln(t + 1) - e^{t^3} \\left( \\frac{1}{t+1} \\right)}{(\\ln(t + 1))^2}"
+            },
+             {
+                "paso_numero": 3.4,
+                "descripcion_paso": "Factorizamos \\(e^{t^3}\\) en el numerador (opcional).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_2(t) = \\frac{e^{t^3} \\left( 3t^2 \\ln(t + 1) - \\frac{1}{t+1} \\right)}{(\\ln(t + 1))^2}"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos la derivada de la tercera componente \\(f_3(t) = \\frac{\\sec^{-1}(3t)}{t^2 + 1}\\) usando la regla del cociente. Recordamos \\(\\frac{d}{dx}(\\sec^{-1}(w)) = \\frac{w'}{|w|\\sqrt{w^2 - 1}}\\).",
+                "expresion_latex_paso": "u = \\sec^{-1}(3t) \\\\ v = t^2 + 1"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Calculamos \\(u'\\) usando la regla de la cadena con \\(w = 3t\\).",
+                "expresion_latex_paso": "w' = 3 \\\\ u' = \\frac{3}{|3t|\\sqrt{(3t)^2 - 1}} = \\frac{3}{3|t|\\sqrt{9t^2 - 1}} = \\frac{1}{|t|\\sqrt{9t^2 - 1}}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Calculamos \\(v'\\).",
+                "expresion_latex_paso": "v' = 2t"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Aplicamos la regla del cociente a \\(f_3(t)\\).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_3(t) = \\frac{\\left( \\frac{1}{|t|\\sqrt{9t^2 - 1}} \\right)(t^2 + 1) - (\\sec^{-1}(3t))(2t)}{(t^2 + 1)^2}"
+            },
+             {
+                "paso_numero": 4.4,
+                "descripcion_paso": "Simplificamos la expresión (opcional).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_3(t) = \\frac{\\frac{t^2 + 1}{|t|\\sqrt{9t^2 - 1}} - 2t \\sec^{-1}(3t)}{(t^2 + 1)^2}"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Combinamos las derivadas de las componentes para obtener la derivada de la función vectorial.",
+                "expresion_latex_paso": "\\vec{f}'(t) = \\left( 2t \\arctan(\\sqrt{t}) + \\frac{t\\sqrt{t}}{2(1 + t)}, \\frac{e^{t^3} ( 3t^2 \\ln(t + 1) - \\frac{1}{t+1} )}{(\\ln(t + 1))^2}, \\frac{\\frac{t^2 + 1}{|t|\\sqrt{9t^2 - 1}} - 2t \\sec^{-1}(3t)}{(t^2 + 1)^2} \\right)"
+            }
+        ],
+        "resolucion_latex": "\\vec{f}'(t) = \\left( 2t \\arctan(\\sqrt{t}) + \\frac{t\\sqrt{t}}{2(1 + t)}, \\frac{e^{t^3} ( 3t^2 \\ln(t + 1) - \\frac{1}{t+1} )}{(\\ln(t + 1))^2}, \\frac{(t^2 + 1) - 2t|t|\\sqrt{9t^2 - 1} \\sec^{-1}(3t)}{|t|\\sqrt{9t^2 - 1}(t^2 + 1)^2} \\right)"
+    },
+    {
+        "titulo": "Problema 9",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "x^2 = 2y^2 + 4z + 4",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 0,
+                "descripcion_paso": "Reescribir la ecuación en una forma estándar para identificar el tipo de superficie.",
+                "expresion_latex_paso": "x^2 - 2y^2 = 4z + 4 \\\\ x^2 - 2y^2 = 4(z + 1) \\\\ \\frac{x^2}{4} - \\frac{y^2}{2} = z + 1 \\\\ z = \\frac{x^2}{4} - \\frac{y^2}{2} - 1 \\\\ \\text{La ecuación corresponde a un Paraboloide Hiperbólico.}"
+            },
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "Intersección con los ejes coordenados.",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 1.1,
+                "descripcion_paso": "Eje X (y=0, z=0):",
+                "expresion_latex_paso": "x^2 = 2(0)^2 + 4(0) + 4 \\implies x^2 = 4 \\implies x = \\pm 2. \\text{ Interceptos: } (2, 0, 0), (-2, 0, 0)."
+            },
+            {
+                "paso_numero": 1.2,
+                "descripcion_paso": "Eje Y (x=0, z=0):",
+                "expresion_latex_paso": "0^2 = 2y^2 + 4(0) + 4 \\implies 0 = 2y^2 + 4 \\implies y^2 = -2. \\text{ No hay intersección con el eje Y (en los reales).}"
+            },
+            {
+                "paso_numero": 1.3,
+                "descripcion_paso": "Eje Z (x=0, y=0):",
+                "expresion_latex_paso": "0^2 = 2(0)^2 + 4z + 4 \\implies 0 = 4z + 4 \\implies z = -1. \\text{ Intercepto: } (0, 0, -1). \\text{ (Vértice del paraboloide)}"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Trazas (Intersecciones con los planos coordenados).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Plano XY (z=0):",
+                "expresion_latex_paso": "x^2 = 2y^2 + 4(0) + 4 \\implies x^2 - 2y^2 = 4 \\implies \\frac{x^2}{4} - \\frac{y^2}{2} = 1. \\text{ Una hipérbola con eje focal en X.}"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Plano XZ (y=0):",
+                "expresion_latex_paso": "x^2 = 2(0)^2 + 4z + 4 \\implies x^2 = 4z + 4 \\implies x^2 = 4(z + 1). \\text{ Una parábola con vértice en } (0, 0, -1) \\text{ que abre hacia } +z."
+            },
+            {
+                "paso_numero": 2.3,
+                "descripcion_paso": "Plano YZ (x=0):",
+                "expresion_latex_paso": "0^2 = 2y^2 + 4z + 4 \\implies 0 = 2y^2 + 4z + 4 \\implies 2y^2 = -4z - 4 \\implies y^2 = -2(z + 1). \\text{ Una parábola con vértice en } (0, 0, -1) \\text{ que abre hacia } -z."
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Simetría.",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Respecto al plano XY (z por -z):",
+                "expresion_latex_paso": "x^2 = 2y^2 + 4(-z) + 4 = 2y^2 - 4z + 4 \\neq x^2 = 2y^2 + 4z + 4. \\text{ No es simétrica respecto al plano XY.}"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Respecto al plano XZ (y por -y):",
+                "expresion_latex_paso": "x^2 = 2(-y)^2 + 4z + 4 = 2y^2 + 4z + 4. \\text{ Sí es simétrica respecto al plano XZ.}"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "Respecto al plano YZ (x por -x):",
+                "expresion_latex_paso": "(-x)^2 = 2y^2 + 4z + 4 \\implies x^2 = 2y^2 + 4z + 4. \\text{ Sí es simétrica respecto al plano YZ.}"
+            },
+            {
+                "paso_numero": 3.4,
+                "descripcion_paso": "Respecto a los ejes y al origen: Dada la simetría respecto a los planos XZ e YZ, es simétrica respecto a su intersección, el eje Z.",
+                "expresion_latex_paso": "\\text{Simétrica respecto al eje Z. No es simétrica respecto a los ejes X, Y ni al origen.}"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Secciones transversales (paralelas a los planos coordenados).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Planos z = k:",
+                "expresion_latex_paso": "x^2 = 2y^2 + 4k + 4 \\implies x^2 - 2y^2 = 4(k + 1). \\\\ \\text{Si } k > -1: \\text{Hipérbolas con eje focal X.} \\\\ \\text{Si } k = -1: x^2 = 2y^2 \\implies x = \\pm \\sqrt{2}y \\text{ (Dos rectas que se cortan en (0,0,-1)).} \\\\ \\text{Si } k < -1: 2y^2 - x^2 = -4(k+1) = 4|k+1| \\text{ (Hipérbolas con eje focal Y).}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Planos y = k:",
+                "expresion_latex_paso": "x^2 = 2k^2 + 4z + 4 \\implies x^2 = 4(z + 1 + \\frac{k^2}{2}). \\text{ Parábolas que abren hacia } +z."
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Planos x = k:",
+                "expresion_latex_paso": "k^2 = 2y^2 + 4z + 4 \\implies 2y^2 = -4z + (k^2 - 4) \\implies y^2 = -2(z - \\frac{k^2 - 4}{4}). \\text{ Parábolas que abren hacia } -z."
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Extensión de la superficie.",
+                "expresion_latex_paso": "z = \\frac{x^2}{4} - \\frac{y^2}{2} - 1. \\text{ No hay restricciones para } x, y, z. \\text{ La superficie se extiende indefinidamente en todas las direcciones.} \\\\ x \\in (-\\infty, \\infty), y \\in (-\\infty, \\infty), z \\in (-\\infty, \\infty)."
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "Gráfica (Descripción y comando para GeoGebra).",
+                "expresion_latex_paso": "\\text{La superficie es un paraboloide hiperbólico (silla de montar) con vértice en } (0, 0, -1). \\text{ Es simétrica respecto a los planos xz e yz, y al eje z.}"
+            }
+        ],
+        "geogebra": "x^2 = 2y^2 + 4z + 4",
+        "resolucion_latex": ""
+    },
+    {
+        "titulo": "Problema 10",
+        "descripcion": "Hallar el dominio de:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{t^2 - 8t} + \\frac{1}{\\sqrt{t^2 - 7t + 10}}, \\frac{\\ln(t^2 + 8t)}{\\sqrt{t^3 - 9t}}, \\frac{\\sqrt{t - 10}}{t^2 - 6t + 5} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "El dominio de la función vectorial \\(\\vec{f}(t) = (f_1(t), f_2(t), f_3(t))\\) es la intersección de los dominios de sus funciones componentes.",
+                "expresion_latex_paso": "Dom(\\vec{f}) = Dom(f_1) \\cap Dom(f_2) \\cap Dom(f_3)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Identificamos las funciones componentes:",
+                "expresion_latex_paso": "f_1(t) = \\sqrt{t^2 - 8t} + \\frac{1}{\\sqrt{t^2 - 7t + 10}} \\\\ f_2(t) = \\frac{\\ln(t^2 + 8t)}{\\sqrt{t^3 - 9t}} \\\\ f_3(t) = \\frac{\\sqrt{t - 10}}{t^2 - 6t + 5}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos el dominio de \\(f_1(t)\\). Se deben cumplir dos condiciones simultáneamente para ambos términos de la suma:",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Condición 1 (Primer término): El argumento de la raíz cuadrada \\(\\sqrt{t^2 - 8t}\\) debe ser mayor o igual a cero.",
+                "expresion_latex_paso": "t^2 - 8t \\ge 0 \\implies t(t - 8) \\ge 0 \\implies t \\in (-\\infty, 0] \\cup [8, \\infty)"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Condición 2 (Segundo término): El argumento de la raíz cuadrada en el denominador \\(\\sqrt{t^2 - 7t + 10}\\) debe ser estrictamente positivo.",
+                "expresion_latex_paso": "t^2 - 7t + 10 > 0 \\implies (t - 2)(t - 5) > 0 \\implies t \\in (-\\infty, 2) \\cup (5, \\infty)"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "El dominio de \\(f_1(t)\\) es la intersección de las dos condiciones:",
+                "expresion_latex_paso": "Dom(f_1) = [(-\\infty, 0] \\cup [8, \\infty)] \\cap [(-\\infty, 2) \\cup (5, \\infty)] = (-\\infty, 0] \\cup [8, \\infty)"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el dominio de \\(f_2(t)\\). Se deben cumplir dos condiciones simultáneamente:",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Condición 1 (Logaritmo): El argumento del logaritmo natural \\(\\ln(t^2 + 8t)\\) debe ser estrictamente positivo.",
+                "expresion_latex_paso": "t^2 + 8t > 0 \\implies t(t + 8) > 0 \\implies t \\in (-\\infty, -8) \\cup (0, \\infty)"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Condición 2 (Raíz cuadrada en denominador): El argumento de la raíz cuadrada \\(\\sqrt{t^3 - 9t}\\) debe ser estrictamente positivo.",
+                "expresion_latex_paso": "t^3 - 9t > 0 \\implies t(t^2 - 9) > 0 \\implies t(t - 3)(t + 3) > 0 \\implies t \\in (-3, 0) \\cup (3, \\infty)"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "El dominio de \\(f_2(t)\\) es la intersección de las dos condiciones:",
+                "expresion_latex_paso": "Dom(f_2) = [(-\\infty, -8) \\cup (0, \\infty)] \\cap [(-3, 0) \\cup (3, \\infty)] = (3, \\infty)"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Calculamos el dominio de \\(f_3(t)\\). Se deben cumplir dos condiciones simultáneamente:",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 5.1,
+                "descripcion_paso": "Condición 1 (Raíz cuadrada): El argumento de la raíz cuadrada \\(\\sqrt{t - 10}\\) debe ser mayor o igual a cero.",
+                "expresion_latex_paso": "t - 10 \\ge 0 \\implies t \\ge 10 \\implies t \\in [10, \\infty)"
+            },
+            {
+                "paso_numero": 5.2,
+                "descripcion_paso": "Condición 2 (Denominador): El denominador \\(t^2 - 6t + 5\\) no puede ser cero.",
+                "expresion_latex_paso": "t^2 - 6t + 5 \\neq 0 \\implies (t - 1)(t - 5) \\neq 0 \\implies t \\neq 1 \\text{ y } t \\neq 5"
+            },
+            {
+                "paso_numero": 5.3,
+                "descripcion_paso": "El dominio de \\(f_3(t)\\) es la intersección de las dos condiciones:",
+                "expresion_latex_paso": "Dom(f_3) = [10, \\infty) \\cap \\{t \\in \\mathbb{R} \\mid t \\neq 1, t \\neq 5 \\} = [10, \\infty) \\quad \\text{(ya que 1 y 5 no están en } [10, \\infty))"
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "Finalmente, encontramos la intersección de los tres dominios para obtener el dominio de \\(\\vec{f}(t)\\):",
+                "expresion_latex_paso": "Dom(\\vec{f}) = Dom(f_1) \\cap Dom(f_2) \\cap Dom(f_3)"
+            },
+            {
+                "paso_numero": 6.1,
+                "descripcion_paso": "Sustituimos los dominios encontrados:",
+                "expresion_latex_paso": "Dom(\\vec{f}) = [(-\\infty, 0] \\cup [8, \\infty)] \\cap (3, \\infty) \\cap [10, \\infty)"
+            },
+            {
+                "paso_numero": 6.2,
+                "descripcion_paso": "Primero intersectamos \\(Dom(f_1)\\) y \\(Dom(f_2)\\):",
+                "expresion_latex_paso": "[(-\\infty, 0] \\cup [8, \\infty)] \\cap (3, \\infty) = [8, \\infty)"
+            },
+            {
+                "paso_numero": 6.3,
+                "descripcion_paso": "Ahora intersectamos el resultado anterior con \\(Dom(f_3)\\):",
+                "expresion_latex_paso": "[8, \\infty) \\cap [10, \\infty) = [10, \\infty)"
+            },
+            {
+                "paso_numero": 7,
+                "descripcion_paso": "El dominio de la función vectorial es:",
+                "expresion_latex_paso": "Dom(\\vec{f}) = [10, \\infty)"
+            }
+        ],
+        "resolucion_latex": "Dom(\\vec{f}) = [10, \\infty)"
+    },
+    {
+        "titulo": "Problema 11",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sqrt{1 + 5t} - \\sqrt{1 - 2t}}{t}, \\frac{\\cos(4t) - \\cos(2t)}{t^2}, \\frac{\\arcsin(3t)}{\\tan(5t)} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "El límite de una función vectorial es el vector de los límites de sus funciones componentes, siempre que estos límites existan.",
+                "expresion_latex_paso": "L = (L_1, L_2, L_3)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos el límite de la primera componente \\(L_1\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{\\sqrt{1 + 5t} - \\sqrt{1 - 2t}}{t}"
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Artificio: Multiplicamos por el conjugado del numerador.",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{\\sqrt{1 + 5t} - \\sqrt{1 - 2t}}{t} \\cdot \\frac{\\sqrt{1 + 5t} + \\sqrt{1 - 2t}}{\\sqrt{1 + 5t} + \\sqrt{1 - 2t}}"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Simplificamos el numerador usando diferencia de cuadrados.",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{(1 + 5t) - (1 - 2t)}{t (\\sqrt{1 + 5t} + \\sqrt{1 - 2t})} = \\lim_{t \\to 0} \\frac{1 + 5t - 1 + 2t}{t (\\sqrt{1 + 5t} + \\sqrt{1 - 2t})}"
+            },
+            {
+                "paso_numero": 2.3,
+                "descripcion_paso": "Continuamos simplificando y cancelamos \\(t\\) (ya que \\(t \\neq 0\\) en el límite).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 0} \\frac{7t}{t (\\sqrt{1 + 5t} + \\sqrt{1 - 2t})} = \\lim_{t \\to 0} \\frac{7}{\\sqrt{1 + 5t} + \\sqrt{1 - 2t}}"
+            },
+            {
+                "paso_numero": 2.4,
+                "descripcion_paso": "Evaluamos el límite sustituyendo \\(t = 0\\).",
+                "expresion_latex_paso": "L_1 = \\frac{7}{\\sqrt{1 + 0} + \\sqrt{1 - 0}} = \\frac{7}{1 + 1} = \\frac{7}{2}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos el límite de la segunda componente \\(L_2\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} \\frac{\\cos(4t) - \\cos(2t)}{t^2}"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Artificio: Usamos la identidad trigonométrica de resta de cosenos: \\(\\cos(A) - \\cos(B) = -2 \\sin\\left(\\frac{A+B}{2}\\right) \\sin\\left(\\frac{A-B}{2}\\right)\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} \\frac{-2 \\sin\\left(\\frac{4t+2t}{2}\\right) \\sin\\left(\\frac{4t-2t}{2}\\right)}{t^2} = \\lim_{t \\to 0} \\frac{-2 \\sin(3t) \\sin(t)}{t^2}"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Artificio: Separamos los términos para usar el límite notable \\(\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} -2 \\left( \\frac{\\sin(3t)}{t} \\right) \\left( \\frac{\\sin(t)}{t} \\right)"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "Artificio: Ajustamos el primer término para que coincida con el límite notable (multiplicar y dividir por 3).",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 0} -2 \\left( \\frac{\\sin(3t)}{3t} \\cdot 3 \\right) \\left( \\frac{\\sin(t)}{t} \\right)"
+            },
+            {
+                "paso_numero": 3.4,
+                "descripcion_paso": "Evaluamos el límite usando \\(\\lim_{u \\to 0} \\frac{\\sin(u)}{u} = 1\\).",
+                "expresion_latex_paso": "L_2 = -2 (1 \\cdot 3) (1) = -6"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el límite de la tercera componente \\(L_3\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{\\arcsin(3t)}{\\tan(5t)}"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Se observa la indeterminación \\(\\frac{0}{0}\\). Artificio: Usamos los límites notables \\(\\lim_{x \\to 0} \\frac{\\arcsin(x)}{x} = 1\\) y \\(\\lim_{x \\to 0} \\frac{\\tan(x)}{x} = 1\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{\\arcsin(3t)}{\\tan(5t)}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Artificio: Multiplicamos y dividimos numerador y denominador por \\(t\\) (o múltiplos apropiados) para formar los límites notables.",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{\\frac{\\arcsin(3t)}{t}}{\\frac{\\tan(5t)}{t}}"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Artificio: Ajustamos los argumentos multiplicando y dividiendo por constantes.",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 0} \\frac{\\frac{\\arcsin(3t)}{3t} \\cdot 3}{\\frac{\\tan(5t)}{5t} \\cdot 5}"
+            },
+            {
+                "paso_numero": 4.4,
+                "descripcion_paso": "Evaluamos los límites notables.",
+                "expresion_latex_paso": "L_3 = \\frac{1 \\cdot 3}{1 \\cdot 5} = \\frac{3}{5}"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Combinamos los límites de las componentes para obtener el límite de la función vectorial.",
+                "expresion_latex_paso": "L = (L_1, L_2, L_3) = \\left( \\frac{7}{2}, -6, \\frac{3}{5} \\right)"
+            }
+        ],
+        "resolucion_latex": "\\lim_{t \\to 0} \\vec{f}(t) = \\left( \\frac{7}{2}, -6, \\frac{3}{5} \\right)"
+    },
+    {
+        "titulo": "Problema 12",
+        "descripcion": "Analizar continuidad en \\( t = 2 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{t + 5} - 3}{t - 2}, \\frac{\\ln(t - 1)}{t^2 - 4}, \\frac{t^2 - 4}{t - 2} \\right) & t \\neq 2 \\\\ \\left( \\frac{1}{6}, 0, 4 \\right) & t = 2 \\end{cases}",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "Para que la función vectorial \\(\\vec{f}(t)\\) sea continua en \\( t = a \\), deben cumplirse tres condiciones:",
+                "expresion_latex_paso": "1. \\vec{f}(a) \\text{ está definida} \\\\ 2. \\lim_{t \\to a} \\vec{f}(t) \\text{ existe} \\\\ 3. \\lim_{t \\to a} \\vec{f}(t) = \\vec{f}(a)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Verificamos la primera condición en \\( t = 2 \\).",
+                "expresion_latex_paso": "La función está definida en \\( t = 2 \\) por la segunda rama: \\vec{f}(2) = \\left( \\frac{1}{6}, 0, 4 \\right)."
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Verificamos la segunda condición calculando el límite de \\(\\vec{f}(t)\\) cuando \\( t \\to 2 \\). Usamos la definición para \\( t \\neq 2 \\).",
+                "expresion_latex_paso": "\\lim_{t \\to 2} \\vec{f}(t) = \\left( \\lim_{t \\to 2} \\frac{\\sqrt{t + 5} - 3}{t - 2}, \\lim_{t \\to 2} \\frac{\\ln(t - 1)}{t^2 - 4}, \\lim_{t \\to 2} \\frac{t^2 - 4}{t - 2} \\right)"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos el límite de la primera componente \\(L_1\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 2} \\frac{\\sqrt{t + 5} - 3}{t - 2}"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Evaluamos el numerador y el denominador cuando \\(t \\to 2\\).",
+                "expresion_latex_paso": "\\text{Numerador} \\to \\sqrt{2 + 5} - 3 = \\sqrt{7} - 3 \\neq 0 \\\\ \\text{Denominador} \\to 2 - 2 = 0"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Dado que el límite tiene la forma \\(\\frac{c}{0}\\) con \\(c = \\sqrt{7} - 3 \\neq 0\\), el límite \\(L_1\\) no existe (tiende a \\(\\infty\\) o \\(-\\infty\\)).",
+                "expresion_latex_paso": "L_1 \\text{ no existe.}"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Dado que el límite de la primera componente no existe, el límite de la función vectorial \\(\\lim_{t \\to 2} \\vec{f}(t)\\) no existe.",
+                "expresion_latex_paso": "\\lim_{t \\to 2} \\vec{f}(t) \\text{ no existe.}"
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "(Opcional: Calculamos los otros límites para verificar si existirían individualmente). Calculamos \\(L_2\\):",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 2} \\frac{\\ln(t - 1)}{t^2 - 4}"
+            },
+            {
+                "paso_numero": 6.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{\\ln(1)}{0} = \\frac{0}{0}\\). Usamos la regla de L'Hôpital.",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 2} \\frac{\\frac{d}{dt}(\\ln(t - 1))}{\\frac{d}{dt}(t^2 - 4)} = \\lim_{t \\to 2} \\frac{1/(t - 1)}{2t}"
+            },
+            {
+                "paso_numero": 6.2,
+                "descripcion_paso": "Evaluamos el límite.",
+                "expresion_latex_paso": "L_2 = \\frac{1/(2 - 1)}{2(2)} = \\frac{1/1}{4} = \\frac{1}{4}"
+            },
+            {
+                "paso_numero": 7,
+                "descripcion_paso": "(Opcional) Calculamos \\(L_3\\):",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 2} \\frac{t^2 - 4}{t - 2}"
+            },
+            {
+                "paso_numero": 7.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{0}{0}\\). Artificio: Factorizamos el numerador.",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 2} \\frac{(t - 2)(t + 2)}{t - 2}"
+            },
+            {
+                "paso_numero": 7.2,
+                "descripcion_paso": "Cancelamos el factor \\((t - 2)\\) y evaluamos.",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 2} (t + 2) = 2 + 2 = 4"
+            },
+            {
+                "paso_numero": 8,
+                "descripcion_paso": "Aunque \\(L_2\\) y \\(L_3\\) existen, como \\(L_1\\) no existe, la segunda condición para la continuidad (la existencia del límite del vector) falla.",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 9,
+                "descripcion_paso": "Dado que \\(\\lim_{t \\to 2} \\vec{f}(t)\\) no existe, la función \\(\\vec{f}(t)\\) no es continua en \\( t = 2 \\).",
+                "expresion_latex_paso": "\\text{La función no es continua en } t = 2."
+            }
+        ],
+        "resolucion_latex": ""
+    },
+    {
+        "titulo": "Problema 13",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "3x^2 - y^2 + 2z^2 + 4x - 6z = 0",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 0,
+                "descripcion_paso": "Completar cuadrados para identificar la superficie y su centro.",
+                "expresion_latex_paso": "(3x^2 + 4x) - y^2 + (2z^2 - 6z) = 0 \\\\ 3(x^2 + \\frac{4}{3}x) - y^2 + 2(z^2 - 3z) = 0 \\\\ 3(x^2 + \\frac{4}{3}x + \\frac{4}{9}) - 3(\\frac{4}{9}) - y^2 + 2(z^2 - 3z + \\frac{9}{4}) - 2(\\frac{9}{4}) = 0 \\\\ 3(x + \\frac{2}{3})^2 - \\frac{4}{3} - y^2 + 2(z - \\frac{3}{2})^2 - \\frac{9}{2} = 0 \\\\ 3(x + \\frac{2}{3})^2 - y^2 + 2(z - \\frac{3}{2})^2 = \\frac{4}{3} + \\frac{9}{2} = \\frac{8 + 27}{6} = \\frac{35}{6}"
+            },
+            {
+                "paso_numero": 0.1,
+                "descripcion_paso": "Escribir la ecuación en forma estándar.",
+                "expresion_latex_paso": "\\frac{3(x + 2/3)^2}{35/6} - \\frac{y^2}{35/6} + \\frac{2(z - 3/2)^2}{35/6} = 1 \\\\ \\frac{(x + 2/3)^2}{35/18} - \\frac{y^2}{35/6} + \\frac{(z - 3/2)^2}{35/12} = 1 \\\\ \\implies \\frac{(x + 2/3)^2}{35/18} + \\frac{(z - 3/2)^2}{35/12} - \\frac{y^2}{35/6} = 1 \\\\ \\text{Hiperboloide de una hoja. Centro } C = (-\\frac{2}{3}, 0, \\frac{3}{2}). \\text{ Eje paralelo al eje Y.}"
+            },
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "Intersección con los ejes coordenados (usando la ecuación original).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 1.1,
+                "descripcion_paso": "Eje X (y=0, z=0):",
+                "expresion_latex_paso": "3x^2 + 4x = 0 \\implies x(3x + 4) = 0 \\implies x = 0 \\text{ o } x = -4/3. \\text{ Puntos: } (0, 0, 0), (-4/3, 0, 0)."
+            },
+            {
+                "paso_numero": 1.2,
+                "descripcion_paso": "Eje Y (x=0, z=0):",
+                "expresion_latex_paso": "-y^2 = 0 \\implies y = 0. \\text{ Punto: } (0, 0, 0)."
+            },
+            {
+                "paso_numero": 1.3,
+                "descripcion_paso": "Eje Z (x=0, y=0):",
+                "expresion_latex_paso": "2z^2 - 6z = 0 \\implies 2z(z - 3) = 0 \\implies z = 0 \\text{ o } z = 3. \\text{ Puntos: } (0, 0, 0), (0, 0, 3)."
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Trazas (Intersecciones con los planos coordenados, usando la ecuación original).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Plano XY (z=0):",
+                "expresion_latex_paso": "3x^2 - y^2 + 4x = 0 \\implies 3(x + 2/3)^2 - y^2 = 4/3 \\implies \\frac{(x+2/3)^2}{4/9} - \\frac{y^2}{4/3} = 1. \\text{ Hipérbola (eje paralelo a X).}"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Plano XZ (y=0):",
+                "expresion_latex_paso": "3x^2 + 2z^2 + 4x - 6z = 0 \\implies 3(x + 2/3)^2 + 2(z - 3/2)^2 = 35/6 \\implies \\frac{(x+2/3)^2}{35/18} + \\frac{(z-3/2)^2}{35/12} = 1. \\text{ Elipse.}"
+            },
+            {
+                "paso_numero": 2.3,
+                "descripcion_paso": "Plano YZ (x=0):",
+                "expresion_latex_paso": "-y^2 + 2z^2 - 6z = 0 \\implies 2(z - 3/2)^2 - y^2 = 9/2 \\implies \\frac{(z-3/2)^2}{9/4} - \\frac{y^2}{9/2} = 1. \\text{ Hipérbola (eje paralelo a Z).}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Simetría (analizando la ecuación original).",
+                "expresion_latex_paso": "Ecuación: 3x^2 - y^2 + 2z^2 + 4x - 6z = 0"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Respecto al plano XY (z por -z): No simétrica (por el término -6z).",
+                "expresion_latex_paso": "3x^2 - y^2 + 2(-z)^2 + 4x - 6(-z) = 3x^2 - y^2 + 2z^2 + 4x + 6z \\neq 0"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Respecto al plano XZ (y por -y): Sí simétrica.",
+                "expresion_latex_paso": "3x^2 - (-y)^2 + 2z^2 + 4x - 6z = 3x^2 - y^2 + 2z^2 + 4x - 6z = 0"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "Respecto al plano YZ (x por -x): No simétrica (por el término +4x).",
+                "expresion_latex_paso": "3(-x)^2 - y^2 + 2z^2 + 4(-x) - 6z = 3x^2 - y^2 + 2z^2 - 4x - 6z \\neq 0"
+            },
+            {
+                 "paso_numero": 3.4,
+                "descripcion_paso": "Simetría respecto al centro \\( C = (-2/3, 0, 3/2) \\) y respecto a los planos y ejes que pasan por el centro.",
+                "expresion_latex_paso": "\\text{La superficie es simétrica respecto al plano coordenado } y=0. \\text{ También es simétrica respecto a su centro } C(-\\frac{2}{3}, 0, \\frac{3}{2})."
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Secciones transversales (usando la forma completada).",
+                "expresion_latex_paso": "3(x + \\frac{2}{3})^2 - y^2 + 2(z - \\frac{3}{2})^2 = \\frac{35}{6}"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Planos z = k:",
+                "expresion_latex_paso": "3(x + 2/3)^2 - y^2 = 35/6 - 2(k - 3/2)^2. \\text{ Hipérbolas (o dos rectas).}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Planos y = k:",
+                "expresion_latex_paso": "3(x + 2/3)^2 + 2(z - 3/2)^2 = 35/6 + k^2. \\text{ Elipses (siempre, ya que } 35/6 + k^2 > 0).}"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Planos x = k:",
+                "expresion_latex_paso": "2(z - 3/2)^2 - y^2 = 35/6 - 3(k + 2/3)^2. \\text{ Hipérbolas (o dos rectas).}"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Extensión de la superficie.",
+                "expresion_latex_paso": "\\frac{(x + 2/3)^2}{35/18} + \\frac{(z - 3/2)^2}{35/12} = 1 + \\frac{y^2}{35/6}. \\text{ El lado derecho es siempre } \\ge 1. \\text{ No hay restricciones para x, y, z. La superficie se extiende indefinidamente.}"
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "Gráfica (Descripción y comando GeoGebra).",
+                "expresion_latex_paso": "\\text{La superficie es un Hiperboloide de una hoja centrado en } C(-\\frac{2}{3}, 0, \\frac{3}{2}), \\text{ con eje de simetría paralelo al eje Y.}"
+            },
+            {
+                "paso_numero": 6.1,
+                "descripcion_paso": "Comando GeoGebra (usando la ecuación original):",
+                "geogebra": "3x^2 - y^2 + 2z^2 + 4x - 6z = 0"
+            }
+        ],
+        "resolucion_latex": "",
+        "geogebra": "3x^2 - y^2 + 2z^2 + 4x - 6z = 0"
+    },
+    {
+        "titulo": "Problema 14",
+        "descripcion": "Resolver la integral vectorial:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t^3}{1 + t^2}, \\frac{\\cos(2t)}{\\sqrt{1 - \\sin(2t)}}, t \\cdot e^{t^2} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "La integral de una función vectorial se calcula integrando cada una de sus funciones componentes por separado.",
+                "expresion_latex_paso": "\\int \\vec{f}(t) \\, dt = \\left( \\int f_1(t) \\, dt, \\int f_2(t) \\, dt, \\int f_3(t) \\, dt \\right)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos la integral de la primera componente \\(I_1 = \\int \\frac{t^3}{1 + t^2} \\, dt\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Realizamos una división larga o una manipulación algebraica. Artificio:",
+                "expresion_latex_paso": "\\frac{t^3}{1 + t^2} = \\frac{t(t^2 + 1 - 1)}{1 + t^2} = \\frac{t(t^2 + 1)}{1 + t^2} - \\frac{t}{1 + t^2} = t - \\frac{t}{1 + t^2}"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Integramos la expresión resultante.",
+                "expresion_latex_paso": "I_1 = \\int \\left( t - \\frac{t}{1 + t^2} \\right) dt = \\int t \\, dt - \\int \\frac{t}{1 + t^2} \\, dt"
+            },
+            {
+                "paso_numero": 2.3,
+                "descripcion_paso": "La primera integral es directa. Para la segunda, usamos la sustitución \\(u = 1 + t^2\\), \\(du = 2t \\, dt \\implies t \\, dt = du/2\\).",
+                "expresion_latex_paso": "I_1 = \\frac{t^2}{2} - \\int \\frac{1}{u} \\frac{du}{2} = \\frac{t^2}{2} - \\frac{1}{2} \\int \\frac{1}{u} \\, du"
+            },
+            {
+                "paso_numero": 2.4,
+                "descripcion_paso": "Resolvemos la integral en u y sustituimos de vuelta.",
+                "expresion_latex_paso": "I_1 = \\frac{t^2}{2} - \\frac{1}{2} \\ln|u| + C_1 = \\frac{t^2}{2} - \\frac{1}{2} \\ln(1 + t^2) + C_1 \\quad \\text{(ya que } 1+t^2 > 0)"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos la integral de la segunda componente \\(I_2 = \\int \\frac{\\cos(2t)}{\\sqrt{1 - \\sin(2t)}} \\, dt\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Usamos la sustitución \\(u = 1 - \\sin(2t)\\).",
+                "expresion_latex_paso": "du = -\\cos(2t) \\cdot 2 \\, dt = -2 \\cos(2t) \\, dt \\implies \\cos(2t) \\, dt = -\\frac{du}{2}"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Sustituimos en la integral.",
+                "expresion_latex_paso": "I_2 = \\int \\frac{1}{\\sqrt{u}} \\left( -\\frac{du}{2} \\right) = -\\frac{1}{2} \\int u^{-1/2} \\, du"
+            },
+            {
+                "paso_numero": 3.3,
+                "descripcion_paso": "Integramos respecto a u y sustituimos de vuelta.",
+                "expresion_latex_paso": "I_2 = -\\frac{1}{2} \\frac{u^{1/2}}{1/2} + C_2 = -u^{1/2} + C_2 = -\\sqrt{u} + C_2 = -\\sqrt{1 - \\sin(2t)} + C_2"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos la integral de la tercera componente \\(I_3 = \\int t \\cdot e^{t^2} \\, dt\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Usamos la sustitución \\(u = t^2\\).",
+                "expresion_latex_paso": "du = 2t \\, dt \\implies t \\, dt = \\frac{du}{2}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Sustituimos en la integral.",
+                "expresion_latex_paso": "I_3 = \\int e^u \\left( \\frac{du}{2} \\right) = \\frac{1}{2} \\int e^u \\, du"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Integramos respecto a u y sustituimos de vuelta.",
+                "expresion_latex_paso": "I_3 = \\frac{1}{2} e^u + C_3 = \\frac{1}{2} e^{t^2} + C_3"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Combinamos las integrales de las componentes, añadiendo un vector constante de integración \\(\\vec{C} = (C_1, C_2, C_3)\\).",
+                "expresion_latex_paso": "\\int \\vec{f}(t) \\, dt = \\left( \\frac{t^2}{2} - \\frac{1}{2} \\ln(1 + t^2), -\\sqrt{1 - \\sin(2t)}, \\frac{1}{2} e^{t^2} \\right) + \\vec{C}"
+            }
+        ],
+        "resolucion_latex": "\\int \\vec{f}(t) \\, dt = \\left( \\frac{t^2}{2} - \\frac{1}{2} \\ln(1 + t^2) + C_1, -\\sqrt{1 - \\sin(2t)} + C_2, \\frac{1}{2} e^{t^2} + C_3 \\right)"
+    },
+    {
+        "titulo": "Problema 15",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\ln\\left(\\frac{t^2 + 1}{\\sqrt{t}}\\right), \\arcsin(t^2) \\cdot \\arctan(t), \\frac{e^{3t} \\cdot \\sin^2(t)}{t^3 + 1} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "La derivada de la función vectorial \\(\\vec{f}(t) = (f_1(t), f_2(t), f_3(t))\\) se obtiene derivando cada componente.",
+                "expresion_latex_paso": "\\vec{f}'(t) = \\left( \\frac{d}{dt}f_1(t), \\frac{d}{dt}f_2(t), \\frac{d}{dt}f_3(t) \\right)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos la derivada de la primera componente \\(f_1(t) = \\ln\\left(\\frac{t^2 + 1}{\\sqrt{t}}\\right)\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Simplificamos la expresión usando propiedades de logaritmos.",
+                "expresion_latex_paso": "f_1(t) = \\ln(t^2 + 1) - \\ln(t^{1/2}) = \\ln(t^2 + 1) - \\frac{1}{2} \\ln(t)"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Derivamos la expresión simplificada usando la regla de la cadena.",
+                "expresion_latex_paso": "\\frac{d}{dt}f_1(t) = \\frac{1}{t^2 + 1} \\cdot (2t) - \\frac{1}{2} \\cdot \\frac{1}{t} = \\frac{2t}{t^2 + 1} - \\frac{1}{2t}"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos la derivada de la segunda componente \\(f_2(t) = \\arcsin(t^2) \\cdot \\arctan(t)\\) usando la regla del producto \\((uv)' = u'v + uv'\\).",
+                "expresion_latex_paso": "u = \\arcsin(t^2) \\implies u' = \\frac{1}{\\sqrt{1 - (t^2)^2}} \\cdot (2t) = \\frac{2t}{\\sqrt{1 - t^4}} \\\\ v = \\arctan(t) \\implies v' = \\frac{1}{1 + t^2}"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Aplicamos la regla del producto.",
+                "expresion_latex_paso": "\\frac{d}{dt}f_2(t) = \\left( \\frac{2t}{\\sqrt{1 - t^4}} \\right) \\arctan(t) + \\arcsin(t^2) \\left( \\frac{1}{1 + t^2} \\right) = \\frac{2t \\arctan(t)}{\\sqrt{1 - t^4}} + \\frac{\\arcsin(t^2)}{1 + t^2}"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos la derivada de la tercera componente \\(f_3(t) = \\frac{e^{3t} \\sin^2(t)}{t^3 + 1}\\) usando la regla del cociente \\((\\frac{u}{v})' = \\frac{u'v - uv'}{v^2}\\).",
+                "expresion_latex_paso": "u = e^{3t} \\sin^2(t) \\\\ v = t^3 + 1 \\implies v' = 3t^2"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Calculamos \\(u'\\) usando la regla del producto y la regla de la cadena.",
+                "expresion_latex_paso": "u' = (\\frac{d}{dt}e^{3t}) \\sin^2(t) + e^{3t} (\\frac{d}{dt}\\sin^2(t)) \\\\ u' = (e^{3t} \\cdot 3) \\sin^2(t) + e^{3t} (2 \\sin(t) \\cos(t)) \\\\ u' = e^{3t} (3 \\sin^2(t) + 2 \\sin(t) \\cos(t)) = e^{3t} \\sin(t) (3 \\sin(t) + 2 \\cos(t))"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Aplicamos la regla del cociente.",
+                "expresion_latex_paso": "\\frac{d}{dt}f_3(t) = \\frac{[e^{3t} \\sin(t) (3 \\sin(t) + 2 \\cos(t))] (t^3 + 1) - [e^{3t} \\sin^2(t)] (3t^2)}{(t^3 + 1)^2}"
+            },
+            {
+                "paso_numero": 4.3,
+                "descripcion_paso": "Factorizamos \\(e^{3t} \\sin(t)\\) en el numerador (opcional).",
+                "expresion_latex_paso": "\\frac{d}{dt}f_3(t) = \\frac{e^{3t} \\sin(t) [ (3 \\sin(t) + 2 \\cos(t))(t^3 + 1) - 3t^2 \\sin(t) ]}{(t^3 + 1)^2}"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Combinamos las derivadas de las componentes.",
+                "expresion_latex_paso": "\\vec{f}'(t) = \\left( \\frac{2t}{t^2 + 1} - \\frac{1}{2t}, \\frac{2t \\arctan(t)}{\\sqrt{1 - t^4}} + \\frac{\\arcsin(t^2)}{1 + t^2}, \\frac{e^{3t} \\sin(t) [ (3 \\sin(t) + 2 \\cos(t))(t^3 + 1) - 3t^2 \\sin(t) ]}{(t^3 + 1)^2} \\right)"
+            }
+        ],
+        "resolucion_latex": "\\vec{f}'(t) = \\left( \\frac{2t}{t^2 + 1} - \\frac{1}{2t}, \\frac{2t \\arctan(t)}{\\sqrt{1 - t^4}} + \\frac{\\arcsin(t^2)}{1 + t^2}, \\frac{e^{3t} \\sin(t) [ (3 \\sin(t) + 2 \\cos(t))(t^3 + 1) - 3t^2 \\sin(t) ]}{(t^3 + 1)^2} \\right)"
+    },
+    {
+        "titulo": "Problema 16",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\pi \\):",
+        "expresion_latex": "\\lim_{t \\to \\pi} \\left( \\frac{\\sin(3t)}{t - \\pi}, \\frac{1 - \\cos(t - \\pi)}{(t - \\pi)^3}, \\frac{\\tan(2t)}{t - \\pi} \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "Calculamos el límite componente a componente. Artificio: Usamos el cambio de variable \\(u = t - \\pi\\). Cuando \\(t \\to \\pi\\), \\(u \\to 0\\). Además, \\(t = u + \\pi\\).",
+                "expresion_latex_paso": "L = (L_1, L_2, L_3)"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Calculamos \\(L_1 = \\lim_{t \\to \\pi} \\frac{\\sin(3t)}{t - \\pi}\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{u \\to 0} \\frac{\\sin(3(u + \\pi))}{u} = \\lim_{u \\to 0} \\frac{\\sin(3u + 3\\pi)}{u}"
+            },
+            {
+                "paso_numero": 2.1,
+                "descripcion_paso": "Usamos la identidad \\(\\sin(x + 3\\pi) = \\sin(x + \\pi) = -\\sin(x)\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{u \\to 0} \\frac{-\\sin(3u)}{u}"
+            },
+            {
+                "paso_numero": 2.2,
+                "descripcion_paso": "Artificio: Usamos el límite notable \\(\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1\\).",
+                "expresion_latex_paso": "L_1 = \\lim_{u \\to 0} -3 \\cdot \\frac{\\sin(3u)}{3u} = -3 \\cdot 1 = -3"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos \\(L_2 = \\lim_{t \\to \\pi} \\frac{1 - \\cos(t - \\pi)}{(t - \\pi)^3}\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{u \\to 0} \\frac{1 - \\cos(u)}{u^3}"
+            },
+            {
+                "paso_numero": 3.1,
+                "descripcion_paso": "Indeterminación \\(\\frac{0}{0}\\). Artificio: Usamos el hecho de que para \\(u \\approx 0\\), \\(1 - \\cos(u) \\approx \\frac{u^2}{2}\\).",
+                "expresion_latex_paso": "L_2 = \\lim_{u \\to 0} \\frac{u^2 / 2}{u^3} = \\lim_{u \\to 0} \\frac{1}{2u}"
+            },
+            {
+                "paso_numero": 3.2,
+                "descripcion_paso": "Este límite no existe (tiende a \\(\\infty\\) o \\(-\\infty\\) dependiendo del lado por el que \\(u\\) se acerque a 0).",
+                "expresion_latex_paso": "L_2 \\text{ no existe.}"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos \\(L_3 = \\lim_{t \\to \\pi} \\frac{\\tan(2t)}{t - \\pi}\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{u \\to 0} \\frac{\\tan(2(u + \\pi))}{u} = \\lim_{u \\to 0} \\frac{\\tan(2u + 2\\pi)}{u}"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Usamos la periodicidad de la tangente: \\(\\tan(x + 2\\pi) = \\tan(x)\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{u \\to 0} \\frac{\\tan(2u)}{u}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Artificio: Usamos el límite notable \\(\\lim_{x \\to 0} \\frac{\\tan(x)}{x} = 1\\).",
+                "expresion_latex_paso": "L_3 = \\lim_{u \\to 0} 2 \\cdot \\frac{\\tan(2u)}{2u} = 2 \\cdot 1 = 2"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Dado que el límite de la segunda componente (\\(L_2\\)) no existe, el límite de la función vectorial no existe.",
+                "expresion_latex_paso": "\\lim_{t \\to \\pi} \\vec{f}(t) \\text{ no existe.}"
+            }
+        ],
+        "resolucion_latex": "\\text{El límite no existe porque el límite de la segunda componente no existe.}"
+    },
+    {
+        "titulo": "Problema 17",
+        "descripcion": "Analizar continuidad en \\( t = 1 \\) según el valor de \\( k \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{kt + 1} - \\sqrt{k + 1}}{t - 1}, \\frac{e^{t - 1} - 1}{t^2 - 1}, \\frac{t^3 - k}{t - 1} \\right) & t \\neq 1 \\\\ \\left( \\frac{k}{4}, 0, 3 \\right) & t = 1 \\end{cases}",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "Para que \\(\\vec{f}(t)\\) sea continua en \\( t = 1 \\), debe cumplirse \\(\\lim_{t \\to 1} \\vec{f}(t) = \\vec{f}(1)\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Identificamos \\(\\vec{f}(1)\\) a partir de la definición.",
+                "expresion_latex_paso": "\\vec{f}(1) = \\left( \\frac{k}{4}, 0, 3 \\right)"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Calculamos el límite de cada componente cuando \\( t \\to 1 \\) usando la definición para \\( t \\neq 1 \\).",
+                "expresion_latex_paso": "\\lim_{t \\to 1} \\vec{f}(t) = (L_1, L_2, L_3)"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Calculamos \\(L_1 = \\lim_{t \\to 1} \\frac{\\sqrt{kt + 1} - \\sqrt{k + 1}}{t - 1}\\). Indeterminación \\(\\frac{0}{0}\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Usamos L'Hôpital (derivando numerador y denominador respecto a t).",
+                "expresion_latex_paso": "L_1 = \\lim_{t \\to 1} \\frac{\\frac{d}{dt}(\\sqrt{kt + 1} - \\sqrt{k + 1})}{\\frac{d}{dt}(t - 1)} = \\lim_{t \\to 1} \\frac{\\frac{1}{2\\sqrt{kt + 1}} \\cdot k}{1}"
+            },
+            {
+                "paso_numero": 4.2,
+                "descripcion_paso": "Evaluamos el límite.",
+                "expresion_latex_paso": "L_1 = \\frac{k}{2\\sqrt{k(1) + 1}} = \\frac{k}{2\\sqrt{k + 1}} \\quad (\\text{asumiendo } k+1 > 0)"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Calculamos \\(L_2 = \\lim_{t \\to 1} \\frac{e^{t - 1} - 1}{t^2 - 1}\\). Indeterminación \\(\\frac{0}{0}\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 5.1,
+                "descripcion_paso": "Usamos L'Hôpital.",
+                "expresion_latex_paso": "L_2 = \\lim_{t \\to 1} \\frac{\\frac{d}{dt}(e^{t - 1} - 1)}{\\frac{d}{dt}(t^2 - 1)} = \\lim_{t \\to 1} \\frac{e^{t - 1}}{2t}"
+            },
+            {
+                "paso_numero": 5.2,
+                "descripcion_paso": "Evaluamos el límite.",
+                "expresion_latex_paso": "L_2 = \\frac{e^{1 - 1}}{2(1)} = \\frac{e^0}{2} = \\frac{1}{2}"
+            },
+            {
+                "paso_numero": 6,
+                "descripcion_paso": "Calculamos \\(L_3 = \\lim_{t \\to 1} \\frac{t^3 - k}{t - 1}\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 6.1,
+                "descripcion_paso": "Para que este límite exista y sea finito, el numerador debe tender a 0 cuando \\(t \\to 1\\) (para obtener la forma \\(\\frac{0}{0}\\)).",
+                "expresion_latex_paso": "\\lim_{t \\to 1} (t^3 - k) = 1^3 - k = 1 - k = 0 \\implies k = 1"
+            },
+            {
+                "paso_numero": 6.2,
+                "descripcion_paso": "Si \\(k = 1\\), calculamos el límite usando L'Hôpital o factorización.",
+                "expresion_latex_paso": "L_3 = \\lim_{t \\to 1} \\frac{t^3 - 1}{t - 1} = \\lim_{t \\to 1} \\frac{(t-1)(t^2 + t + 1)}{t - 1} = \\lim_{t \\to 1} (t^2 + t + 1)"
+            },
+            {
+                "paso_numero": 6.3,
+                "descripcion_paso": "Evaluamos el límite.",
+                "expresion_latex_paso": "L_3 = 1^2 + 1 + 1 = 3"
+            },
+            {
+                "paso_numero": 7,
+                "descripcion_paso": "Para que la función sea continua, los límites deben coincidir con \\(\\vec{f}(1) = (k/4, 0, 3)\\).",
+                "expresion_latex_paso": "\\left( \\frac{k}{2\\sqrt{k + 1}}, \\frac{1}{2}, 3 \\right) = \\left( \\frac{k}{4}, 0, 3 \\right)"
+            },
+            {
+                "paso_numero": 8,
+                "descripcion_paso": "Igualamos componente a componente.",
+                "expresion_latex_paso": "1. \\quad \\frac{k}{2\\sqrt{k + 1}} = \\frac{k}{4} \\\\ 2. \\quad \\frac{1}{2} = 0 \\\\ 3. \\quad 3 = 3"
+            },
+            {
+                "paso_numero": 9,
+                "descripcion_paso": "Analizamos la segunda ecuación: \\(\\frac{1}{2} = 0\\). Esta ecuación es falsa.",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 10,
+                "descripcion_paso": "Dado que la igualdad de la segunda componente nunca se cumple, no existe ningún valor de \\( k \\) para el cual la función \\(\\vec{f}(t)\\) sea continua en \\( t = 1 \\).",
+                "expresion_latex_paso": "\\text{No existe valor de } k \\text{ para que la función sea continua en } t = 1."
+            }
+        ],
+        "resolucion_latex": "\\text{La función no es continua en } t = 1 \\text{ para ningún valor de } k \\text{ porque el límite de la segunda componente es } 1/2 \\text{ mientras que el valor de la función en ese punto es } 0."
+    },
+    {
+        "titulo": "Problema 18",
+        "descripcion": "Dadas las funciones vectoriales, evaluar \\(\\vec{f}(2)\\) y \\(\\vec{g}(2)\\), y luego calcular \\(\\vec{f}(2) \\cdot \\vec{g}(2)\\) y \\(\\vec{f}(2) \\times \\vec{g}(2)\\):",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 + 1, \\frac{t}{t + 1}, \\sqrt{t + 2} \\right), \\quad \\vec{g}(t) = \\left( \\frac{t^2}{t - 1}, \\ln(t), t - 1 \\right)",
+        "pasos_resolucion": [
+            {
+                "paso_numero": 1,
+                "descripcion_paso": "Elegir un valor de \\( t \\) dentro del dominio común de \\(\\vec{f}(t)\\) y \\(\\vec{g}(t)\\). El dominio común es \\( (0, 1) \\cup (1, \\infty) \\). Elegimos \\( t = 2 \\).",
+                "expresion_latex_paso": "t = 2"
+            },
+            {
+                "paso_numero": 2,
+                "descripcion_paso": "Evaluar \\(\\vec{f}(t)\\) en \\( t = 2 \\).",
+                "expresion_latex_paso": "f_1(2) = 2^2 + 1 = 5 \\\\ f_2(2) = \\frac{2}{2 + 1} = \\frac{2}{3} \\\\ f_3(2) = \\sqrt{2 + 2} = \\sqrt{4} = 2 \\\\ \\implies \\vec{f}(2) = \\left( 5, \\frac{2}{3}, 2 \\right)"
+            },
+            {
+                "paso_numero": 3,
+                "descripcion_paso": "Evaluar \\(\\vec{g}(t)\\) en \\( t = 2 \\).",
+                "expresion_latex_paso": "g_1(2) = \\frac{2^2}{2 - 1} = \\frac{4}{1} = 4 \\\\ g_2(2) = \\ln(2) \\\\ g_3(2) = 2 - 1 = 1 \\\\ \\implies \\vec{g}(2) = \\left( 4, \\ln(2), 1 \\right)"
+            },
+            {
+                "paso_numero": 4,
+                "descripcion_paso": "Cálculo del Producto Punto: \\(\\vec{f}(2) \\cdot \\vec{g}(2) = f_1(2) g_1(2) + f_2(2) g_2(2) + f_3(2) g_3(2)\\).",
+                "expresion_latex_paso": "\\vec{f}(2) \\cdot \\vec{g}(2) = (5)(4) + \\left(\\frac{2}{3}\\right)(\\ln(2)) + (2)(1)"
+            },
+            {
+                "paso_numero": 4.1,
+                "descripcion_paso": "Simplificar el resultado del producto punto.",
+                "expresion_latex_paso": "\\vec{f}(2) \\cdot \\vec{g}(2) = 20 + \\frac{2}{3}\\ln(2) + 2 = 22 + \\frac{2}{3}\\ln(2)"
+            },
+            {
+                "paso_numero": 5,
+                "descripcion_paso": "Cálculo del Producto Cruz: \\(\\vec{f}(2) \\times \\vec{g}(2) = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 5 & 2/3 & 2 \\\\ 4 & \\ln(2) & 1 \\end{vmatrix}\\).",
+                "expresion_latex_paso": ""
+            },
+            {
+                "paso_numero": 5.1,
+                "descripcion_paso": "Componente \\(\\mathbf{i}\\): \\((\\frac{2}{3})(1) - (2)(\\ln(2))\\).",
+                "expresion_latex_paso": "\\frac{2}{3} - 2\\ln(2)"
+            },
+            {
+                "paso_numero": 5.2,
+                "descripcion_paso": "Componente \\(\\mathbf{j}\\): \\(- [(5)(1) - (2)(4)]\\).",
+                "expresion_latex_paso": "- (5 - 8) = - (-3) = 3"
+            },
+            {
+                "paso_numero": 5.3,
+                "descripcion_paso": "Componente \\(\\mathbf{k}\\): \\((5)(\\ln(2)) - (\\frac{2}{3})(4)\\).",
+                "expresion_latex_paso": "5\\ln(2) - \\frac{8}{3}"
+            },
+            {
+                "paso_numero": 5.4,
+                "descripcion_paso": "Vector resultante del producto cruz.",
+                "expresion_latex_paso": "\\vec{f}(2) \\times \\vec{g}(2) = \\left( \\frac{2}{3} - 2\\ln(2), 3, 5\\ln(2) - \\frac{8}{3} \\right)"
+            }
+        ],
+        "resolucion_latex": "\\text{Evaluando en } t=2: \\\\ \\vec{f}(2) = \\left( 5, \\frac{2}{3}, 2 \\right) \\\\ \\vec{g}(2) = \\left( 4, \\ln(2), 1 \\right) \\\\ \\\\ \\text{Producto Punto:} \\\\ \\vec{f}(2) \\cdot \\vec{g}(2) = 22 + \\frac{2}{3}\\ln(2) \\\\ \\\\ \\text{Producto Cruz:} \\\\ \\vec{f}(2) \\times \\vec{g}(2) = \\left( \\frac{2}{3} - 2\\ln(2), 3, 5\\ln(2) - \\frac{8}{3} \\right)"
+    },
+    {
+        "titulo": "Problema 19",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\sin(2t), \\frac{t}{t^2 + 1}, e^{t} \\cos(t) \\right)"
+    },
+    {
+        "titulo": "Problema 20",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t - 2)}{\\sqrt{t^2 - 16}}, \\sqrt{25 - t^2}, \\frac{t}{\\sqrt{t + 4}} \\right)"
+    },
+    {
+        "titulo": "Problema 21",
+        "descripcion": "Calcular el límite cuando \\( t \\to 3 \\):",
+        "expresion_latex": "\\lim_{t \\to 3} \\left( \\frac{\\sqrt{t + 1} - 2}{t - 3}, \\frac{\\cos(\\pi t) + 1}{t^2 - 9}, \\frac{e^{t - 3} - 1}{t - 3} \\right)"
+    },
+    {
+        "titulo": "Problema 22",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t \\ln(t^2 + 1), \\frac{\\sin(2t)}{t + 3}, e^{t^2} \\arctan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 23",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{t^2 - 1}{t - 1}, \\frac{e^t - e}{t - 1}, \\frac{\\sqrt{t + 3} - 2}{t - 1} \\right) & t \\neq 1 \\\\ \\left( 2, 1, \\frac{1}{4} \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 24",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 - 4, \\frac{t}{t - 1}, \\sqrt{t + 5} \\right), \\quad \\vec{g}(t) = \\left( \\frac{t}{t + 2}, \\ln(t + 1), t - 3 \\right)"
+    },
+    {
+        "titulo": "Problema 25",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t \\cos(\\pi t), \\frac{e^t}{t^2 + 1}, \\sin(t) e^{t} \\right)"
+    },
+    {
+        "titulo": "Problema 26",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "x^2 + y^2 + z^2 = 25"
+    },
+    {
+        "titulo": "Problema 27",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "9x^2 + 4y^2 - 36z = 0"
+    },
+    {
+        "titulo": "Problema 28",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "x^2 - y^2 + z^2 = 4"
+    },
+    {
+        "titulo": "Problema 29",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "z = x^2 - 2y^2"
+    },
+    {
+        "titulo": "Problema 30",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "\\frac{x^2}{16} + \\frac{y^2}{9} + \\frac{z^2}{4} = 1"
+    },
+    {
+        "titulo": "Problema 31",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "4x^2 + y^2 - 2z^2 = 0"
+    },
+    {
+        "titulo": "Problema 32",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "\\frac{x^2}{4} + \\frac{y^2}{25} = 1"
+    },
+    {
+        "titulo": "Problema 33",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "-\\frac{x^2}{9} - \\frac{y^2}{16} + \\frac{z^2}{25} = 1"
+    },
+    {
+        "titulo": "Problema 34",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "z = 3x^2 + 2y^2"
+    },
+    {
+        "titulo": "Problema 35",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "2x^2 + y^2 - z^2 = 9"
+    },
+    {
+        "titulo": "Problema 36",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t + 3)}{\\sqrt{16 - t^2}}, \\sqrt{t^2 - 9}, \\frac{\\cos(t)}{\\sqrt{t - 1}} \\right)"
+    },
+    {
+        "titulo": "Problema 37",
+        "descripcion": "Calcular el límite cuando \\( t \\to 2 \\):",
+        "expresion_latex": "\\lim_{t \\to 2} \\left( \\frac{\\sqrt{t + 2} - 2}{t - 2}, \\frac{\\sin(\\pi t)}{t^2 - 4}, \\frac{e^{t - 2} - 1}{t - 2} \\right)"
+    },
+    {
+        "titulo": "Problema 38",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 \\ln(t + 1), \\frac{\\cos(3t)}{t^2 + 1}, e^{2t} \\sin(t) \\right)"
+    },
+    {
+        "titulo": "Problema 39",
+        "descripcion": "Analizar la continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sin(2t)}{t}, \\frac{e^t - 1}{t}, \\frac{\\sqrt{1 + t} - 1}{t} \\right) & t \\neq 0 \\\\ \\left( 2, 1, \\frac{1}{2} \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 40",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 + 1, \\frac{t}{t + 2}, \\sqrt{t + 3} \\right), \\quad \\vec{g}(t) = \\left( \\frac{t}{t - 2}, \\ln(t + 1), t - 1 \\right)"
+    },
+    {
+        "titulo": "Problema 41",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{2} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t \\sin(\\pi t), \\frac{e^{2t}}{t^2 + 4}, \\cos(t) e^t \\right)"
+    },
+    {
+        "titulo": "Problema 42",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sin(t) \\ln(t + 2), \\frac{t^2}{e^t}, \\sqrt{t + 1} \\arctan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 43",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "\\frac{x^2}{25} + \\frac{y^2}{16} - \\frac{z^2}{9} = 1"
+    },
+    {
+        "titulo": "Problema 44",
+        "descripcion": "Calcular el límite cuando \\( t \\to 1 \\):",
+        "expresion_latex": "\\lim_{t \\to 1} \\left( \\frac{t^2 - 1}{t - 1}, \\frac{\\cos(\\pi t) - 1}{t - 1}, \\frac{\\ln(t)}{t - 1} \\right)"
+    },
+    {
+        "titulo": "Problema 45",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 - 1, \\frac{1}{t + 1}, \\sin(t) \\right), \\quad \\vec{g}(t) = \\left( \\frac{t}{t - 1}, e^t, \\cos(t) \\right)"
+    },
+    {
+        "titulo": "Problema 46",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "z = 4x^2 + y^2 - 4"
+    },
+    {
+        "titulo": "Problema 47",
+        "descripcion": "Analizar la continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sin(3t)}{t}, \\frac{e^{2t} - 1}{t}, \\frac{\\sqrt{1 + 2t} - 1}{t} \\right) & t \\neq 0 \\\\ \\left( 3, 2, 1 \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 48",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t - 1)}{\\sqrt{9 - t^2}}, \\sqrt{t + 2}, \\frac{\\sin(2t)}{\\sqrt{t - 3}} \\right)"
+    },
+    {
+        "titulo": "Problema 49",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\cos(\\pi t), \\frac{t}{t^2 + 1}, e^t \\sin(2t) \\right)"
+    },
+    {
+        "titulo": "Problema 50",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "x^2 + 4y^2 - z^2 = 0"
+    },
+    {
+        "titulo": "Problema 51",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sqrt{1 + t} - 1}{t}, \\frac{\\sin(2t)}{t}, \\frac{e^t - 1}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 52",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t e^{2t}, \\frac{\\ln(t + 1)}{t + 2}, \\cos(t) \\sqrt{t + 3} \\right)"
+    },
+    {
+        "titulo": "Problema 53",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "\\frac{x^2}{9} + \\frac{y^2}{16} = 1"
+    },
+    {
+        "titulo": "Problema 54",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2, \\frac{t}{t - 2}, \\cos(t) \\right), \\quad \\vec{g}(t) = \\left( \\frac{1}{t + 1}, \\sin(t), e^t \\right)"
+    },
+    {
+        "titulo": "Problema 55",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{t^2 - 1}{t - 1}, \\frac{\\ln(t)}{t - 1}, \\frac{\\sqrt{t + 1} - \\sqrt{2}}{t - 1} \\right) & t \\neq 1 \\\\ \\left( 2, 0, \\frac{1}{2\\sqrt{2}} \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 56",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "z = x^2 - y^2 + 1"
+    },
+    {
+        "titulo": "Problema 57",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t + 1)}{\\sqrt{25 - t^2}}, \\sqrt{t - 4}, \\frac{\\tan(t)}{\\sqrt{t + 2}} \\right)"
+    },
+    {
+        "titulo": "Problema 58",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t^2 \\cos(\\pi t), \\frac{e^t}{t + 1}, \\sin(t) \\cos(t) \\right)"
+    },
+    {
+        "titulo": "Problema 59",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "\\frac{x^2}{4} + \\frac{y^2}{9} + \\frac{z^2}{25} = 1"
+    },
+    {
+        "titulo": "Problema 60",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sin(4t)}{t}, \\frac{e^{3t} - 1}{t}, \\frac{\\sqrt{1 + 3t} - 1}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 61",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^3 e^{-t}, \\frac{\\sin(t)}{t + 1}, \\ln(t + 2) \\sqrt{t} \\right)"
+    },
+    {
+        "titulo": "Problema 62",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 + 2, \\frac{t}{t - 1}, \\cos(2t) \\right), \\quad \\vec{g}(t) = \\left( \\frac{1}{t + 2}, \\sin(t), e^{-t} \\right)"
+    },
+    {
+        "titulo": "Problema 63",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "z = 2x^2 - 3y^2"
+    },
+    {
+        "titulo": "Problema 64",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{t^2 - 1}{t - 1}, \\frac{e^t - e}{t - 1}, \\frac{\\sqrt{t + 3} - 2}{t - 1} \\right) & t \\neq 1 \\\\ \\left( 2, 1, \\frac{1}{4} \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 65",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{2} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\sin(2\\pi t), \\frac{t^2}{t^2 + 1}, e^t \\cos(t) \\right)"
+    },
+    {
+        "titulo": "Problema 66",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "x^2 + y^2 - 4z^2 = 0"
+    },
+    {
+        "titulo": "Problema 67",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t - 2)}{\\sqrt{16 - t^2}}, \\sqrt{t + 3}, \\frac{\\cos(3t)}{\\sqrt{t - 1}} \\right)"
+    },
+    {
+        "titulo": "Problema 68",
+        "descripcion": "Calcular el límite cuando \\( t \\to 2 \\):",
+        "expresion_latex": "\\lim_{t \\to 2} \\left( \\frac{\\sqrt{t + 2} - 2}{t - 2}, \\frac{\\sin(\\pi t)}{t - 2}, \\frac{e^{t - 2} - 1}{t - 2} \\right)"
+    },
+    {
+        "titulo": "Problema 69",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "\\frac{x^2}{16} - \\frac{y^2}{9} + \\frac{z^2}{4} = 1"
+    },
+    {
+        "titulo": "Problema 70",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t \\sin(2t), \\frac{e^t}{t + 3}, \\ln(t + 1) \\cos(t) \\right)"
+    },
+    {
+        "titulo": "Problema 71",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 - 3, \\frac{t}{t + 1}, \\sin(t) \\right), \\quad \\vec{g}(t) = \\left( \\frac{1}{t - 1}, \\cos(t), e^{2t} \\right)"
+    },
+    {
+        "titulo": "Problema 87",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "2x^2 - 3y^2 + 4z^2 - 12x + 6y + 8z = 10"
+    },
+    {
+        "titulo": "Problema 88",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{t^2}{t - 2}, \\ln(t^2 + 1), \\sin(t) e^{-t} \\right), \\quad \\vec{g}(t) = \\left( \\sqrt{t + 3}, \\frac{\\cos(t)}{t - 1}, \\arctan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 89",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sin(2t) \\ln(t + 1)}{e^t}, \\sqrt{t^2 + 1} \\arctan(t^2), \\frac{e^{t^2}}{\\cos(t) + 1} \\right)"
+    },
+    {
+        "titulo": "Problema 90",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sin(t^2)}{t^3}, \\frac{e^{t^2} - 1}{t \\sin(t)}, \\frac{\\ln(1 + t^2) - t^2}{t^4} \\right)"
+    },
+    {
+        "titulo": "Problema 91",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "\\frac{(x - 1)^2}{9} - \\frac{(y + 2)^2}{16} + \\frac{(z - 3)^2}{4} = 1"
+    },
+    {
+        "titulo": "Problema 92",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t^2 \\sin(\\pi t^2), \\frac{e^{t^2}}{\\ln(t + 2)}, \\cos(t) \\arctan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 93",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t^2 - 9)}{\\sqrt{t^2 - 16}}, \\sqrt{\\cos(t)}, \\frac{\\arctan(t)}{\\sqrt{t^2 - 4t + 3}} \\right)"
+    },
+    {
+        "titulo": "Problema 94",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sin(t^2 - 1)}{t - 1}, \\frac{e^{t^2 - 1} - 1}{(t - 1)^2}, \\frac{\\ln(t^2) - 2\\ln(t)}{t^2 - 1} \\right) & t \\neq 1 \\\\ \\left( 2, 1, \\frac{1}{2} \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 95",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "z = x^2 - 2y^2 + 2x + 4y - 5"
+    },
+    {
+        "titulo": "Problema 96",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\tan(t^2)}{t^3}, \\frac{e^{t^2} - 1 - t^2}{t^4}, \\frac{\\arctan(t) - t}{t^3} \\right)"
+    },
+    {
+        "titulo": "Problema 97",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{t \\cos(t^2)}{\\ln(t + 2)}, e^{t^2} \\sin(2t), \\sqrt{\\sin(t) + 1} \\arctan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 98",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{t^2}{t - 1}, \\ln(t^2 + 2), \\cos(t) e^t \\right), \\quad \\vec{g}(t) = \\left( \\sqrt{t + 2}, \\frac{\\sin(t)}{t + 1}, \\arctan(t^2) \\right)"
+    },
+    {
+        "titulo": "Problema 99",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "4x^2 + y^2 - 2z^2 - 8x + 4y + 12z = 20"
+    },
+    {
+        "titulo": "Problema 100",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t \\sin(\\pi t^3), \\frac{e^{t^2} \\cos(t)}{\\ln(t + 2)}, \\arctan(t) \\sin(2t) \\right)"
+    },
+    {
+        "titulo": "Problema 100",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln|\\cos^{-1}(t^2 - 1)|}{\\sqrt{t^4 - 10t^2 + 9}}, \\sqrt{\\sinh^{-1}(\\tan(t^3 - 2t))}, \\frac{\\csc(2t)}{\\sqrt{\\ln(t^5 - 3t^2 + 2)}} \\right)"
+    },
+    {
+        "titulo": "Problema 101",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sqrt{1 + \\sin(3t^2)} - e^{t^3}}{\\tan(2t^2)}, \\frac{\\cosh(4t) - \\cos(5t)}{t^4}, \\frac{\\arcsin(e^{2t} - 1)}{\\sqrt{t} \\cdot \\ln(1 + t^2)} \\right)"
+    },
+    {
+        "titulo": "Problema 102",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^4 \\cdot \\sec^{-1}(\\sqrt{\\sinh(t^2 + 1)}), \\frac{\\ln(t^3 + e^{t^2})}{\\sqrt{\\cos^{-1}(t^2)}}, \\frac{\\tanh(3t) \\cdot e^{t^3}}{t^5 - 4t + 1} \\right)"
+    },
+    {
+        "titulo": "Problema 103",
+        "descripcion": "Analizar continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sin(\\ln(1 + t^2))}{t}, \\frac{e^{\\tan(2t)} - 1}{t^3}, \\frac{\\sqrt{\\cosh(t^2)} - 1}{\\sin(3t^2)} \\right) & t \\neq 0 \\\\ \\left( 0, 2, \\frac{1}{3} \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 104",
+        "descripcion": "Hallar el dominio de:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\arcsin(\\ln|t^2 - 1|)}{\\sqrt{t^6 - 5t^4 + 4}}, \\sqrt{\\cot^{-1}(\\cosh(t^2 - 3))}, \\frac{\\tan^{-1}(e^{t^2})}{\\sqrt{\\sin(t^3 - t)}} \\right)"
+    },
+    {
+        "titulo": "Problema 105",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\frac{\\pi}{2} \\):",
+        "expresion_latex": "\\lim_{t \\to \\frac{\\pi}{2}} \\left( \\frac{\\sin(3t) - 1}{\\sqrt{\\cos(t)} \\cdot (t - \\frac{\\pi}{2})}, \\frac{\\tanh(t - \\frac{\\pi}{2})}{\\ln|\\cos(t)|}, \\frac{\\sec(2t)}{\\sqrt{t - \\frac{\\pi}{2}}} \\right)"
+    },
+    {
+        "titulo": "Problema 106",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{t^3 \\cdot \\sinh^{-1}(\\sqrt{t^4 + 1})}{\\cos(2t)}, \\sqrt{\\ln(\\cosh(t^3))} \\cdot \\arctan(t^2), \\frac{e^{\\sin^{-1}(t^2)}}{t^6 - 9t^2 + 8} \\right)"
+    },
+    {
+        "titulo": "Problema 107",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "4x^2 - 3y^2 + 5z^2 + 2xy - 4yz + 6x - 8z + 10 = 0"
+    },
+    {
+        "titulo": "Problema 108",
+        "descripcion": "Resolver la integral vectorial:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{\\sin(\\ln(t^2 + 1))}{t^3 - 2t + 1}, \\frac{\\sqrt{\\cosh(3t)}}{\\arctan(t^2)}, t^2 \\cdot e^{\\sinh(t^3)} \\right)"
+    },
+    {
+        "titulo": "Problema 109",
+        "descripcion": "Analizar continuidad en \\( t = 1 \\) según el valor de \\( k \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{k \\sin(t)} - \\sqrt{k}}{t - 1}, \\frac{e^{\\cosh(t - 1)} - 1}{(t - 1)^3}, \\frac{\\ln(t^2 + k) - \\ln(k + 1)}{t - 1} \\right) & t \\neq 1 \\\\ \\left( \\frac{k}{2}, 0, 2k \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 110",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\arcsin(3t - 1)}{\\sqrt{25 - t^2}}, \\sqrt{t^3 - 6t^2 + 11t - 6}, \\frac{\\sec(t)}{\\ln|t^2 - 5t + 4|} \\right)"
+    },
+    {
+        "titulo": "Problema 111",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\pi/2 \\):",
+        "expresion_latex": "\\lim_{t \\to \\pi/2} \\left( \\frac{\\tan(3t)}{t - \\pi/2}, \\frac{\\cos^2(t)}{(2t - \\pi)^2}, \\frac{\\ln(\\sin(2t))}{\\pi - 2t} \\right)"
+    },
+    {
+        "titulo": "Problema 112",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^2 \\cdot \\tanh^{-1}(\\sqrt{t}), \\frac{\\sinh(2t)}{\\cos(t^2)}, e^{t^3} \\cdot \\text{sech}(t) \\right)"
+    },
+    {
+        "titulo": "Problema 113",
+        "descripcion": "Analizar continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{e^{\\sin(t^2)} - 1}{t^3}, \\frac{\\ln(1 + \\tan(t))}{\\sqrt{t}}, \\frac{\\sqrt[3]{1 + 5t} - 1}{t} \\right) & t \\neq 0 \\\\ \\left( \\frac{1}{3}, 1, \\frac{5}{3} \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 114",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "4x^2 + 9y^2 - z^2 + 8x - 18y + 4z = 0"
+    },
+    {
+        "titulo": "Problema 115",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t \\cdot \\arctan(t^2), \\frac{e^{t^3}}{\\sqrt{1 + t^4}}, \\sin(2t) \\cdot \\cosh(t) \\right)"
+    },
+    {
+        "titulo": "Problema 116",
+        "descripcion": "Hallar el dominio de:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{|t^2 - 9|}}{\\ln|t|}, \\arcsin(2t - 1), \\frac{\\tan^{-1}(t)}{\\sqrt{|t^3 - 4t|}} \\right)"
+    },
+    {
+        "titulo": "Problema 117",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\cos(t^2) - e^{-t^2}}{t^4}, \\frac{\\sqrt{1 + 2t^3} - 1 - t^3}{t^6}, \\frac{\\sin(t^2) - t^2}{t^5} \\right)"
+    },
+    {
+        "titulo": "Problema 118",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t^2 + \\cos(t))}{\\sqrt{t^4 + 1}}, t^2 \\cdot \\sec^{-1}(e^{t}), \\frac{\\sinh^{-1}(t^3)}{1 + \\tan(t)} \\right)"
+    },
+    {
+        "titulo": "Problema 119",
+        "descripcion": "Analizar continuidad en \\( t = 2 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{t^2 + t - 2} - 2}{t - 2}, \\frac{\\ln(t^2 - 3t + 2)}{t - 2}, \\frac{e^{t - 2} - 1}{(t - 2)^2} \\right) & t \\neq 2 \\\\ \\left( \\frac{5}{4}, 1, \\frac{1}{2} \\right) & t = 2 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 120",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "x^2 + 2y^2 + 3z^2 - 2xy + 4yz - 6x + 8z = 15"
+    },
+    {
+        "titulo": "Problema 121",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\arccos(2t^2 - 1)}{\\sqrt{9 - |t|}}, \\sqrt{\\sin(\\pi t) - \\cos(\\pi t)}, \\frac{\\cot^{-1}(t^2 - 4)}{\\ln(t^3 - t)} \\right)"
+    },
+    {
+        "titulo": "Problema 122",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\cosh(3t) - \\cos(2t)}{t^2}, \\frac{\\tanh(t^2) - \\sin(t^2)}{t^4}, \\frac{\\text{sech}(t) - e^{-t^2}}{t^3} \\right)"
+    },
+    {
+        "titulo": "Problema 123",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( e^{\\sin^{-1}(t^2)} \\cdot \\ln(1 + t^4), \\frac{\\tanh^{-1}(t^3)}{\\sqrt{1 + t^6}}, \\frac{\\cos(t^2) \\cdot \\text{arcsec}(t)}{1 + t^4} \\right)"
+    },
+    {
+        "titulo": "Problema 124",
+        "descripcion": "Analizar continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\ln(t^2 + t - 1)}{t - 1}, \\frac{\\sqrt{t^3 - 1} - \\sqrt{2(t - 1)}}{t - 1}, \\frac{\\sinh(t - 1)}{t^2 - 1} \\right) & t \\neq 1 \\\\ \\left( \\frac{3}{2}, \\frac{\\sqrt{2}}{4}, \\frac{1}{2} \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 125",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "2x^2 + 5y^2 + 2z^2 + 4xy + 2xz + 4yz - 6x + 10y + 2z = 8"
+    },
+    {
+        "titulo": "Problema 126",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{-1}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t \\cdot \\tan^{-1}(t^3)}{\\sqrt{1 + t^4}}, \\frac{e^{-t^2} \\cdot \\sinh(t)}{1 + t^2}, \\frac{\\ln(1 + t^2)}{1 + |t|} \\right)"
+    },
+    {
+        "titulo": "Problema 127",
+        "descripcion": "Hallar el dominio de:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{t - e^{-t}}}{\\ln(t^2 - 2t)}, \\frac{\\arcsin(e^t - 1)}{\\sqrt{t^2 - 4}}, \\frac{\\text{sech}(t)}{\\ln|t^2 - 3t + 2|} \\right)"
+    },
+    {
+        "titulo": "Problema 128",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( \\frac{t^2 \\cdot \\arctan(t^{-2})}{e^{1/t} - 1}, \\frac{\\ln(1 + 2t^3) - \\ln(t^3)}{\\sqrt{t^2 + 1} - t}, \\frac{\\sqrt{t^4 + t} - t^2}{\\sin(1/t)} \\right)"
+    },
+    {
+        "titulo": "Problema 129",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(\\sin(\\pi t^2) + \\sqrt{t^4 - 10t^2 + 9})}{\\sqrt{16 - t^2}}, \\sqrt{\\frac{\\arcsin(2t^2 - 1)}{t^3 - 4t}}, \\frac{\\arccos(t^3 - 3t)}{\\ln|t^5 - 7t^3 + 10t|} \\right)"
+    },
+    {
+        "titulo": "Problema 130",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sqrt[5]{1 + \\sin(3t^3)} - \\sqrt[3]{1 + \\tan(2t^2)}}{t^4}, \\frac{\\arccos(1 - t^4) - \\sqrt{2t^4}}{t^6}, \\frac{\\arctan(t^3) - \\arcsin(t^3)}{t^9} \\right)"
+    },
+    {
+        "titulo": "Problema 131",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^5 \\cdot \\arcsin(\\sqrt{t^4 + 1}) \\cdot \\ln(\\arctan(t^2 + 1)), \\frac{e^{\\arccos(t^3 + 2t)}}{\\sqrt{\\arctan(t^4 + 1)}}, \\frac{\\arccot(e^{t^3})}{\\ln(\\arcsin(t^2 + t))} \\right)"
+    },
+    {
+        "titulo": "Problema 132",
+        "descripcion": "Analizar continuidad en \\( t = 0 \\) para:",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sin(\\arctan(t^3)) - \\tan(\\arcsin(t^3))}{t^9}, \\frac{\\sqrt{1 + \\arccos(1 - t^4)} - 1}{t^6}, \\frac{\\ln(1 + \\arcsin(t^2))}{t^4} \\right) & t \\neq 0 \\\\ \\left( \\frac{1}{3}, \\frac{1}{8}, \\frac{1}{2} \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 133",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "5x^2 + 5y^2 + 3z^2 - 6xy + 4xz - 4yz + 2x - 8y + 12z = 20"
+    },
+    {
+        "titulo": "Problema 134",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t^3 \\cdot \\arctan(t^4)}{\\sqrt{1 + t^{10}}}, \\frac{\\ln(1 + \\arccos(1 - t^2))}{t^4 + 1}, e^{\\arcsin(t^3)} \\cdot \\sin(t^5) \\right)"
+    },
+    {
+        "titulo": "Problema 135",
+        "descripcion": "Hallar el dominio de:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\arccos(t^5 - 5t^3 + 4t)}{\\sqrt{\\ln|t^6 - 12t^4 + 32t^2|}}, \\sqrt[6]{\\frac{\\arcsin(t^4 - 2t^2)}{t^8 - 18t^6 + 72t^4}}, \\frac{\\arctan(t^3 - 3t)}{\\ln|\\arccos(t^2 - 1)|} \\right)"
+    },
+    {
+        "titulo": "Problema 136",
+        "descripcion": "Calcular el límite cuando \\( t \\to 1 \\):",
+        "expresion_latex": "\\lim_{t \\to 1} \\left( \\frac{\\arctan(t^5 - 1) - \\arcsin(t^3 - 1)}{(t - 1)^4}, \\frac{\\sqrt{\\arccos(t^2 - 1)} - \\sqrt{\\pi/2}}{(t - 1)^2}, \\frac{\\ln(\\arcsin(t^4 - 1)) - \\ln(\\pi/2)}{t - 1} \\right)"
+    },
+    {
+        "titulo": "Problema 137",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{t^9}{\\arccos(\\sqrt{t^6 + 1})} \\cdot \\ln\\left(\\frac{\\arctan(t^4 + 1)}{\\arcsin(t^2 + 1)}\\right), \\frac{e^{\\arctan(t^5 + t^3)}}{\\sqrt{\\arccot(t^7 + t)}}, \\sin\\left(\\frac{\\arccos(t^3)}{1 + \\arcsin(t^2)}\\right) \\right)"
+    },
+    {
+        "titulo": "Problema 138",
+        "descripcion": "Analizar continuidad en \\( t = 2 \\) según valores de \\( k \\) y \\( m \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{k \\cdot \\arctan(t - 2)} - \\sqrt{m \\cdot (t - 2)}}{(t - 2)^2}, \\frac{\\arccos(kt) - \\arccos(2k)}{t - 2}, \\frac{\\ln|\\arcsin(mt)| - \\ln|\\arcsin(2m)|}{t - 2} \\right) & t \\neq 2 \\\\ \\left( \\frac{\\sqrt{k}}{2}, \\frac{k}{\\sqrt{1 - 4k^2}}, \\frac{m}{\\sqrt{1 - 4m^2}} \\right) & t = 2 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 139",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "7x^2 + 7y^2 + 5z^2 - 10xy + 8xz - 8yz - 14x + 28y - 35z = 49"
+    },
+    {
+        "titulo": "Problema 140",
+        "descripcion": "Resolver la integral:",
+        "expresion_latex": "\\int_{-1}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t^5 \\cdot \\arcsin(t^4)}{\\sqrt{1 - t^8}}, \\frac{\\arctan(t^6)}{1 + t^{12}}, e^{\\arccos(t^2)} \\cdot \\cos(t^7) \\right)"
+    },
+    {
+        "titulo": "Problema 141",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{\\ln(\\arcsin(t^3 - 1))}, \\frac{\\arccos(t^4 - 2)}{\\sqrt{t^6 - 7t^4 + 6t^2}}, \\frac{\\tan(\\pi t)}{\\ln|t^5 - 10t^3 + 9t|} \\right)"
+    },
+    {
+        "titulo": "Problema 142",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sin(\\tan(t^2)) - t^2}{t^6}, \\frac{\\ln(\\cos(2t)) + 2t^2}{t^4}, \\frac{\\sqrt[3]{1 + \\arctan(3t)} - 1}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 143",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^6 \\cdot \\arccos(e^{-t^2}) \\cdot \\ln(\\tanh(t^3)), \\frac{\\arcsin(\\sqrt{t^4 + 1})}{\\cosh(\\arctan(t^2))}, \\tan\\left(\\frac{\\ln(t^2+1)}{\\arcsin(t)}\\right) \\right)"
+    },
+    {
+        "titulo": "Problema 144",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\ln(t^3 + t - 1)}{t-1}, \\frac{\\arctan(t^2) - \\arctan(1)}{t-1}, \\frac{e^{\\sin(\\pi t)} - 1}{t-1} \\right) & t \\neq 1 \\\\ \\left( 4, 1, -\\pi \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 145",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "3x^2 - 2y^2 + z^2 + 6x + 8y - 4z = 10"
+    },
+    {
+        "titulo": "Problema 146",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{0}^{\\pi/2} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t^2 \\cos(2t), \\frac{\\sin(t) \\cos(t)}{1 + \\sin^2(t)}, e^{3t} \\sin(t) \\right)"
+    },
+    {
+        "titulo": "Problema 147",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{t^2 - 5t + 4}}{\\ln(|t| - 1)}, \\arcsin\\left(\\frac{t}{t+2}\\right), \\frac{\\sqrt{\\cosh(t) - 2}}{t^3 - 8} \\right)"
+    },
+    {
+        "titulo": "Problema 148",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( \\left(1 + \\frac{3}{t^2}\\right)^{t^2}, t \\left(\\arctan(t+1) - \\frac{\\pi}{2}\\right), \\frac{\\ln(t^3 + 5t) - \\ln(2t^3 - t^2)}{\\sqrt{t^4 + t^2} / (t^2 + 1)} \\right)"
+    },
+    {
+        "titulo": "Problema 149",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( (\\sin(t))^{\\arctan(t)}, \\ln\\left(\\frac{\\sqrt{t^4+1} \\cdot \\cosh(t)}{\\arcsin(t^2)}\\right), \\frac{t^3 \\cdot \\sec^{-1}(2t)}{e^{t^2} + \\ln(t)} \\right)"
+    },
+    {
+        "titulo": "Problema 150",
+        "descripcion": "Analizar la continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{1 + \\tan(2t)} - \\sqrt{1 - \\sin(2t)}}{t}, \\frac{\\arcsin(t^2)}{1 - \\cos(3t)}, \\frac{t^3}{t - \\ln(1+t)} \\right) & t \\neq 0 \\\\ \\left( 2, \\frac{2}{9}, 2 \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 151",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t - \\sin(\\pi t))}{\\sqrt{\\arccos(t^2 - 1) - \\pi/2}}, \\sqrt[4]{(t^3 - 8)\\arcsin(t/3)}, \\frac{\\text{arccosh}(t^2+1)}{\\ln|t^4 - 5t^2|} \\right)"
+    },
+    {
+        "titulo": "Problema 152",
+        "descripcion": "Calcular el límite cuando \\( t \\to 1 \\):",
+        "expresion_latex": "\\lim_{t \\to 1} \\left( \\frac{t^t - 1}{t \\ln(t)}, \\frac{\\arctan(t) - \\pi/4}{t-1}, \\frac{\\sqrt{2 + t^2} - \\sqrt{3t}}{(t-1)^2} \\right)"
+    },
+    {
+        "titulo": "Problema 153",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\arctan(\\ln(\\sinh(t^2))), \\frac{e^{\\sec(t)}}{\\sqrt{t^2 + \\cos(t)}}, t^{\\sqrt{t}} \\right)"
+    },
+    {
+        "titulo": "Problema 154",
+        "descripcion": "Analizar la continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sinh(3t) - 3t}{t^3}, \\frac{\\text{arctanh}(t^2)}{t \\sin(t)}, \\frac{\\sqrt[4]{1 + 8t} - 1}{t} \\right) & t \\neq 0 \\\\ \\left( \\frac{9}{2}, 1, 2 \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 155",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "x^2 + 4y^2 - z^2 - 6x + 8y + 2z + 12 = 0"
+    },
+    {
+        "titulo": "Problema 156",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{1}^{e} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{\\ln^2(t)}{t}, t^3 \\ln(t), \\sin(\\pi \\ln(t)) \\right)"
+    },
+    {
+        "titulo": "Problema 157",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^3, \\frac{1}{t^2+1}, \\arctan(t) \\right), \\quad \\vec{g}(t) = \\left( \\ln(t), e^{-t}, \\frac{t}{\\sqrt{t^2+4}} \\right)"
+    },
+    {
+        "titulo": "Problema 158",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{t - \\lfloor t \\rfloor}}{\\ln(t^2 - 1)}, \\arccos\\left(\\frac{e^t}{2}\\right), \\frac{1}{\\sqrt{|\\sin(t)| - |\\cos(t)|}} \\right)"
+    },
+    {
+        "titulo": "Problema 159",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( t^2 (\\sec(1/t) - 1), \\frac{\\text{arccot}(t)}{\\arcsin(1/t)}, \\frac{\\sqrt{t^3+t} - \\sqrt{t^3-t}}{\\sqrt{t}} \\right)"
+    },
+    {
+        "titulo": "Problema 160",
+        "descripcion": "Dada la función vectorial \\( \\vec{G}(t) = \\int_{0}^{t^2} \\vec{f}(x) \\, dx \\), donde",
+        "expresion_latex": "\\vec{f}(x) = \\left( \\frac{\\sin(x)}{x}, e^{-x^2}, \\sqrt{1 + x^3} \\right)"
+    },
+    {
+        "titulo": "Problema 161",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{\\ln(t^2 - 3)}}{\\arccos(t - 2)}, \\sqrt[3]{\\frac{t}{t^3 - 2t^2 - t + 2}}, \\frac{\\arcsin(e^{-t})}{\\sqrt{4 - t}} \\right)"
+    },
+    {
+        "titulo": "Problema 162",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{e^{t^2} - \\cos(2t)}{t^2}, \\frac{t^2}{\\arcsin(t) - \\tan(t)}, \\left(1 + \\sin(t)\\right)^{1/t} \\right)"
+    },
+    {
+        "titulo": "Problema 163",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\ln\\left(\\frac{\\sin(t^3)}{\\sqrt{t^2+1}}\\right), e^{\\arctan(\\sqrt{t})} \\cdot \\cos(t^2), \\frac{t \\cdot \\arcsin(2t)}{1 + e^{3t}} \\right)"
+    },
+    {
+        "titulo": "Problema 164",
+        "descripcion": "Analizar la continuidad en \\( t = 2 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{t+2} - \\sqrt{3t-2}}{t-2}, \\frac{\\sin(\\pi t)}{t^2 - 4}, (t-1)^{\\frac{1}{t-2}} \\right) & t \\neq 2 \\\\ \\left( -\\frac{1}{4}, -\\frac{\\pi}{4}, e \\right) & t = 2 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 165",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "2x^2 + y^2 - 4z^2 - 8x + 4y + 24z = 30"
+    },
+    {
+        "titulo": "Problema 166",
+        "descripcion": "Resolver la integral vectorial indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t}{\\sqrt{1 - t^4}}, t^2 e^{-t^3}, \\frac{\\cos(\\ln t)}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 167",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{r}(t) = \\left( \\cos(2t), \\sin(2t), t^2 \\right), \\quad \\vec{s}(t) = \\left( e^t, t e^t, \\ln(t+1) \\right)"
+    },
+    {
+        "titulo": "Problema 168",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{\\frac{t^2-4}{1-t^2}}, \\ln(\\sin^2(\\pi t)), \\frac{\\arccos(t/5)}{\\sqrt{t^3-t}} \\right)"
+    },
+    {
+        "titulo": "Problema 169",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( \\sqrt{t^2 + 3t} - \\sqrt{t^2 - t}, \\frac{\\ln(t^2 + e^t)}{\\ln(t^3 + e^{2t})}, t \\sin\\left(\\frac{2}{t}\\right) \\right)"
+    },
+    {
+        "titulo": "Problema 170",
+        "descripcion": "Dada la curva definida por la función vectorial:",
+        "expresion_latex": "\\vec{r}(t) = \\left( e^t \\cos(t), e^t \\sin(t), e^t \\right)"
+    },
+    {
+        "titulo": "Problema 161",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{\\ln(t^2 - 3)}}{\\arccos(t - 2)}, \\sqrt[3]{\\frac{t}{t^3 - 2t^2 - t + 2}}, \\frac{\\arcsin(e^{-t})}{\\sqrt{4 - t}} \\right)"
+    },
+    {
+        "titulo": "Problema 162",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{e^{t^2} - \\cos(2t)}{t^2}, \\frac{t^2}{\\arcsin(t) - \\tan(t)}, \\left(1 + \\sin(t)\\right)^{1/t} \\right)"
+    },
+    {
+        "titulo": "Problema 163",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\ln\\left(\\frac{\\sin(t^3)}{\\sqrt{t^2+1}}\\right), e^{\\arctan(\\sqrt{t})} \\cdot \\cos(t^2), \\frac{t \\cdot \\arcsin(2t)}{1 + e^{3t}} \\right)"
+    },
+    {
+        "titulo": "Problema 164",
+        "descripcion": "Analizar la continuidad en \\( t = 2 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt{t+2} - \\sqrt{3t-2}}{t-2}, \\frac{\\sin(\\pi t)}{t^2 - 4}, (t-1)^{\\frac{1}{t-2}} \\right) & t \\neq 2 \\\\ \\left( -\\frac{1}{4}, -\\frac{\\pi}{4}, e \\right) & t = 2 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 165",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "2x^2 + y^2 - 4z^2 - 8x + 4y + 24z = 30"
+    },
+    {
+        "titulo": "Problema 166",
+        "descripcion": "Resolver la integral vectorial indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t}{\\sqrt{1 - t^4}}, t^2 e^{-t^3}, \\frac{\\cos(\\ln t)}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 167",
+        "descripcion": "Dadas las funciones vectoriales:",
+        "expresion_latex": "\\vec{r}(t) = \\left( \\cos(2t), \\sin(2t), t^2 \\right), \\quad \\vec{s}(t) = \\left( e^t, t e^t, \\ln(t+1) \\right)"
+    },
+    {
+        "titulo": "Problema 168",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{\\frac{t^2-4}{1-t^2}}, \\ln(\\sin^2(\\pi t)), \\frac{\\arccos(t/5)}{\\sqrt{t^3-t}} \\right)"
+    },
+    {
+        "titulo": "Problema 169",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( \\sqrt{t^2 + 3t} - \\sqrt{t^2 - t}, \\frac{\\ln(t^2 + e^t)}{\\ln(t^3 + e^{2t})}, t \\sin\\left(\\frac{2}{t}\\right) \\right)"
+    },
+    {
+        "titulo": "Problema 170",
+        "descripcion": "Dada la curva definida por la función vectorial:",
+        "expresion_latex": "\\vec{r}(t) = \\left( e^t \\cos(t), e^t \\sin(t), e^t \\right)"
+    },
+    {
+        "titulo": "Problema 171",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(5t - t^2)}{\\sqrt{t^2 - 9}}, \\arcsin\\left(\\frac{t-1}{3}\\right), \\frac{\\sqrt{25 - t^2}}{t^2 - t - 6} \\right)"
+    },
+    {
+        "titulo": "Problema 172",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\arctan(2t)}{\\sin(3t)}, \\frac{\\sqrt{1+t^2} - 1}{t^2}, \\frac{e^{t^3} - 1}{\\ln(1+t^3)} \\right)"
+    },
+    {
+        "titulo": "Problema 173",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( t^4 \\cdot \\arccos(1/t), \\frac{\\ln(t^2+4)}{e^{2t}}, \\sqrt{t^3 + \\sin^2(t)} \\right)"
+    },
+    {
+        "titulo": "Problema 174",
+        "descripcion": "Analizar la continuidad en \\( t = 3 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{t^2 - 9}{t - 3}, \\frac{\\ln(t-2)}{t^2 - 9}, \\frac{\\sqrt{t+1} - 2}{t-3} \\right) & t \\neq 3 \\\\ \\left( 6, \\frac{1}{6}, \\frac{1}{4} \\right) & t = 3 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 175",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "z = 2x^2 + 3y^2 - 12"
+    },
+    {
+        "titulo": "Problema 176",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t e^{t^2}, \\frac{t^2}{\\sqrt{1+t^3}}, \\sin(\\pi t) \\cos(\\pi t) \\right)"
+    },
+    {
+        "titulo": "Problema 177",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{t^3 - 8}, \\frac{\\ln(t+1)}{\\sqrt{16-t^2}}, \\frac{t}{\\sin(t) - 1} \\right)"
+    },
+    {
+        "titulo": "Problema 178",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\pi/2 \\):",
+        "expresion_latex": "\\lim_{t \\to \\pi/2} \\left( \\frac{\\cos(t)}{t - \\pi/2}, \\frac{\\sin(2t)}{\\cos(t)}, (t - \\pi/2) \\tan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 179",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sin(\\arctan(t^2)), \\ln(\\cos(e^t)), \\sqrt{\\frac{t+1}{t-1}} \\right)"
+    },
+    {
+        "titulo": "Problema 180",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "\\frac{x^2}{4} + \\frac{y^2}{9} - z^2 = 1"
+    },
+    {
+        "titulo": "Problema 181",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{t^2-2t-3}}{\\ln(t)}, \\arccos\\left(\\frac{1}{t^2+1}\\right), \\frac{1}{\\sqrt{\\sin(\\pi t)}} \\right)"
+    },
+    {
+        "titulo": "Problema 182",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{e^{2t} - e^{-t}}{\\sin(t)}, \\frac{1 - \\cos(t^2)}{t^4}, \\frac{\\ln(1+t^2)}{t(e^t-1)} \\right)"
+    },
+    {
+        "titulo": "Problema 183",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\arcsin(t) \\cdot \\arccos(t), \\frac{t^2}{\\arctan(t)}, e^{\\sin(t^3)} \\right)"
+    },
+    {
+        "titulo": "Problema 184",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{|t-1|}{t-1}, \\frac{\\sin(t^2-1)}{t-1}, \\frac{\\sqrt{t+3}-2}{t^2-1} \\right) & t \\neq 1 \\\\ \\left( 1, 2, \\frac{1}{8} \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 185",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "y^2 + 4z^2 = 16"
+    },
+    {
+        "titulo": "Problema 186",
+        "descripcion": "Resolver la integral vectorial indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{e^{\\arctan(t)}}{1+t^2}, t^3 \\sqrt{1+t^4}, \\cos^3(t) \\sin(t) \\right)"
+    },
+    {
+        "titulo": "Problema 187",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{t - \\sqrt{t^2-1}}, \\frac{\\ln(4-t)}{\\sqrt{t}}, \\frac{1}{\\cos(\\pi t) - 1} \\right)"
+    },
+    {
+        "titulo": "Problema 188",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\arcsin(t) - t}{t^3}, \\frac{e^t - e^{-t} - 2t}{t^3}, \\frac{\\ln(\\cos(t))}{t^2} \\right)"
+    },
+    {
+        "titulo": "Problema 189",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( e^{t^2 \\sin(t)}, \\ln(\\ln(t^2+1)), \\frac{\\sqrt{t+1}}{e^t + t} \\right)"
+    },
+    {
+        "titulo": "Problema 190",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "4x^2 + y^2 - 9z^2 = 0"
+    },
+    {
+        "titulo": "Problema 191",
+        "descripcion": "Analizar la continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sin(t^3)}{t^2}, \\frac{1 - \\sqrt{1-t^2}}{t^2}, t \\ln(|t|) \\right) & t \\neq 0 \\\\ \\left( 0, \\frac{1}{2}, 0 \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 192",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{0}^{\\pi/4} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\tan^2(t), t \\sin(2t), \\frac{\\cos(t)}{1 + \\sin^2(t)} \\right)"
+    },
+    {
+        "titulo": "Problema 193",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\arcsin(t/2)}{\\sqrt{t^2 - t - 2}}, \\ln(\\cos(\\pi t)), \\sqrt[6]{t^4 - 1} \\right)"
+    },
+    {
+        "titulo": "Problema 194",
+        "descripcion": "Calcular el límite cuando \\( h \\to 0 \\):",
+        "expresion_latex": "\\lim_{h \\to 0} \\frac{\\vec{r}(t+h) - \\vec{r}(t)}{h} \\quad \\text{para} \\quad \\vec{r}(t) = \\left( \\ln(t^2+1), \\frac{1}{t}, e^{t^2} \\right)"
+    },
+    {
+        "titulo": "Problema 195",
+        "descripcion": "Si \\( \\vec{r}(t) = \\left( x(t), y(t), z(t) \\right) \\) satisface la ecuación \\( x^2(t) + 2y^2(t) - z^3(t) = 5 \\) y se sabe que \\( \\vec{r}(1) = (2, 1, 1) \\) y \\( \\vec{r}'(1) = (1, -1, \\alpha) \\), hallar el valor de \\( \\alpha \\).",
+        "expresion_latex": "t"
+    },
+    {
+        "titulo": "Problema 196",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "x^2 - y^2 - 4z^2 - 2x - 4y + 8z = 7"
+    },
+    {
+        "titulo": "Problema 197",
+        "descripcion": "Resolver la integral indefinida:",
+        "expresion_latex": "\\int (\\vec{a} \\times \\vec{r}(t)) \\, dt \\quad \\text{donde} \\quad \\vec{a} = (1, 0, -1) \\quad \\text{y} \\quad \\vec{r}(t) = (t, t^2, \\cos(t))"
+    },
+    {
+        "titulo": "Problema 198",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{\\tan(t)}, \\ln(2 - |t|), \\frac{\\arcsin(t^2-1)}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 199",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\pi \\):",
+        "expresion_latex": "\\lim_{t \\to \\pi} \\left( \\frac{\\sin^2(t)}{(t-\\pi)^2}, \\frac{1 + \\cos(t)}{(t-\\pi)^2}, \\frac{e^{\\sin(t)} - 1}{t-\\pi} \\right)"
+    },
+    {
+        "titulo": "Problema 200",
+        "descripcion": "Dada la curva \\( \\vec{r}(t) = (\\cos(t), \\sin(t), t) \\), encontrar el vector tangente unitario \\( \\vec{T}(t) \\) y luego calcular su derivada \\( \\vec{T}'(t) \\). (El vector normal principal \\( \\vec{N}(t) \\) es paralelo a \\( \\vec{T}'(t) \\)).",
+        "expresion_latex": "\\vec{r}'(t)"
+    },
+    {
+        "titulo": "Problema 201",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{\\ln(t+2)}}{\\sqrt{5-t}}, \\arcsin\\left(\\frac{t-1}{t+1}\\right), \\frac{1}{t^3 - 4t} \\right)"
+    },
+    {
+        "titulo": "Problema 202",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\tan(t) - \\sin(t)}{t^3}, \\frac{\\sqrt{1+t^2} - 1}{\\cos(t) - 1}, \\frac{e^{\\sin(t)} - 1}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 203",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{t^2 \\ln(t)}{t+1}, (t^2+1) \\arctan(t^3), \\sin(t \\cos(t)) \\right)"
+    },
+    {
+        "titulo": "Problema 204",
+        "descripcion": "Analizar la continuidad en \\( t = \\pi/2 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\cos(t)}{t - \\pi/2}, \\frac{\\sin(2t)}{2t - \\pi}, (1 + \\cos(t))^{\\cot(t)} \\right) & t \\neq \\pi/2 \\\\ \\left( -1, -1, 1 \\right) & t = \\pi/2 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 205",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "z = \\frac{y^2}{4} - \\frac{x^2}{9}"
+    },
+    {
+        "titulo": "Problema 206",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t}{1+t^4}, \\arcsin(t), t e^{-t} \\right)"
+    },
+    {
+        "titulo": "Problema 207",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\arccos(\\ln(t)), \\frac{\\sqrt{9-t^2}}{t^2-t-6}, \\tan(\\pi t / 2) \\right)"
+    },
+    {
+        "titulo": "Problema 208",
+        "descripcion": "Calcular el límite cuando \\( t \\to 1 \\):",
+        "expresion_latex": "\\lim_{t \\to 1} \\left( \\frac{\\ln(t^2)}{t-1}, \\frac{\\arctan(t) - \\pi/4}{t-1}, \\frac{e^t - e}{t^2-1} \\right)"
+    },
+    {
+        "titulo": "Problema 209",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\tan(\\sin(t^2)), \\cos(e^{\\sqrt{t}}), \\frac{\\ln(t+1)}{\\cos(t)} \\right)"
+    },
+    {
+        "titulo": "Problema 210",
+        "descripcion": "Identificar y describir la superficie cuádrica dada por la ecuación:",
+        "expresion_latex": "-x^2 - y^2 + \\frac{z^2}{4} = 1"
+    },
+    {
+        "titulo": "Problema 211",
+        "descripcion": "Analizar la continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{1 - \\cos(3t)}{t^2}, \\frac{t^2}{\\sin(t^2) + t^3}, e^{-1/t^2} \\right) & t \\neq 0 \\\\ \\left( \\frac{9}{2}, 1, 0 \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 212",
+        "descripcion": "Resolver la integral indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{1}{\\sqrt{4-t^2}}, \\frac{t}{9+t^2}, \\sec^2(t) \\tan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 213",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{t^3 - t}, \\ln(\\arccos(t/3)), \\frac{1}{t^2 - 5t + 6} \\right)"
+    },
+    {
+        "titulo": "Problema 214",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( \\frac{t^3 + 2t}{5t^3 - t^2 + 1}, \\arctan(e^t), t (\\ln(t+1) - \\ln(t)) \\right)"
+    },
+    {
+        "titulo": "Problema 215",
+        "descripcion": "Dadas \\( \\vec{u}(t) = (t, t^2, t^3) \\) y \\( \\vec{v}(t) = (\\sin t, \\cos t, e^t) \\), calcular \\( \\frac{d}{dt}(\\vec{u}(t) \\times \\vec{v}(t)) \\).",
+        "expresion_latex": "(\\vec{u} \\times \\vec{v})' = \\vec{u}' \\times \\vec{v} + \\vec{u} \\times \\vec{v}'"
+    },
+    {
+        "titulo": "Problema 216",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "x = y^2 + 1"
+    },
+    {
+        "titulo": "Problema 217",
+        "descripcion": "Analizar la continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sin|t|}{t}, \\arctan(1/t), \\frac{e^t - 1}{|t|} \\right)"
+    },
+    {
+        "titulo": "Problema 218",
+        "descripcion": "Resolver la integral vectorial indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( (2t+1) e^{t^2+t}, \\frac{\\arcsin t}{\\sqrt{1-t^2}}, t \\cos(t^2) \\right)"
+    },
+    {
+        "titulo": "Problema 219",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\ln(\\tan^2(t)), \\sqrt{\\arccos(t^2)}, \\frac{1}{e^t - 2} \\right)"
+    },
+    {
+        "titulo": "Problema 220",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( (1 + 2t)^{1/t}, \\frac{\\ln(1+t \\sin t)}{t^2}, \\frac{\\arctan(3t^2)}{1 - \\cos(t)} \\right)"
+    },
+    {
+        "titulo": "Problema 221",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\arcsin(\\sqrt{1-t^2}), e^{t / (t+1)}, \\ln(\\sec t + \\tan t) \\right)"
+    },
+    {
+        "titulo": "Problema 222",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "\\frac{(x-1)^2}{4} + \\frac{(y+2)^2}{9} + \\frac{z^2}{1} = 1"
+    },
+    {
+        "titulo": "Problema 223",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sqrt[3]{t} - 1}{t-1}, \\frac{\\sin(\\pi t)}{t-1}, \\frac{\\ln(t^3)}{t^2-1} \\right) & t \\neq 1 \\\\ \\left( \\frac{1}{3}, -\\pi, \\frac{3}{2} \\right) & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 224",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{-1}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t^2 |t|, e^{-|t|}, \\frac{t}{1+t^2} \\right)"
+    },
+    {
+        "titulo": "Problema 225",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{\\arcsin(t) - \\pi/6}}{\\ln(1-t)}, \\frac{1}{\\sqrt{t^4-16}}, \\arccos(t^2-t) \\right)"
+    },
+    {
+        "titulo": "Problema 226",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{1-\\cos^3(t)}{t \\sin(t)}, \\frac{t \\arctan(t)}{1-\\cos(2t)}, \\frac{\\sqrt{1+\\sin t} - \\sqrt{1-\\sin t}}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 227",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\arctan\\left(\\frac{1+t}{1-t}\\right), t^{\\cos t}, \\frac{\\sin(t^2)}{e^t+1} \\right)"
+    },
+    {
+        "titulo": "Problema 228",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "y = x^2 + z^2 - 2x + 4z + 5"
+    },
+    {
+        "titulo": "Problema 229",
+        "descripcion": "Analizar la continuidad en \\( t = \\pi \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sin(t)}{\\sin(2t)}, \\frac{t-\\pi}{\\tan t}, \\frac{\\ln(1+\\cos t)}{t-\\pi} \\right) & t \\neq \\pi \\\\ \\left( \\frac{1}{2}, 1, 0 \\right) & t = \\pi \\end{cases}"
+    },
+    {
+        "titulo": "Problema 230",
+        "descripcion": "Resolver la integral indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t \\arctan(t), e^t \\cos(t), \\ln(t^2+1) \\right)"
+    },
+    {
+        "titulo": "Problema 231",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{\\cos t}}{\\ln(1-t^2)}, \\arcsin(\\sqrt{t}), \\frac{1}{4\\sin^2 t - 1} \\right)"
+    },
+    {
+        "titulo": "Problema 232",
+        "descripcion": "Calcular el límite cuando \\( t \\to 1 \\):",
+        "expresion_latex": "\\lim_{t \\to 1} \\left( \\frac{\\sin(\\pi t)}{1-t}, (2-t)^{\\tan(\\pi t / 2)}, \\frac{\\arccos t}{\\sqrt{1-t}} \\right)"
+    },
+    {
+        "titulo": "Problema 233",
+        "descripcion": "Si \\( \\vec{r}(t) = (x(t), y(t), z(t)) \\) satisface \\( x e^y + y \\cos z + z \\ln x = 1 \\), y se sabe que \\( \\vec{r}(0) = (1, 0, \\pi/2) \\) y \\( (x'(0), y'(0)) = (1, 2) \\), hallar \\( z'(0) \\).",
+        "expresion_latex": "t"
+    },
+    {
+        "titulo": "Problema 234",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "(x+1)^2 - \\frac{(y-1)^2}{4} - \\frac{(z+2)^2}{9} = 1"
+    },
+    {
+        "titulo": "Problema 235",
+        "descripcion": "Dadas \\( \\vec{f}(u) = (\\ln u, \\sqrt{u}, e^{1/u}) \\) y \\( u(t) = \\cos t + 1 \\). Analizar la continuidad de la función compuesta \\( \\vec{g}(t) = \\vec{f}(u(t)) \\) en \\( t=\\pi \\).",
+        "expresion_latex": "u(\\pi)"
+    },
+    {
+        "titulo": "Problema 236",
+        "descripcion": "Resolver la integral indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\sin^3(t), \\frac{1}{1+\\cos t}, t \\sec^2(t) \\right)"
+    },
+    {
+        "titulo": "Problema 237",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{\\frac{\\ln t}{\\arcsin(t-1)}}, \\frac{t}{t^5-t}, \\arccos(\\sqrt{t^2-3}) \\right)"
+    },
+    {
+        "titulo": "Problema 238",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sin(\\arctan t)}{t}, \\frac{e^{t^3}-1}{\\ln(1+t^3)}, \\frac{\\sqrt{4+t} - 2}{\\tan(3t)} \\right)"
+    },
+    {
+        "titulo": "Problema 239",
+        "descripcion": "Sea \\( \\vec{r}(t) \\) una función vectorial tal que \\( ||\\vec{r}(t)|| = c \\) (constante) para todo \\( t \\). Demostrar que \\( \\vec{r}'(t) \\) es ortogonal a \\( \\vec{r}(t) \\) para todo \\( t \\) (asumiendo que \\( \\vec{r}'(t) \\) existe).",
+        "expresion_latex": "\\vec{r}(t) \\cdot \\vec{r}(t) = ||\\vec{r}(t)||^2 = c^2"
+    },
+    {
+        "titulo": "Problema 240",
+        "descripcion": "Discutir y graficar la superficie representada por:",
+        "expresion_latex": "x^2 - 4y^2 = 0"
+    },
+    {
+        "titulo": "Problema 241",
+        "descripcion": "Analizar la continuidad en \\( t = 0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\text{sgn}(t) \\cos(t), \\frac{\\ln(1+t^2)}{|t|}, \\sqrt{t^2+1} \\right) \\quad (\\text{sgn}(t) \\text{ es la función signo})"
+    },
+    {
+        "titulo": "Problema 242",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( (t^2+1) e^t, \\frac{t^3}{t^2+1}, \\arctan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 243",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\arcsin(\\ln(t^2)), \\frac{\\sqrt{1-e^t}}{t}, \\frac{1}{\\sqrt{\\cos(\\pi t)}} \\right)"
+    },
+    {
+        "titulo": "Problema 244",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\arcsin(2t)}{\\arctan(3t)}, \\frac{t^2}{\\arccos(1-t^2)}, \\frac{e^{\\arcsin t} - 1}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 245",
+        "descripcion": "Sea \\( \\vec{u}(t) \\) un vector unitario ( \\( ||\\vec{u}(t)|| = 1 \\) ) para todo \\( t \\). Si \\( \\vec{u}'(t) \\) existe, ¿cuál es el valor de \\( \\vec{u}(t) \\cdot \\vec{u}'(t) \\)?",
+        "expresion_latex": "\\vec{u}(t) \\cdot \\vec{u}(t) = 1"
+    },
+    {
+        "titulo": "Problema 246",
+        "descripcion": "Considerar la ecuación \\( z = xy \\). ¿Qué tipo de superficie representa?",
+        "expresion_latex": "x = (X-Y)/\\sqrt{2}, y = (X+Y)/\\sqrt{2}"
+    },
+    {
+        "titulo": "Problema 247",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\left( (t - \\lfloor t \\rfloor) \\sin(\\pi t), \\frac{\\ln t}{t-1}, \\lfloor t^2 + 1 \\rfloor \\right)"
+    },
+    {
+        "titulo": "Problema 248",
+        "descripcion": "Resolver la integral vectorial indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t+1}{t^2+2t+5}, \\sin(\\ln t) \\frac{1}{t}, t^2 \\sin(t) \\right)"
+    },
+    {
+        "titulo": "Problema 249",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\ln(\\sin t + \\cos t), \\frac{\\arccos(1/t)}{\\sqrt{t-1}}, \\frac{t}{e^{2t}-e^t} \\right)"
+    },
+    {
+        "titulo": "Problema 250",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0^+ \\):",
+        "expresion_latex": "\\lim_{t \\to 0^+} \\left( t \\ln(\\sin t), \\sqrt{t} \\cot t, (\\tan t)^t \\right)"
+    },
+    {
+        "titulo": "Problema 251",
+        "descripcion": "Derivar la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\cos(\\arcsin(t^2)), \\arctan(e^t + \\ln t), \\frac{\\sqrt{t^3+1}}{\\sin(t)} \\right)"
+    },
+    {
+        "titulo": "Problema 252",
+        "descripcion": "Discutir y graficar la superficie representada por:",
+        "expresion_latex": "x^2 + 2y^2 + 3 = 0"
+    },
+    {
+        "titulo": "Problema 253",
+        "descripcion": "Analizar la continuidad en \\( t = 1 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\ln(t^2)}{(t-1)^2}, \\frac{\\cos(\\pi t/2)}{t-1}, \\frac{e^{1/(t-1)}}{1 + e^{1/(t-1)}} \\right) & t \\neq 1 \\\\ \\text{No definida} & t = 1 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 254",
+        "descripcion": "Resolver la integral indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{t^2}{t^3+1}, \\frac{1}{t^2+4t+5}, \\frac{2t-1}{t^2-t-2} \\right)"
+    },
+    {
+        "titulo": "Problema 255",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{\\frac{t}{1-\\ln t}}, \\arcsin(t^2-2), \\frac{1}{\\sqrt[3]{t^2-4}} \\right)"
+    },
+    {
+        "titulo": "Problema 256",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( \\sqrt{t^4+t^2+1} - t^2, t \\left( \\frac{\\pi}{2} - \\arctan t \\right), \\frac{e^{2t}+t}{e^{2t}-1} \\right)"
+    },
+    {
+        "titulo": "Problema 257",
+        "descripcion": "Dadas \\( \\vec{u}(t) = (e^t, \\cos t, t^2) \\) y \\( \\vec{v}(t) = (t, \\sin t, \\ln t) \\), calcular \\( \\frac{d}{dt}(\\vec{u}(t) \\cdot \\vec{v}(t)) \\) usando la regla del producto.",
+        "expresion_latex": "(\\vec{u} \\cdot \\vec{v})' = \\vec{u}' \\cdot \\vec{v} + \\vec{u} \\cdot \\vec{v}'"
+    },
+    {
+        "titulo": "Problema 258",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "z = 4 - x^2 - y^2"
+    },
+    {
+        "titulo": "Problema 259",
+        "descripcion": "Analizar la continuidad de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{1}{t^2-9}, \\tan(\\pi t), \\sqrt{t^2-1} \\right)"
+    },
+    {
+        "titulo": "Problema 260",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{0}^{\\ln 2} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( e^{2t}, t e^t, \\frac{e^t}{1+e^{2t}} \\right)"
+    },
+    {
+        "titulo": "Problema 261",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\ln(\\sec t), \\sqrt{1 - \\tan^2 t}, \\frac{\\arcsin(\\cos t)}{t} \\right)"
+    },
+    {
+        "titulo": "Problema 262",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sin(t^4)}{t^3}, \\frac{\\arctan(t^2) - t^2}{t^6}, \\frac{t}{e^{-1/t}} \\right)"
+    },
+    {
+        "titulo": "Problema 263",
+        "descripcion": "Sea \\( \\vec{r}(t) \\) una función vectorial diferenciable tal que \\( \\vec{r}(t) \\cdot \\vec{r}'(t) = 0 \\) para todo \\( t \\). ¿Qué se puede concluir sobre \\( ||\\vec{r}(t)|| \\)?",
+        "expresion_latex": "||\\vec{r}(t)||^2 = \\vec{r}(t) \\cdot \\vec{r}(t)"
+    },
+    {
+        "titulo": "Problema 264",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "4(x-1)^2 + (z+1)^2 = y"
+    },
+    {
+        "titulo": "Problema 265",
+        "descripcion": "Si \\( \\vec{f}(t) \\) es continua en \\( t=a \\) y \\( g(t) \\) es continua en \\( t=a \\), ¿es necesariamente continua la función \\( \\vec{h}(t) = g(t) \\vec{f}(t) \\) en \\( t=a \\)?",
+        "expresion_latex": "Instrucción: Usar las propiedades de los límites para funciones escalares y vectoriales para justificar la respuesta."
+    },
+    {
+        "titulo": "Problema 266",
+        "descripcion": "Resolver la integral indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( t^2 \\ln(t), \\arcsin(t), e^{2t} \\sin(t) \\right)"
+    },
+    {
+        "titulo": "Problema 267",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{\\arcsin(\\sqrt{t}) - \\pi/4}, \\frac{\\ln(t^2-t-12)}{t-5}, \\arccos(1 - e^{-t}) \\right)"
+    },
+    {
+        "titulo": "Problema 268",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\sin t}{t} \\vec{i} + \\frac{1-\\cos t}{t^2} \\vec{j} + t \\ln t \\vec{k} \\right)"
+    },
+    {
+        "titulo": "Problema 269",
+        "descripcion": "Calcular la derivada segunda \\( \\vec{r}''(t) \\) para \\( \\vec{r}(t) = (\\arctan t, \\ln(1+t^2), t e^t) \\).",
+        "expresion_latex": "\\vec{r}'(t)"
+    },
+    {
+        "titulo": "Problema 270",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "y^2 - x^2 - z^2 = 1"
+    },
+    {
+        "titulo": "Problema 271",
+        "descripcion": "Si \\( \\vec{f}(t) \\) y \\( \\vec{g}(t) \\) son continuas en \\( t=a \\), ¿es necesariamente continua la función \\( h(t) = \\vec{f}(t) \\cdot \\vec{g}(t) \\) en \\( t=a \\)?",
+        "expresion_latex": "Instrucción: Usar las propiedades de los límites para el producto punto para justificar la respuesta."
+    },
+    {
+        "titulo": "Problema 272",
+        "descripcion": "Resolver la integral definida:",
+        "expresion_latex": "\\int_{1}^{2} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{1}{t^3}, \\ln(t), \\frac{t}{\\sqrt{t^2+1}} \\right)"
+    },
+    {
+        "titulo": "Problema 273",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{\\ln(\\frac{t+1}{t-1})}, \\frac{\\arcsin(t/4)}{t^2-1}, \\tan(t) \\right)"
+    },
+    {
+        "titulo": "Problema 274",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( \\frac{\\cos(t) - \\cos(3t)}{t^2}, \\frac{\\arctan(t) - \\sin(t)}{t^3}, \\frac{1 - \\sqrt{\\cos t}}{t^2} \\right)"
+    },
+    {
+        "titulo": "Problema 275",
+        "descripcion": "Hallar un vector tangente a la curva de intersección de las superficies \\( z = x^2 + y^2 \\) y \\( z = 4 - y \\) en el punto \\( ( \\sqrt{7}/2, 1/2, 2) \\).",
+        "expresion_latex": "Instrucción: Parametrizar la curva (puede ser difícil) o encontrar los gradientes de las superficies en el punto y calcular su producto cruz (el producto cruz de los vectores normales es tangente a la curva)."
+    },
+    {
+        "titulo": "Problema 276",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "\\frac{y^2}{4} - \\frac{x^2}{9} = 1"
+    },
+    {
+        "titulo": "Problema 277",
+        "descripcion": "Si \\( \\vec{f}(t) \\) y \\( \\vec{g}(t) \\) son continuas en \\( t=a \\), ¿es necesariamente continua la función \\( \\vec{h}(t) = \\vec{f}(t) \\times \\vec{g}(t) \\) en \\( t=a \\)?",
+        "expresion_latex": "Instrucción: Usar las propiedades de los límites para el producto cruz para justificar la respuesta."
+    },
+    {
+        "titulo": "Problema 278",
+        "descripcion": "Resolver la integral indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\sin^2(t) \\cos^2(t), \\sec^4(t), t \\sin(t^2) \\cos(t^2) \\right)"
+    },
+    {
+        "titulo": "Problema 279",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\ln(t^2-4)}{\\sqrt{t^2-9}}, \\arcsin(e^{-t^2}), \\frac{1}{\\cos(\\pi t)} \\right)"
+    },
+    {
+        "titulo": "Problema 280",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( e^{-t} \\sin(t), \\frac{\\ln(t^2+1)}{t}, \\frac{t+\\cos t}{t-\\sin t} \\right)"
+    },
+    {
+        "titulo": "Problema 281",
+        "descripcion": "Si \\( \\vec{r}(t) = (x(t), y(t)) \\) define una curva en el plano tal que \\( x(t)^3 + y(t)^3 = 9 x(t) y(t) \\) (Folio de Descartes), hallar \\( \\vec{r}'(t) \\) en el punto \\( (4, 2) \\) si \\( x'(t) = 1 \\) en ese punto.",
+        "expresion_latex": "t"
+    },
+    {
+        "titulo": "Problema 282",
+        "descripcion": "Discutir y graficar la superficie cuádrica:",
+        "expresion_latex": "x^2 + y^2 + z^2 - 4x + 6y - 2z + 10 = 0"
+    },
+    {
+        "titulo": "Problema 283",
+        "descripcion": "Analizar la continuidad en \\( t=0 \\):",
+        "expresion_latex": "\\vec{f}(t) = \\begin{cases} \\left( \\frac{\\sin(3t)}{\\sin(5t)}, \\frac{\\tan(t^2)}{t}, \\frac{1-\\cos(t^3)}{t^6} \\right) & t \\neq 0 \\\\ \\left( \\frac{3}{5}, 0, \\frac{1}{2} \\right) & t = 0 \\end{cases}"
+    },
+    {
+        "titulo": "Problema 284",
+        "descripcion": "Calcular la integral:",
+        "expresion_latex": "\\int_{0}^{a} \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\cos(t/a), \\frac{a^2}{a^2+t^2}, t e^{t/a} \\right)"
+    },
+    {
+        "titulo": "Problema 285",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{\\sqrt{\\arccos(t)-\\pi/3}}{\\ln(t-1/2)}, \\sqrt[4]{t^4-8t^2+16}, \\cot(\\pi t) \\right)"
+    },
+    {
+        "titulo": "Problema 286",
+        "descripcion": "Calcular el límite cuando \\( t \\to 0 \\):",
+        "expresion_latex": "\\lim_{t \\to 0} \\left( (\\cos t)^{1/t^2}, \\frac{\\ln(1+\\sin t)}{t}, \\frac{e^t - 1 - t}{t^2} \\right)"
+    },
+    {
+        "titulo": "Problema 287",
+        "descripcion": "Sea \\( \\vec{r}(t) = (t, \\ln t, \\sqrt{t}) \\). Calcular \\( \\frac{d}{dt} ||\\vec{r}(t)|| \\).",
+        "expresion_latex": "||\\vec{r}(t)|| = \\sqrt{t^2 + (\\ln t)^2 + t}"
+    },
+    {
+        "titulo": "Problema 288",
+        "descripcion": "Discutir y graficar la superficie representada por:",
+        "expresion_latex": "(x-1)^2 + 2(y+1)^2 + 3z^2 = 0"
+    },
+    {
+        "titulo": "Problema 289",
+        "descripcion": "Analizar la continuidad de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\sqrt{t^2-t}, \\frac{1}{\\sqrt{4-t^2}}, \\ln(\\arctan t) \\right)"
+    },
+    {
+        "titulo": "Problema 290",
+        "descripcion": "Resolver la integral vectorial indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{\\ln(\\ln t)}{t}, \\frac{t}{\\cos^2(t)}, e^{\\sin t} \\cos t \\right)"
+    },
+    {
+        "titulo": "Problema 291",
+        "descripcion": "Hallar el dominio de la función vectorial:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\arcsin(\\frac{1}{t}), \\ln(t - \\lfloor t \\rfloor), \\frac{\\sqrt{t+1}}{t^3+t} \\right)"
+    },
+    {
+        "titulo": "Problema 292",
+        "descripcion": "Calcular el límite cuando \\( t \\to \\pi/4 \\):",
+        "expresion_latex": "\\lim_{t \\to \\pi/4} \\left( \\frac{\\tan t - 1}{t - \\pi/4}, \\frac{\\sin t - \\cos t}{t - \\pi/4}, \\frac{\\ln(\\tan t)}{t - \\pi/4} \\right)"
+    },
+    {
+        "titulo": "Problema 293",
+        "descripcion": "Sea \\( \\vec{r}(t) \\) una curva tal que \\( \\vec{r}'(t) \\) es paralelo a \\( \\vec{r}(t) \\) para todo \\( t \\). ¿Qué se puede decir sobre la dirección del vector \\( \\vec{r}(t) \\)?",
+        "expresion_latex": "\\vec{r}'(t) = k(t) \\vec{r}(t)"
+    },
+    {
+        "titulo": "Problema 294",
+        "descripcion": "Discutir y graficar la superficie:",
+        "expresion_latex": "4x^2 + z^2 - 8x + 4z + 4 = 0"
+    },
+    {
+        "titulo": "Problema 295",
+        "descripcion": "Determinar el intervalo más grande donde la función vectorial es continua:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\ln(t^2-1), \\sqrt{5-t}, \\arccos(t/2) \\right)"
+    },
+    {
+        "titulo": "Problema 296",
+        "descripcion": "Resolver la integral indefinida:",
+        "expresion_latex": "\\int \\vec{f}(t) \\, dt \\quad \\text{donde} \\quad \\vec{f}(t) = \\left( \\frac{\\arctan t}{1+t^2}, \\frac{t}{\\sqrt{1-t^2}} \\arcsin t, \\frac{1}{t \\sqrt{t^2-1}} \\right)"
+    },
+    {
+        "titulo": "Problema 297",
+        "descripcion": "Si el dominio de \\( f_1(t) \\) es \\( (0, \\infty) \\), el de \\( f_2(t) \\) es \\( [-2, 2] \\), y el de \\( f_3(t) \\) es \\( \\mathbb{R} \\setminus \\{1\\} \\), ¿cuál es el dominio de \\( \\vec{f}(t) = (f_1(t), f_2(t), f_3(t)) \\)?",
+        "expresion_latex": "Instrucción: Encontrar la intersección de los dominios individuales."
+    },
+    {
+        "titulo": "Problema 298",
+        "descripcion": "Calcular el límite (si existe) cuando \\( t \\to \\infty \\):",
+        "expresion_latex": "\\lim_{t \\to \\infty} \\left( \\frac{\\sin t}{t}, \\cos(\\pi e^{-t}), \\frac{t^2}{e^t} \\right)"
+    },
+    {
+        "titulo": "Problema 299",
+        "descripcion": "Sean \\( \\vec{f}(u) = (u^2, e^u, 1/u) \\) y \\( u(t) = \\sin t \\). Calcular la derivada de la composición \\( \\vec{g}(t) = \\vec{f}(u(t)) \\) usando la regla de la cadena \\( \\vec{g}'(t) = \\vec{f}'(u(t)) u'(t) \\).",
+        "expresion_latex": "\\vec{f}'(u)"
+    },
+    {
+        "titulo": "Problema 300",
+        "descripcion": "¿Qué tipo de superficie representa la ecuación \\( Ax^2 + By^2 + Cz^2 + Dxy + Exz + Fyz + Gx + Hy + Iz + J = 0 \\)?",
+        "expresion_latex": "Instrucción: Describir que esta es la ecuación general de segundo grado y que representa una superficie cuádrica (posiblemente degenerada) cuyo tipo específico depende de los coeficientes y puede requerir rotación y traslación para su identificación."
+    },
+    {
+        "titulo": "Problema Dominio 1",
+        "descripcion": "Hallar el dominio de la función vectorial de variable real:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\frac{1}{t-2}, \\sqrt{t}, \\ln(t+1) \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 2",
+        "descripcion": "Determinar el dominio de la función vectorial de variable real:",
+        "expresion_latex": "\\vec{g}(t) = \\left( \\ln(t^2-4), \\frac{t}{\\sqrt{9-t^2}}, |t-1| \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 3",
+        "descripcion": "Encontrar el dominio de la función vectorial de variable real:",
+        "expresion_latex": "\\vec{h}(t) = \\left( \\sqrt[3]{t-5}, \\frac{1}{\\ln(t)}, \\sqrt{5-|t|} \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 4",
+        "descripcion": "Hallar el dominio de la función vectorial de variable real:",
+        "expresion_latex": "\\vec{r}(t) = \\left( \\frac{\\sqrt{t+3}}{t}, \\ln(|t-1|-2), \\lfloor t \\rfloor \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 5",
+        "descripcion": "Determinar el dominio de la función vectorial de variable real:",
+        "expresion_latex": "\\vec{s}(t) = \\left( \\sqrt{\\lfloor t \\rfloor - 1}, \\frac{1}{|t|-t}, \\ln(10-t) \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 6",
+        "descripcion": "Encontrar el dominio de la función vectorial de variable real:",
+        "expresion_latex": "\\vec{u}(t) = \\left( \\ln\\left(\\frac{t}{t+2}\\right), \\sqrt{|t^2-1|}, \\frac{1}{\\sqrt[4]{5-t}} \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 7",
+        "descripcion": "Hallar el dominio de la función vectorial de variable real:",
+        "expresion_latex": "\\vec{v}(t) = \\left( \\frac{1}{\\lfloor t \\rfloor - 3}, \\sqrt{\\ln(t)}, |t^3-8| \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 8",
+        "descripcion": "Hallar el dominio de la función vectorial de variable real (F.V.V.R) extremadamente compleja:",
+        "expresion_latex": "\\vec{f}(t) = \\left( \\ln(\\sqrt{t - \\lfloor t \\rfloor + 10^{-10}}), \\frac{1}{\\sqrt{|t^2 - 3|} - 1}, \\sqrt{\\lfloor \\frac{2}{|t|+0.1} \\rfloor - 1} \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 9",
+        "descripcion": "Determinar el dominio de la siguiente F.V.V.R con funciones anidadas y condiciones estrictas:",
+        "expresion_latex": "\\vec{g}(t) = \\left( \\frac{1}{\\sqrt{|t| - \\lfloor |t| \\rfloor + 10^{-10}}}, \\ln(|\\lfloor t \\rfloor| - t + 1), \\frac{t}{\\ln\\left( \\frac{|t+1|}{|t-1|} \\right)} \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 10",
+        "descripcion": "Encontrar el dominio de la F.V.V.R definida por componentes con restricciones combinadas:",
+        "expresion_latex": "\\vec{h}(t) = \\left( \\sqrt{\\frac{\\lfloor t \\rfloor}{\\lfloor t \\rfloor - 1}}, \\ln(|t - |t|| + |t|), \\frac{1}{|t+ \\sqrt{2}| - |t - \\sqrt{2}|} \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 11",
+        "descripcion": "Hallar el dominio de la F.V.V.R con valor absoluto dentro de logaritmo y raíz de una división con parte entera:",
+        "expresion_latex": "\\vec{r}(t) = \\left( \\sqrt{\\frac{t}{\\lfloor t \\rfloor} - 1}, \\ln(|t^2 - 4| - 1), \\frac{1}{|t| - \\lfloor t \\rfloor} \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 12",
+        "descripcion": "Determinar el dominio de la F.V.V.R involucrando logaritmo de valor absoluto y raíz de función piso:",
+        "expresion_latex": "\\vec{s}(t) = \\left( \\ln(| \\lfloor 1/t \\rfloor |), \\sqrt{3 - | \\lfloor t \\rfloor - 1 |}, \\frac{1}{t - \\sqrt{|t|}} \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 13",
+        "descripcion": "Encontrar el dominio de la F.V.V.R con múltiples capas de funciones y restricciones:",
+        "expresion_latex": "\\vec{u}(t) = \\left( \\frac{\\sqrt{1 - \\lfloor |t| \\rfloor}}{\\ln(2 - |t|)}, \\sqrt{\\ln(\\frac{t^2}{|t^2-1|})}, \\frac{1}{\\lfloor t \\rfloor - t + 0.1} \\right)"
+    },
+    {
+        "titulo": "Problema Dominio 14",
+        "descripcion": "Hallar el dominio de la F.V.V.R con condiciones de desigualdad estricta y composición de funciones:",
+        "expresion_latex": "\\vec{v}(t) = \\left( \\ln(1 - \\sqrt{|t^2-1|}), \\frac{1}{\\sqrt{\\lfloor t^2 \\rfloor - 1}}, \\sqrt{|t - \\lfloor t + 0.5 \\rfloor|} \\right)"
+    }
+]

@@ -1,0 +1,1149 @@
+[
+  {
+    "titulo": "Ejercicio 1: Derivadas Parciales por Definición",
+    "descripcion": "Hallar las derivadas parciales \\( \\frac{\\partial z}{\\partial x} \\) y \\( \\frac{\\partial z}{\\partial y} \\) aplicando la definición (<strong>sin L'Hôpital</strong>) para la siguiente función:",
+    "expresion_latex": "z = f(x,y) = \\frac{x-y}{x+y}",
+    "tags": ["Cálculo Multivariable", "Derivadas Parciales", "Definición de Derivada", "Límites"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para hallar \\( \\frac{\\partial z}{\\partial x} \\), aplicamos la definición de derivada parcial respecto a x: \\( \\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{f(x+h, y) - f(x,y)}{h} \\). Sustituimos la función:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{\\frac{(x+h)-y}{(x+h)+y} - \\frac{x-y}{x+y}}{h}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Combinamos las fracciones en el numerador encontrando un común denominador:",
+        "expresion_latex_paso": "\\frac{\\frac{((x+h)-y)(x+y) - (x-y)((x+h)+y)}{((x+h)+y)(x+y)}}{h}"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Expandimos los productos en el numerador:",
+        "expresion_latex_paso": "\\text{Numerador} = ((x+h)x + (x+h)y - yx - y^2) - (x(x+h) + xy - y(x+h) - y^2) \\\\\n= (x^2+hx + xy+hy - yx - y^2) - (x^2+hx + xy - yx-hy - y^2) \\\\\n= (x^2+hx+hy-y^2) - (x^2+hx-hy-y^2)"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Simplificamos el numerador:",
+        "expresion_latex_paso": "x^2+hx+hy-y^2 - x^2-hx+hy+y^2 = 2hy"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Sustituimos el numerador simplificado en la expresión del límite y cancelamos \\(h\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{\\frac{2hy}{((x+h)+y)(x+y)}}{h} = \\lim_{h \\to 0} \\frac{2y}{((x+h)+y)(x+y)}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Evaluamos el límite cuando \\(h \\to 0\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\frac{2y}{(x+y)(x+y)} = \\frac{2y}{(x+y)^2}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Para hallar \\( \\frac{\\partial z}{\\partial y} \\), aplicamos la definición de derivada parcial respecto a y (usando \\(k\\) como incremento): \\( \\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{f(x, y+k) - f(x,y)}{k} \\). Sustituimos la función:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{\\frac{x-(y+k)}{x+(y+k)} - \\frac{x-y}{x+y}}{k}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Combinamos las fracciones en el numerador:",
+        "expresion_latex_paso": "\\frac{\\frac{(x-(y+k))(x+y) - (x-y)(x+(y+k))}{(x+(y+k))(x+y)}}{k}"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Expandimos los productos en el numerador:",
+        "expresion_latex_paso": "\\text{Numerador} = (x(x+y) - (y+k)(x+y)) - (x(x+y+k) - y(x+y+k)) \\\\\n= (x^2+xy - (xy+y^2+kx+ky)) - (x^2+xy+xk - (xy+y^2+yk)) \\\\\n= (x^2-y^2-kx-ky) - (x^2-y^2+xk-yk)"
+      },
+      {
+        "paso_numero": 10,
+        "descripcion_paso": "Simplificamos el numerador:",
+        "expresion_latex_paso": "x^2-y^2-kx-ky - x^2+y^2-xk+yk = -kx-xk = -2kx"
+      },
+      {
+        "paso_numero": 11,
+        "descripcion_paso": "Sustituimos el numerador simplificado en la expresión del límite y cancelamos \\(k\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{\\frac{-2kx}{(x+(y+k))(x+y)}}{k} = \\lim_{k \\to 0} \\frac{-2x}{(x+(y+k))(x+y)}"
+      },
+      {
+        "paso_numero": 12,
+        "descripcion_paso": "Evaluamos el límite cuando \\(k \\to 0\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} = \\frac{-2x}{(x+y)(x+y)} = \\frac{-2x}{(x+y)^2}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 2: Derivada Direccional por Definición",
+    "descripcion": "Hallar la derivada direccional de la función \\( f(x,y) \\) en el punto \\( P_0 \\) en dirección del vector \\( \\mathbf{v} \\) usando la definición y (<strong>sin L'Hôpital</strong>):",
+    "expresion_latex": "f(x,y) = 2x^2 - xy + y^2; \\quad P_0(2, 1); \\quad \\mathbf{v} = \\langle 1, -2 \\rangle",
+    "tags": ["Cálculo Multivariable", "Derivada Direccional", "Definición de Derivada", "Vectores", "Límites"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "La definición de la derivada direccional de \\(f\\) en \\((x_0, y_0)\\) en la dirección de un vector unitario \\(\\mathbf{u} = \\langle u_1, u_2 \\rangle\\) es: \\( D_{\\mathbf{u}}f(x_0, y_0) = \\lim_{h \\to 0} \\frac{f(x_0 + hu_1, y_0 + hu_2) - f(x_0, y_0)}{h} \\).",
+        "expresion_latex_paso": "D_{\\mathbf{u}}f(x_0, y_0) = \\lim_{h \\to 0} \\frac{f(x_0 + hu_1, y_0 + hu_2) - f(x_0, y_0)}{h}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Primero, normalizamos el vector de dirección \\(\\mathbf{v} = \\langle 1, -2 \\rangle\\): \\( \\|\\mathbf{v}\\| = \\sqrt{1^2 + (-2)^2} = \\sqrt{1+4} = \\sqrt{5} \\). El vector unitario es \\(\\mathbf{u} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\langle \\frac{1}{\\sqrt{5}}, \\frac{-2}{\\sqrt{5}} \\rangle\\). Así, \\(u_1 = \\frac{1}{\\sqrt{5}}\\) y \\(u_2 = \\frac{-2}{\\sqrt{5}}\\).",
+        "expresion_latex_paso": "\\mathbf{u} = \\left\\langle \\frac{1}{\\sqrt{5}}, \\frac{-2}{\\sqrt{5}} \\right\\rangle"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos \\(f(x_0, y_0) = f(2,1)\\):",
+        "expresion_latex_paso": "f(2,1) = 2(2)^2 - (2)(1) + (1)^2 = 2(4) - 2 + 1 = 8 - 2 + 1 = 7"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Evaluamos \\(f(x_0 + hu_1, y_0 + hu_2) = f(2 + h\\frac{1}{\\sqrt{5}}, 1 + h\\frac{-2}{\\sqrt{5}})\\):",
+        "expresion_latex_paso": "f\\left(2 + \\frac{h}{\\sqrt{5}}, 1 - \\frac{2h}{\\sqrt{5}}\\right) = 2\\left(2 + \\frac{h}{\\sqrt{5}}\\right)^2 - \\left(2 + \\frac{h}{\\sqrt{5}}\\right)\\left(1 - \\frac{2h}{\\sqrt{5}}\\right) + \\left(1 - \\frac{2h}{\\sqrt{5}}\\right)^2"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Expandimos y simplificamos algebraicamente la expresión anterior: \\\\\nPrimer término: \\(2(4 + \\frac{4h}{\\sqrt{5}} + \\frac{h^2}{5}) = 8 + \\frac{8h}{\\sqrt{5}} + \\frac{2h^2}{5}\\) \\\\\nSegundo término: \\(-(2 - \\frac{4h}{\\sqrt{5}} + \\frac{h}{\\sqrt{5}} - \\frac{2h^2}{5}) = -(2 - \\frac{3h}{\\sqrt{5}} - \\frac{2h^2}{5}) = -2 + \\frac{3h}{\\sqrt{5}} + \\frac{2h^2}{5}\\) \\\\\nTercer término: \\((1 - \\frac{4h}{\\sqrt{5}} + \\frac{4h^2}{5}) = 1 - \\frac{4h}{\\sqrt{5}} + \\frac{4h^2}{5}\\) \\\\\nSumando los términos:",
+        "expresion_latex_paso": "\\left(8 + \\frac{8h}{\\sqrt{5}} + \\frac{2h^2}{5}\\right) + \\left(-2 + \\frac{3h}{\\sqrt{5}} + \\frac{2h^2}{5}\\right) + \\left(1 - \\frac{4h}{\\sqrt{5}} + \\frac{4h^2}{5}\\right) \\\\\n= (8-2+1) + h\\left(\\frac{8}{\\sqrt{5}} + \\frac{3}{\\sqrt{5}} - \\frac{4}{\\sqrt{5}}\\right) + h^2\\left(\\frac{2}{5} + \\frac{2}{5} + \\frac{4}{5}\\right) \\\\\n= 7 + h\\frac{7}{\\sqrt{5}} + h^2\\frac{8}{5}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Formamos el cociente incremental:",
+        "expresion_latex_paso": "\\frac{f(2 + \\frac{h}{\\sqrt{5}}, 1 - \\frac{2h}{\\sqrt{5}}) - f(2,1)}{h} = \\frac{\\left(7 + \\frac{7h}{\\sqrt{5}} + \\frac{8h^2}{5}\\right) - 7}{h}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Simplificamos el cociente, cancelando términos y factorizando \\(h\\):",
+        "expresion_latex_paso": "\\frac{\\frac{7h}{\\sqrt{5}} + \\frac{8h^2}{5}}{h} = \\frac{h\\left(\\frac{7}{\\sqrt{5}} + \\frac{8h}{5}\\right)}{h} = \\frac{7}{\\sqrt{5}} + \\frac{8h}{5}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Evaluamos el límite cuando \\(h \\to 0\\):",
+        "expresion_latex_paso": "D_{\\mathbf{u}}f(2,1) = \\lim_{h \\to 0} \\left(\\frac{7}{\\sqrt{5}} + \\frac{8h}{5}\\right) = \\frac{7}{\\sqrt{5}} = \\frac{7\\sqrt{5}}{5}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 3: Regla de la Cadena Multivariable",
+    "descripcion": "Si \\( z = f(x,y) \\), donde \\(x\\) e \\(y\\) son funciones de \\(t\\) y \\(s\\). Hallar \\( \\frac{\\partial z}{\\partial t} \\) y \\( \\frac{\\partial z}{\\partial s} \\) usando la regla de la cadena.",
+    "expresion_latex": "z = x^2 e^y; \\quad x(t,s) = t^2 - s^2; \\quad y(t,s) = 2ts",
+    "tags": ["Cálculo Multivariable", "Regla de la Cadena", "Derivadas Parciales"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Las fórmulas de la regla de la cadena para \\(z(x(t,s), y(t,s))\\) son: \\\\\n\\( \\frac{\\partial z}{\\partial t} = \\frac{\\partial z}{\\partial x} \\frac{\\partial x}{\\partial t} + \\frac{\\partial z}{\\partial y} \\frac{\\partial y}{\\partial t} \\) \\\\\n\\( \\frac{\\partial z}{\\partial s} = \\frac{\\partial z}{\\partial x} \\frac{\\partial x}{\\partial s} + \\frac{\\partial z}{\\partial y} \\frac{\\partial y}{\\partial s} \\)",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial t} = \\frac{\\partial z}{\\partial x} \\frac{\\partial x}{\\partial t} + \\frac{\\partial z}{\\partial y} \\frac{\\partial y}{\\partial t} \\quad \\text{y} \\quad \\frac{\\partial z}{\\partial s} = \\frac{\\partial z}{\\partial x} \\frac{\\partial x}{\\partial s} + \\frac{\\partial z}{\\partial y} \\frac{\\partial y}{\\partial s}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(z\\) con respecto a \\(x\\) e \\(y\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\frac{\\partial}{\\partial x}(x^2 e^y) = 2x e^y \\\\\n\\frac{\\partial z}{\\partial y} = \\frac{\\partial}{\\partial y}(x^2 e^y) = x^2 e^y"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(x\\) e \\(y\\) con respecto a \\(t\\) y \\(s\\):",
+        "expresion_latex_paso": "\\frac{\\partial x}{\\partial t} = \\frac{\\partial}{\\partial t}(t^2 - s^2) = 2t \\quad \\quad \\frac{\\partial x}{\\partial s} = \\frac{\\partial}{\\partial s}(t^2 - s^2) = -2s \\\\\n\\frac{\\partial y}{\\partial t} = \\frac{\\partial}{\\partial t}(2ts) = 2s \\quad \\quad \\frac{\\partial y}{\\partial s} = \\frac{\\partial}{\\partial s}(2ts) = 2t"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Sustituimos estas derivadas en la fórmula para \\( \\frac{\\partial z}{\\partial t} \\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial t} = (2x e^y)(2t) + (x^2 e^y)(2s) = 2e^y (2xt + x^2s) = 2x e^y (2t + xs)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Sustituimos \\(x = t^2 - s^2\\) y \\(y = 2ts\\) para expresar \\( \\frac{\\partial z}{\\partial t} \\) en términos de \\(t\\) y \\(s\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial t} = 2(t^2 - s^2) e^{2ts} (2t + (t^2 - s^2)s) \\\\\n = 2(t^2 - s^2) e^{2ts} (2t + t^2s - s^3)"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Sustituimos las derivadas en la fórmula para \\( \\frac{\\partial z}{\\partial s} \\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial s} = (2x e^y)(-2s) + (x^2 e^y)(2t) = 2e^y (-2xs + x^2t) = 2x e^y (-2s + xt)"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Sustituimos \\(x = t^2 - s^2\\) y \\(y = 2ts\\) para expresar \\( \\frac{\\partial z}{\\partial s} \\) en términos de \\(t\\) y \\(s\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial s} = 2(t^2 - s^2) e^{2ts} (-2s + (t^2 - s^2)t) \\\\\n = 2(t^2 - s^2) e^{2ts} (-2s + t^3 - ts^2)"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 4: Aproximación de Valores usando Diferenciales",
+    "descripcion": "Hallar el valor aproximado de la siguiente expresión usando diferenciales. Expresar el resultado en términos de \\(\\sqrt[3]{4}\\).",
+    "expresion_latex": "\\sqrt[3]{(2.03)^2 + (1.98)^2 - 4}",
+    "tags": ["Cálculo Multivariable", "Diferenciales", "Aproximación Lineal", "Aplicaciones de la Derivada"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Identificamos la función \\(f(x,y)\\) que modela la expresión. Sea \\(f(x,y) = \\sqrt[3]{x^2 + y^2 - 4} = (x^2 + y^2 - 4)^{1/3}\\). Queremos aproximar \\(f(2.03, 1.98)\\).",
+        "expresion_latex_paso": "f(x,y) = (x^2 + y^2 - 4)^{1/3}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Elegimos un punto cercano \\((x_0, y_0)\\) donde \\(f(x_0, y_0)\\) sea fácil de calcular. Sea \\(x_0 = 2\\) y \\(y_0 = 2\\).",
+        "expresion_latex_paso": "(x_0, y_0) = (2, 2)"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos los incrementos \\(dx = x - x_0\\) y \\(dy = y - y_0\\):",
+        "expresion_latex_paso": "dx = 2.03 - 2 = 0.03 \\\\\ndy = 1.98 - 2 = -0.02"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Calculamos las derivadas parciales \\(f_x(x,y)\\) y \\(f_y(x,y)\\):",
+        "expresion_latex_paso": "f_x(x,y) = \\frac{1}{3}(x^2 + y^2 - 4)^{-2/3}(2x) = \\frac{2x}{3(x^2 + y^2 - 4)^{2/3}} \\\\\nf_y(x,y) = \\frac{1}{3}(x^2 + y^2 - 4)^{-2/3}(2y) = \\frac{2y}{3(x^2 + y^2 - 4)^{2/3}}"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Evaluamos \\(f(x_0, y_0)\\), \\(f_x(x_0, y_0)\\) y \\(f_y(x_0, y_0)\\) en el punto \\((2,2)\\): \\\\\n\\(f(2,2) = (2^2 + 2^2 - 4)^{1/3} = (4+4-4)^{1/3} = 4^{1/3} = \\sqrt[3]{4}\\) \\\\\n\\(f_x(2,2) = \\frac{2(2)}{3(2^2+2^2-4)^{2/3}} = \\frac{4}{3(4)^{2/3}} = \\frac{4}{3(4^{1/3})^2} = \\frac{4}{3(\\sqrt[3]{4})^2} = \\frac{4 \\cdot \\sqrt[3]{4}}{3 \\cdot 4} = \\frac{\\sqrt[3]{4}}{3}\\) \\\\\n\\(f_y(2,2) = \\frac{2(2)}{3(2^2+2^2-4)^{2/3}} = \\frac{4}{3(4)^{2/3}} = \\frac{\\sqrt[3]{4}}{3}\\)",
+        "expresion_latex_paso": "f(2,2) = \\sqrt[3]{4} \\\\\nf_x(2,2) = \\frac{\\sqrt[3]{4}}{3} \\\\\nf_y(2,2) = \\frac{\\sqrt[3]{4}}{3}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Aplicamos la fórmula de aproximación lineal (diferencial total): \\( f(x,y) \\approx f(x_0,y_0) + f_x(x_0,y_0)dx + f_y(x_0,y_0)dy \\).",
+        "expresion_latex_paso": "L(x,y) = f(x_0, y_0) + f_x(x_0, y_0)dx + f_y(x_0, y_0)dy"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Sustituimos los valores calculados para obtener el valor aproximado:",
+        "expresion_latex_paso": "\\sqrt[3]{(2.03)^2 + (1.98)^2 - 4} \\approx \\sqrt[3]{4} + \\left(\\frac{\\sqrt[3]{4}}{3}\\right)(0.03) + \\left(\\frac{\\sqrt[3]{4}}{3}\\right)(-0.02) \\\\\n= \\sqrt[3]{4} \\left(1 + \\frac{0.03}{3} - \\frac{0.02}{3}\\right) \\\\\n= \\sqrt[3]{4} \\left(1 + \\frac{0.03 - 0.02}{3}\\right) \\\\\n= \\sqrt[3]{4} \\left(1 + \\frac{0.01}{3}\\right) = \\sqrt[3]{4} \\left(\\frac{3+0.01}{3}\\right) = \\sqrt[3]{4} \\left(\\frac{3.01}{3}\\right)"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 5: Cálculo de Derivadas Parciales de Orden Superior",
+    "descripcion": "Dada la función \\(f(x,y)\\), hallar todas las segundas derivadas parciales: \\( \\frac{\\partial^2 f}{\\partial x^2} \\) (o \\(f_{xx}\\)), \\( \\frac{\\partial^2 f}{\\partial y^2} \\) (o \\(f_{yy}\\)), y \\( \\frac{\\partial^2 f}{\\partial x \\partial y} \\) (o \\(f_{xy}\\)). Se asume que \\(x>0\\) y \\(y \\neq 0\\) para que el logaritmo esté bien definido.",
+    "expresion_latex": "f(x,y) = x \\ln(xy^2) + \\cos(x^2y)",
+    "tags": ["Cálculo Multivariable", "Derivadas Parciales", "Derivadas de Orden Superior", "Reglas de Derivación", "Teorema de Clairaut"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Simplificamos el logaritmo: \\(\\ln(xy^2) = \\ln(x) + \\ln(y^2) = \\ln(x) + 2\\ln|y|\\). Para simplificar la derivación y dado el contexto habitual de estos problemas, se asume \\(y>0\\) o se trabaja con \\(\\ln(y^2)\\) directamente. Usaremos \\(\\ln(xy^2)\\) y aplicaremos la regla de la cadena. \\(f(x,y) = x \\ln(xy^2) + \\cos(x^2y)\\). Primero calculamos \\( \\frac{\\partial f}{\\partial x} \\) (o \\(f_x\\)):",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial x} = \\frac{\\partial}{\\partial x} (x \\ln(xy^2)) + \\frac{\\partial}{\\partial x} (\\cos(x^2y)) \\\\\n= (1 \\cdot \\ln(xy^2) + x \\cdot \\frac{1}{xy^2} \\cdot y^2) + (-\\sin(x^2y) \\cdot 2xy) \\\\\n= \\ln(xy^2) + \\frac{xy^2}{xy^2} - 2xy \\sin(x^2y) \\\\\n= \\ln(xy^2) + 1 - 2xy \\sin(x^2y)"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos \\( \\frac{\\partial f}{\\partial y} \\) (o \\(f_y\\)):",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial y} = \\frac{\\partial}{\\partial y} (x \\ln(xy^2)) + \\frac{\\partial}{\\partial y} (\\cos(x^2y)) \\\\\n= x \\cdot \\frac{1}{xy^2} \\cdot (2xy) + (-\\sin(x^2y) \\cdot x^2) \\\\\n= \\frac{2x^2y}{xy^2} - x^2 \\sin(x^2y) \\\\\n= \\frac{2x}{y} - x^2 \\sin(x^2y)"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos \\( \\frac{\\partial^2 f}{\\partial x^2} \\) derivando \\(f_x\\) respecto a \\(x\\):",
+        "expresion_latex_paso": "\\frac{\\partial^2 f}{\\partial x^2} = \\frac{\\partial}{\\partial x} (\\ln(xy^2) + 1 - 2xy \\sin(x^2y)) \\\\\n= \\frac{1}{xy^2} \\cdot y^2 + 0 - \\frac{\\partial}{\\partial x}(2xy \\sin(x^2y)) \\\\\n= \\frac{1}{x} - (2y \\sin(x^2y) + 2xy \\cos(x^2y) \\cdot 2xy) \\\\\n= \\frac{1}{x} - 2y \\sin(x^2y) - 4x^2y^2 \\cos(x^2y)"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Calculamos \\( \\frac{\\partial^2 f}{\\partial y^2} \\) derivando \\(f_y\\) respecto a \\(y\\):",
+        "expresion_latex_paso": "\\frac{\\partial^2 f}{\\partial y^2} = \\frac{\\partial}{\\partial y} (\\frac{2x}{y} - x^2 \\sin(x^2y)) \\\\\n= -\\frac{2x}{y^2} - x^2 (\\cos(x^2y) \\cdot x^2) \\\\\n= -\\frac{2x}{y^2} - x^4 \\cos(x^2y)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Calculamos \\( \\frac{\\partial^2 f}{\\partial x \\partial y} \\) derivando \\(f_y\\) respecto a \\(x\\) (o \\(f_x\\) respecto a \\(y\\)). Usaremos \\(f_y\\) respecto a \\(x\\) (i.e., \\(f_{yx}\\)):",
+        "expresion_latex_paso": "\\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial}{\\partial x} \\left(\\frac{2x}{y} - x^2 \\sin(x^2y)\\right) \\\\\n= \\frac{2}{y} - (2x \\sin(x^2y) + x^2 \\cos(x^2y) \\cdot 2xy) \\\\\n= \\frac{2}{y} - 2x \\sin(x^2y) - 2x^3y \\cos(x^2y)"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Nota: Por el Teorema de Clairaut, si las segundas derivadas parciales son continuas, entonces \\(f_{xy} = f_{yx}\\). Podemos verificar derivando \\(f_x\\) respecto a \\(y\\): \\\\\n \\( \\frac{\\partial}{\\partial y} (\\ln(xy^2) + 1 - 2xy \\sin(x^2y)) = \\frac{1}{xy^2}(2xy) + 0 - (2x\\sin(x^2y) + 2xy \\cos(x^2y) x^2) \\) \\\\\n \\( = \\frac{2x}{y} - 2x \\sin(x^2y) - 2x^3y \\cos(x^2y) \\). El resultado coincide.",
+        "expresion_latex_paso": "f_{xy} = f_{yx} = \\frac{2}{y} - 2x \\sin(x^2y) - 2x^3y \\cos(x^2y)"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 6: Dominio de una Función de Dos Variables",
+    "descripcion": "Hallar y representar gráficamente el dominio de la función \\(f(x,y)\\).",
+    "expresion_latex": "f(x,y) = \\frac{\\sqrt{9 - x^2 - y^2}}{\\ln(y - x^2 + 1)}",
+    "tags": ["Cálculo Multivariable", "Dominio de Funciones", "Inecuaciones", "Gráfica de Regiones"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para que la función \\(f(x,y)\\) esté definida, se deben cumplir tres condiciones simultáneamente:",
+        "expresion_latex_paso": "1. \\text{El radicando de la raíz cuadrada debe ser no negativo: } 9 - x^2 - y^2 \\ge 0 \\\\\n2. \\text{El argumento del logaritmo natural debe ser estrictamente positivo: } y - x^2 + 1 > 0 \\\\\n3. \\text{El denominador no debe ser cero: } \\ln(y - x^2 + 1) \\neq 0"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Analizamos la primera condición: \\(9 - x^2 - y^2 \\ge 0 \\implies x^2 + y^2 \\le 9\\). Esta región corresponde al interior y la frontera de un círculo con centro en \\((0,0)\\) y radio \\(r=3\\).",
+        "expresion_latex_paso": "x^2 + y^2 \\le 9"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Analizamos la segunda condición: \\(y - x^2 + 1 > 0 \\implies y > x^2 - 1\\). Esta región corresponde a los puntos que están por encima de la parábola \\(y = x^2 - 1\\) (vértice en \\((0,-1)\\), abre hacia arriba).",
+        "expresion_latex_paso": "y > x^2 - 1"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Analizamos la tercera condición: \\(\\ln(y - x^2 + 1) \\neq 0 \\implies y - x^2 + 1 \\neq e^0 \\implies y - x^2 + 1 \\neq 1 \\implies y - x^2 \\neq 0 \\implies y \\neq x^2\\). Esto significa que se excluyen los puntos sobre la parábola \\(y = x^2\\) (vértice en \\((0,0)\\), abre hacia arriba).",
+        "expresion_latex_paso": "y \\neq x^2"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "El dominio de \\(f(x,y)\\) es el conjunto de puntos \\((x,y)\\) que satisfacen las tres condiciones: \\(D = \\{ (x,y) \\in \\mathbb{R}^2 \\mid x^2 + y^2 \\le 9 \\text{ y } y > x^2 - 1 \\text{ y } y \\neq x^2 \\}\\).",
+        "expresion_latex_paso": "D = \\{ (x,y) \\in \\mathbb{R}^2 \\mid x^2 + y^2 \\le 9 \\text{ y } y > x^2 - 1 \\text{ y } y \\neq x^2 \\}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Para representar gráficamente el dominio: \n 1. Dibujar el círculo \\(x^2+y^2=9\\). La región es el interior y el borde. \n 2. Dibujar la parábola \\(y=x^2-1\\). La región es la parte superior a esta parábola (sin incluir la parábola misma). \n 3. Dibujar la parábola \\(y=x^2\\). Los puntos sobre esta parábola deben ser excluidos del dominio. \n El dominio es la intersección de la región interior al círculo (incluyendo borde) con la región estrictamente por encima de la parábola \\(y=x^2-1\\), excluyendo los puntos que además caen sobre la parábola \\(y=x^2\\).",
+        "expresion_latex_paso": "\\text{Representación gráfica (descripción): Un círculo de radio 3 centrado en el origen. Se considera el área dentro del círculo. Luego, se toma la región por encima de la parábola } y=x^2-1 \\text{. Finalmente, se excluyen los puntos de la parábola } y=x^2 \\text{ que caigan en la región resultante.}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 7: Cálculo de Límite Multivariable",
+    "descripcion": "Demostrar y calcular el siguiente límite, si existe. Si no existe, justificar por qué.",
+    "expresion_latex": "\\lim_{(x,y) \\to (0,0)} \\frac{x^3 y}{x^6 + y^2}",
+    "tags": ["Cálculo Multivariable", "Límites Multivariables", "Inexistencia de Límite", "Trayectorias"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para investigar la existencia del límite, probaremos acercarnos al origen \\((0,0)\\) a través de diferentes trayectorias.",
+        "expresion_latex_paso": "L = \\lim_{(x,y) \\to (0,0)} \\frac{x^3 y}{x^6 + y^2}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Trayectoria 1: A lo largo del eje x (donde \\(y=0\\), para \\(x \\neq 0\\)).",
+        "expresion_latex_paso": "\\lim_{x \\to 0} \\frac{x^3 (0)}{x^6 + (0)^2} = \\lim_{x \\to 0} \\frac{0}{x^6} = \\lim_{x \\to 0} 0 = 0"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Trayectoria 2: A lo largo del eje y (donde \\(x=0\\), para \\(y \\neq 0\\)).",
+        "expresion_latex_paso": "\\lim_{y \\to 0} \\frac{(0)^3 y}{(0)^6 + y^2} = \\lim_{y \\to 0} \\frac{0}{y^2} = \\lim_{y \\to 0} 0 = 0"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Trayectoria 3: A lo largo de la recta \\(y=mx\\) (donde \\(m\\) es una constante).",
+        "expresion_latex_paso": "\\lim_{x \\to 0} \\frac{x^3 (mx)}{x^6 + (mx)^2} = \\lim_{x \\to 0} \\frac{mx^4}{x^6 + m^2x^2} = \\lim_{x \\to 0} \\frac{mx^2 \\cdot x^2}{x^2(x^4 + m^2)} = \\lim_{x \\to 0} \\frac{mx^2}{x^4 + m^2}"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Evaluamos el límite para la trayectoria \\(y=mx\\):",
+        "expresion_latex_paso": "\\frac{m(0)^2}{(0)^4 + m^2} = \\frac{0}{m^2} = 0 \\quad \\text{(si } m \\neq 0)"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Hasta ahora, todas las trayectorias probadas dan como resultado 0. Esto no garantiza que el límite sea 0. Probemos una trayectoria curvilínea que relacione las potencias del denominador. Consideremos la trayectoria \\(y = x^3\\).",
+        "expresion_latex_paso": "\\text{Trayectoria 4: } y = x^3"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Sustituimos \\(y = x^3\\) en la expresión del límite:",
+        "expresion_latex_paso": "\\lim_{x \to 0} \\frac{x^3 (x^3)}{x^6 + (x^3)^2} = \\lim_{x \to 0} \\frac{x^6}{x^6 + x^6} = \\lim_{x \to 0} \\frac{x^6}{2x^6}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Simplificamos y evaluamos el límite a lo largo de \\(y=x^3\\):",
+        "expresion_latex_paso": "\\lim_{x \to 0} \\frac{1}{2} = \\frac{1}{2}"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Hemos encontrado dos trayectorias diferentes que conducen a valores de límite distintos: \n - A lo largo de \\(y=mx\\) (o los ejes), el límite es 0. \n - A lo largo de \\(y=x^3\\), el límite es \\(\\frac{1}{2}\\). \n Dado que \\(0 \\neq \\frac{1}{2}\\), el límite no existe.",
+        "expresion_latex_paso": "\\text{El límite no existe.}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 8: Derivación Implícita Multivariable",
+    "descripcion": "Si la ecuación \\( xe^y + yz + z e^x = 2 \\) define implícitamente a \\(z\\) como una función derivable de \\(x\\) e \\(y\\), hallar \\( \\frac{\\partial z}{\\partial x} \\) y \\( \\frac{\\partial z}{\\partial y} \\) en el punto \\(P(0, \\ln 2, 1)\\).",
+    "expresion_latex": "xe^y + yz + z e^x = 2; \\quad P(0, \\ln 2, 1)",
+    "tags": ["Cálculo Multivariable", "Derivación Implícita", "Derivadas Parciales", "Regla de la Cadena"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Definimos la función \\(F(x,y,z) = xe^y + yz + ze^x - 2 = 0\\). El punto \\(P(0, \\ln 2, 1)\\) satisface la ecuación: \\(0 \\cdot e^{\\ln 2} + (\\ln 2)(1) + 1 \\cdot e^0 = 0 + \\ln 2 + 1 \\cdot 1 = \\ln 2 + 1 \\neq 2\\). **Corrección:** El problema debe plantearse con un punto que satisfaga la ecuación o una ecuación que el punto satisfaga. Asumamos que la ecuación es \\( xe^y + yz + z e^x = \\ln 2 + 1 \\) o ajustemos el punto. \\\\ Si la ecuación es \\( xe^y + yz + z e^x = 2 \\) y \\(x=0, y=\\ln 2\\), entonces \\(0 \\cdot e^{\\ln 2} + (\\ln 2)z + z e^0 = 2 \\implies (\\ln 2)z + z = 2 \\implies z(\\ln 2 + 1) = 2 \\implies z = \frac{2}{\\ln 2 + 1}\\). \\\\ Para el punto \\(P(0, \\ln 2, 1)\\) ser válido, la ecuación debería ser \\( xe^y + yz + ze^x = \\ln 2 + 1 \\). Usaremos esta ecuación corregida: \\( F(x,y,z) = xe^y + yz + ze^x - (\\ln 2 + 1) = 0 \\).",
+        "expresion_latex_paso": "F(x,y,z) = xe^y + yz + ze^x - (\\ln 2 + 1)"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Utilizamos las fórmulas para derivadas implícitas: \\( \\frac{\\partial z}{\\partial x} = -\\frac{F_x}{F_z} \\) y \\( \\frac{\\partial z}{\\partial y} = -\\frac{F_y}{F_z} \\).",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = -\\frac{\\frac{\\partial F}{\\partial x}}{\\frac{\\partial F}{\\partial z}}; \\quad \\frac{\\partial z}{\\partial y} = -\\frac{\\frac{\\partial F}{\\partial y}}{\\frac{\\partial F}{\\partial z}}"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(F\\): \\\\\n\\( F_x = \\frac{\\partial}{\\partial x} (xe^y + yz + ze^x - (\\ln 2 + 1)) = e^y + 0 + ze^x \\) \\\\\n\\( F_y = \\frac{\\partial}{\\partial y} (xe^y + yz + ze^x - (\\ln 2 + 1)) = xe^y + z + 0 \\) \\\\\n\\( F_z = \\frac{\\partial}{\\partial z} (xe^y + yz + ze^x - (\\ln 2 + 1)) = 0 + y + e^x \\)",
+        "expresion_latex_paso": "F_x = e^y + ze^x \\\\\nF_y = xe^y + z \\\\\nF_z = y + e^x"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Evaluamos estas derivadas parciales en el punto \\(P(0, \\ln 2, 1)\\): \\\\\n\\( F_x(0, \\ln 2, 1) = e^{\\ln 2} + (1)e^0 = 2 + 1 \\cdot 1 = 3 \\) \\\\\n\\( F_y(0, \\ln 2, 1) = (0)e^{\\ln 2} + 1 = 0 + 1 = 1 \\) \\\\\n\\( F_z(0, \\ln 2, 1) = \\ln 2 + e^0 = \\ln 2 + 1 \\)",
+        "expresion_latex_paso": "F_x(P) = 3 \\\\\nF_y(P) = 1 \\\\\nF_z(P) = \\ln 2 + 1"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Calculamos \\( \\frac{\\partial z}{\\partial x} \\) en el punto \\(P\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} \\Bigg|_P = -\\frac{F_x(P)}{F_z(P)} = -\\frac{3}{\\ln 2 + 1}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Calculamos \\( \\frac{\\partial z}{\\partial y} \\) en el punto \\(P\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} \\Bigg|_P = -\\frac{F_y(P)}{F_z(P)} = -\\frac{1}{\\ln 2 + 1}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 8: Derivadas Parciales por Definición (Función Polinómica)",
+    "descripcion": "Hallar las derivadas parciales \\( \\frac{\\partial z}{\\partial x} \\) y \\( \\frac{\\partial z}{\\partial y} \\) aplicado la definición (<strong>sin H'opital</strong>) para la siguiente función:",
+    "expresion_latex": "\\[ z(x,y) = 2x^2 - 3xy + 5y^2 - x + 2y - 7 \\]",
+    "tags": ["Cálculo Multivariable", "Derivadas Parciales", "Definición de Derivada", "Límites", "Funciones Polinómicas"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para hallar \\( \\frac{\\partial z}{\\partial x} \\), aplicamos la definición de derivada parcial respecto a \\(x\\). Consideramos \\(y\\) como una constante. La definición es: \\( \\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{z(x+h, y) - z(x,y)}{h} \\).",
+        "expresion_latex_paso": "\\[ \\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{(2(x+h)^2 - 3(x+h)y + 5y^2 - (x+h) + 2y - 7) - (2x^2 - 3xy + 5y^2 - x + 2y - 7)}{h} \\]"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Expandimos los términos en el numerador:",
+        "expresion_latex_paso": "\\[ z(x+h, y) = 2(x^2+2xh+h^2) - 3xy - 3hy + 5y^2 - x - h + 2y - 7 \\]"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Sustituimos y simplificamos el numerador \\( z(x+h, y) - z(x,y) \\):",
+        "expresion_latex_paso": "\\[ (2x^2 + 4xh + 2h^2 - 3xy - 3hy + 5y^2 - x - h + 2y - 7) - (2x^2 - 3xy + 5y^2 - x + 2y - 7) = 4xh + 2h^2 - 3hy - h \\]"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Factorizamos \\(h\\) en el numerador y lo cancelamos con el denominador:",
+        "expresion_latex_paso": "\\[ \\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{h(4x + 2h - 3y - 1)}{h} = \\lim_{h \\to 0} (4x + 2h - 3y - 1) \\]"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Evaluamos el límite cuando \\(h \\to 0\\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial z}{\\partial x} = 4x - 3y - 1 \\]"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Para hallar \\( \\frac{\\partial z}{\\partial y} \\), aplicamos la definición de derivada parcial respecto a \\(y\\). Consideramos \\(x\\) como una constante. La definición es: \\( \\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{z(x, y+k) - z(x,y)}{k} \\).",
+        "expresion_latex_paso": "\\[ \\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{(2x^2 - 3x(y+k) + 5(y+k)^2 - x + 2(y+k) - 7) - (2x^2 - 3xy + 5y^2 - x + 2y - 7)}{k} \\]"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Expandimos los términos en el numerador:",
+        "expresion_latex_paso": "\\[ z(x, y+k) = 2x^2 - 3xy - 3xk + 5(y^2+2yk+k^2) - x + 2y + 2k - 7 \\]"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Sustituimos y simplificamos el numerador \\( z(x, y+k) - z(x,y) \\):",
+        "expresion_latex_paso": "\\[ (2x^2 - 3xy - 3xk + 5y^2 + 10yk + 5k^2 - x + 2y + 2k - 7) - (2x^2 - 3xy + 5y^2 - x + 2y - 7) = -3xk + 10yk + 5k^2 + 2k \\]"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Factorizamos \\(k\\) en el numerador y lo cancelamos con el denominador:",
+        "expresion_latex_paso": "\\[ \\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{k(-3x + 10y + 5k + 2)}{k} = \\lim_{k \\to 0} (-3x + 10y + 5k + 2) \\]"
+      },
+      {
+        "paso_numero": 10,
+        "descripcion_paso": "Evaluamos el límite cuando \\(k \\to 0\\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial z}{\\partial y} = -3x + 10y + 2 \\]"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 9: Regla de la Cadena Multivariable",
+    "descripcion": "Si \\( f(x,y) = x^3 + 2y^2 - xy \\), hallar \\( \\frac{\\partial f}{\\partial t} \\) y \\( \\frac{\\partial f}{\\partial s} \\), donde \\( x = t \\sin(s) \\) e \\( y = s \\cos(t) \\).",
+    "expresion_latex": "\\[ f(x,y) = x^3 + 2y^2 - xy; \\quad x(t,s) = t \\sin(s); \\quad y(t,s) = s \\cos(t) \\]",
+    "tags": ["Cálculo Multivariable", "Regla de la Cadena", "Derivadas Parciales"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Aplicamos la regla de la cadena para \\( \\frac{\\partial f}{\\partial t} \\): \\( \\frac{\\partial f}{\\partial t} = \\frac{\\partial f}{\\partial x} \\frac{\\partial x}{\\partial t} + \\frac{\\partial f}{\\partial y} \\frac{\\partial y}{\\partial t} \\).",
+        "expresion_latex_paso": "\\[ \\frac{\\partial f}{\\partial t} = \\frac{\\partial f}{\\partial x} \\frac{\\partial x}{\\partial t} + \\frac{\\partial f}{\\partial y} \\frac{\\partial y}{\\partial t} \\]"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(f\\) respecto a \\(x\\) e \\(y\\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial f}{\\partial x} = 3x^2 - y \\] \\[ \\frac{\\partial f}{\\partial y} = 4y - x \\]"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(x\\) e \\(y\\) respecto a \\(t\\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial x}{\\partial t} = \\frac{\\partial}{\\partial t}(t \\sin(s)) = \\sin(s) \\] \\[ \\frac{\\partial y}{\\partial t} = \\frac{\\partial}{\\partial t}(s \\cos(t)) = -s \\sin(t) \\]"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Sustituimos estas derivadas en la fórmula de \\( \\frac{\\partial f}{\\partial t} \\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial f}{\\partial t} = (3x^2 - y)(\\sin(s)) + (4y - x)(-s \\sin(t)) \\]"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Sustituimos \\(x = t \\sin(s)\\) e \\(y = s \\cos(t)\\) para expresar \\( \\frac{\\partial f}{\\partial t} \\) en términos de \\(t\\) y \\(s\\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial f}{\\partial t} = (3(t \\sin s)^2 - s \\cos t)\\sin s - s \\sin t (4s \\cos t - t \\sin s) \\] \\[ = (3t^2 \\sin^2 s - s \\cos t)\\sin s - (4s^2 \\cos t - st \\sin s)s \\sin t \\] \\[ = 3t^2 \\sin^3 s - s \\cos t \\sin s - 4s^3 \\cos t \\sin t + st^2 \\sin s \\sin^2 t \\]"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Aplicamos la regla de la cadena para \\( \\frac{\\partial f}{\\partial s} \\): \\( \\frac{\\partial f}{\\partial s} = \\frac{\\partial f}{\\partial x} \\frac{\\partial x}{\\partial s} + \\frac{\\partial f}{\\partial y} \\frac{\\partial y}{\\partial s} \\).",
+        "expresion_latex_paso": "\\[ \\frac{\\partial f}{\\partial s} = \\frac{\\partial f}{\\partial x} \\frac{\\partial x}{\\partial s} + \\frac{\\partial f}{\\partial y} \\frac{\\partial y}{\\partial s} \\]"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(x\\) e \\(y\\) respecto a \\(s\\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial x}{\\partial s} = \\frac{\\partial}{\\partial s}(t \\sin(s)) = t \\cos(s) \\] \\[ \\frac{\\partial y}{\\partial s} = \\frac{\\partial}{\\partial s}(s \\cos(t)) = \\cos(t) \\]"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Sustituimos \\( \\frac{\\partial f}{\\partial x} \\), \\( \\frac{\\partial f}{\\partial y} \\), \\( \\frac{\\partial x}{\\partial s} \\), y \\( \\frac{\\partial y}{\\partial s} \\) en la fórmula de \\( \\frac{\\partial f}{\\partial s} \\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial f}{\\partial s} = (3x^2 - y)(t \\cos(s)) + (4y - x)(\\cos(t)) \\]"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Sustituimos \\(x = t \\sin(s)\\) e \\(y = s \\cos(t)\\) para expresar \\( \\frac{\\partial f}{\\partial s} \\) en términos de \\(t\\) y \\(s\\):",
+        "expresion_latex_paso": "\\[ \\frac{\\partial f}{\\partial s} = (3(t \\sin s)^2 - s \\cos t)t \\cos s + (4s \\cos t - t \\sin s)\\cos t \\] \\[ = (3t^2 \\sin^2 s - s \\cos t)t \\cos s + (4s \\cos^2 t - t \\sin s \\cos t) \\] \\[ = 3t^3 \\sin^2 s \\cos s - st \\cos t \\cos s + 4s \\cos^2 t - t \\sin s \\cos t \\]"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 10: Aproximación por Diferenciales Totales",
+    "descripcion": "Hallar el valor aproximado de la siguiente expresión usando diferenciales totales. Expresar el resultado final con <strong>4 decimales</strong>.",
+    "expresion_latex": "\\[ \\sqrt{(3.98)^2 + (3.03)^2 - 6} \\]",
+    "tags": ["Cálculo Multivariable", "Aproximación por Diferenciales", "Diferenciales Totales"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Definimos la función \\( f(x,y) \\) que representa la expresión:",
+        "expresion_latex_paso": "\\[ f(x,y) = \\sqrt{x^2 + y^2 - 6} \\]"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Elegimos un punto cercano \\( (x_0, y_0) \\) donde \\( f(x_0, y_0) \\) sea fácil de calcular. Sea \\( x = 3.98 \\) y \\( y = 3.03 \\). Elegimos \\( x_0 = 4 \\) e \\( y_0 = 3 \\).",
+        "expresion_latex_paso": "\\[ x_0 = 4, \\quad y_0 = 3 \\]"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos los diferenciales \\( dx \\) y \\( dy \\):",
+        "expresion_latex_paso": "\\[ dx = x - x_0 = 3.98 - 4 = -0.02 \\] \\[ dy = y - y_0 = 3.03 - 3 = 0.03 \\]"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Calculamos el valor de la función en el punto \\( (x_0, y_0) \\):",
+        "expresion_latex_paso": "\\[ f(x_0, y_0) = f(4, 3) = \\sqrt{4^2 + 3^2 - 6} = \\sqrt{16 + 9 - 6} = \\sqrt{25 - 6} = \\sqrt{19} \\]"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\( f(x,y) \\): \\( f_x(x,y) = \\frac{\\partial f}{\\partial x} \\) y \\( f_y(x,y) = \\frac{\\partial f}{\\partial y} \\).",
+        "expresion_latex_paso": "\\[ f_x(x,y) = \\frac{\\partial}{\\partial x} (x^2 + y^2 - 6)^{1/2} = \\frac{1}{2}(x^2 + y^2 - 6)^{-1/2}(2x) = \\frac{x}{\\sqrt{x^2 + y^2 - 6}} \\] \\[ f_y(x,y) = \\frac{\\partial}{\\partial y} (x^2 + y^2 - 6)^{1/2} = \\frac{1}{2}(x^2 + y^2 - 6)^{-1/2}(2y) = \\frac{y}{\\sqrt{x^2 + y^2 - 6}} \\]"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Evaluamos las derivadas parciales en el punto \\( (x_0, y_0) = (4, 3) \\):",
+        "expresion_latex_paso": "\\[ f_x(4, 3) = \\frac{4}{\\sqrt{4^2 + 3^2 - 6}} = \\frac{4}{\\sqrt{19}} \\] \\[ f_y(4, 3) = \\frac{3}{\\sqrt{4^2 + 3^2 - 6}} = \\frac{3}{\\sqrt{19}} \\]"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Aplicamos la fórmula de aproximación por diferenciales totales: \\( f(x,y) \\approx f(x_0,y_0) + f_x(x_0,y_0)dx + f_y(x_0,y_0)dy \\).",
+        "expresion_latex_paso": "\\[ \\sqrt{(3.98)^2 + (3.03)^2 - 6} \\approx \\sqrt{19} + \\left(\\frac{4}{\\sqrt{19}}\\right)(-0.02) + \\left(\\frac{3}{\\sqrt{19}}\\right)(0.03) \\]"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Calculamos el valor numérico. Usamos \\( \\sqrt{19} \\approx 4.358902 \\):",
+        "expresion_latex_paso": "\\[ \\approx 4.358902 + \\frac{-0.08 + 0.09}{\\sqrt{19}} = 4.358902 + \\frac{0.01}{4.358902} \\] \\[ \\approx 4.358902 + 0.0022941 = 4.3611961 \\]"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Redondeando a 4 decimales, el valor aproximado es:",
+        "expresion_latex_paso": "\\[ 4.3612 \\]"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 11: Dominio de Función con Raíz Cuadrada y Logaritmo",
+    "descripcion": "Hallar y describir analíticamente el dominio de la siguiente función. Opcionalmente, describir cómo se representaría gráficamente dicho dominio.",
+    "expresion_latex": "\\[ f(x,y) = \\frac{\\ln(y - x^2)}{\\sqrt{4 - x^2 - y^2}} \\]",
+    "tags": ["Cálculo Multivariable", "Dominio de Funciones", "Funciones de Varias Variables", "Inecuaciones"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para que la función \\( f(x,y) \\) esté definida, se deben cumplir tres condiciones simultáneamente, derivadas del argumento del logaritmo natural, el argumento de la raíz cuadrada y el denominador (que no puede ser cero).",
+        "expresion_latex_paso": ""
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "<strong>Condición 1: Argumento del logaritmo natural.</strong> El argumento de \\( \\ln(u) \\) debe ser estrictamente positivo: \\( u > 0 \\).",
+        "expresion_latex_paso": "\\[ y - x^2 > 0 \\implies y > x^2 \\]"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "<strong>Condición 2: Argumento de la raíz cuadrada.</strong> El argumento de \\( \\sqrt{v} \\) debe ser mayor o igual a cero: \\( v \\ge 0 \\).",
+        "expresion_latex_paso": "\\[ 4 - x^2 - y^2 \\ge 0 \\implies x^2 + y^2 \\le 4 \\]"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "<strong>Condición 3: Denominador no nulo.</strong> El denominador no puede ser cero.",
+        "expresion_latex_paso": "\\[ \\sqrt{4 - x^2 - y^2} \\neq 0 \\implies 4 - x^2 - y^2 \\neq 0 \\implies x^2 + y^2 \\neq 4 \\]"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Combinando las condiciones 2 y 3, el argumento de la raíz cuadrada en el denominador debe ser estrictamente positivo:",
+        "expresion_latex_paso": "\\[ 4 - x^2 - y^2 > 0 \\implies x^2 + y^2 < 4 \\]"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "El dominio de \\( f(x,y) \\) es el conjunto de puntos \\( (x,y) \\) en \\( \\mathbb{R}^2 \\) que satisfacen ambas condiciones (derivadas del paso 2 y paso 5):",
+        "expresion_latex_paso": "\\[ D = \\{ (x,y) \\in \\mathbb{R}^2 \\mid y > x^2 \\text{ y } x^2 + y^2 < 4 \\} \\]"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "<strong>Descripción gráfica del dominio (opcional):</strong> <br> La condición \\( y > x^2 \\) representa la región por encima de la parábola \\( y = x^2 \\) (la parábola misma no está incluida). <br> La condición \\( x^2 + y^2 < 4 \\) representa la región interior del círculo con centro en el origen \\( (0,0) \\) y radio 2 (la circunferencia misma no está incluida). <br> El dominio de la función es la intersección de estas dos regiones: el conjunto de puntos que están simultáneamente por encima de la parábola \\( y = x^2 \\) y estrictamente dentro del círculo \\( x^2 + y^2 = 4 \\).",
+        "expresion_latex_paso": ""
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 8: Derivada Direccional por Definición",
+    "descripcion": "Hallar la derivada direccional de la función \\( f(x,y) \\) en el punto \\( P(1, -1) \\) en dirección del vector \\( \\mathbf{v} = \\langle 3, 4 \\rangle \\) usando la definición y <strong>(sin H'opital)</strong>:",
+    "expresion_latex": "f(x,y) = 2x^2 - xy + 3y^2",
+    "tags": ["Cálculo Multivariable", "Derivada Direccional", "Definición de Derivada", "Límites"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "La definición de la derivada direccional de \\( f \\) en \\( (x_0, y_0) \\) en la dirección de un vector unitario \\( \\mathbf{u} = \\langle a, b \\rangle \\) es \\( D_{\\mathbf{u}}f(x_0, y_0) = \\lim_{h \\to 0} \\frac{f(x_0 + ha, y_0 + hb) - f(x_0, y_0)}{h} \\).",
+        "expresion_latex_paso": "D_{\\mathbf{u}}f(x_0, y_0) = \\lim_{h \\to 0} \\frac{f(x_0 + ha, y_0 + hb) - f(x_0, y_0)}{h}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "El punto dado es \\( (x_0, y_0) = (1, -1) \\). El vector de dirección es \\( \\mathbf{v} = \\langle 3, 4 \\rangle \\). Normalizamos \\( \\mathbf{v} \\) para obtener el vector unitario \\( \\mathbf{u} \\):",
+        "expresion_latex_paso": "\\|\\mathbf{v}\\| = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5 \\\\ \\mathbf{u} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\left\\langle \\frac{3}{5}, \\frac{4}{5} \\right\\rangle. \\text{ Así, } a = \\frac{3}{5} \\text{ y } b = \\frac{4}{5}."
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos \\( f(x_0, y_0) = f(1, -1) \\):",
+        "expresion_latex_paso": "f(1, -1) = 2(1)^2 - (1)(-1) + 3(-1)^2 = 2 + 1 + 3 = 6"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Formamos \\( f(x_0 + ha, y_0 + hb) = f(1 + h\\frac{3}{5}, -1 + h\\frac{4}{5}) \\):",
+        "expresion_latex_paso": "f\\left(1 + \\frac{3h}{5}, -1 + \\frac{4h}{5}\\right) = 2\\left(1 + \\frac{3h}{5}\\right)^2 - \\left(1 + \\frac{3h}{5}\\right)\\left(-1 + \\frac{4h}{5}\\right) + 3\\left(-1 + \\frac{4h}{5}\\right)^2 \\\\ = 2\\left(1 + \\frac{6h}{5} + \\frac{9h^2}{25}\\right) - \\left(-1 + \\frac{4h}{5} - \\frac{3h}{5} + \\frac{12h^2}{25}\\right) + 3\\left(1 - \\frac{8h}{5} + \\frac{16h^2}{25}\\right) \\\\ = \\left(2 + \\frac{12h}{5} + \\frac{18h^2}{25}\\right) - \\left(-1 + \\frac{h}{5} + \\frac{12h^2}{25}\\right) + \\left(3 - \\frac{24h}{5} + \\frac{48h^2}{25}\\right) \\\\ = 2 + \\frac{12h}{5} + \\frac{18h^2}{25} + 1 - \\frac{h}{5} - \\frac{12h^2}{25} + 3 - \\frac{24h}{5} + \\frac{48h^2}{25} \\\\ = (2+1+3) + h\\left(\\frac{12}{5} - \\frac{1}{5} - \\frac{24}{5}\\right) + h^2\\left(\\frac{18}{25} - \\frac{12}{25} + \\frac{48}{25}\\right) \\\\ = 6 + h\\left(\\frac{11-24}{5}\\right) + h^2\\left(\\frac{6+48}{25}\\right) = 6 - \\frac{13h}{5} + \\frac{54h^2}{25}"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Sustituimos en la definición del límite:",
+        "expresion_latex_paso": "D_{\\mathbf{u}}f(1, -1) = \\lim_{h \\to 0} \\frac{\\left(6 - \\frac{13h}{5} + \\frac{54h^2}{25}\\right) - 6}{h}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Simplificamos el numerador:",
+        "expresion_latex_paso": "\\left(6 - \\frac{13h}{5} + \\frac{54h^2}{25}\\right) - 6 = - \\frac{13h}{5} + \\frac{54h^2}{25}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Dividimos por \\( h \\) (para \\( h \\neq 0 \\)) y evaluamos el límite:",
+        "expresion_latex_paso": "D_{\\mathbf{u}}f(1, -1) = \\lim_{h \\to 0} \\frac{h\\left(- \\frac{13}{5} + \\frac{54h}{25}\\right)}{h} = \\lim_{h \\to 0} \\left(- \\frac{13}{5} + \\frac{54h}{25}\\right) = -\\frac{13}{5}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 9: Aproximación de Valores usando Diferenciales",
+    "descripcion": "Hallar el valor aproximado de la siguiente expresión usando diferenciales. Expresar el resultado con 3 decimales.",
+    "expresion_latex": "\\sqrt{(3.02)^2 + (3.97)^2}",
+    "tags": ["Cálculo Multivariable", "Diferenciales Totales", "Aproximación Lineal", "Aplicaciones de la Derivada"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Identificamos la función \\( f(x,y) \\) que modela la expresión. En este caso, sea:",
+        "expresion_latex_paso": "f(x,y) = \\sqrt{x^2 + y^2}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Elegimos un punto cercano \\( (x_0, y_0) \\) donde \\( f(x_0, y_0) \\) sea fácil de calcular. Los valores dados son \\( x = 3.02 \\) y \\( y = 3.97 \\). Un punto cercano adecuado es:",
+        "expresion_latex_paso": "(x_0, y_0) = (3, 4)"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos los diferenciales \\( dx \\) y \\( dy \\):",
+        "expresion_latex_paso": "dx = x - x_0 = 3.02 - 3 = 0.02 \\\\ dy = y - y_0 = 3.97 - 4 = -0.03"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "La fórmula de aproximación lineal usando diferenciales es: \\( f(x_0+dx, y_0+dy) \\approx f(x_0,y_0) + f_x(x_0,y_0)dx + f_y(x_0,y_0)dy \\).",
+        "expresion_latex_paso": "L(x,y) = f(x_0,y_0) + \\frac{\\partial f}{\\partial x}(x_0,y_0) (x-x_0) + \\frac{\\partial f}{\\partial y}(x_0,y_0) (y-y_0)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Calculamos \\( f(x_0, y_0) = f(3,4) \\):",
+        "expresion_latex_paso": "f(3,4) = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\( f(x,y) \\):",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial x} = \\frac{\\partial}{\\partial x} (x^2 + y^2)^{1/2} = \\frac{1}{2}(x^2+y^2)^{-1/2}(2x) = \\frac{x}{\\sqrt{x^2+y^2}} \\\\ \\frac{\\partial f}{\\partial y} = \\frac{\\partial}{\\partial y} (x^2 + y^2)^{1/2} = \\frac{1}{2}(x^2+y^2)^{-1/2}(2y) = \\frac{y}{\\sqrt{x^2+y^2}}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Evaluamos las derivadas parciales en el punto \\( (x_0, y_0) = (3,4) \\):",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial x}(3,4) = \\frac{3}{\\sqrt{3^2+4^2}} = \\frac{3}{5} \\\\ \\frac{\\partial f}{\\partial y}(3,4) = \\frac{4}{\\sqrt{3^2+4^2}} = \\frac{4}{5}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Sustituimos todos los valores en la fórmula de aproximación:",
+        "expresion_latex_paso": "\\sqrt{(3.02)^2 + (3.97)^2} \\approx f(3,4) + \\frac{\\partial f}{\\partial x}(3,4)dx + \\frac{\\partial f}{\\partial y}(3,4)dy \\\\ \\approx 5 + \\left(\\frac{3}{5}\\right)(0.02) + \\left(\\frac{4}{5}\\right)(-0.03) \\\\ \\approx 5 + \\frac{0.06}{5} - \\frac{0.12}{5} \\\\ \\approx 5 + 0.012 - 0.024 \\\\ \\approx 5 - 0.012 = 4.988"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 10: Regla de la Cadena Multivariable",
+    "descripcion": "Si \\( f(x,y) = x^2 \\ln(y) \\), donde \\( x = t e^s \\) e \\( y = t^2 + s \\). Hallar \\( \\frac{\\partial f}{\\partial t} \\) y \\( \\frac{\\partial f}{\\partial s} \\) usando la regla de la cadena. Expresar las derivadas en términos de \\( t \\) y \\( s \\). (Asumir que \\( y > 0 \\)).",
+    "expresion_latex": "f(x,y) = x^2 \\ln(y); \\quad x(t,s) = t e^s; \\quad y(t,s) = t^2 + s",
+    "tags": ["Cálculo Multivariable", "Regla de la Cadena", "Derivadas Parciales"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Las fórmulas de la regla de la cadena para \\( \\frac{\\partial f}{\\partial t} \\) y \\( \\frac{\\partial f}{\\partial s} \\) son:",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial t} = \\frac{\\partial f}{\\partial x} \\frac{\\partial x}{\\partial t} + \\frac{\\partial f}{\\partial y} \\frac{\\partial y}{\\partial t} \\\\ \\frac{\\partial f}{\\partial s} = \\frac{\\partial f}{\\partial x} \\frac{\\partial x}{\\partial s} + \\frac{\\partial f}{\\partial y} \\frac{\\partial y}{\\partial s}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\( f(x,y) \\) con respecto a \\( x \\) e \\( y \\):",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial x} = \\frac{\\partial}{\\partial x} (x^2 \\ln(y)) = 2x \\ln(y) \\\\ \\frac{\\partial f}{\\partial y} = \\frac{\\partial}{\\partial y} (x^2 \\ln(y)) = x^2 \\cdot \\frac{1}{y} = \\frac{x^2}{y}"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\( x(t,s) \\) y \\( y(t,s) \\) con respecto a \\( t \\) y \\( s \\):",
+        "expresion_latex_paso": "\\frac{\\partial x}{\\partial t} = \\frac{\\partial}{\\partial t} (t e^s) = e^s \\\\ \\frac{\\partial x}{\\partial s} = \\frac{\\partial}{\\partial s} (t e^s) = t e^s \\\\ \\frac{\\partial y}{\\partial t} = \\frac{\\partial}{\\partial t} (t^2 + s) = 2t \\\\ \\frac{\\partial y}{\\partial s} = \\frac{\\partial}{\\partial s} (t^2 + s) = 1"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Sustituimos estas derivadas en la fórmula para \\( \\frac{\\partial f}{\\partial t} \\):",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial t} = (2x \\ln(y))(e^s) + \\left(\\frac{x^2}{y}\\right)(2t)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Expresamos \\( \\frac{\\partial f}{\\partial t} \\) en términos de \\( t \\) y \\( s \\) sustituyendo \\( x = t e^s \\) y \\( y = t^2 + s \\), y simplificamos:",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial t} = 2(t e^s) \\ln(t^2+s) \\cdot e^s + \\frac{(t e^s)^2}{t^2+s} \\cdot 2t \\\\ = 2t e^{2s} \\ln(t^2+s) + \\frac{t^2 e^{2s}}{t^2+s} \\cdot 2t \\\\ = 2t e^{2s} \\ln(t^2+s) + \\frac{2t^3 e^{2s}}{t^2+s}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Sustituimos las derivadas parciales en la fórmula para \\( \\frac{\\partial f}{\\partial s} \\):",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial s} = (2x \\ln(y))(t e^s) + \\left(\\frac{x^2}{y}\\right)(1)"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Expresamos \\( \\frac{\\partial f}{\\partial s} \\) en términos de \\( t \\) y \\( s \\) sustituyendo \\( x = t e^s \\) y \\( y = t^2 + s \\), y simplificamos:",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial s} = 2(t e^s) \\ln(t^2+s) \\cdot (t e^s) + \\frac{(t e^s)^2}{t^2+s} \\cdot 1 \\\\ = 2t^2 e^{2s} \\ln(t^2+s) + \\frac{t^2 e^{2s}}{t^2+s}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 11: Dominio de Funciones Multivariables",
+    "descripcion": "Hallar y describir algebraicamente el dominio de la siguiente función \\( f(x,y) \\).",
+    "expresion_latex": "f(x,y) = \\frac{\\sqrt{x^2 + y^2 - 4}}{\\ln(9 - x^2)}",
+    "tags": ["Cálculo Multivariable", "Dominio de Funciones", "Funciones de Varias Variables", "Inecuaciones"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para que \\( f(x,y) \\) esté definida, se deben cumplir tres condiciones simultáneamente: el argumento de la raíz cuadrada debe ser no negativo, el argumento del logaritmo natural debe ser positivo, y el denominador (el logaritmo natural) no debe ser cero.",
+        "expresion_latex_paso": ""
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "<strong>Condición 1 (Raíz cuadrada):</strong> El argumento de la raíz cuadrada debe ser mayor o igual a cero.",
+        "expresion_latex_paso": "x^2 + y^2 - 4 \\ge 0 \\implies x^2 + y^2 \\ge 4"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "<strong>Condición 2 (Logaritmo natural):</strong> El argumento del logaritmo natural debe ser estrictamente positivo.",
+        "expresion_latex_paso": "9 - x^2 > 0 \\implies x^2 < 9 \\implies -3 < x < 3"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "<strong>Condición 3 (Denominador no nulo):</strong> El denominador no debe ser cero.",
+        "expresion_latex_paso": "\\ln(9 - x^2) \\neq 0 \\implies 9 - x^2 \\neq e^0 \\implies 9 - x^2 \\neq 1 \\implies x^2 \\neq 8 \\implies x \\neq \\pm\\sqrt{8} \\implies x \\neq \\pm 2\\sqrt{2}"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "El dominio \\( D \\) de la función \\( f(x,y) \\) es el conjunto de todos los puntos \\( (x,y) \\) que satisfacen las tres condiciones. Combinando las condiciones, obtenemos:",
+        "expresion_latex_paso": "D = \\{ (x,y) \\in \\mathbb{R}^2 \\mid (x^2 + y^2 \\ge 4) \\land (-3 < x < 3) \\land (x \\neq 2\\sqrt{2}) \\land (x \\neq -2\\sqrt{2}) \\}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Descripción del dominio: El dominio consiste en todos los puntos \\( (x,y) \\) que están sobre o fuera de la circunferencia \\( x^2 + y^2 = 4 \\) (radio 2, centro en el origen), estrictamente entre las rectas verticales \\( x = -3 \\) y \\( x = 3 \\), y excluyendo los puntos sobre las rectas verticales \\( x = 2\\sqrt{2} \\approx 2.828 \\) y \\( x = -2\\sqrt{2} \\approx -2.828 \\).",
+        "expresion_latex_paso": "\\text{Geométricamente: Puntos en o fuera del círculo } x^2+y^2=4, \\text{ dentro de la franja } -3 < x < 3, \\text{ excluyendo las líneas } x = \\pm 2\\sqrt{2}."
+      }
+    ]
+  },
+   {
+    "titulo": "Ejercicio 12: Derivadas Parciales por Definición",
+    "descripcion": "Hallar las derivadas parciales \\( \\frac{\\partial f}{\\partial x} \\) y \\( \\frac{\\partial f}{\\partial y} \\) aplicando la definición <strong>(sin H'opital)</strong> para la siguiente función:",
+    "expresion_latex": "f(x,y) = x^2y - 3xy^2 + 5x",
+    "tags": ["Cálculo Multivariable", "Derivadas Parciales", "Definición de Derivada", "Límites"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para hallar \\( \\frac{\\partial f}{\\partial x} \\), aplicamos la definición de derivada parcial respecto a x: \\( \\frac{\\partial f}{\\partial x} = \\lim_{h \\to 0} \\frac{f(x+h, y) - f(x,y)}{h} \\).",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial x} = \\lim_{h \\to 0} \\frac{[(x+h)^2y - 3(x+h)y^2 + 5(x+h)] - [x^2y - 3xy^2 + 5x]}{h}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Expandimos los términos en el numerador:",
+        "expresion_latex_paso": "(x+h)^2y = (x^2+2xh+h^2)y = x^2y + 2xhy + h^2y \\\\ -3(x+h)y^2 = -3xy^2 - 3hy^2 \\\\ 5(x+h) = 5x + 5h"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Sustituimos las expansiones y simplificamos el numerador:",
+        "expresion_latex_paso": "\\frac{[x^2y + 2xhy + h^2y - 3xy^2 - 3hy^2 + 5x + 5h] - [x^2y - 3xy^2 + 5x]}{h} \\\\ = \\frac{x^2y + 2xhy + h^2y - 3xy^2 - 3hy^2 + 5x + 5h - x^2y + 3xy^2 - 5x}{h} \\\\ = \\frac{2xhy + h^2y - 3hy^2 + 5h}{h}"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Factorizamos \\( h \\) del numerador (para \\( h \\neq 0 \\)) y evaluamos el límite:",
+        "expresion_latex_paso": "\\lim_{h \\to 0} \\frac{h(2xy + hy - 3y^2 + 5)}{h} = \\lim_{h \\to 0} (2xy + hy - 3y^2 + 5) = 2xy - 3y^2 + 5"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Para hallar \\( \\frac{\\partial f}{\\partial y} \\), aplicamos la definición de derivada parcial respecto a y: \\( \\frac{\\partial f}{\\partial y} = \\lim_{k \\to 0} \\frac{f(x, y+k) - f(x,y)}{k} \\).",
+        "expresion_latex_paso": "\\frac{\\partial f}{\\partial y} = \\lim_{k \\to 0} \\frac{[x^2(y+k) - 3x(y+k)^2 + 5x] - [x^2y - 3xy^2 + 5x]}{k}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Expandimos los términos en el numerador:",
+        "expresion_latex_paso": "x^2(y+k) = x^2y + x^2k \\\\ -3x(y+k)^2 = -3x(y^2+2yk+k^2) = -3xy^2 - 6xyk - 3xk^2"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Sustituimos las expansiones y simplificamos el numerador:",
+        "expresion_latex_paso": "\\frac{[x^2y + x^2k - 3xy^2 - 6xyk - 3xk^2 + 5x] - [x^2y - 3xy^2 + 5x]}{k} \\\\ = \\frac{x^2y + x^2k - 3xy^2 - 6xyk - 3xk^2 + 5x - x^2y + 3xy^2 - 5x}{k} \\\\ = \\frac{x^2k - 6xyk - 3xk^2}{k}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Factorizamos \\( k \\) del numerador (para \\( k \\neq 0 \\)) y evaluamos el límite:",
+        "expresion_latex_paso": "\\lim_{k \\to 0} \\frac{k(x^2 - 6xy - 3xk)}{k} = \\lim_{k \\to 0} (x^2 - 6xy - 3xk) = x^2 - 6xy"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 13: Límite de Función Multivariable",
+    "descripcion": "Demostrar si el siguiente límite existe y, en caso afirmativo, calcular su valor. En caso negativo, justificarlo.",
+    "expresion_latex": "\\lim_{(x,y) \\to (0,0)} \\frac{x^2 y}{x^2 + y^2}",
+    "tags": ["Cálculo Multivariable", "Límites Multivariables", "Coordenadas Polares", "Teorema del Sándwich"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para evaluar este límite, podemos intentar aproximarnos al origen \\((0,0)\\) a través de diferentes trayectorias o usar coordenadas polares.",
+        "expresion_latex_paso": ""
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Consideremos la trayectoria \\( y = mx \\). Si el límite depende de \\( m \\), entonces no existe. Si da un valor constante, puede existir.",
+        "expresion_latex_paso": "\\lim_{x \\to 0} \\frac{x^2 (mx)}{x^2 + (mx)^2} = \\lim_{x \\to 0} \\frac{mx^3}{x^2 + m^2x^2} = \\lim_{x \\to 0} \\frac{mx^3}{x^2(1 + m^2)} = \\lim_{x \\to 0} \\frac{mx}{1 + m^2} = 0"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Dado que diferentes trayectorias lineales sugieren que el límite es 0, intentaremos demostrarlo usando coordenadas polares. Hacemos \\( x = r \\cos(\\theta) \\) e \\( y = r \\sin(\\theta) \\). Cuando \\( (x,y) \\to (0,0) \\), tenemos \\( r \\to 0^+ \\).",
+        "expresion_latex_paso": "\\frac{x^2 y}{x^2 + y^2} = \\frac{(r \\cos(\\theta))^2 (r \\sin(\\theta))}{(r \\cos(\\theta))^2 + (r \\sin(\\theta))^2} = \\frac{r^2 \\cos^2(\\theta) r \\sin(\\theta)}{r^2 \\cos^2(\\theta) + r^2 \\sin^2(\\theta)}"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Simplificamos la expresión en coordenadas polares:",
+        "expresion_latex_paso": "\\frac{r^3 \\cos^2(\\theta) \\sin(\\theta)}{r^2 (\\cos^2(\\theta) + \\sin^2(\\theta))} = \\frac{r^3 \\cos^2(\\theta) \\sin(\\theta)}{r^2 \\cdot 1} = r \\cos^2(\\theta) \\sin(\\theta)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Ahora calculamos el límite cuando \\( r \\to 0^+ \\):",
+        "expresion_latex_paso": "\\lim_{r \\to 0^+} r \\cos^2(\\theta) \\sin(\\theta)"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Para demostrar formalmente que este límite es 0, usamos el Teorema del Sándwich (o de Estricción). Sabemos que \\( 0 \\le \\cos^2(\\theta) \\le 1 \\) y \\( -1 \\le \\sin(\\theta) \\le 1 \\). Por lo tanto, \\( -1 \\le \\cos^2(\\theta) \\sin(\\theta) \\le 1 \\).",
+        "expresion_latex_paso": "0 \\le |\\cos^2(\\theta) \\sin(\\theta)| \\le 1"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Multiplicando por \\( |r| \\) (con \\( r > 0 \\)):",
+        "expresion_latex_paso": "0 \\le |r \\cos^2(\\theta) \\sin(\\theta)| \\le |r| \\cdot 1 \\implies 0 \\le |r \\cos^2(\\theta) \\sin(\\theta)| \\le r"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Como \\( \\lim_{r \\to 0^+} 0 = 0 \\) y \\( \\lim_{r \\to 0^+} r = 0 \\), por el Teorema del Sándwich:",
+        "expresion_latex_paso": "\\lim_{r \\to 0^+} |r \\cos^2(\\theta) \\sin(\\theta)| = 0 \\implies \\lim_{r \\to 0^+} r \\cos^2(\\theta) \\sin(\\theta) = 0"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Por lo tanto, el límite existe y es igual a 0.",
+        "expresion_latex_paso": "\\lim_{(x,y) \\to (0,0)} \\frac{x^2 y}{x^2 + y^2} = 0"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 14: Derivadas Parciales de Orden Superior",
+    "descripcion": "Dada la función \\( f(x,y) \\), hallar las derivadas parciales \\( \\frac{\\partial^2 f}{\\partial x^2} \\) (o \\( f_{xx} \\)), \\( \\frac{\\partial^2 f}{\\partial y^2} \\) (o \\( f_{yy} \\)) y \\( \\frac{\\partial^2 f}{\\partial x \\partial y} \\) (o \\( f_{xy} \\)).",
+    "expresion_latex": "f(x,y) = e^{xy} \\cos(x^2 + y)",
+    "tags": ["Cálculo Multivariable", "Derivadas Parciales", "Reglas de Derivación", "Derivadas de Orden Superior", "Teorema de Clairaut"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Calculamos la primera derivada parcial \\( f_x = \\frac{\\partial f}{\\partial x} \\) usando la regla del producto \\( (uv)' = u'v + uv' \\) y la regla de la cadena.",
+        "expresion_latex_paso": "f_x = \\frac{\\partial}{\\partial x}(e^{xy}) \\cos(x^2+y) + e^{xy} \\frac{\\partial}{\\partial x}(\\cos(x^2+y)) \\\\ = y e^{xy} \\cos(x^2+y) + e^{xy} (-\\sin(x^2+y) \\cdot 2x) \\\\ = y e^{xy} \\cos(x^2+y) - 2x e^{xy} \\sin(x^2+y)"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos la primera derivada parcial \\( f_y = \\frac{\\partial f}{\\partial y} \\) usando la regla del producto y la regla de la cadena.",
+        "expresion_latex_paso": "f_y = \\frac{\\partial}{\\partial y}(e^{xy}) \\cos(x^2+y) + e^{xy} \\frac{\\partial}{\\partial y}(\\cos(x^2+y)) \\\\ = x e^{xy} \\cos(x^2+y) + e^{xy} (-\\sin(x^2+y) \\cdot 1) \\\\ = x e^{xy} \\cos(x^2+y) - e^{xy} \\sin(x^2+y)"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos \\( f_{xx} = \\frac{\\partial^2 f}{\\partial x^2} = \\frac{\\partial}{\\partial x}(f_x) \\). Derivamos cada término de \\( f_x \\) respecto a \\( x \\).",
+        "expresion_latex_paso": "\\frac{\\partial}{\\partial x}(y e^{xy} \\cos(x^2+y)) = y(y e^{xy}) \\cos(x^2+y) + y e^{xy} (-\\sin(x^2+y) \\cdot 2x) \\\\ = y^2 e^{xy} \\cos(x^2+y) - 2xy e^{xy} \\sin(x^2+y) \\\\ \\frac{\\partial}{\\partial x}(-2x e^{xy} \\sin(x^2+y)) = -[ (2 e^{xy} + 2x(y e^{xy})) \\sin(x^2+y) + 2x e^{xy} (\\cos(x^2+y) \\cdot 2x) ] \\\\ = -(2 e^{xy} + 2xy e^{xy}) \\sin(x^2+y) - 4x^2 e^{xy} \\cos(x^2+y) \\\\ f_{xx} = y^2 e^{xy} \\cos(x^2+y) - 2xy e^{xy} \\sin(x^2+y) - (2 e^{xy} + 2xy e^{xy}) \\sin(x^2+y) - 4x^2 e^{xy} \\cos(x^2+y) \\\\ = e^{xy} [(y^2-4x^2)\\cos(x^2+y) - (2xy+2+2xy)\\sin(x^2+y)] \\\\ = e^{xy} [(y^2-4x^2)\\cos(x^2+y) - (4xy+2)\\sin(x^2+y)]"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Calculamos \\( f_{yy} = \\frac{\\partial^2 f}{\\partial y^2} = \\frac{\\partial}{\\partial y}(f_y) \\). Derivamos cada término de \\( f_y \\) respecto a \\( y \\).",
+        "expresion_latex_paso": "\\frac{\\partial}{\\partial y}(x e^{xy} \\cos(x^2+y)) = x(x e^{xy}) \\cos(x^2+y) + x e^{xy} (-\\sin(x^2+y) \\cdot 1) \\\\ = x^2 e^{xy} \\cos(x^2+y) - x e^{xy} \\sin(x^2+y) \\\\ \\frac{\\partial}{\\partial y}(-e^{xy} \\sin(x^2+y)) = -[ (x e^{xy}) \\sin(x^2+y) + e^{xy} (\\cos(x^2+y) \\cdot 1) ] \\\\ = -x e^{xy} \\sin(x^2+y) - e^{xy} \\cos(x^2+y) \\\\ f_{yy} = x^2 e^{xy} \\cos(x^2+y) - x e^{xy} \\sin(x^2+y) - x e^{xy} \\sin(x^2+y) - e^{xy} \\cos(x^2+y) \\\\ = e^{xy} [(x^2-1)\\cos(x^2+y) - 2x\\sin(x^2+y)]"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Calculamos \\( f_{xy} = \\frac{\\partial^2 f}{\\partial x \\partial y} = \\frac{\\partial}{\\partial y}(f_x) \\). Derivamos cada término de \\( f_x \\) respecto a \\( y \\).",
+        "expresion_latex_paso": "\\frac{\\partial}{\\partial y}(y e^{xy} \\cos(x^2+y)) = (1 \\cdot e^{xy} + y \\cdot x e^{xy})\\cos(x^2+y) + y e^{xy} (-\\sin(x^2+y) \\cdot 1) \\\\ = e^{xy}(1+xy)\\cos(x^2+y) - y e^{xy} \\sin(x^2+y) \\\\ \\frac{\\partial}{\\partial y}(-2x e^{xy} \\sin(x^2+y)) = -2x [ (x e^{xy}) \\sin(x^2+y) + e^{xy} (\\cos(x^2+y) \\cdot 1) ] \\\\ = -2x^2 e^{xy} \\sin(x^2+y) - 2x e^{xy} \\cos(x^2+y) \\\\ f_{xy} = e^{xy}(1+xy)\\cos(x^2+y) - y e^{xy} \\sin(x^2+y) - 2x^2 e^{xy} \\sin(x^2+y) - 2x e^{xy} \\cos(x^2+y) \\\\ = e^{xy} [(1+xy-2x)\\cos(x^2+y) - (y+2x^2)\\sin(x^2+y)]"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Nota: Se podría verificar \\( f_{yx} = \\frac{\\partial}{\\partial x}(f_y) \\) y, si las segundas derivadas parciales son continuas (lo cual son para esta función), el Teorema de Clairaut establece que \\( f_{xy} = f_{yx} \\).",
+        "expresion_latex_paso": ""
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 15: Regla de la Cadena con Coordenadas Polares",
+    "descripcion": "Sea \\( z = f(x,y) = \\arctan\\left(\\frac{y}{x}\\right) \\). Si \\( x = r \\cos(\\theta) \\) e \\( y = r \\sin(\\theta) \\), hallar \\( \\frac{\\partial z}{\\partial r} \\) y \\( \\frac{\\partial z}{\\partial \\theta} \\) usando la regla de la cadena. Expresar las derivadas finales en términos de \\( r \\) y \\( \\theta \\) (o como constantes si es el caso). Asumir \\( x > 0 \\).",
+    "expresion_latex": "z = \\arctan\\left(\\frac{y}{x}\\right); \\quad x = r \\cos(\\theta); \\quad y = r \\sin(\\theta)",
+    "tags": ["Cálculo Multivariable", "Regla de la Cadena", "Coordenadas Polares", "Derivadas Parciales"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Las fórmulas de la regla de la cadena son: \\\\ \\( \\frac{\\partial z}{\\partial r} = \\frac{\\partial z}{\\partial x} \\frac{\\partial x}{\\partial r} + \\frac{\\partial z}{\\partial y} \\frac{\\partial y}{\\partial r} \\) \\\\ \\( \\frac{\\partial z}{\\partial \\theta} = \\frac{\\partial z}{\\partial x} \\frac{\\partial x}{\\partial \\theta} + \\frac{\\partial z}{\\partial y} \\frac{\\partial y}{\\partial \\theta} \\)",
+        "expresion_latex_paso": ""
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\( z = \\arctan(y/x) \\) con respecto a \\( x \\) e \\( y \\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\frac{1}{1 + (y/x)^2} \\cdot \\frac{\\partial}{\\partial x}\\left(\\frac{y}{x}\\right) = \\frac{1}{1 + y^2/x^2} \\cdot \\left(-\\frac{y}{x^2}\\right) = \\frac{x^2}{x^2+y^2} \\cdot \\left(-\\frac{y}{x^2}\\right) = -\\frac{y}{x^2+y^2} \\\\ \\frac{\\partial z}{\\partial y} = \\frac{1}{1 + (y/x)^2} \\cdot \\frac{\\partial}{\\partial y}\\left(\\frac{y}{x}\\right) = \\frac{x^2}{x^2+y^2} \\cdot \\left(\\frac{1}{x}\\right) = \\frac{x}{x^2+y^2}"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\( x = r \\cos(\\theta) \\) e \\( y = r \\sin(\\theta) \\) con respecto a \\( r \\) y \\( \\theta \\):",
+        "expresion_latex_paso": "\\frac{\\partial x}{\\partial r} = \\cos(\\theta) \\hspace{1cm} \\frac{\\partial y}{\\partial r} = \\sin(\\theta) \\\\ \\frac{\\partial x}{\\partial \\theta} = -r \\sin(\\theta) \\hspace{1cm} \\frac{\\partial y}{\\partial \\theta} = r \\cos(\\theta)"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Sustituimos estas derivadas en la fórmula para \\( \\frac{\\partial z}{\\partial r} \\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial r} = \\left(-\\frac{y}{x^2+y^2}\\right) (\\cos(\\theta)) + \\left(\\frac{x}{x^2+y^2}\\right) (\\sin(\\theta))"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Sustituimos \\( x = r \\cos(\\theta) \\), \\( y = r \\sin(\\theta) \\) y \\( x^2+y^2 = r^2 \\) en la expresión de \\( \\frac{\\partial z}{\\partial r} \\) y simplificamos:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial r} = \\left(-\\frac{r \\sin(\\theta)}{r^2}\\right) (\\cos(\\theta)) + \\left(\\frac{r \\cos(\\theta)}{r^2}\\right) (\\sin(\\theta)) \\\\ = -\\frac{\\sin(\\theta)\\cos(\\theta)}{r} + \\frac{\\cos(\\theta)\\sin(\\theta)}{r} = 0"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Sustituimos las derivadas en la fórmula para \\( \\frac{\\partial z}{\\partial \\theta} \\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial \\theta} = \\left(-\\frac{y}{x^2+y^2}\\right) (-r \\sin(\\theta)) + \\left(\\frac{x}{x^2+y^2}\\right) (r \\cos(\\theta))"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Sustituimos \\( x = r \\cos(\\theta) \\), \\( y = r \\sin(\\theta) \\) y \\( x^2+y^2 = r^2 \\) en la expresión de \\( \\frac{\\partial z}{\\partial \\theta} \\) y simplificamos:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial \\theta} = \\left(-\\frac{r \\sin(\\theta)}{r^2}\\right) (-r \\sin(\\theta)) + \\left(\\frac{r \\cos(\\theta)}{r^2}\\right) (r \\cos(\\theta)) \\\\ = \\frac{r^2 \\sin^2(\\theta)}{r^2} + \\frac{r^2 \\cos^2(\\theta)}{r^2} = \\sin^2(\\theta) + \\cos^2(\\theta) = 1"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Interpretación: Dado que \\( z = \\arctan(y/x) \\) representa el ángulo \\( \\theta \\) en coordenadas polares (para \\(x>0\\), específicamente \\( \\theta \\in (-\\pi/2, \\pi/2) \\)), es decir \\( z = \\theta \\). Entonces, \\( \\frac{\\partial z}{\\partial r} = \\frac{\\partial \\theta}{\\partial r} = 0 \\) (el ángulo no cambia con el radio si la dirección se mantiene) y \\( \\frac{\\partial z}{\\partial \\theta} = \\frac{\\partial \\theta}{\\partial \\theta} = 1 \\). Los resultados concuerdan.",
+        "expresion_latex_paso": ""
+      }
+    ]
+  },
+   {
+    "titulo": "Ejercicio 16: Derivadas Parciales por Definición (Función Polinómica)",
+    "descripcion": "Hallar las derivadas parciales \\( \\frac{\\partial z}{\\partial x} \\) y \\( \\frac{\\partial z}{\\partial y} \\) aplicando la definición (<strong>sin H'opital</strong>) para la siguiente función:",
+    "expresion_latex": "z = f(x,y) = 2x^2 - 3xy + 5y",
+    "tags": ["Cálculo Multivariable", "Derivadas Parciales", "Definición de Derivada", "Límites", "Funciones Polinómicas"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Para hallar \\( \\frac{\\partial z}{\\partial x} \\), aplicamos la definición de derivada parcial respecto a \\(x\\): \\( \\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{f(x+h, y) - f(x,y)}{h} \\). Sustituimos la función \\(f(x,y)\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{[2(x+h)^2 - 3(x+h)y + 5y] - [2x^2 - 3xy + 5y]}{h}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Expandimos los términos en el numerador:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{[2(x^2+2xh+h^2) - 3xy - 3hy + 5y] - 2x^2 + 3xy - 5y}{h}"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Simplificamos el numerador:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{2x^2 + 4xh + 2h^2 - 3xy - 3hy + 5y - 2x^2 + 3xy - 5y}{h} \\\\ = \\lim_{h \\to 0} \\frac{4xh + 2h^2 - 3hy}{h}"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Factorizamos \\(h\\) del numerador y cancelamos:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = \\lim_{h \\to 0} \\frac{h(4x + 2h - 3y)}{h} \\\\ = \\lim_{h \\to 0} (4x + 2h - 3y)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Evaluamos el límite haciendo \\(h \\to 0\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial x} = 4x + 2(0) - 3y = 4x - 3y"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Para hallar \\( \\frac{\\partial z}{\\partial y} \\), aplicamos la definición de derivada parcial respecto a \\(y\\): \\( \\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{f(x, y+k) - f(x,y)}{k} \\). Sustituimos la función \\(f(x,y)\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{[2x^2 - 3x(y+k) + 5(y+k)] - [2x^2 - 3xy + 5y]}{k}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Expandimos los términos en el numerador:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{2x^2 - 3xy - 3xk + 5y + 5k - 2x^2 + 3xy - 5y}{k}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Simplificamos el numerador:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{-3xk + 5k}{k}"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Factorizamos \\(k\\) del numerador y cancelamos:",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} = \\lim_{k \\to 0} \\frac{k(-3x + 5)}{k} \\\\ = \\lim_{k \\to 0} (-3x + 5)"
+      },
+      {
+        "paso_numero": 10,
+        "descripcion_paso": "Evaluamos el límite haciendo \\(k \\to 0\\):",
+        "expresion_latex_paso": "\\frac{\\partial z}{\\partial y} = -3x + 5"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 17: Derivada Direccional por Definición (Función Polinómica)",
+    "descripcion": "Hallar la derivada direccional de la función \\( f(x,y) = x^2 y - 3y^2 \\) en el punto \\( P_0(2, 1) \\) en dirección del vector \\( \\mathbf{v} = \\langle 3, -4 \\rangle \\) usando la definición y (<strong>sin H'opital</strong>):",
+    "expresion_latex": "f(x,y) = x^2 y - 3y^2; \\quad P_0(2,1); \\quad \\mathbf{v} = \\langle 3, -4 \\rangle",
+    "tags": ["Cálculo Multivariable", "Derivada Direccional", "Definición de Derivada", "Vectores", "Límites"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "La definición de la derivada direccional de \\(f\\) en \\((x_0, y_0)\\) en la dirección de un vector unitario \\(\\mathbf{u}\\) es \\( D_{\\mathbf{u}}f(x_0, y_0) = \\lim_{h \\to 0} \\frac{f(x_0 + hu_1, y_0 + hu_2) - f(x_0, y_0)}{h} \\). Primero, normalizamos el vector de dirección \\(\\mathbf{v}\\).",
+        "expresion_latex_paso": "\\|\\mathbf{v}\\| = \\sqrt{3^2 + (-4)^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5 \\\\ \\mathbf{u} = \\frac{\\mathbf{v}}{\\|\\mathbf{v}\\|} = \\left\\langle \\frac{3}{5}, \\frac{-4}{5} \\right\\rangle"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Identificamos \\(x_0 = 2, y_0 = 1, u_1 = \\frac{3}{5}, u_2 = -\\frac{4}{5}\\). Calculamos \\(f(x_0, y_0)\\):",
+        "expresion_latex_paso": "f(2,1) = (2)^2(1) - 3(1)^2 = 4 - 3 = 1"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Expresamos las coordenadas del punto \\((x_0 + hu_1, y_0 + hu_2)\\):",
+        "expresion_latex_paso": "x_0 + hu_1 = 2 + h\\left(\\frac{3}{5}\\right) = 2 + \\frac{3h}{5} \\\\ y_0 + hu_2 = 1 + h\\left(-\\frac{4}{5}\\right) = 1 - \\frac{4h}{5}"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Calculamos \\(f(x_0 + hu_1, y_0 + hu_2)\\):",
+        "expresion_latex_paso": "f\\left(2 + \\frac{3h}{5}, 1 - \\frac{4h}{5}\\right) = \\left(2 + \\frac{3h}{5}\\right)^2 \\left(1 - \\frac{4h}{5}\\right) - 3\\left(1 - \\frac{4h}{5}\\right)^2"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Expandimos la expresión anterior. Primero los cuadrados:",
+        "expresion_latex_paso": "\\left(2 + \\frac{3h}{5}\\right)^2 = 4 + \\frac{12h}{5} + \\frac{9h^2}{25} \\\\ \\left(1 - \\frac{4h}{5}\\right)^2 = 1 - \\frac{8h}{5} + \\frac{16h^2}{25}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Sustituimos y continuamos expandiendo:",
+        "expresion_latex_paso": "f\\left(P_0+h\\mathbf{u}\\right) = \\left(4 + \\frac{12h}{5} + \\frac{9h^2}{25}\\right)\\left(1 - \\frac{4h}{5}\\right) - 3\\left(1 - \\frac{8h}{5} + \\frac{16h^2}{25}\\right) \\\\ = \\left(4 - \\frac{16h}{5} + \\frac{12h}{5} - \\frac{48h^2}{25} + \\frac{9h^2}{25} - \\frac{36h^3}{125}\\right) - \\left(3 - \\frac{24h}{5} + \\frac{48h^2}{25}\\right) \\\\ = 4 - \\frac{4h}{5} - \\frac{39h^2}{25} - \\frac{36h^3}{125} - 3 + \\frac{24h}{5} - \\frac{48h^2}{25} \\\\ = 1 + \\frac{20h}{5} - \\frac{87h^2}{25} - \\frac{36h^3}{125} = 1 + 4h - \\frac{87h^2}{25} - \\frac{36h^3}{125}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Ahora formamos el cociente del límite:",
+        "expresion_latex_paso": "\\frac{f(P_0+h\\mathbf{u}) - f(P_0)}{h} = \\frac{\\left(1 + 4h - \\frac{87h^2}{25} - \\frac{36h^3}{125}\\right) - 1}{h} \\\\ = \\frac{4h - \\frac{87h^2}{25} - \\frac{36h^3}{125}}{h}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Factorizamos \\(h\\) del numerador y cancelamos:",
+        "expresion_latex_paso": "\\frac{h\\left(4 - \\frac{87h}{25} - \\frac{36h^2}{125}\\right)}{h} = 4 - \\frac{87h}{25} - \\frac{36h^2}{125}"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Finalmente, evaluamos el límite cuando \\(h \\to 0\\):",
+        "expresion_latex_paso": "D_{\\mathbf{u}}f(2,1) = \\lim_{h \\to 0} \\left(4 - \\frac{87h}{25} - \\frac{36h^2}{125}\\right) = 4 - 0 - 0 = 4"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 18: Regla de la Cadena con Funciones Exponenciales y Polinómicas",
+    "descripcion": "Si \\( w = f(x,y) = xy^2 - x^2y \\), donde \\( x = t e^s \\) e \\( y = s e^t \\). Hallar \\( \\frac{\\partial w}{\\partial t} \\) y \\( \\frac{\\partial w}{\\partial s} \\). Expresar las respuestas en términos de \\(t\\) y \\(s\\).",
+    "expresion_latex": "w = xy^2 - x^2y; \\quad x(t,s) = t e^s; \\quad y(t,s) = s e^t",
+    "tags": ["Cálculo Multivariable", "Regla de la Cadena", "Derivadas Parciales", "Funciones Exponenciales", "Funciones Polinómicas"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Aplicamos la regla de la cadena. Para \\( \\frac{\\partial w}{\\partial t} \\), la fórmula es: \\( \\frac{\\partial w}{\\partial t} = \\frac{\\partial w}{\\partial x} \\frac{\\partial x}{\\partial t} + \\frac{\\partial w}{\\partial y} \\frac{\\partial y}{\\partial t} \\).",
+        "expresion_latex_paso": ""
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(w\\) respecto a \\(x\\) e \\(y\\):",
+        "expresion_latex_paso": "\\frac{\\partial w}{\\partial x} = y^2 - 2xy \\\\ \\frac{\\partial w}{\\partial y} = 2xy - x^2"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(x\\) e \\(y\\) respecto a \\(t\\):",
+        "expresion_latex_paso": "\\frac{\\partial x}{\\partial t} = e^s \\\\ \\frac{\\partial y}{\\partial t} = s e^t"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Sustituimos estas derivadas en la fórmula para \\( \\frac{\\partial w}{\\partial t} \\):",
+        "expresion_latex_paso": "\\frac{\\partial w}{\\partial t} = (y^2 - 2xy)(e^s) + (2xy - x^2)(s e^t)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Sustituimos \\(x = t e^s\\) e \\(y = s e^t\\) en la expresión anterior para obtener \\( \\frac{\\partial w}{\\partial t} \\) en términos de \\(t\\) y \\(s\\):",
+        "expresion_latex_paso": "\\frac{\\partial w}{\\partial t} = ((se^t)^2 - 2(te^s)(se^t))(e^s) + (2(te^s)(se^t) - (te^s)^2)(se^t) \\\\ = (s^2e^{2t} - 2tse^{s+t})(e^s) + (2tse^{s+t} - t^2e^{2s})(se^t) \\\\ = s^2e^{2t+s} - 2tse^{2s+t} + 2ts^2e^{s+2t} - t^2se^{2s+t}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Para \\( \\frac{\\partial w}{\\partial s} \\), la fórmula es: \\( \\frac{\\partial w}{\\partial s} = \\frac{\\partial w}{\\partial x} \\frac{\\partial x}{\\partial s} + \\frac{\\partial w}{\\partial y} \\frac{\\partial y}{\\partial s} \\).",
+        "expresion_latex_paso": ""
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(x\\) e \\(y\\) respecto a \\(s\\):",
+        "expresion_latex_paso": "\\frac{\\partial x}{\\partial s} = t e^s \\\\ \\frac{\\partial y}{\\partial s} = e^t"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Sustituimos las derivadas en la fórmula para \\( \\frac{\\partial w}{\\partial s} \\) (usando \\( \\frac{\\partial w}{\\partial x} \\) y \\( \\frac{\\partial w}{\\partial y} \\) del paso 2):",
+        "expresion_latex_paso": "\\frac{\\partial w}{\\partial s} = (y^2 - 2xy)(t e^s) + (2xy - x^2)(e^t)"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Sustituimos \\(x = t e^s\\) e \\(y = s e^t\\) en la expresión anterior para obtener \\( \\frac{\\partial w}{\\partial s} \\) en términos de \\(t\\) y \\(s\\):",
+        "expresion_latex_paso": "\\frac{\\partial w}{\\partial s} = ((se^t)^2 - 2(te^s)(se^t))(t e^s) + (2(te^s)(se^t) - (te^s)^2)(e^t) \\\\ = (s^2e^{2t} - 2tse^{s+t})(t e^s) + (2tse^{s+t} - t^2e^{2s})(e^t) \\\\ = ts^2e^{2t+s} - 2t^2se^{2s+t} + 2tse^{s+2t} - t^2e^{2s+t}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 19: Aproximación de Valor Numérico usando Diferenciales Totales",
+    "descripcion": "Hallar el valor aproximado de \\( V = (1.98)^3 \\sqrt{25.04} \\) usando diferenciales totales. Indicar la función \\(f(x,y)\\) elegida, el punto \\((x_0, y_0)\\) y los diferenciales \\(dx, dy\\).",
+    "expresion_latex": "V = (1.98)^3 \\sqrt{25.04}",
+    "tags": ["Cálculo Multivariable", "Diferenciales Totales", "Aproximación Lineal", "Derivadas Parciales"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Queremos aproximar \\( (1.98)^3 \\sqrt{25.04} \\). Elegimos una función \\(f(x,y)\\) adecuada. Sea \\(f(x,y) = x^3 \\sqrt{y}\\).",
+        "expresion_latex_paso": "f(x,y) = x^3 \\sqrt{y}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Elegimos un punto \\((x_0, y_0)\\) cercano a \\((1.98, 25.04)\\) donde \\(f(x_0, y_0)\\) sea fácil de calcular. Sea \\(x_0 = 2\\) y \\(y_0 = 25\\).",
+        "expresion_latex_paso": "(x_0, y_0) = (2, 25)"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos los diferenciales \\(dx = x - x_0\\) y \\(dy = y - y_0\\):",
+        "expresion_latex_paso": "dx = 1.98 - 2 = -0.02 \\\\ dy = 25.04 - 25 = 0.04"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Calculamos el valor de la función en el punto \\((x_0, y_0)\\):",
+        "expresion_latex_paso": "f(x_0, y_0) = f(2, 25) = (2)^3 \\sqrt{25} = 8 \\times 5 = 40"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Calculamos las derivadas parciales de \\(f(x,y)\\) respecto a \\(x\\) e \\(y\\):",
+        "expresion_latex_paso": "f_x(x,y) = \\frac{\\partial}{\\partial x}(x^3 \\sqrt{y}) = 3x^2 \\sqrt{y} \\\\ f_y(x,y) = \\frac{\\partial}{\\partial y}(x^3 \\sqrt{y}) = x^3 \\frac{1}{2\\sqrt{y}} = \\frac{x^3}{2\\sqrt{y}}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Evaluamos las derivadas parciales en el punto \\((x_0, y_0) = (2, 25)\\):",
+        "expresion_latex_paso": "f_x(2, 25) = 3(2)^2 \\sqrt{25} = 3(4)(5) = 60 \\\\ f_y(2, 25) = \\frac{(2)^3}{2\\sqrt{25}} = \\frac{8}{2(5)} = \\frac{8}{10} = 0.8"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Aplicamos la fórmula de aproximación lineal (diferencial total): \\( f(x,y) \\approx f(x_0,y_0) + f_x(x_0,y_0)dx + f_y(x_0,y_0)dy \\).",
+        "expresion_latex_paso": "V \\approx f(2,25) + f_x(2,25)dx + f_y(2,25)dy \\\\ V \\approx 40 + (60)(-0.02) + (0.8)(0.04)"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Calculamos el valor aproximado:",
+        "expresion_latex_paso": "V \\approx 40 - 1.2 + 0.032 \\\\ V \\approx 38.8 + 0.032 \\\\ V \\approx 38.832"
+      }
+    ]
+  }
+]

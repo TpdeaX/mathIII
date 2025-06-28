@@ -1,0 +1,341 @@
+[
+  {
+    "titulo": "Ejercicio 1: Longitud de Arco con Exponenciales",
+    "descripcion": "Calcular la longitud de arco de la curva dada por: <br><strong>Instrucción:</strong> Aplicar la fórmula de longitud de arco \\( L = \\int_{a}^{b} ||\\vec{r}'(t)|| \\, dt \\). Calcular la derivada, su magnitud y resolver la integral resultante.",
+    "expresion_latex": "\\vec{r}(t) = (e^t \\cos(t), e^t \\sin(t), e^t), \\quad t \\in [0, \\ln(2)]",
+    "tags": ["Cálculo Vectorial", "Longitud de Arco", "Curvas Paramétricas", "Integrales Definidas", "Derivadas"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Calculamos la derivada del vector posición \\( \\vec{r}(t) \\) respecto a \\( t \\). Usamos la regla del producto para las primeras dos componentes.",
+        "expresion_latex_paso": "\\frac{dx}{dt} = \\frac{d}{dt}(e^t \\cos(t)) = e^t \\cos(t) - e^t \\sin(t) = e^t(\\cos(t) - \\sin(t)) \\\\ \\frac{dy}{dt} = \\frac{d}{dt}(e^t \\sin(t)) = e^t \\sin(t) + e^t \\cos(t) = e^t(\\sin(t) + \\cos(t)) \\\\ \\frac{dz}{dt} = \\frac{d}{dt}(e^t) = e^t \\\\ \\Rightarrow \\vec{r}'(t) = (e^t(\\cos t - \\sin t), e^t(\\sin t + \\cos t), e^t)"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos el cuadrado de la magnitud del vector velocidad \\( ||\\vec{r}'(t)||^2 \\).",
+        "expresion_latex_paso": "||\\vec{r}'(t)||^2 = \\left(\\frac{dx}{dt}\\right)^2 + \\left(\\frac{dy}{dt}\\right)^2 + \\left(\\frac{dz}{dt}\\right)^2 \\\\ = [e^t(\\cos t - \\sin t)]^2 + [e^t(\\sin t + \\cos t)]^2 + [e^t]^2 \\\\ = e^{2t}(\\cos^2 t - 2\\cos t \\sin t + \\sin^2 t) + e^{2t}(\\sin^2 t + 2\\sin t \\cos t + \\cos^2 t) + e^{2t} \\\\ = e^{2t}(1 - 2\\cos t \\sin t) + e^{2t}(1 + 2\\sin t \\cos t) + e^{2t} \\\\ = e^{2t}(1 - 2\\cos t \\sin t + 1 + 2\\sin t \\cos t + 1) \\\\ = e^{2t}(1+1+1) = 3e^{2t}"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos la magnitud del vector velocidad (rapidez) \\( ||\\vec{r}'(t)|| \\).",
+        "expresion_latex_paso": "||\\vec{r}'(t)|| = \\sqrt{3e^{2t}} = e^t \\sqrt{3}"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Planteamos y resolvemos la integral de longitud de arco \\( L \\) en el intervalo \\( [0, \\ln(2)] \\).",
+        "expresion_latex_paso": "L = \\int_{0}^{\\ln(2)} ||\\vec{r}'(t)|| \\, dt = \\int_{0}^{\\ln(2)} e^t \\sqrt{3} \\, dt \\\\ = \\sqrt{3} \\int_{0}^{\\ln(2)} e^t \\, dt \\\\ = \\sqrt{3} [e^t]_{0}^{\\ln(2)} \\\\ = \\sqrt{3} (e^{\\ln(2)} - e^0) \\\\ = \\sqrt{3} (2 - 1) \\\\ = \\sqrt{3}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 2: Triedro de Frenet y Planos",
+    "descripcion": "Hallar los vectores tangente unitario (T), normal principal (N), binormal (B) y las ecuaciones de los planos osculador, normal y rectificante para la curva determinada por \\( \\vec{r}(t) \\) en el punto correspondiente a \\( t=0 \\).<br><strong>Instrucción:</strong> Calcular \\( \\vec{r}'(t) \\) y \\( \\vec{r}''(t) \\). Evaluar en \\( t=0 \\). Calcular \\( \\vec{T}(0) \\), \\( \\vec{B}(0) = \\frac{\\vec{r}'(0) \\times \\vec{r}''(0)}{||\\vec{r}'(0) \\times \\vec{r}''(0)||} \\), \\( \\vec{N}(0) = \\vec{B}(0) \\times \\vec{T}(0) \\). Usar el punto y los vectores normales para hallar las ecuaciones de los planos.",
+    "expresion_latex": "\\vec{r}(t) = (e^t, e^{-t}, \\sqrt{2}t), \\quad \\text{en } t=0",
+    "tags": ["Cálculo Vectorial", "Geometría Diferencial", "Triedro de Frenet", "Vector Tangente", "Vector Normal", "Vector Binormal", "Plano Osculador", "Plano Normal", "Plano Rectificante", "Derivadas", "Producto Vectorial"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Encontrar el punto P en la curva evaluando \\( \\vec{r}(t) \\) en \\( t=0 \\).",
+        "expresion_latex_paso": "\\vec{r}(0) = (e^0, e^{-0}, \\sqrt{2}(0)) = (1, 1, 0) \\\\ \\text{El punto es } P(1, 1, 0)."
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calcular la primera y segunda derivada de \\( \\vec{r}(t) \\) y evaluarlas en \\( t=0 \\).",
+        "expresion_latex_paso": "\\vec{r}'(t) = (e^t, -e^{-t}, \\sqrt{2}) \\Rightarrow \\vec{r}'(0) = (e^0, -e^{-0}, \\sqrt{2}) = (1, -1, \\sqrt{2}) \\\\ \\vec{r}''(t) = (e^t, e^{-t}, 0) \\Rightarrow \\vec{r}''(0) = (e^0, e^{-0}, 0) = (1, 1, 0)"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calcular el vector tangente unitario \\( \\vec{T}(0) \\).",
+        "expresion_latex_paso": "||\\vec{r}'(0)|| = ||(1, -1, \\sqrt{2})|| = \\sqrt{1^2 + (-1)^2 + (\\sqrt{2})^2} = \\sqrt{1 + 1 + 2} = \\sqrt{4} = 2 \\\\ \\vec{T}(0) = \\frac{\\vec{r}'(0)}{||\\vec{r}'(0)||} = \\frac{(1, -1, \\sqrt{2})}{2} = \\left(\\frac{1}{2}, -\\frac{1}{2}, \\frac{\\sqrt{2}}{2}\\right)"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Calcular el producto vectorial \\( \\vec{r}'(0) \\times \\vec{r}''(0) \\) y su magnitud para hallar el vector binormal \\( \\vec{B}(0) \\).",
+        "expresion_latex_paso": "\\vec{r}'(0) \\times \\vec{r}''(0) = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ 1 & -1 & \\sqrt{2} \\\\ 1 & 1 & 0 \\end{vmatrix} = \\mathbf{i}(0 - \\sqrt{2}) - \\mathbf{j}(0 - \\sqrt{2}) + \\mathbf{k}(1 - (-1)) \\\\ = -\\sqrt{2}\\mathbf{i} + \\sqrt{2}\\mathbf{j} + 2\\mathbf{k} = (-\\sqrt{2}, \\sqrt{2}, 2) \\\\ ||\\vec{r}'(0) \\times \\vec{r}''(0)|| = \\sqrt{(-\\sqrt{2})^2 + (\\sqrt{2})^2 + 2^2} = \\sqrt{2 + 2 + 4} = \\sqrt{8} = 2\\sqrt{2} \\\\ \\vec{B}(0) = \\frac{(-\\sqrt{2}, \\sqrt{2}, 2)}{2\\sqrt{2}} = \\left(-\\frac{\\sqrt{2}}{2\\sqrt{2}}, \\frac{\\sqrt{2}}{2\\sqrt{2}}, \\frac{2}{2\\sqrt{2}}\\right) = \\left(-\\frac{1}{2}, \\frac{1}{2}, \\frac{1}{\\sqrt{2}}\\right) = \\left(-\\frac{1}{2}, \\frac{1}{2}, \\frac{\\sqrt{2}}{2}\\right)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Calcular el vector normal principal \\( \\vec{N}(0) = \\vec{B}(0) \\times \\vec{T}(0) \\).",
+        "expresion_latex_paso": "\\vec{N}(0) = \\left(-\\frac{1}{2}, \\frac{1}{2}, \\frac{\\sqrt{2}}{2}\\right) \\times \\left(\\frac{1}{2}, -\\frac{1}{2}, \\frac{\\sqrt{2}}{2}\\right) \\\\ = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ -1/2 & 1/2 & \\sqrt{2}/2 \\\\ 1/2 & -1/2 & \\sqrt{2}/2 \\end{vmatrix} \\\\ = \\mathbf{i}\\left(\\frac{1}{2}\\frac{\\sqrt{2}}{2} - \\frac{\\sqrt{2}}{2}(-\\frac{1}{2})\\right) - \\mathbf{j}\\left(-\\frac{1}{2}\\frac{\\sqrt{2}}{2} - \\frac{\\sqrt{2}}{2}\\frac{1}{2}\\right) + \\mathbf{k}\\left(-\\frac{1}{2}(-\\frac{1}{2}) - \\frac{1}{2}\\frac{1}{2}\\right) \\\\ = \\mathbf{i}\\left(\\frac{\\sqrt{2}}{4} + \\frac{\\sqrt{2}}{4}\\right) - \\mathbf{j}\\left(-\\frac{\\sqrt{2}}{4} - \\frac{\\sqrt{2}}{4}\\right) + \\mathbf{k}\\left(\\frac{1}{4} - \\frac{1}{4}\\right) \\\\ = \\frac{2\\sqrt{2}}{4}\\mathbf{i} - \\left(-\\frac{2\\sqrt{2}}{4}\\right)\\mathbf{j} + 0\\mathbf{k} = \\frac{\\sqrt{2}}{2}\\mathbf{i} + \\frac{\\sqrt{2}}{2}\\mathbf{j} \\\\ \\vec{N}(0) = \\left(\\frac{\\sqrt{2}}{2}, \\frac{\\sqrt{2}}{2}, 0\\right)"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Hallar la ecuación del Plano Osculador (contiene T y N, normal a B). Usa \\( \\vec{B}(0) = (-1/2, 1/2, \\sqrt{2}/2) \\) y el punto \\( P(1, 1, 0) \\). La ecuación es \\( \\vec{B}(0) \\cdot (x-x_0, y-y_0, z-z_0) = 0 \\).",
+        "expresion_latex_paso": "-\\frac{1}{2}(x - 1) + \\frac{1}{2}(y - 1) + \\frac{\\sqrt{2}}{2}(z - 0) = 0 \\\\ -(x - 1) + (y - 1) + \\sqrt{2}z = 0 \\\\ -x + 1 + y - 1 + \\sqrt{2}z = 0 \\\\ -x + y + \\sqrt{2}z = 0 \\quad \\text{o} \\quad x - y - \\sqrt{2}z = 0"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Hallar la ecuación del Plano Normal (contiene N y B, normal a T). Usa \\( \\vec{T}(0) = (1/2, -1/2, \\sqrt{2}/2) \\) y el punto \\( P(1, 1, 0) \\). La ecuación es \\( \\vec{T}(0) \\cdot (x-x_0, y-y_0, z-z_0) = 0 \\).",
+        "expresion_latex_paso": "\\frac{1}{2}(x - 1) - \\frac{1}{2}(y - 1) + \\frac{\\sqrt{2}}{2}(z - 0) = 0 \\\\ (x - 1) - (y - 1) + \\sqrt{2}z = 0 \\\\ x - 1 - y + 1 + \\sqrt{2}z = 0 \\\\ x - y + \\sqrt{2}z = 0"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Hallar la ecuación del Plano Rectificante (contiene T y B, normal a N). Usa \\( \\vec{N}(0) = (\\sqrt{2}/2, \\sqrt{2}/2, 0) \\) y el punto \\( P(1, 1, 0) \\). La ecuación es \\( \\vec{N}(0) \\cdot (x-x_0, y-y_0, z-z_0) = 0 \\).",
+        "expresion_latex_paso": "\\frac{\\sqrt{2}}{2}(x - 1) + \\frac{\\sqrt{2}}{2}(y - 1) + 0(z - 0) = 0 \\\\ \\sqrt{2}(x - 1) + \\sqrt{2}(y - 1) = 0 \\\\ (x - 1) + (y - 1) = 0 \\\\ x + y - 2 = 0"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 3: Demostración de Límite por Definición ε-δ",
+    "descripcion": "Demostrar usando la definición epsilon-delta que: <br><strong>Instrucción:</strong> Para un \\( \\varepsilon > 0 \\) dado, encontrar un \\( \\delta > 0 \\) tal que si \\( 0 < \\sqrt{x^2 + y^2} < \\delta \\), entonces \\( |f(x,y) - L| < \\varepsilon \\). Usar acotaciones apropiadas, por ejemplo \\( x^2 \\leq x^2+y^2 \\) y \\( |y| \\leq \\sqrt{x^2+y^2} \\) o coordenadas polares.",
+    "expresion_latex": "\\lim_{(x,y) \\to (0,0)} \\frac{3x^2y}{x^2 + y^2} = 0",
+    "tags": ["Cálculo Multivariable", "Límites", "Continuidad", "Definición Epsilon-Delta", "Acotación"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Identificar la función \\( f(x,y) = \\frac{3x^2y}{x^2 + y^2} \\) y el valor propuesto del límite \\( L = 0 \\). El punto al que nos acercamos es \\( (a,b) = (0,0) \\).",
+        "expresion_latex_paso": "f(x,y) = \\frac{3x^2y}{x^2 + y^2}, \\quad L = 0, \\quad (a,b) = (0,0)"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Plantear la condición de la definición ε-δ: Para todo \\( \\varepsilon > 0 \\), debemos encontrar un \\( \\delta > 0 \\) tal que si \\( 0 < ||(x,y) - (0,0)|| < \\delta \\), entonces \\( |f(x,y) - L| < \\varepsilon \\).",
+        "expresion_latex_paso": "\\text{Queremos: } 0 < \\sqrt{x^2+y^2} < \\delta \\implies \\left| \\frac{3x^2y}{x^2 + y^2} - 0 \\right| < \\varepsilon"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Analizar y acotar la expresión \\( |f(x,y) - L| \\).",
+        "expresion_latex_paso": "\\left| \\frac{3x^2y}{x^2 + y^2} - 0 \\right| = \\left| \\frac{3x^2y}{x^2 + y^2} \\right| = 3 \\frac{x^2}{|x^2 + y^2|} |y|"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Utilizar la desigualdad clave: \\( x^2 \\leq x^2 + y^2 \\). Como \\( x^2+y^2 > 0 \\) (ya que \\( (x,y) \\neq (0,0) \\)), podemos dividir por \\( x^2+y^2 \\) para obtener \\( \\frac{x^2}{x^2 + y^2} \\leq 1 \\).",
+        "expresion_latex_paso": "x^2 \\geq 0 \\text{ y } y^2 \\geq 0 \\implies x^2 \\leq x^2 + y^2 \\implies \\frac{x^2}{x^2 + y^2} \\leq 1"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Aplicar la acotación del paso anterior a la expresión del paso 3.",
+        "expresion_latex_paso": "\\left| \\frac{3x^2y}{x^2 + y^2} \\right| = 3 \\left( \\frac{x^2}{x^2 + y^2} \\right) |y| \\leq 3(1)|y| = 3|y|"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Relacionar \\( |y| \\) con la distancia al origen \\( \\sqrt{x^2+y^2} \\). Sabemos que \\( |y| = \\sqrt{y^2} \\leq \\sqrt{x^2+y^2} \\).",
+        "expresion_latex_paso": "|y| \\leq \\sqrt{x^2+y^2}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Combinar las acotaciones de los pasos 5 y 6.",
+        "expresion_latex_paso": "\\left| \\frac{3x^2y}{x^2 + y^2} \\right| \\leq 3|y| \\leq 3\\sqrt{x^2+y^2}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Ahora queremos que esta cota superior sea menor que \\( \\varepsilon \\). Es decir, queremos \\( 3\\sqrt{x^2+y^2} < \\varepsilon \\). Esto se cumple si \\( \\sqrt{x^2+y^2} < \\frac{\\varepsilon}{3} \\).",
+        "expresion_latex_paso": "3\\sqrt{x^2+y^2} < \\varepsilon \\iff \\sqrt{x^2+y^2} < \\frac{\\varepsilon}{3}"
+      },
+      {
+        "paso_numero": 9,
+        "descripcion_paso": "Elegir \\( \\delta \\). Basado en el paso anterior, podemos elegir \\( \\delta = \\frac{\\varepsilon}{3} \\). Con esta elección, si \\( 0 < \\sqrt{x^2+y^2} < \\delta \\), entonces \\( \\sqrt{x^2+y^2} < \\varepsilon/3 \\), lo que implica \\( 3\\sqrt{x^2+y^2} < \\varepsilon \\). Y como \\( |f(x,y)-0| \\leq 3\\sqrt{x^2+y^2} \\), concluimos que \\( |f(x,y)-0| < \\varepsilon \\).",
+        "expresion_latex_paso": "\\text{Dado } \\varepsilon > 0, \\text{ elegimos } \\delta = \\frac{\\varepsilon}{3}. \\\\ \\text{Si } 0 < \\sqrt{x^2+y^2} < \\delta, \\text{ entonces } \\\\ \\left| \\frac{3x^2y}{x^2 + y^2} - 0 \\right| \\leq 3\\sqrt{x^2+y^2} < 3\\delta = 3\\left(\\frac{\\varepsilon}{3}\\right) = \\varepsilon. \\\\ \\text{Por lo tanto, por la definición ε-δ, el límite es 0.}"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 4: Derivadas Parciales por Definición",
+    "descripcion": "Usando la definición de derivada parcial, hallar \\( D_x f(0,0) \\) (o \\( f_x(0,0) \\)) y \\( D_y f(0,0) \\) (o \\( f_y(0,0) \\)) si: <br><strong>Instrucción:</strong> Aplicar la definición \\( D_x f(a,b) = \\lim_{h \\to 0} \\frac{f(a+h, b) - f(a,b)}{h} \\) y \\( D_y f(a,b) = \\lim_{k \\to 0} \\frac{f(a, b+k) - f(a,b)}{k} \\) para \\( (a,b) = (0,0) \\).",
+    "expresion_latex": "f(x,y) = \\begin{cases} \\frac{x^3 + y^3}{x^2 + y^2} & \\text{si } (x,y) \\neq (0,0) \\\\ 0 & \\text{si } (x,y) = (0,0) \\end{cases}",
+    "tags": ["Cálculo Multivariable", "Derivadas Parciales", "Límites", "Definición de Derivada"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Aplicar la definición para calcular \\( D_x f(0,0) \\).",
+        "expresion_latex_paso": "D_x f(0,0) = \\lim_{h \\to 0} \\frac{f(0+h, 0) - f(0,0)}{h} \\\\ = \\lim_{h \\to 0} \\frac{f(h, 0) - 0}{h}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Evaluar \\( f(h, 0) \\) usando la definición de \\( f(x,y) \\) para \\( (h,0) \\neq (0,0) \\) (asumiendo \\( h \\neq 0 \\) en el límite).",
+        "expresion_latex_paso": "f(h, 0) = \\frac{h^3 + 0^3}{h^2 + 0^2} = \\frac{h^3}{h^2} = h"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Sustituir \\( f(h, 0) \\) en la expresión del límite y calcularlo.",
+        "expresion_latex_paso": "D_x f(0,0) = \\lim_{h \\to 0} \\frac{h - 0}{h} = \\lim_{h \\to 0} \\frac{h}{h} = \\lim_{h \\to 0} 1 = 1"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Aplicar la definición para calcular \\( D_y f(0,0) \\).",
+        "expresion_latex_paso": "D_y f(0,0) = \\lim_{k \\to 0} \\frac{f(0, 0+k) - f(0,0)}{k} \\\\ = \\lim_{k \\to 0} \\frac{f(0, k) - 0}{k}"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Evaluar \\( f(0, k) \\) usando la definición de \\( f(x,y) \\) para \\( (0,k) \\neq (0,0) \\) (asumiendo \\( k \\neq 0 \\) en el límite).",
+        "expresion_latex_paso": "f(0, k) = \\frac{0^3 + k^3}{0^2 + k^2} = \\frac{k^3}{k^2} = k"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Sustituir \\( f(0, k) \\) en la expresión del límite y calcularlo.",
+        "expresion_latex_paso": "D_y f(0,0) = \\lim_{k \\to 0} \\frac{k - 0}{k} = \\lim_{k \\to 0} \\frac{k}{k} = \\lim_{k \\to 0} 1 = 1"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Conclusión: Las derivadas parciales en el origen existen y sus valores son:",
+        "expresion_latex_paso": "D_x f(0,0) = 1 \\quad \\text{y} \\quad D_y f(0,0) = 1"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 5: Integral de Función Vectorial",
+    "descripcion": "Hallar la integral definida de la función vectorial \\( \\vec{f}(t) \\) en el intervalo dado: <br><strong>Instrucción:</strong> Integrar cada componente de la función vectorial por separado usando las técnicas de integración adecuadas (p. ej., integración por partes, sustitución). Evaluar la integral definida.",
+    "expresion_latex": "\\int_{0}^{1} \\vec{f}(t) \\, dt, \\quad \\text{si } \\vec{f}(t) = \\left( t e^{2t}, \\quad t^2 \\cos(t), \\quad \\frac{1}{\\sqrt{1-t^2}} \\right)",
+    "tags": ["Cálculo Vectorial", "Integrales", "Integración por Partes", "Integrales Definidas", "Funciones Vectoriales"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Integrar la primera componente \\( f_1(t) = t e^{2t} \\) usando integración por partes: \\( \\int u \\, dv = uv - \\int v \\, du \\). Sea \\( u = t \\Rightarrow du = dt \\) y \\( dv = e^{2t} dt \\Rightarrow v = \\frac{1}{2}e^{2t} \\).",
+        "expresion_latex_paso": "\\int t e^{2t} dt = t \\left(\\frac{1}{2}e^{2t}\\right) - \\int \\frac{1}{2}e^{2t} dt \\\\ = \\frac{1}{2} t e^{2t} - \\frac{1}{2} \\int e^{2t} dt \\\\ = \\frac{1}{2} t e^{2t} - \\frac{1}{2} \\left(\\frac{1}{2}e^{2t}\\right) + C = \\frac{1}{2} t e^{2t} - \\frac{1}{4} e^{2t} + C \\\\ \\int_{0}^{1} t e^{2t} dt = \\left[ \\frac{1}{2} t e^{2t} - \\frac{1}{4} e^{2t} \\right]_{0}^{1} \\\\ = \\left( \\frac{1}{2}(1)e^{2} - \\frac{1}{4}e^{2} \\right) - \\left( \\frac{1}{2}(0)e^{0} - \\frac{1}{4}e^{0} \\right) \\\\ = \\left( \\frac{1}{2}e^{2} - \\frac{1}{4}e^{2} \\right) - \\left( 0 - \\frac{1}{4} \\right) = \\frac{1}{4}e^{2} + \\frac{1}{4}"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Integrar la segunda componente \\( f_2(t) = t^2 \\cos(t) \\) usando integración por partes dos veces. <br>Primera vez: \\( u = t^2 \\Rightarrow du = 2t dt \\); \\( dv = \\cos(t) dt \\Rightarrow v = \\sin(t) \\).",
+        "expresion_latex_paso": "\\int t^2 \\cos(t) dt = t^2 \\sin(t) - \\int 2t \\sin(t) dt = t^2 \\sin(t) - 2 \\int t \\sin(t) dt"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Integrar \\( \\int t \\sin(t) dt \\) por partes: \\( u = t \\Rightarrow du = dt \\); \\( dv = \\sin(t) dt \\Rightarrow v = -\\cos(t) \\).",
+        "expresion_latex_paso": "\\int t \\sin(t) dt = t(-\\cos(t)) - \\int (-\\cos(t)) dt \\\\ = -t \\cos(t) + \\int \\cos(t) dt = -t \\cos(t) + \\sin(t) + C_1"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Sustituir el resultado de \\( \\int t \\sin(t) dt \\) en la integral de \\( t^2 \\cos(t) \\) y evaluar la integral definida.",
+        "expresion_latex_paso": "\\int t^2 \\cos(t) dt = t^2 \\sin(t) - 2(-t \\cos(t) + \\sin(t)) + C \\\\ = t^2 \\sin(t) + 2t \\cos(t) - 2\\sin(t) + C \\\\ \\int_{0}^{1} t^2 \\cos(t) dt = [t^2 \\sin(t) + 2t \\cos(t) - 2\\sin(t)]_{0}^{1} \\\\ = (1^2 \\sin(1) + 2(1) \\cos(1) - 2\\sin(1)) - (0^2 \\sin(0) + 2(0) \\cos(0) - 2\\sin(0)) \\\\ = (\\sin(1) + 2\\cos(1) - 2\\sin(1)) - (0 + 0 - 0) \\\\ = 2\\cos(1) - \\sin(1)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Integrar la tercera componente \\( f_3(t) = \\frac{1}{\\sqrt{1-t^2}} \\). Esta es la derivada de \\( \\arcsin(t) \\). Notar que el intervalo de integración es \\( [0, 1) \\) ya que la función no está definida en \\( t=1 \\), pero la integral converge (es una integral impropia).",
+        "expresion_latex_paso": "\\int_{0}^{1} \\frac{1}{\\sqrt{1-t^2}} dt = \\lim_{b \\to 1^-} \\int_{0}^{b} \\frac{1}{\\sqrt{1-t^2}} dt \\\\ = \\lim_{b \\to 1^-} [\\arcsin(t)]_{0}^{b} \\\\ = \\lim_{b \\to 1^-} (\\arcsin(b) - \\arcsin(0)) \\\\ = \\arcsin(1) - 0 = \\frac{\\pi}{2}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Combinar los resultados de las integrales de cada componente para obtener la integral vectorial.",
+        "expresion_latex_paso": "\\int_{0}^{1} \\vec{f}(t) \\, dt = \\left( \\int_{0}^{1} f_1(t) dt, \\int_{0}^{1} f_2(t) dt, \\int_{0}^{1} f_3(t) dt \\right) \\\\ = \\left( \\frac{e^2+1}{4}, \\quad 2\\cos(1) - \\sin(1), \\quad \\frac{\\pi}{2} \\right)"
+      }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 6: Longitud de Arco (Curva tipo Astroide 3D)",
+    "descripcion": "Calcular la longitud de arco de la curva dada por: <br><strong>Instrucción:</strong> Calcular \\( \\vec{r}'(t) \\), su magnitud \\( ||\\vec{r}'(t)|| \\), y luego evaluar la integral \\( L = \\int_{a}^{b} ||\\vec{r}'(t)|| \\, dt \\). Prestar atención a las identidades trigonométricas y simplificaciones.",
+    "expresion_latex": "\\vec{r}(t) = (\\cos^3 t, \\sin^3 t, \\cos(2t)), \\quad t \\in [0, \\pi/2]",
+    "tags": ["Cálculo Vectorial", "Longitud de Arco", "Integrales Definidas", "Derivadas", "Trigonometría", "Geometría Diferencial"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Calculamos la derivada del vector posición \\( \\vec{r}(t) \\).",
+        "expresion_latex_paso": "x(t) = \\cos^3 t \\Rightarrow x'(t) = 3\\cos^2 t (-\\sin t) = -3\\cos^2 t \\sin t \\\\ y(t) = \\sin^3 t \\Rightarrow y'(t) = 3\\sin^2 t (\\cos t) = 3\\sin^2 t \\cos t \\\\ z(t) = \\cos(2t) \\Rightarrow z'(t) = -\\sin(2t) \\cdot 2 = -2(2\\sin t \\cos t) = -4\\sin t \\cos t \\\\ \\vec{r}'(t) = (-3\\cos^2 t \\sin t, 3\\sin^2 t \\cos t, -4\\sin t \\cos t)"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calculamos el cuadrado de la magnitud del vector velocidad \\( ||\\vec{r}'(t)||^2 \\).",
+        "expresion_latex_paso": "||\\vec{r}'(t)||^2 = (x'(t))^2 + (y'(t))^2 + (z'(t))^2 \\\\ = (-3\\cos^2 t \\sin t)^2 + (3\\sin^2 t \\cos t)^2 + (-4\\sin t \\cos t)^2 \\\\ = 9\\cos^4 t \\sin^2 t + 9\\sin^4 t \\cos^2 t + 16\\sin^2 t \\cos^2 t \\\\ = 9\\cos^2 t \\sin^2 t (\\cos^2 t + \\sin^2 t) + 16\\sin^2 t \\cos^2 t \\\\ = 9\\cos^2 t \\sin^2 t (1) + 16\\sin^2 t \\cos^2 t \\\\ = (9+16)\\sin^2 t \\cos^2 t = 25 \\sin^2 t \\cos^2 t"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calculamos la magnitud del vector velocidad (rapidez) \\( ||\\vec{r}'(t)|| \\). Dado que \\( t \\in [0, \\pi/2] \\), tanto \\( \\sin t \\) como \\( \\cos t \\) son no negativos, por lo que \\( \\sin t \\cos t \\geq 0 \\).",
+        "expresion_latex_paso": "||\\vec{r}'(t)|| = \\sqrt{25 \\sin^2 t \\cos^2 t} = 5 |\\sin t \\cos t| \\\\ \\text{Para } t \\in [0, \\pi/2], ||\\vec{r}'(t)|| = 5 \\sin t \\cos t"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Utilizar la identidad \\( \\sin(2t) = 2\\sin t \\cos t \\) para simplificar la expresión de la rapidez.",
+        "expresion_latex_paso": "||\\vec{r}'(t)|| = 5 \\sin t \\cos t = \\frac{5}{2} (2 \\sin t \\cos t) = \\frac{5}{2} \\sin(2t)"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Planteamos y resolvemos la integral de longitud de arco \\( L \\) en el intervalo \\( [0, \\pi/2] \\).",
+        "expresion_latex_paso": "L = \\int_{0}^{\\pi/2} ||\\vec{r}'(t)|| \\, dt = \\int_{0}^{\\pi/2} \\frac{5}{2} \\sin(2t) \\, dt \\\\ = \\frac{5}{2} \\left[ -\\frac{1}{2} \\cos(2t) \\right]_{0}^{\\pi/2} \\\\ = -\\frac{5}{4} [\\cos(2t)]_{0}^{\\pi/2} \\\\ = -\\frac{5}{4} (\\cos(\\pi) - \\cos(0)) \\\\ = -\\frac{5}{4} (-1 - 1) \\\\ = -\\frac{5}{4} (-2) = \\frac{10}{4} = \\frac{5}{2}"
+      }
+    ]
+  },
+      {
+    "titulo": "Ejercicio 7: Curvatura y Torsión",
+    "descripcion": "Calcular la curvatura \\( \\kappa(t) \\) y la torsión \\( \\tau(t) \\) para la curva (hélice cónica) dada por: <br><strong>Instrucción:</strong> Calcular \\( \\vec{r}'(t), \\vec{r}''(t), \\vec{r}'''(t) \\). Luego usar las fórmulas: \\( \\kappa(t) = \\frac{||\\vec{r}'(t) \\times \\vec{r}''(t)||}{||\\vec{r}'(t)||^3} \\) y \\( \\tau(t) = \\frac{(\\vec{r}'(t) \\times \\vec{r}''(t)) \\cdot \\vec{r}'''(t)}{||\\vec{r}'(t) \\times \\vec{r}''(t)||^2} \\).",
+    "expresion_latex": "\\vec{r}(t) = (e^t \\cos t, e^t \\sin t, e^t)",
+    "tags": ["Cálculo Vectorial", "Geometría Diferencial", "Curvatura", "Torsión", "Triedro de Frenet", "Derivadas", "Producto Vectorial", "Producto Mixto"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Calcular las primeras tres derivadas de \\( \\vec{r}(t) \\). (Nota: \\( \\vec{r}'(t) \\) se calculó en el Ejercicio 1). Denotamos \\( c=\\cos t, s=\\sin t \\).",
+        "expresion_latex_paso": "\\vec{r}'(t) = (e^t(c-s), e^t(s+c), e^t) \\\\ \\vec{r}''(t) = \\frac{d}{dt} \\vec{r}'(t) = (e^t(c-s)+e^t(-s-c), e^t(s+c)+e^t(c-s), e^t) \\\\ = (e^t(-2s), e^t(2c), e^t) = e^t(-2s, 2c, 1) \\\\ \\vec{r}'''(t) = \\frac{d}{dt} \\vec{r}''(t) = e^t(-2s, 2c, 1) + e^t(-2c, -2s, 0) \\\\ = e^t(-2s-2c, 2c-2s, 1) = e^t(-2(s+c), 2(c-s), 1)"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calcular la magnitud de \\( \\vec{r}'(t) \\). (Nota: Se calculó en el Ejercicio 1).",
+        "expresion_latex_paso": "||\\vec{r}'(t)||^2 = 3e^{2t} \\implies ||\\vec{r}'(t)|| = \\sqrt{3}e^t"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Calcular el producto vectorial \\( \\vec{r}'(t) \\times \\vec{r}''(t) \\).",
+        "expresion_latex_paso": "\\vec{r}'(t) \\times \\vec{r}''(t) = \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ e^t(c-s) & e^t(s+c) & e^t \\\\ e^t(-2s) & e^t(2c) & e^t \\end{vmatrix} \\\\ = e^{2t} \\begin{vmatrix} \\mathbf{i} & \\mathbf{j} & \\mathbf{k} \\\\ c-s & s+c & 1 \\\\ -2s & 2c & 1 \\end{vmatrix} \\\\ = e^{2t} [ \\mathbf{i}((s+c)(1) - (1)(2c)) - \\mathbf{j}((c-s)(1) - (1)(-2s)) + \\mathbf{k}((c-s)(2c) - (s+c)(-2s)) ] \\\\ = e^{2t} [ \\mathbf{i}(s+c-2c) - \\mathbf{j}(c-s+2s) + \\mathbf{k}(2c^2-2cs - (-2s^2-2cs)) ] \\\\ = e^{2t} [ \\mathbf{i}(s-c) - \\mathbf{j}(c+s) + \\mathbf{k}(2c^2-2cs+2s^2+2cs) ] \\\\ = e^{2t} [ (s-c)\\mathbf{i} - (c+s)\\mathbf{j} + 2(c^2+s^2)\\mathbf{k} ] \\\\ = e^{2t} (\\sin t - \\cos t, -\\cos t - \\sin t, 2)"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Calcular la magnitud de \\( \\vec{r}'(t) \\times \\vec{r}''(t) \\).",
+        "expresion_latex_paso": "||\\vec{r}'(t) \\times \\vec{r}''(t)||^2 = (e^{2t})^2 [ (s-c)^2 + (-c-s)^2 + 2^2 ] \\\\ = e^{4t} [ (s^2-2sc+c^2) + (c^2+2cs+s^2) + 4 ] \\\\ = e^{4t} [ (s^2+c^2) + (c^2+s^2) - 2sc + 2cs + 4 ] \\\\ = e^{4t} [ 1 + 1 + 4 ] = 6e^{4t} \\\\ ||\\vec{r}'(t) \\times \\vec{r}''(t)|| = \\sqrt{6e^{4t}} = \\sqrt{6}e^{2t}"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Calcular la curvatura \\( \\kappa(t) \\).",
+        "expresion_latex_paso": "\\kappa(t) = \\frac{||\\vec{r}'(t) \\times \\vec{r}''(t)||}{||\\vec{r}'(t)||^3} = \\frac{\\sqrt{6}e^{2t}}{(\\sqrt{3}e^t)^3} = \\frac{\\sqrt{6}e^{2t}}{3\\sqrt{3}e^{3t}} \\\\ = \\frac{\\sqrt{2}\\sqrt{3}}{3\\sqrt{3}e^t} = \\frac{\\sqrt{2}}{3e^t}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Calcular el producto mixto \\( (\\vec{r}' \\times \\vec{r}'') \\cdot \\vec{r}''' \\).",
+        "expresion_latex_paso": "(\\vec{r}' \\times \\vec{r}'') \\cdot \\vec{r}''' = [ e^{2t} (s-c, -c-s, 2) ] \\cdot [ e^t (-2(s+c), 2(c-s), 1) ] \\\\ = e^{3t} [ (s-c)(-2(s+c)) + (-c-s)(2(c-s)) + (2)(1) ] \\\\ = e^{3t} [ -2(s-c)(s+c) - 2(c+s)(c-s) + 2 ] \\\\ = e^{3t} [ -2(s^2-c^2) - 2(c^2-s^2) + 2 ] \\\\ = e^{3t} [ -2s^2+2c^2 - 2c^2+2s^2 + 2 ] \\\\ = e^{3t} [ 2 ] = 2e^{3t}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Calcular la torsión \\( \\tau(t) \\).",
+        "expresion_latex_paso": "\\tau(t) = \\frac{(\\vec{r}' \\times \\vec{r}'') \\cdot \\vec{r}'''}{||\\vec{r}' \\times \\vec{r}''||^2} = \\frac{2e^{3t}}{6e^{4t}} = \\frac{1}{3e^t}"
+      },
+       {
+        "paso_numero": 8,
+        "descripcion_paso": "Resultados finales:",
+        "expresion_latex_paso": "\\kappa(t) = \\frac{\\sqrt{2}}{3e^t} \\quad \\text{y} \\quad \\tau(t) = \\frac{1}{3e^t}"
+       }
+    ]
+  },
+  {
+    "titulo": "Ejercicio 8: Diferenciabilidad por Definición",
+    "descripcion": "Determinar si la siguiente función es diferenciable en el punto (0,0) usando la definición formal de diferenciabilidad.<br><strong>Instrucción:</strong> Calcular las derivadas parciales \\( f_x(0,0) \\) y \\( f_y(0,0) \\) por definición. Luego, evaluar el límite \\( \\lim_{(h,k) \\to (0,0)} \\frac{f(h,k) - f(0,0) - f_x(0,0)h - f_y(0,0)k}{\\sqrt{h^2+k^2}} \\). La función es diferenciable en (0,0) si y sólo si este límite es igual a 0.",
+    "expresion_latex": "f(x,y) = \\begin{cases} \\frac{x^3 + y^3}{x^2 + y^2} & \\text{si } (x,y) \\neq (0,0) \\\\ 0 & \\text{si } (x,y) = (0,0) \\end{cases}",
+    "tags": ["Cálculo Multivariable", "Diferenciabilidad", "Derivadas Parciales", "Límites", "Definición de Diferenciabilidad"],
+    "pasos_resolucion": [
+      {
+        "paso_numero": 1,
+        "descripcion_paso": "Verificar el valor de la función en el punto: \\( f(0,0) = 0 \\).",
+        "expresion_latex_paso": "f(0,0) = 0"
+      },
+      {
+        "paso_numero": 2,
+        "descripcion_paso": "Calcular las derivadas parciales en (0,0) usando la definición. (Nota: Se hizo en el Ejercicio 4).",
+        "expresion_latex_paso": "f_x(0,0) = \\lim_{h \\to 0} \\frac{f(h, 0) - f(0,0)}{h} = \\lim_{h \\to 0} \\frac{h^3/h^2 - 0}{h} = \\lim_{h \\to 0} \\frac{h}{h} = 1 \\\\ f_y(0,0) = \\lim_{k \\to 0} \\frac{f(0, k) - f(0,0)}{k} = \\lim_{k \\to 0} \\frac{k^3/k^2 - 0}{k} = \\lim_{k \\to 0} \\frac{k}{k} = 1"
+      },
+      {
+        "paso_numero": 3,
+        "descripcion_paso": "Plantear el límite requerido por la definición de diferenciabilidad.",
+        "expresion_latex_paso": "L = \\lim_{(h,k) \\to (0,0)} \\frac{f(h,k) - f(0,0) - f_x(0,0)h - f_y(0,0)k}{\\sqrt{h^2+k^2}} \\\\ = \\lim_{(h,k) \\to (0,0)} \\frac{\\frac{h^3 + k^3}{h^2 + k^2} - 0 - 1 \\cdot h - 1 \\cdot k}{\\sqrt{h^2+k^2}}"
+      },
+      {
+        "paso_numero": 4,
+        "descripcion_paso": "Simplificar la expresión dentro del límite. Combinar los términos en el numerador.",
+        "expresion_latex_paso": "\\text{Numerador} = \\frac{h^3 + k^3}{h^2 + k^2} - (h + k) = \\frac{h^3 + k^3 - (h+k)(h^2+k^2)}{h^2+k^2} \\\\ = \\frac{h^3 + k^3 - (h^3 + hk^2 + kh^2 + k^3)}{h^2+k^2} \\\\ = \\frac{h^3 + k^3 - h^3 - hk^2 - kh^2 - k^3}{h^2+k^2} \\\\ = \\frac{-hk^2 - kh^2}{h^2+k^2} = \\frac{-hk(k+h)}{h^2+k^2}"
+      },
+      {
+        "paso_numero": 5,
+        "descripcion_paso": "Sustituir el numerador simplificado en la expresión del límite.",
+        "expresion_latex_paso": "L = \\lim_{(h,k) \\to (0,0)} \\frac{\\frac{-hk(h+k)}{h^2+k^2}}{\\sqrt{h^2+k^2}} = \\lim_{(h,k) \\to (0,0)} \\frac{-hk(h+k)}{(h^2+k^2)^{3/2}}"
+      },
+      {
+        "paso_numero": 6,
+        "descripcion_paso": "Evaluar el límite a lo largo de una trayectoria, por ejemplo, \\( k=h \\).",
+        "expresion_latex_paso": "\\text{Si } k=h, \\text{ la expresión se convierte en: } \\\\ \\frac{-h(h)(h+h)}{(h^2+h^2)^{3/2}} = \\frac{-h^2(2h)}{(2h^2)^{3/2}} = \\frac{-2h^3}{2\\sqrt{2}(h^2)^{3/2}} = \\frac{-2h^3}{2\\sqrt{2}|h|^3}"
+      },
+      {
+        "paso_numero": 7,
+        "descripcion_paso": "Analizar el límite a lo largo de \\( k=h \\) cuando \\( h \\to 0 \\).",
+        "expresion_latex_paso": "\\lim_{h \\to 0^+} \\frac{-2h^3}{2\\sqrt{2}h^3} = \\lim_{h \\to 0^+} \\frac{-1}{\\sqrt{2}} = -\\frac{1}{\\sqrt{2}} \\\\ \\lim_{h \\to 0^-} \\frac{-2h^3}{2\\sqrt{2}(-h^3)} = \\lim_{h \\to 0^-} \\frac{1}{\\sqrt{2}} = \\frac{1}{\\sqrt{2}}"
+      },
+      {
+        "paso_numero": 8,
+        "descripcion_paso": "Conclusión: Dado que el límite a lo largo de la trayectoria \\( k=h \\) no existe (los límites laterales son diferentes), el límite general \\( L \\) no existe. Además, incluso si existiera por esta trayectoria, no es igual a 0.",
+        "expresion_latex_paso": "\\text{El límite } L = \\lim_{(h,k) \\to (0,0)} \\frac{-hk(h+k)}{(h^2+k^2)^{3/2}} \\text{ no es 0 (de hecho, no existe).} \\\\ \\text{Por lo tanto, la función } f(x,y) \\text{ no es diferenciable en (0,0).}"
+      }
+    ]
+  }
+]
