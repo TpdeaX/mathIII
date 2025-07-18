@@ -11,7 +11,34 @@
 </head>
 <body>
 
-    <div class="quiz-container" id="quiz-container">
+    <!-- Contenedor para la solicitud inicial (reanudar/empezar nuevo) -->
+    <div class="card hidden" id="initial-prompt-container">
+        <h2>¡Bienvenido de nuevo!</h2>
+        <p>Detectamos un cuestionario sin terminar. ¿Deseas reanudarlo o empezar desde cero?</p>
+        <div class="button-group">
+            <button id="resume-quiz-button" class="btn btn-primary">Reanudar</button>
+            <button id="start-new-quiz-button" class="btn btn-secondary">Empezar Nuevo</button>
+        </div>
+    </div>
+
+    <!-- Contenedor para la selección de modo (ordenado/aleatorio) -->
+    <div class="card hidden" id="mode-selection-container">
+        <h2>Elige un modo</h2>
+        <div class="mode-options">
+            <label>
+                <input type="radio" name="quiz-mode" id="ordered-mode-button" value="ordered" checked>
+                <span>Preguntas en orden</span>
+            </label>
+            <label>
+                <input type="radio" name="quiz-mode" id="random-mode-button" value="random">
+                <span>Preguntas aleatorias</span>
+            </label>
+        </div>
+        <button id="start-quiz-mode-button" class="btn btn-primary">Comenzar Cuestionario</button>
+    </div>
+
+    <!-- Contenedor principal del cuestionario -->
+    <div class="card hidden" id="quiz-container">
         <h2 id="question">Cargando pregunta...</h2>
         <div id="options-container" class="options-container">
             <!-- Las opciones se generarán aquí con JavaScript -->
@@ -19,13 +46,17 @@
         <div id="feedback-container" class="feedback-container">
             <!-- El feedback aparecerá aquí -->
         </div>
-        <button id="next-button" class="next-button hidden">Siguiente Pregunta</button>
+        <div class="quiz-footer-buttons">
+            <button id="next-button" class="btn btn-primary hidden">Siguiente Pregunta</button>
+            <button id="home-button" class="btn btn-secondary">Volver al Inicio</button>
+        </div>
     </div>
 
-    <div class="results-container hidden" id="results-container">
+    <!-- Contenedor de resultados -->
+    <div class="card hidden" id="results-container">
         <h2>¡Cuestionario completado!</h2>
         <p id="score">Tu puntuación es: 0 de 0</p>
-        <button id="restart-button" class="next-button">Volver a empezar</button>
+        <button id="restart-button" class="btn btn-primary">Volver a empezar</button>
     </div>
 
     <script src="script.js"></script>

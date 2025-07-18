@@ -1,110 +1,236 @@
+/* style.css - Rediseño con Material Design */
+
+/* Variables de color para un mantenimiento fácil */
+:root {
+    --primary-color: #3f51b5; /* Indigo */
+    --primary-color-dark: #303f9f;
+    --accent-color: #ff4081; /* Pink */
+    --correct-color: #4caf50; /* Green */
+    --incorrect-color: #f44336; /* Red */
+    --background-color: #f5f5f5;
+    --card-background: #ffffff;
+    --text-color-primary: #212121;
+    --text-color-secondary: #757575;
+    --border-color: #e0e0e0;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f0f2f5;
-    color: #333;
+    background-color: var(--background-color);
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    padding: 20px;
+    padding: 16px;
+    color: var(--text-color-primary);
     box-sizing: border-box;
 }
 
-.quiz-container, .results-container {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+/* El contenedor principal de cada "pantalla" */
+.card {
+    background-color: var(--card-background);
+    padding: 24px 32px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     width: 100%;
     max-width: 600px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
 }
 
-#question {
-    font-size: 1.5em;
-    font-weight: 700;
-    margin-bottom: 25px;
-    color: #1c1c1e;
+h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+p {
+    margin-bottom: 24px;
+    line-height: 1.6;
+    color: var(--text-color-secondary);
 }
 
 .options-container {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
+    margin: 24px 0;
+}
+
+/* Estilo base para todos los botones */
+.btn {
+    padding: 10px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    outline: none;
+    letter-spacing: 0.5px;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* Botones de acción principal */
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-color-dark);
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+}
+
+/* Botones de acción secundaria (contorno) */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    box-shadow: none;
+}
+
+.btn-secondary:hover {
+    background-color: rgba(63, 81, 181, 0.08);
 }
 
 .option-btn {
-    background-color: #f0f2f5;
-    border: 2px solid transparent;
-    border-radius: 8px;
-    padding: 15px;
-    width: 100%;
-    text-align: left;
-    font-size: 1em;
+    background-color: var(--card-background);
+    color: var(--text-color-primary);
+    border: 1px solid var(--border-color);
+    padding: 14px 18px;
+    border-radius: 4px;
+    font-size: 1rem;
     cursor: pointer;
-    transition: background-color 0.3s, border-color 0.3s;
+    transition: all 0.2s ease;
+    text-align: left;
+    width: 100%;
 }
 
 .option-btn:hover:not(:disabled) {
-    background-color: #e4e6eb;
-}
-
-.option-btn.correct {
-    background-color: #d4edda; /* Verde claro */
-    border-color: #c3e6cb;
-    color: #155724;
-    font-weight: 500;
-}
-
-.option-btn.incorrect {
-    background-color: #f8d7da; /* Rojo claro */
-    border-color: #f5c6cb;
-    color: #721c24;
-    font-weight: 500;
+    border-color: var(--primary-color);
+    background-color: rgba(63, 81, 181, 0.04);
 }
 
 .option-btn:disabled {
     cursor: not-allowed;
-    opacity: 0.9;
+    opacity: 0.8;
+}
+
+.option-btn.correct {
+    background-color: #e8f5e9; /* Light Green */
+    border-color: var(--correct-color);
+    color: #2e7d32;
+    font-weight: 700;
+}
+
+.option-btn.incorrect {
+    background-color: #ffebee; /* Light Red */
+    border-color: var(--incorrect-color);
+    color: #c62828;
+    font-weight: 700;
 }
 
 .feedback-container {
     margin-top: 20px;
-    padding: 15px;
-    border-radius: 8px;
-    font-size: 0.95em;
-    line-height: 1.5;
+    padding: 12px;
+    border-radius: 4px;
+    font-weight: 500;
+    border: 1px solid transparent;
 }
 
 .feedback-container.correct {
-    background-color: #e9f7ef;
-    color: #155724;
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-color: var(--correct-color);
 }
 
 .feedback-container.incorrect {
-    background-color: #fdecea;
-    color: #721c24;
+    background-color: #ffebee;
+    color: #c62828;
+    border-color: var(--incorrect-color);
 }
 
-.next-button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 12px 25px;
-    font-size: 1em;
-    font-weight: 500;
-    cursor: pointer;
-    display: block;
-    width: 100%;
-    margin-top: 25px;
-    transition: background-color 0.3s;
+/* Contenedores de botones */
+.button-group, .quiz-footer-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 24px;
 }
 
-.next-button:hover {
-    background-color: #0056b3;
-}
-
+/* Clase para ocultar elementos */
 .hidden {
-    display: none;
+    display: none !important;
+}
+
+/* Estilos para los radio buttons personalizados */
+.mode-options {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 24px 0;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.mode-options label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1.1rem;
+}
+
+.mode-options input[type="radio"] {
+    display: none; /* Oculta el radio button original */
+}
+
+.mode-options label span {
+    padding-left: 32px;
+    position: relative;
+}
+
+/* Círculo exterior del radio button */
+.mode-options label span::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+/* Círculo interior (visible cuando está seleccionado) */
+.mode-options label span::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    transform: translateY(-50%) scale(0);
+    width: 10px;
+    height: 10px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    transition: transform 0.2s;
+}
+
+/* Estilos cuando el radio está seleccionado */
+.mode-options input[type="radio"]:checked + span::after {
+    transform: translateY(-50%) scale(1);
+}
+
+.mode-options input[type="radio"]:checked + span::before {
+    border-color: var(--primary-color);
 }
