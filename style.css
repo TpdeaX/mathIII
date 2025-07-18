@@ -1,0 +1,110 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.quiz-container, .results-container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#question {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1c1c1e;
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-btn {
+    background-color: #f0f2f5;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: #e4e6eb;
+}
+
+.option-btn.correct {
+    background-color: #d4edda; /* Verde claro */
+    border-color: #c3e6cb;
+    color: #155724;
+    font-weight: 500;
+}
+
+.option-btn.incorrect {
+    background-color: #f8d7da; /* Rojo claro */
+    border-color: #f5c6cb;
+    color: #721c24;
+    font-weight: 500;
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.9;
+}
+
+.feedback-container {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 0.95em;
+    line-height: 1.5;
+}
+
+.feedback-container.correct {
+    background-color: #e9f7ef;
+    color: #155724;
+}
+
+.feedback-container.incorrect {
+    background-color: #fdecea;
+    color: #721c24;
+}
+
+.next-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: 500;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 25px;
+    transition: background-color 0.3s;
+}
+
+.next-button:hover {
+    background-color: #0056b3;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,1102 @@
+[
+  {
+    "question": "¿Cuál es la función principal de los registros en un sistema digital?",
+    "options": [
+      {
+        "text": "Almacenar datos de forma permanente, incluso sin energía.",
+        "feedback": "Incorrecto. Los registros son unidades de almacenamiento temporal y volátiles. La memoria ROM es la que almacena datos de forma permanente."
+      },
+      {
+        "text": "Guardar información temporal utilizada en operaciones de cálculo o control dentro del procesador.",
+        "feedback": "Correcto. Los registros son pequeñas unidades de almacenamiento dentro del procesador que guardan información temporal para operaciones rápidas de cálculo o control."
+      },
+      {
+        "text": "Controlar el encendido y apagado de dispositivos periféricos.",
+        "feedback": "Incorrecto. Si bien los registros pueden gestionar el flujo de control, su función principal no es controlar directamente el encendido y apagado de periféricos, sino almacenar datos y direcciones para el procesamiento."
+      },
+      {
+        "text": "Implementar funciones lógicas personalizadas en circuitos integrados.",
+        "feedback": "Incorrecto. Esta es la función principal de los Dispositivos Lógicos Programables (PLD), no de los registros."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Qué tipo de memoria es no volátil y se utiliza principalmente para almacenar firmware del sistema?",
+    "options": [
+      {
+        "text": "Memoria RAM",
+        "feedback": "Incorrecto. La memoria RAM es volátil, lo que significa que pierde su contenido cuando el dispositivo se apaga."
+      },
+      {
+        "text": "Memoria Caché",
+        "feedback": "Incorrecto. La memoria caché es un tipo de RAM (SRAM) y, por lo tanto, es volátil."
+      },
+      {
+        "text": "Memoria ROM",
+        "feedback": "Correcto. La memoria ROM (Read Only Memory) es un tipo de memoria no volátil que conserva su contenido incluso cuando el dispositivo se apaga y su función principal es almacenar datos fijos como el firmware."
+      },
+      {
+        "text": "Dispositivos Lógicos Programables (PLD)",
+        "feedback": "Incorrecto. Los PLD son circuitos configurables para implementar lógica, aunque algunos (como Flash) tienen componentes no volátiles, su función principal no es el almacenamiento masivo de firmware."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la principal característica que diferencia la memoria RAM de la memoria ROM?",
+    "options": [
+      {
+        "text": "La RAM es más económica de fabricar.",
+        "feedback": "Incorrecto. Si bien la DRAM (un tipo de RAM) es económica, la principal diferencia no es el costo, sino su volatilidad."
+      },
+      {
+        "text": "La RAM es un tipo de memoria no volátil.",
+        "feedback": "Incorrecto. La RAM es, por definición, una memoria volátil, lo que significa que pierde su contenido al apagar el dispositivo."
+      },
+      {
+        "text": "La RAM permite acceso aleatorio, mientras que la ROM es secuencial.",
+        "feedback": "Correcto. La memoria RAM permite el acceso aleatorio a los datos, lo que significa que cualquier celda puede ser accedida directamente. Aunque la ROM puede tener acceso rápido, su principal distinción es su naturaleza no volátil, y el concepto de 'aleatorio' se asocia más fuertemente a RAM."
+      },
+      {
+        "text": "La RAM es volátil y se utiliza para cargar y manipular información temporal, a diferencia de la ROM que es no volátil y almacena datos fijos.",
+        "feedback": "Correcto. Esta opción describe la principal diferencia: la volatilidad de la RAM para información temporal versus la no volatilidad de la ROM para datos fijos como el firmware."
+      }
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "question": "¿Qué son los Dispositivos Lógicos Programables (PLD)?",
+    "options": [
+      {
+        "text": "Circuitos integrados diseñados con una función lógica fija y predeterminada por el fabricante.",
+        "feedback": "Incorrecto. Esta descripción se refiere a los ASICs (Application-Specific Integrated Circuits) o chips estándar, no a los PLD."
+      },
+      {
+        "text": "Pequeñas unidades de almacenamiento temporal dentro del procesador.",
+        "feedback": "Incorrecto. Esta es la definición de registros."
+      },
+      {
+        "text": "Circuitos integrados configurables que permiten al usuario implementar funciones lógicas personalizadas.",
+        "feedback": "Correcto. Los PLD son circuitos integrados cuya funcionalidad lógica puede ser configurada o 'programada' por el usuario después de su fabricación."
+      },
+      {
+        "text": "Memorias no volátiles usadas exclusivamente para el arranque de un sistema.",
+        "feedback": "Incorrecto. Aunque algunos PLD pueden usar memoria no volátil para su configuración, su propósito principal es implementar lógica, no solo el arranque del sistema."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál de las siguientes es una ventaja de los Dispositivos Lógicos Programables (PLD)?",
+    "options": [
+      {
+        "text": "Son más económicos por unidad que un circuito fijo para producción a gran escala.",
+        "feedback": "Incorrecto. Una desventaja de los PLD es que son más caros por unidad que un circuito fijo si se producen a gran escala."
+      },
+      {
+        "text": "Requieren una curva de aprendizaje mínima para su programación.",
+        "feedback": "Incorrecto. Una limitación de los PLD es que requieren conocimiento técnico y herramientas de diseño especializadas, implicando una curva de aprendizaje."
+      },
+      {
+        "text": "Ofrecen flexibilidad para cambiar la función sin cambiar el hardware físico.",
+        "feedback": "Correcto. La flexibilidad y la capacidad de reconfiguración son ventajas clave de los PLD, permitiendo modificar su funcionalidad mediante programación sin alterar el hardware."
+      },
+      {
+        "text": "Consumen menos energía que cualquier otro circuito integrado específico.",
+        "feedback": "Incorrecto. Los PLD, especialmente los más complejos como las FPGAs, pueden consumir más energía que un circuito integrado específico para la misma funcionalidad."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué tipo de memoria ROM permite el borrado y la reprogramación eléctrica, sin necesidad de quitar el chip del dispositivo, y se utiliza para actualizaciones de firmware?",
+    "options": [
+      {
+        "text": "Mask ROM",
+        "feedback": "Incorrecto. La Mask ROM se programa en fábrica y no puede ser borrada ni reprogramada por el usuario."
+      },
+      {
+        "text": "PROM (Programmable Read-Only Memory)",
+        "feedback": "Incorrecto. Las PROM pueden programarse una sola vez y no son borrables una vez grabadas."
+      },
+      {
+        "text": "EPROM (Erasable Programmable Read-Only Memory)",
+        "feedback": "Incorrecto. La EPROM es borrable, pero requiere exposición a luz ultravioleta y generalmente debe ser retirada del circuito para su reprogramación."
+      },
+      {
+        "text": "EEPROM (Electrically Erasable Programmable Read-Only Memory)",
+        "feedback": "Correcto. La EEPROM permite el borrado y la reprogramación eléctrica, a menudo byte a byte, directamente en el circuito, lo que la hace ideal para actualizaciones de firmware sin necesidad de remover el chip."
+      }
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "question": "¿Cuál es la principal diferencia de funcionamiento entre SRAM (Static RAM) y DRAM (Dynamic RAM)?",
+    "options": [
+      {
+        "text": "La SRAM necesita refrescarse constantemente para mantener los datos, mientras que la DRAM no.",
+        "feedback": "Incorrecto. Es al revés: la DRAM necesita refrescarse constantemente, mientras que la SRAM no, porque utiliza biestables para retener los datos."
+      },
+      {
+        "text": "La SRAM es volátil y la DRAM es no volátil.",
+        "feedback": "Incorrecto. Ambas, SRAM y DRAM, son tipos de memoria volátil y pierden su contenido al apagar el dispositivo."
+      },
+      {
+        "text": "La SRAM es más lenta y económica que la DRAM.",
+        "feedback": "Incorrecto. La SRAM es significativamente más rápida y, por lo general, más cara que la DRAM debido a su mayor complejidad y estabilidad sin necesidad de refresco."
+      },
+      {
+        "text": "La SRAM retiene los datos mientras tenga energía sin necesidad de refresco, a diferencia de la DRAM que sí requiere refresco constante.",
+        "feedback": "Correcto. La SRAM utiliza biestables que mantienen el dato sin refresco, mientras que la DRAM utiliza capacitores que pierden su carga con el tiempo y necesitan ser refrescados periódicamente."
+      }
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "question": "¿Cuál de las siguientes es una aplicación típica de la memoria ROM?",
+    "options": [
+      {
+        "text": "Almacenamiento temporal de datos y programas en ejecución.",
+        "feedback": "Incorrecto. Esta es la función principal de la memoria RAM."
+      },
+      {
+        "text": "Realización de operaciones aritméticas y lógicas de alta velocidad en el procesador.",
+        "feedback": "Incorrecto. Estas operaciones se realizan en la ALU con datos almacenados en registros."
+      },
+      {
+        "text": "Almacenamiento del BIOS o firmware esencial para el arranque del sistema.",
+        "feedback": "Correcto. La ROM es fundamental para almacenar el software de bajo nivel (BIOS/UEFI, firmware) que inicia y controla el hardware del sistema al encenderlo."
+      },
+      {
+        "text": "Creación de circuitos lógicos personalizados y reconfigurables.",
+        "feedback": "Incorrecto. Esta es la función principal de los Dispositivos Lógicos Programables (PLD)."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la principal desventaja de los contadores asincrónicos, según el material?",
+    "options": [
+      {
+        "text": "Son más complejos de diseñar e implementar debido a la necesidad de lógica combinatoria adicional.",
+        "feedback": "Incorrecto. La ventaja de los contadores asincrónicos es su sencillez, no su complejidad. La complejidad es más característica de los sincrónicos."
+      },
+      {
+        "text": "Su velocidad de respuesta es limitada y depende fuertemente de la cantidad de bits que manejan, debido a una cadena de retardos.",
+        "feedback": "Correcto. La señal de reloj se propaga de un flip-flop a otro, creando una cadena de retardos que limita la velocidad máxima de operación, especialmente con un mayor número de bits."
+      },
+      {
+        "text": "Consumen significativamente más energía que los contadores sincrónicos.",
+        "feedback": "Incorrecto. El consumo de energía no es su principal desventaja en comparación con los sincrónicos, aunque podría ser un factor, la limitación de velocidad es más destacada."
+      },
+      {
+        "text": "Requieren una única fuente de reloj externa que se conecta a todos los flip-flops simultáneamente.",
+        "feedback": "Incorrecto. Esta es una característica de los contadores sincrónicos, no una desventaja de los asincrónicos. En los asincrónicos, el reloj se conecta a un solo flip-flop y se propaga internamente."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Qué característica clave distingue a los contadores sincrónicos de los asincrónicos con respecto a la señal de reloj?",
+    "options": [
+      {
+        "text": "En los contadores sincrónicos, la señal de reloj se conecta a la entrada de un solo flip-flop y se propaga internamente.",
+        "feedback": "Incorrecto. Esta es la forma en que funcionan los contadores asincrónicos, no los sincrónicos."
+      },
+      {
+        "text": "En los contadores sincrónicos, la señal de reloj externa se conecta simultáneamente a las entradas de reloj de todos los flip-flops.",
+        "feedback": "Correcto. Esta conexión simultánea del reloj a todos los flip-flops es la característica definitoria de los contadores sincrónicos, lo que permite que todos los elementos de memoria actúen al mismo tiempo."
+      },
+      {
+        "text": "Los contadores sincrónicos no utilizan una señal de reloj, sino un generador de pulsos interno.",
+        "feedback": "Incorrecto. Los contadores sincrónicos sí utilizan una señal de reloj externa, y su comportamiento se basa en la sincronización con esa señal."
+      },
+      {
+        "text": "Los contadores sincrónicos tienen una cadena de retardos más pronunciada que los asincrónicos.",
+        "feedback": "Incorrecto. La estructura sincrónica busca eliminar la cadena de retardos característica de los contadores asincrónicos, lo que permite mayor velocidad."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Cuál es la principal característica que distingue a una GAL (Generic Array Logic) de una PAL (Programmable Array Logic)?",
+    "options": [
+      {
+        "text": "La GAL tiene ambas matrices (AND y OR) programables, mientras que la PAL solo tiene la matriz AND programable.",
+        "feedback": "Incorrecto. La PLA es la que tiene ambas matrices programables. La GAL y PAL tienen matriz OR fija."
+      },
+      {
+        "text": "La GAL es reprogramable eléctricamente, a diferencia de la PAL que es programable una sola vez.",
+        "feedback": "Correcto. La GAL es una innovación de la PAL que incorpora tecnología EEPROM o Flash, permitiendo borrar y reescribir la información múltiples veces, lo que no es posible con la PAL original."
+      },
+      {
+        "text": "La GAL es más compleja de fabricar y, por lo tanto, más costosa que la PAL.",
+        "feedback": "Incorrecto. Aunque la GAL ofrece más flexibilidad, su diseño se considera una simplificación económica respecto a la PLA, y suele ser más económica que los dispositivos más complejos como las FPGA."
+      },
+      {
+        "text": "La GAL se utiliza para funciones lógicas más avanzadas que la PAL, como los microprocesadores.",
+        "feedback": "Incorrecto. Si bien la GAL es más versátil, los microprocesadores y lógicas más avanzadas suelen implementarse en CPLD o, más comúnmente, FPGA."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Qué tipo de memoria RAM utiliza capacitores y necesita ser refrescada constantemente para retener los datos?",
+    "options": [
+      {
+        "text": "SRAM (Static RAM)",
+        "feedback": "Incorrecto. La SRAM no necesita refresco constante porque utiliza biestables (flip-flops) para almacenar datos."
+      },
+      {
+        "text": "MRAM (Magnetoresistive RAM)",
+        "feedback": "Incorrecto. La MRAM es una tecnología emergente que usa propiedades magnéticas y no requiere refresco."
+      },
+      {
+        "text": "DRAM (Dynamic RAM)",
+        "feedback": "Correcto. La DRAM (Dynamic RAM) es el tipo de memoria RAM que almacena cada bit en un capacitor y requiere ciclos de refresco periódicos para evitar la pérdida de carga y, por ende, de datos."
+      },
+      {
+        "text": "VRAM (Video RAM)",
+        "feedback": "Incorrecto. La VRAM es un tipo especializado de DRAM utilizado en tarjetas gráficas, por lo que también necesita refresco, pero la respuesta más general y precisa es DRAM."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la función principal de un Multiplexor en un sistema digital?",
+    "options": [
+      {
+        "text": "Distribuir una única señal de entrada a varias salidas, seleccionando una de ellas.",
+        "feedback": "Incorrecto. Esta es la función de un Demultiplexor, que realiza la operación inversa."
+      },
+      {
+        "text": "Almacenar información temporal utilizada en operaciones de cálculo.",
+        "feedback": "Incorrecto. Esta es la función de los registros o memoria RAM."
+      },
+      {
+        "text": "Seleccionar uno de varios canales de datos de entrada y enviarlo a una única salida.",
+        "feedback": "Correcto. Un multiplexor actúa como un selector o 'llave de paso' que permite que solo uno de sus múltiples canales de entrada pase a la salida, basado en una señal de selección."
+      },
+      {
+        "text": "Compactar información, generando un código de salida a partir de la información de entrada.",
+        "feedback": "Incorrecto. Esta es la función principal de un Codificador."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué tipo de dispositivo lógico programable (PLD) se caracteriza por tener una gran matriz de 'bloques lógicos configurables' y una red extensa de rutas de enrutamiento programables, siendo ideal para sistemas complejos como microprocesadores (soft-cores)?",
+    "options": [
+      {
+        "text": "PAL (Programmable Array Logic)",
+        "feedback": "Incorrecto. Las PALs son dispositivos más simples con una matriz AND programable y OR fija, no adecuados para lógicas tan complejas."
+      },
+      {
+        "text": "GAL (Generic Array Logic)",
+        "feedback": "Incorrecto. Las GALs son reprogramables y más flexibles que las PALs, pero aún se utilizan para aplicaciones de lógica más sencilla o máquinas de estado simples, no microprocesadores completos."
+      },
+      {
+        "text": "CPLD (Complex Programmable Logic Device)",
+        "feedback": "Incorrecto. Los CPLDs integran múltiples bloques de lógica interconectados, pero son de menor escala y densidad que los FPGA, y no se usan comúnmente para microprocesadores completos."
+      },
+      {
+        "text": "FPGA (Field-Programmable Gate Array)",
+        "feedback": "Correcto. Los FPGA son los PLD más avanzados y flexibles, con miles de bloques lógicos configurables y una vasta red de interconexión, lo que les permite implementar diseños muy complejos, incluyendo sistemas completos como microprocesadores 'soft-cores'."
+      }
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "question": "¿Cuál de las siguientes afirmaciones describe mejor el rol de los registros en los microcontroladores?",
+    "options": [
+      {
+        "text": "Se utilizan para el almacenamiento masivo y permanente de código de programa.",
+        "feedback": "Incorrecto. El almacenamiento masivo y permanente de código es función de la memoria Flash (ROM) del microcontrolador, no de los registros que son temporales."
+      },
+      {
+        "text": "Son esenciales para manipular datos de forma temporal, gestionar el flujo de ejecución y configurar periféricos.",
+        "feedback": "Correcto. En microcontroladores, los registros de propósito general, control, dirección y datos son cruciales para el manejo rápido de variables, el control del programa y la interacción con los periféricos en tiempo real."
+      },
+      {
+        "text": "Sirven principalmente como interfaz para la comunicación serial de datos con dispositivos externos.",
+        "feedback": "Incorrecto. Aunque los registros de desplazamiento pueden realizar conversión serie-paralelo, su rol en microcontroladores es más amplio y fundamental que solo la comunicación serial."
+      },
+      {
+        "text": "Determinan la velocidad máxima de operación del microcontrolador al generar retardos.",
+        "feedback": "Incorrecto. Los registros están diseñados para una velocidad alta y, si bien pueden estar sujetos a retardos de propagación, su función principal no es generarlos, sino facilitar el procesamiento rápido."
+      }
+    ],
+    "correctAnswer": 1
+  },
+   {
+    "question": "¿Cuál es la función principal del 'Contador de Programa (PC)' en la Unidad Central de Procesamiento (CPU)?",
+    "options": [
+      {
+        "text": "Almacenar resultados intermedios de operaciones aritméticas o lógicas.",
+        "feedback": "Incorrecto. Esa es la función del Registro Acumulador (AC)."
+      },
+      {
+        "text": "Guardar la instrucción que se está ejecutando en ese momento.",
+        "feedback": "Incorrecto. Esa es la función del Registro de Instrucciones (IR)."
+      },
+      {
+        "text": "Contener la dirección de la siguiente instrucción que debe ejecutarse.",
+        "feedback": "Correcto. El Contador de Programa (PC) almacena la dirección de memoria de la próxima instrucción a ser ejecutada, asegurando el flujo secuencial del programa."
+      },
+      {
+        "text": "Almacenar la dirección en memoria donde se leerá o escribirá un dato.",
+        "feedback": "Incorrecto. Esa es la función del Registro de Dirección de Memoria (MAR)."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué tipo de memoria ROM se programa una única vez por el usuario después de su fabricación, típicamente quemando fusibles internos, y su contenido no puede ser borrado ni reescrito?",
+    "options": [
+      {
+        "text": "Mask ROM",
+        "feedback": "Incorrecto. La Mask ROM es programada por el fabricante durante el proceso de fabricación y no por el usuario."
+      },
+      {
+        "text": "EPROM (Erasable Programmable Read-Only Memory)",
+        "feedback": "Incorrecto. La EPROM permite ser borrada y reprogramada múltiples veces mediante luz ultravioleta."
+      },
+      {
+        "text": "EEPROM (Electrically Erasable Programmable Read-Only Memory)",
+        "feedback": "Incorrecto. La EEPROM puede ser borrada y reprogramada eléctricamente múltiples veces."
+      },
+      {
+        "text": "PROM (Programmable Read-Only Memory)",
+        "feedback": "Correcto. La PROM se programa una sola vez por el usuario, quemando enlaces internos de forma irreversible."
+      }
+    ],
+    "correctAnswer": 3
+  },
+  {
+    "question": "¿Cuál fue la principal mejora introducida con las memorias DDR SDRAM (Double Data Rate SDRAM) en comparación con las SDRAM originales?",
+    "options": [
+      {
+        "text": "La capacidad de ser reprogramable eléctricamente, como una Flash.",
+        "feedback": "Incorrecto. Esta mejora está relacionada con las memorias Flash, no con la evolución de la RAM en cuanto a tasa de datos."
+      },
+      {
+        "text": "Permitir la transferencia de datos en ambos flancos (ascendente y descendente) de la señal de reloj, duplicando la tasa de datos efectiva.",
+        "feedback": "Correcto. La característica 'Double Data Rate' se refiere a la capacidad de transferir datos dos veces por ciclo de reloj, una en el flanco ascendente y otra en el descendente."
+      },
+      {
+        "text": "Eliminar la necesidad de ciclos de refresco para mantener los datos.",
+        "feedback": "Incorrecto. Las DRAM (incluyendo las SDRAM y DDR SDRAM) aún requieren ciclos de refresco. Solo las SRAM eliminan esta necesidad."
+      },
+      {
+        "text": "Ser significativamente más lenta pero más económica que las SDRAM asíncronas.",
+        "feedback": "Incorrecto. Las DDR SDRAM fueron diseñadas para ser más rápidas y eficientes, no más lentas."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "Dentro de la arquitectura de una FPGA (Field-Programmable Gate Array), ¿qué componentes contienen las tablas de búsqueda (LUTs) para lógica combinacional y flip-flops para lógica secuencial?",
+    "options": [
+      {
+        "text": "Las Matrices de Compuertas Lógicas Programables AND/OR.",
+        "feedback": "Incorrecto. Si bien las matrices AND/OR son parte de la lógica programable en PLD, en las FPGA, los LUTs y flip-flops están contenidos en los Bloques Lógicos Configurables."
+      },
+      {
+        "text": "Los elementos de interconexión programables.",
+        "feedback": "Incorrecto. Los elementos de interconexión se encargan de conectar los bloques lógicos, no de contener la lógica en sí."
+      },
+      {
+        "text": "Los Bloques Lógicos Configurables (CLBs).",
+        "feedback": "Correcto. Los CLBs son los componentes básicos de las FPGAs que contienen las LUTs para implementar funciones combinacionales y los flip-flops para lógica secuencial."
+      },
+      {
+        "text": "Las Interfaces de Entrada/Salida (I/O).",
+        "feedback": "Incorrecto. Las interfaces I/O gestionan la comunicación externa del chip, no la lógica interna."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la característica distintiva de un Contador en Anillo de 'N' bits con respecto a la cantidad de conteos en un ciclo completo?",
+    "options": [
+      {
+        "text": "Produce 2N conteos en un ciclo completo.",
+        "feedback": "Incorrecto. 2N conteos es una característica del Contador Johnson, no del Contador en Anillo."
+      },
+      {
+        "text": "Produce N-1 conteos en un ciclo completo.",
+        "feedback": "Incorrecto. El número de conteos en un Contador en Anillo es igual al número de bits."
+      },
+      {
+        "text": "Produce N conteos en un ciclo completo.",
+        "feedback": "Correcto. Un Contador en Anillo de 'N' bits tiene un ciclo de 'N' conteos, donde solo un bit está activo (o inactivo) a la vez y se desplaza."
+      },
+      {
+        "text": "La cantidad de conteos varía dinámicamente según la frecuencia de reloj.",
+        "feedback": "Incorrecto. La frecuencia del reloj afecta la velocidad de conteo, pero no el número total de conteos en un ciclo completo del contador."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué método se utiliza para obtener la expresión más simplificada de una función de salida en un Multiplexor (como F en el ejemplo) si se parte de la tabla de verdad y se usa el Álgebra de Boole?",
+    "options": [
+      {
+        "text": "El método de expansión de variables.",
+        "feedback": "Incorrecto. Aunque el teorema de expansión puede usarse para derivar la función, el método de Karnaugh es el que permite obtener la expresión más simplificada a partir de la tabla de verdad."
+      },
+      {
+        "text": "El método de Karnaugh.",
+        "feedback": "Correcto. El método de Karnaugh se utiliza para simplificar expresiones booleanas a partir de tablas de verdad, lo que permite obtener la función más simplificada de salida para un multiplexor."
+      },
+      {
+        "text": "La asignación directa de valores a las entradas de selección.",
+        "feedback": "Incorrecto. Asignar valores directamente ayuda a entender el funcionamiento del multiplexor, pero no simplifica la expresión booleana de su salida."
+      },
+      {
+        "text": "La construcción de un contador asincrónico binario.",
+        "feedback": "Incorrecto. Esto no está relacionado con la simplificación de funciones booleanas para multiplexores."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Cuál es la función de una entrada de validación (ENABLE) activa a nivel alto en un multiplexor?",
+    "options": [
+      {
+        "text": "Si la entrada de validación es '0', el multiplexor funciona normalmente.",
+        "feedback": "Incorrecto. En una entrada de validación activa a nivel alto, el multiplexor funciona normalmente si la entrada es '1'."
+      },
+      {
+        "text": "Si la entrada de validación es '1', la salida siempre será '0', deshabilitando el multiplexor.",
+        "feedback": "Incorrecto. Si la entrada de validación es '1' (activa a nivel alto), el multiplexor funciona normalmente, no se deshabilita."
+      },
+      {
+        "text": "Actúa como un interruptor de encendido/apagado; si está a '1', el multiplexor funciona normalmente, y si está a '0', la salida siempre es '0'.",
+        "feedback": "Correcto. Una entrada de validación activa a nivel alto (E=1) permite que el multiplexor opere como se espera, mientras que si E=0, todas sus salidas se fuerzan a '0', deshabilitando su funcionalidad."
+      },
+      {
+        "text": "Controla la selección de los datos de entrada, ignorando las entradas de selección (S1, S0).",
+        "feedback": "Incorrecto. La entrada de validación controla si el multiplexor funciona o no, pero no reemplaza la función de selección de datos; esta sigue siendo manejada por las entradas de selección cuando el multiplexor está habilitado."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué método se propone en el material para construir multiplexores más grandes a partir de otros más pequeños, aumentando el número de entradas?",
+    "options": [
+      {
+        "text": "Conectarlos en paralelo, uniendo todas sus entradas de selección.",
+        "feedback": "Incorrecto. Conectarlos en paralelo se usa para aumentar el número de bits por canal, no el número de entradas. Además, las entradas de selección NO se unen en este caso."
+      },
+      {
+        "text": "Conectarlos en cascada, de manera que la salida de un multiplexor alimente la entrada de selección de otro.",
+        "feedback": "Incorrecto. Si bien es en cascada, la salida de un multiplexor NO alimenta la entrada de selección de otro. Las entradas de selección de los primeros multiplexores se unen, y las salidas de estos alimentan las entradas de datos de los siguientes."
+      },
+      {
+        "text": "Conectarlos en cascada, donde las entradas de selección de la primera columna se unen, y las salidas de los primeros multiplexores alimentan las entradas de datos de los siguientes.",
+        "feedback": "Correcto. Para aumentar el número de entradas, los multiplexores se conectan en cascada, utilizando columnas de multiplexores donde las entradas de selección con el mismo peso se unen, y las salidas de una etapa alimentan las entradas de la siguiente."
+      },
+      {
+        "text": "Utilizar únicamente multiplexores de 1 bit para cada entrada y salida.",
+        "feedback": "Incorrecto. Esta afirmación no describe un método de extensión, sino una preferencia para el estudio de multiplexores básicos de 1 bit, a partir de los cuales se pueden construir otros más complejos."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la función principal de un Codificador en sistemas digitales, como se ilustra en el ejemplo de la cadena de música?",
+    "options": [
+      {
+        "text": "Activar una y solo una de sus salidas según el número introducido por la entrada.",
+        "feedback": "Incorrecto. Esta es la función principal de un Decodificador."
+      },
+      {
+        "text": "Seleccionar uno de varios canales de datos de entrada y enviarlo a una única salida.",
+        "feedback": "Incorrecto. Esta es la función principal de un Multiplexor."
+      },
+      {
+        "text": "Compactar información, generando un código de salida (binario) a partir de la información de entrada (generalmente un botón pulsado).",
+        "feedback": "Correcto. El codificador toma una entrada activa (ej. un botón pulsado) y genera un código binario único asociado a esa entrada, 'compactando' la información."
+      },
+      {
+        "text": "Permitir la transferencia de datos entre múltiples sistemas utilizando un único cable.",
+        "feedback": "Incorrecto. Esto se logra mediante la combinación de multiplexores y demultiplexores."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué implica el uso de una 'X' en la tabla de verdad de un codificador, como se ve en el ejemplo de un codificador de 8 a 3?",
+    "options": [
+      {
+        "text": "Indica que la salida siempre será '1' en ese caso.",
+        "feedback": "Incorrecto. La 'X' (don't care) no implica que la salida sea '1'; su valor es irrelevante porque esa condición de entrada no debería ocurrir."
+      },
+      {
+        "text": "Significa que esa condición de entrada es inválida y nunca se producirá.",
+        "feedback": "Correcto. En las tablas de verdad de codificadores, la 'X' se usa para indicar combinaciones de entrada que 'NO SE PUEDEN PRODUCIR' bajo el funcionamiento normal del dispositivo (por ejemplo, más de una entrada activa a la vez en un codificador de prioridad simple), lo que permite simplificar las ecuaciones de salida."
+      },
+      {
+        "text": "Representa un estado de transición temporal de la salida.",
+        "feedback": "Incorrecto. La 'X' en este contexto se refiere a una condición de entrada que no se espera, no a un estado transitorio de la salida."
+      },
+      {
+        "text": "Se utiliza para indicar que la salida debe ser forzada a un valor específico.",
+        "feedback": "Incorrecto. La 'X' permite que la salida tome el valor más conveniente para la simplificación, pero no es una instrucción para forzarla a un valor específico para el usuario final."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Cuál es la función principal de un Demultiplexor en un sistema digital?",
+    "options": [
+      {
+        "text": "Combinar varias entradas de datos en una única salida seleccionada.",
+        "feedback": "Incorrecto. Esta es la función de un Multiplexor."
+      },
+      {
+        "text": "Distribuir una única señal de entrada a una de sus múltiples salidas, seleccionando solo una a la vez.",
+        "feedback": "Correcto. Un demultiplexor toma una única entrada de datos y la dirige a una de varias salidas posibles, basándose en una señal de selección."
+      },
+      {
+        "text": "Compactar la información de entrada en un código de salida más pequeño.",
+        "feedback": "Incorrecto. Esta es la función principal de un Codificador."
+      },
+      {
+        "text": "Almacenar datos binarios temporalmente dentro del procesador.",
+        "feedback": "Incorrecto. Esta es la función principal de los registros."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Qué par de dispositivos lógicos (Codificador y Decodificador) se complementan para 'compactar' y luego 'expandir' la información, como en el control de un semáforo?",
+    "options": [
+      {
+        "text": "Multiplexor y Demultiplexor.",
+        "feedback": "Incorrecto. El multiplexor y demultiplexor se usan para la transmisión eficiente de datos a través de un único canal, seleccionando entradas o distribuyendo una entrada a salidas."
+      },
+      {
+        "text": "Codificador y Decodificador.",
+        "feedback": "Correcto. Un codificador toma una entrada (ej. un botón) y la convierte en un código binario compacto, mientras que un decodificador toma ese código binario y activa una salida específica correspondiente, 'expandiendo' la señal."
+      },
+      {
+        "text": "Registro de Desplazamiento y Contador.",
+        "feedback": "Incorrecto. Estos son tipos de registros usados para manipular o contar bits, no para la compactación/expansión de señales de control."
+      },
+      {
+        "text": "Memoria ROM y Memoria RAM.",
+        "feedback": "Incorrecto. Estas son memorias para almacenamiento permanente y temporal, respectivamente, no para la conversión de señales lógicas."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "En la implementación de funciones booleanas utilizando un multiplexor con 'n-1' entradas de selección, ¿cuántas variables de la función se introducen directamente por las entradas de selección?",
+    "options": [
+      {
+        "text": "Todas las 'n' variables de la función.",
+        "feedback": "Incorrecto. Se utilizan 'n-1' variables para las entradas de selección, no todas las 'n'."
+      },
+      {
+        "text": "Una sola variable, la de menor peso.",
+        "feedback": "Incorrecto. Se utilizan 'n-1' variables de la función para las entradas de selección."
+      },
+      {
+        "text": "'n-1' variables de la función.",
+        "feedback": "Correcto. Para implementar una función de 'n' variables con un multiplexor, se suelen usar 'n-1' de esas variables como entradas de selección del multiplexor, y la variable restante (o constantes '0', '1', o su negación) se conectan a las entradas de datos (I0, I1, etc.)."
+      },
+      {
+        "text": "Ninguna, todas las variables se conectan a las entradas de datos.",
+        "feedback": "Incorrecto. Las variables de selección son fundamentales para el funcionamiento del multiplexor en la implementación de funciones."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué método se utiliza para 'extender' un multiplexor para que maneje un mayor número de bits por cada canal de datos?",
+    "options": [
+      {
+        "text": "Conectarlos en cascada, aumentando el número de entradas de selección.",
+        "feedback": "Incorrecto. Conectar en cascada se utiliza para aumentar el *número de canales de entrada* (ej. de 4 a 8 canales), no el número de bits por canal."
+      },
+      {
+        "text": "Conectarlos en paralelo, uniendo sus entradas de selección y utilizando un multiplexor por cada bit del canal.",
+        "feedback": "Correcto. Para aumentar el número de bits por canal, se utilizan múltiples multiplexores en paralelo, donde cada multiplexor maneja un bit del canal, y todas sus entradas de selección se conectan en común."
+      },
+      {
+        "text": "Rediseñar completamente el circuito de cada multiplexor para incluir más bits.",
+        "feedback": "Incorrecto. La extensión busca utilizar multiplexores más pequeños existentes, no rediseñarlos internamente."
+      },
+      {
+        "text": "Utilizar un demultiplexor adicional en la salida.",
+        "feedback": "Incorrecto. Un demultiplexor realiza la función inversa de un multiplexor y no se utiliza para aumentar los bits por canal de un multiplexor."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Cuál es la principal característica de las salidas de un Decodificador activo a nivel bajo?",
+    "options": [
+      {
+        "text": "Las salidas activas se representan con un '1', y las inactivas con un '0'.",
+        "feedback": "Incorrecto. Esta es la característica de un decodificador activo a nivel alto."
+      },
+      {
+        "text": "Las salidas activas se representan con un '0', y las inactivas con un '1'.",
+        "feedback": "Correcto. En un decodificador activo a nivel bajo, la salida seleccionada (activa) presenta un '0' lógico, mientras que las demás salidas (inactivas) presentan un '1' lógico."
+      },
+      {
+        "text": "Todas las salidas están siempre a '0' cuando la entrada de validación está inactiva.",
+        "feedback": "Incorrecto. Si bien las entradas de validación pueden forzar todas las salidas a '0', esta es una característica de la entrada de validación, no de la naturaleza activa a nivel bajo de las salidas cuando el dispositivo está habilitado."
+      },
+      {
+        "text": "No posee entradas de selección, solo entradas de datos.",
+        "feedback": "Incorrecto. Los decodificadores sí poseen entradas de selección que determinan cuál de sus salidas se activará."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Qué tipo de registro es el principal responsable de la conversión de datos de serie a paralelo y de paralelo a serie?",
+    "options": [
+      {
+        "text": "Registro Básico (Paralelo)",
+        "feedback": "Incorrecto. El registro básico o paralelo carga y emite todos los bits simultáneamente, no realiza conversiones de formato serie/paralelo."
+      },
+      {
+        "text": "Registro de Desplazamiento (Shift Register)",
+        "feedback": "Correcto. Los registros de desplazamiento están diseñados para mover bits secuencialmente a través de sus biestables, lo que los hace esenciales para la conversión de datos entre formatos serie y paralelo."
+      },
+      {
+        "text": "Registro de Propósito General",
+        "feedback": "Incorrecto. Los registros de propósito general almacenan datos temporales para operaciones de cálculo o control, pero no están especializados en conversión de formatos."
+      },
+      {
+        "text": "Contador",
+        "feedback": "Incorrecto. Los contadores están diseñados para llevar la cuenta de pulsos de reloj y generar secuencias de tiempo, no para conversión de formatos de datos."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Cuál de las siguientes es una aplicación clave de la memoria ROM en los sistemas informáticos actuales?",
+    "options": [
+      {
+        "text": "Almacenamiento temporal de programas en ejecución y datos activos.",
+        "feedback": "Incorrecto. Esta es la función principal de la memoria RAM, que es volátil."
+      },
+      {
+        "text": "Ejecución de operaciones aritméticas y lógicas de alta velocidad.",
+        "feedback": "Incorrecto. Estas operaciones se realizan en la CPU utilizando registros."
+      },
+      {
+        "text": "Almacenamiento del BIOS o firmware esencial para el arranque y funcionamiento básico del sistema.",
+        "feedback": "Correcto. La memoria ROM (incluidas sus variantes modernas como Flash ROM) es fundamental para almacenar las instrucciones inalterables que permiten al sistema iniciar y gestionar su hardware básico."
+      },
+      {
+        "text": "Creación de circuitos lógicos personalizados y reconfigurables.",
+        "feedback": "Incorrecto. Esta es la función principal de los Dispositivos Lógicos Programables (PLD)."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué tipo de memoria RAM es más rápida y costosa, y se utiliza principalmente en las memorias caché (L1, L2, L3) de los procesadores?",
+    "options": [
+      {
+        "text": "DRAM (Dynamic RAM)",
+        "feedback": "Incorrecto. La DRAM es más económica y densa, pero más lenta y requiere refresco constante, siendo usada como memoria principal."
+      },
+      {
+        "text": "SDR SDRAM (Single Data Rate Synchronous RAM)",
+        "feedback": "Incorrecto. SDR SDRAM es un tipo de DRAM, utilizada como memoria principal, no para cachés de alta velocidad."
+      },
+      {
+        "text": "SRAM (Static RAM)",
+        "feedback": "Correcto. La SRAM es más rápida y cara que la DRAM porque no requiere refresco constante y está construida con biestables, lo que la hace ideal para las cachés del procesador donde la velocidad es crítica."
+      },
+      {
+        "text": "DDR5 SDRAM (Double Data Rate Synchronous RAM de quinta generación)",
+        "feedback": "Incorrecto. DDR5 es una mejora de la DRAM para memoria principal, ofreciendo mayor velocidad y ancho de banda que sus predecesoras, pero sigue siendo DRAM y no se usa directamente como memoria caché interna de la CPU."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la principal ventaja de utilizar Direct Memory Access (DMA)?",
+    "options": [
+      {
+        "text": "Permite que la CPU controle directamente cada bit durante la transferencia de datos, garantizando la máxima precisión.",
+        "feedback": "Incorrecto. El propósito de DMA es liberar a la CPU de la tarea de controlar cada bit, no que la CPU controle directamente."
+      },
+      {
+        "text": "Aumenta la latencia del sistema al requerir la intervención constante del sistema operativo.",
+        "feedback": "Incorrecto. DMA busca reducir la latencia y la carga de la CPU, no aumentarla. Permite transferencias sin intervención constante del SO."
+      },
+      {
+        "text": "Permite a ciertos subsistemas de hardware acceder a la memoria del sistema directamente, sin la intervención constante de la CPU.",
+        "feedback": "Correcto. La DMA libera a la CPU de la tarea de copiar datos entre la memoria y los periféricos, permitiendo que la CPU realice otras tareas de forma concurrente y mejorando el rendimiento del sistema."
+      },
+      {
+        "text": "Limita el acceso a la memoria solo a los componentes más rápidos del sistema, como los registros.",
+        "feedback": "Incorrecto. DMA permite que periféricos y subsistemas de hardware accedan a la memoria principal, no limita el acceso solo a los registros."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué tipo de PLD (Dispositivo Lógico Programable) se caracteriza por ser el más avanzado y flexible, utilizando miles de bloques lógicos configurables (CLBs) y una red de interconexión extensa, ideal para implementar sistemas complejos como microprocesadores 'soft-cores'?",
+    "options": [
+      {
+        "text": "PAL (Programmable Array Logic)",
+        "feedback": "Incorrecto. Los PALs son dispositivos más simples con lógica AND programable y OR fija, no aptos para sistemas de alta complejidad."
+      },
+      {
+        "text": "CPLD (Complex Programmable Logic Device)",
+        "feedback": "Incorrecto. Los CPLDs son más complejos que los PALs/GALs y tienen bloques interconectados, pero su escala no alcanza la capacidad de una FPGA para implementar sistemas completos como microprocesadores."
+      },
+      {
+        "text": "FPGA (Field-Programmable Gate Array)",
+        "feedback": "Correcto. Las FPGAs son el tipo de PLD más potente, con una arquitectura que permite una reconfiguración masiva y la implementación de sistemas digitales muy complejos, incluyendo el diseño de procesadores personalizados."
+      },
+      {
+        "text": "GAL (Generic Array Logic)",
+        "feedback": "Incorrecto. Las GALs son una mejora reprogramable de los PALs, pero aún se consideran dispositivos de menor complejidad que las FPGAs."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la principal diferencia entre la organización 2D y 3D de las memorias RAM?",
+    "options": [
+      {
+        "text": "La organización 2D accede a las celdas por dos líneas de selección, mientras que la 3D por una sola.",
+        "feedback": "Incorrecto. Es al revés: la organización 2D accede por una línea de selección, y la 3D por dos líneas de selección para cada celda."
+      },
+      {
+        "text": "La organización 2D utiliza capacitores, mientras que la 3D utiliza flip-flops.",
+        "feedback": "Incorrecto. El uso de capacitores o flip-flops depende de si es DRAM o SRAM, no de su organización 2D o 3D."
+      },
+      {
+        "text": "La organización 3D reduce el tamaño de los decodificadores al acceder a las celdas por dos líneas de selección activadas simultáneamente.",
+        "feedback": "Correcto. La organización 3D de las memorias RAM (y ROM) utiliza dos líneas de selección (una de fila y otra de columna) que se activan simultáneamente para seleccionar una celda específica, lo que permite reducir el tamaño de los decodificadores en comparación con una organización 2D equivalente."
+      },
+      {
+        "text": "La organización 2D es para memoria volátil y la 3D para memoria no volátil.",
+        "feedback": "Incorrecto. La volatilidad o no volatilidad es una característica del tipo de memoria (RAM vs ROM), no de su esquema de organización interna 2D o 3D."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué tipo de memoria RAM es la más utilizada actualmente en computadoras comerciales y se caracteriza por poder procesar dos operaciones de lectura o escritura por cada ciclo de reloj?",
+    "options": [
+      {
+        "text": "SRAM (Static RAM)",
+        "feedback": "Incorrecto. La SRAM es más rápida y cara, usada en cachés, y no es el tipo más común para memoria principal que procesa dos operaciones por ciclo de reloj."
+      },
+      {
+        "text": "SDR (Tasa de Datos Única) SDRAM",
+        "feedback": "Incorrecto. La SDR procesa solo una operación de lectura o escritura por ciclo de reloj, a diferencia de las versiones más modernas."
+      },
+      {
+        "text": "DDR (Tasa de Datos Doble) SDRAM",
+        "feedback": "Correcto. La memoria DDR (Double Data Rate) y sus generaciones posteriores (DDR2, DDR3, DDR4, DDR5) son las más empleadas y su principal ventaja es la capacidad de realizar dos transferencias de datos por cada ciclo de reloj."
+      },
+      {
+        "text": "VRAM (Video RAM)",
+        "feedback": "Incorrecto. La VRAM es una memoria especializada para tarjetas gráficas, no el tipo más común para la memoria principal del sistema."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es una de las principales desventajas de la memoria RAM, según el material?",
+    "options": [
+      {
+        "text": "Almacena datos de forma permanente, lo que consume mucha energía.",
+        "feedback": "Incorrecto. La RAM es volátil y no almacena datos de forma permanente; la persistencia es característica de la ROM."
+      },
+      {
+        "text": "Su costo aumenta significativamente a medida que se incrementa la cantidad de memoria.",
+        "feedback": "Correcto. El costo por gigabyte de RAM puede ser considerable, lo que la convierte en un factor limitante para la capacidad total en un sistema, especialmente en comparación con el almacenamiento secundario."
+      },
+      {
+        "text": "Es más lenta que los discos duros, afectando el rendimiento general.",
+        "feedback": "Incorrecto. La RAM es significativamente más rápida que los discos duros (SSD/HDD), y su alta velocidad es crucial para el rendimiento."
+      },
+      {
+        "text": "No es compatible con la mayoría de las placas madre modernas.",
+        "feedback": "Incorrecto. La RAM es un componente fundamental y esencialmente compatible con todas las placas madre modernas, aunque se requiere verificar la compatibilidad de tipo y generación."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Qué función cumple el Registro de Datos de Memoria (MDR) en la interacción entre la CPU y la memoria?",
+    "options": [
+      {
+        "text": "Almacena la dirección de la celda de memoria que se desea leer o escribir.",
+        "feedback": "Incorrecto. Esa es la función del Registro de Dirección de Memoria (MAR)."
+      },
+      {
+        "text": "Guarda el código de la próxima instrucción a ejecutar.",
+        "feedback": "Incorrecto. Esa es la función del Contador de Programa (PC)."
+      },
+      {
+        "text": "Almacena los datos que han sido leídos de la memoria o los datos que deben escribirse en ella.",
+        "feedback": "Correcto. El MDR actúa como un búfer para los datos que se transfieren entre la CPU y la memoria principal, conteniendo la información que se lee o se escribe."
+      },
+      {
+        "text": "Realiza operaciones aritméticas y lógicas con los datos.",
+        "feedback": "Incorrecto. Las operaciones aritméticas y lógicas las realiza la Unidad Aritmético-Lógica (ALU), a menudo utilizando el acumulador o registros de propósito general."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es el rol de los Dispositivos Lógicos Programables (PLD) en la interconexión de componentes dentro de un sistema digital, según el material?",
+    "options": [
+      {
+        "text": "Gestionan exclusivamente el almacenamiento permanente de las instrucciones del sistema operativo.",
+        "feedback": "Incorrecto. El almacenamiento permanente de instrucciones es tarea de la ROM; los PLD implementan lógica configurable, no solo almacenamiento."
+      },
+      {
+        "text": "Actúan como el 'sistema de control' flexible, implementando la lógica personalizada para interconectar componentes y manejar periféricos.",
+        "feedback": "Correcto. Los PLD son descritos como el 'sistema de control' o 'nervios' que permiten implementar lógica personalizada y flexible para interconectar, gestionar y adaptar diferentes partes del sistema digital."
+      },
+      {
+        "text": "Sirven como memoria de trabajo volátil de alta velocidad para programas en ejecución.",
+        "feedback": "Incorrecto. Esa es la función principal de la memoria RAM."
+      },
+      {
+        "text": "Son únicamente utilizados para el prototipado rápido de nuevos diseños de chips.",
+        "feedback": "Incorrecto. Aunque son útiles para prototipado, los PLD tienen una amplia gama de aplicaciones en sistemas finales, como telecomunicaciones, robótica, y automatización industrial, no solo para prototipos."
+      }
+    ],
+    "correctAnswer": 1
+  },
+   {
+    "question": "¿Cuál es la principal ventaja de la memoria Flash (Flash ROM) sobre la EEPROM?",
+    "options": [
+      {
+        "text": "La memoria Flash es volátil y pierde su contenido al apagar el dispositivo.",
+        "feedback": "Incorrecto. La memoria Flash es no volátil, al igual que la EEPROM y la ROM."
+      },
+      {
+        "text": "La memoria Flash permite el borrado y la escritura de datos bit a bit, lo que es más preciso.",
+        "feedback": "Incorrecto. La EEPROM permite el borrado bit a bit o byte a byte. La Flash se caracteriza por el borrado y escritura en bloques grandes, lo que la hace más rápida para grandes volúmenes."
+      },
+      {
+        "text": "La memoria Flash tiene mayor capacidad, velocidad de lectura/escritura y permite el borrado en bloques completos.",
+        "feedback": "Correcto. La memoria Flash es una evolución de la EEPROM que ofrece mayor densidad (capacidad), mayor velocidad de lectura/escritura y la capacidad de borrar y programar en grandes bloques, mejorando su eficiencia en aplicaciones masivas."
+      },
+      {
+        "text": "La memoria Flash no requiere ningún tipo de programador especial.",
+        "feedback": "Incorrecto. Si bien es reprogramable eléctricamente, aún necesita dispositivos y procesos adecuados para su programación y borrado."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué característica de la RAM se refiere al tiempo que tarda en responder después de que el procesador solicite un dato o un programa?",
+    "options": [
+      {
+        "text": "Frecuencia",
+        "feedback": "Incorrecto. La frecuencia se refiere a la velocidad a la que la memoria puede enviar y recibir datos, medida en MHz."
+      },
+      {
+        "text": "Capacidad de almacenamiento",
+        "feedback": "Incorrecto. La capacidad se refiere a la cantidad total de datos que puede almacenar la RAM, medida en gigabytes."
+      },
+      {
+        "text": "Latencia",
+        "feedback": "Correcto. La latencia en la RAM es el retardo o el tiempo de espera entre el momento en que se solicita un dato y el momento en que está disponible, expresado a menudo en ciclos de reloj o nanosegundos."
+      },
+      {
+        "text": "Volatilidad",
+        "feedback": "Incorrecto. La volatilidad se refiere a la característica de perder el contenido al apagar el dispositivo."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué tipo de falla común en la RAM puede resultar en la 'Pantalla azul de la muerte (BSOD)' en una computadora?",
+    "options": [
+      {
+        "text": "Problemas de sobrecalentamiento del procesador.",
+        "feedback": "Incorrecto. Aunque el sobrecalentamiento puede causar problemas, la BSOD por RAM se debe a una falla directa en la memoria, que impide al sistema operativo acceder a la información necesaria."
+      },
+      {
+        "text": "Mal funcionamiento del software o controladores de dispositivo.",
+        "feedback": "Incorrecto. Si bien el software puede causar problemas, la BSOD mencionada en el contexto de la RAM se relaciona con una falla de hardware de la memoria misma."
+      },
+      {
+        "text": "Falla física en el hardware de la RAM que impide su correcto funcionamiento.",
+        "feedback": "Correcto. Una falla física en la RAM puede impedir que el sistema operativo acceda a la información vital, provocando un error crítico y la aparición de la 'Pantalla azul de la muerte'."
+      },
+      {
+        "text": "Una baja capacidad de RAM instalada en el sistema.",
+        "feedback": "Incorrecto. Una baja capacidad de RAM puede ralentizar el sistema o provocar que las aplicaciones se cierren, pero no directamente una BSOD por falla de hardware."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la diferencia clave de la PROM (Programmable Read-Only Memory) con respecto a la Mask ROM tradicional?",
+    "options": [
+      {
+        "text": "La PROM es reprogramable eléctricamente, mientras que la Mask ROM no.",
+        "feedback": "Incorrecto. La PROM no es reprogramable una vez grabada. La EEPROM es la que ofrece reprogramabilidad eléctrica."
+      },
+      {
+        "text": "La PROM es programada por el fabricante durante la producción del chip, mientras que la Mask ROM es programada por el usuario.",
+        "feedback": "Incorrecto. La Mask ROM es programada por el fabricante. La PROM se programa una sola vez por el usuario después de la fabricación."
+      },
+      {
+        "text": "La PROM permite al usuario programar los datos una única vez después de su fabricación, a diferencia de la Mask ROM que tiene sus datos grabados permanentemente en fábrica.",
+        "feedback": "Correcto. La PROM ofrece la flexibilidad de ser programada una vez por el usuario tras su fabricación, lo cual no es posible con la Mask ROM cuyos datos están 'mascarados' permanentemente por el fabricante."
+      },
+      {
+        "text": "La PROM utiliza luz ultravioleta para el borrado, mientras que la Mask ROM no es borrable.",
+        "feedback": "Incorrecto. La EPROM utiliza luz ultravioleta para el borrado, no la PROM. Ni la PROM ni la Mask ROM son borrables por el usuario una vez programadas."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué ventaja clave de los PLD (Dispositivos Lógicos Programables) se refiere a la eliminación de la necesidad de fabricar circuitos integrados específicos (ASICs) con largos ciclos de diseño?",
+    "options": [
+      {
+        "text": "Reducción de Componentes",
+        "feedback": "Incorrecto. La reducción de componentes es una ventaja, pero no es la que se refiere directamente a evitar los ASICs con largos ciclos de diseño."
+      },
+      {
+        "text": "Depuración Simplificada",
+        "feedback": "Incorrecto. Si bien la depuración es más sencilla, no es la ventaja principal relacionada con la sustitución de ASICs y sus ciclos de desarrollo."
+      },
+      {
+        "text": "Menor Tiempo de Desarrollo (Time-to-Market)",
+        "feedback": "Correcto. Los PLD, especialmente las FPGAs, reducen drásticamente el tiempo de desarrollo al eliminar la necesidad de fabricar ASICs, permitiendo implementar y modificar diseños de hardware mucho más rápido, lo que acorta el 'Time-to-Market'."
+      },
+      {
+        "text": "Costo",
+        "feedback": "Incorrecto. Aunque son costo-eficientes para volúmenes medios, no siempre son más económicos que los ASICs para producciones a gran escala, y la ventaja principal en este contexto es el tiempo de desarrollo."
+      }
+    ],
+    "correctAnswer": 2
+  },
+   {
+    "question": "¿Qué tipo de memoria RAM es no expandible por el usuario y se utiliza comúnmente como memoria caché dedicada al procesador del sistema?",
+    "options": [
+      {
+        "text": "DDR SDRAM",
+        "feedback": "Incorrecto. DDR SDRAM es un tipo de DRAM que sí es expandible y se usa como memoria principal, no como caché de CPU."
+      },
+      {
+        "text": "SRAM (Static RAM)",
+        "feedback": "Correcto. La SRAM es más rápida, más costosa, y se caracteriza por no ser expandible por el usuario y su uso principal es en las memorias caché de la CPU debido a su alta velocidad y no necesidad de refresco."
+      },
+      {
+        "text": "VRAM (Video RAM)",
+        "feedback": "Incorrecto. La VRAM es memoria dedicada a tarjetas gráficas, no la caché principal del procesador."
+      },
+      {
+        "text": "LPDDR SDRAM",
+        "feedback": "Incorrecto. LPDDR es un tipo de DDR SDRAM optimizado para bajo consumo en dispositivos móviles, no es la que se usa para caché de CPU."
+      }
+    ],
+    "correctAnswer": 1
+  },
+  {
+    "question": "¿Qué elemento esencial de un registro se encarga de disparar a todos los flip-flops simultáneamente en el flanco de subida de cada pulso, facilitando la transferencia paralela de datos?",
+    "options": [
+      {
+        "text": "La entrada de clear (CLR).",
+        "feedback": "Incorrecto. La entrada CLR se utiliza para inicializar el registro a un estado de cero, no para sincronizar la transferencia de datos."
+      },
+      {
+        "text": "La Unidad Aritmético-Lógica (ALU).",
+        "feedback": "Incorrecto. La ALU realiza operaciones aritméticas y lógicas, no sincroniza los flip-flops de un registro."
+      },
+      {
+        "text": "La señal de reloj (CLK).",
+        "feedback": "Correcto. La señal de reloj (CLK) es fundamental para la operación síncrona de los registros, asegurando que todos los flip-flops capturen y almacenen los datos al mismo tiempo en un flanco específico (ej., de subida)."
+      },
+      {
+        "text": "El Registro de Instrucciones (IR).",
+        "feedback": "Incorrecto. El IR almacena la instrucción actual, no se encarga de la sincronización de los flip-flops de un registro."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál es la principal ventaja de las memorias DDR5 SDRAM en comparación con las DDR4?",
+    "options": [
+      {
+        "text": "Mayor latencia y menor densidad por módulo.",
+        "feedback": "Incorrecto. Las DDR5 buscan reducir la latencia (aunque inicial puede ser mayor, la eficiencia general es mejor) y aumentar la densidad por módulo, no disminuirla."
+      },
+      {
+        "text": "Menor frecuencia de reloj y menor ancho de banda teórico.",
+        "feedback": "Incorrecto. Las DDR5 incrementan significativamente la frecuencia de reloj y duplican el ancho de banda teórico en comparación con DDR4."
+      },
+      {
+        "text": "Menor consumo de energía y mayor capacidad de transferencias por segundo (MT/s).",
+        "feedback": "Correcto. Las DDR5 operan a un voltaje más bajo (1.1V vs 1.2V de DDR4) para mayor eficiencia energética y alcanzan velocidades de hasta 6,400 MT/s, superando ampliamente a DDR4."
+      },
+      {
+        "text": "No requieren ninguna forma de corrección de errores (ECC).",
+        "feedback": "Incorrecto. Las DDR5 integran funcionalidades como Decision Feedback Equalization (DFR) y ECC en matriz para mejorar la confiabilidad a mayores velocidades."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Cuál de las siguientes es una aplicación de los registros de desplazamiento en sistemas embebidos?",
+    "options": [
+      {
+        "text": "Almacenamiento de programas fijos que no cambian con el tiempo.",
+        "feedback": "Incorrecto. Esto se realiza con memoria ROM o Flash."
+      },
+      {
+        "text": "Gestión de la jerarquía de memoria (cachés L1, L2, L3).",
+        "feedback": "Incorrecto. Esto es función de los controladores de caché y del diseño general del procesador, no de los registros de desplazamiento directamente."
+      },
+      {
+        "text": "Conversión de datos entre formatos paralelos y seriales para comunicación eficiente.",
+        "feedback": "Correcto. Los registros de desplazamiento (SIPO y PISO) son cruciales en sistemas embebidos para la comunicación serial, permitiendo convertir datos de formato paralelo a serie para la transmisión, y viceversa para la recepción."
+      },
+      {
+        "text": "Realizar auto-pruebas del hardware al inicio del sistema (POST).",
+        "feedback": "Incorrecto. Las auto-pruebas POST son parte del firmware almacenado en la ROM, no una aplicación directa de los registros de desplazamiento."
+      }
+    ],
+    "correctAnswer": 2
+  },
+  {
+    "question": "¿Qué concepto describe la capacidad de los PLD para permitir que el usuario configure o 'programe' su funcionalidad lógica después de la fabricación, a diferencia de los circuitos fijos?",
+    "options": [
+      {
+        "text": "Volatilidad",
+        "feedback": "Incorrecto. La volatilidad se refiere a la pérdida de datos sin energía, no a la programabilidad de la lógica."
+      },
+      {
+        "text": "Acceso Aleatorio",
+        "feedback": "Incorrecto. El acceso aleatorio se refiere a la capacidad de acceder a cualquier dirección de memoria directamente, no a la configuración de la lógica."
+      },
+      {
+        "text": "Reconfigurabilidad (o Programabilidad)",
+        "feedback": "Correcto. La reconfigurabilidad o programabilidad es la característica distintiva de los PLD que les permite modificar su comportamiento lógico mediante software después de haber sido fabricados, ofreciendo una gran flexibilidad en el diseño digital."
+      },
+      {
+        "text": "Permanencia",
+        "feedback": "Incorrecto. La permanencia se refiere a la retención de datos sin energía (no volatilidad), lo cual es una característica de algunos tipos de memoria o configuración de PLD, pero no define la capacidad de configurar la lógica."
+      }
+    ],
+    "correctAnswer": 2
+  }
+]
